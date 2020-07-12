@@ -2,9 +2,9 @@
 
 ```bash
 # Javascript template
-$ npx degit amoutonbrady/vite-template-solid/js my-solid-project
+$ npx degit amoutonbrady/vite-template-solid/js#main my-solid-project
 # Typescript template
-$ npx degit amoutonbrady/vite-template-solid/ts my-solid-project
+$ npx degit amoutonbrady/vite-template-solid/ts#main my-solid-project
 ```
 
 ## Available Scripts
