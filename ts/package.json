@@ -1,0 +1,17 @@
+{
+  "name": "vite-template-solid",
+  "version": "0.0.0",
+  "description": "My solid + vite project + ts",
+  "scripts": {
+    "start": "vite",
+    "build": "vite build"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@amoutonbrady/vite-plugin-solid": "^0.0.3",
+    "vite": "^1.0.0-beta.11"
+  },
+  "dependencies": {
+    "solid-js": "^0.18.12"
+  }
+}
