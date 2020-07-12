@@ -1,7 +1,11 @@
 ## Install
 
-`npx degit amoutonbrady/vite-template-solid/js` for Javascript
-`npx degit amoutonbrady/vite-template-solid/ts` for Typescript
+```bash
+# Javascript template
+$ npx degit amoutonbrady/vite-template-solid/js my-solid-project
+# Typescript template
+$ npx degit amoutonbrady/vite-template-solid/ts my-solid-project
+```
 
 ## Available Scripts
 
