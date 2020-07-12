@@ -1,10 +1,7 @@
-## Install
+## Usage
 
 ```bash
-# Javascript template
-$ npx degit amoutonbrady/vite-template-solid/js#main my-solid-project
-# Typescript template
-$ npx degit amoutonbrady/vite-template-solid/ts#main my-solid-project
+$ npm install # or pnpm install or yarn install
 ```
 
 ## Available Scripts
