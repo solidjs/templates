@@ -1,7 +1,8 @@
 import logo from "./logo.svg";
 import "./App.css";
+import { Component } from "solid-js";
 
-function App() {
+const App: Component = () => {
   return (
     <div class="App">
       <header class="App-header">
@@ -20,6 +21,6 @@ function App() {
       </header>
     </div>
   );
-}
+};
 
 export default App;

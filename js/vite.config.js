@@ -6,7 +6,6 @@ import { solidPlugin } from "@amoutonbrady/vite-plugin-solid";
 const config = {
   root: "src",
   outDir: "dist",
-  serviceWorker: false,
   plugins: [solidPlugin()],
   enableEsbuild: false,
 };
