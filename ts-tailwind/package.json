@@ -1,7 +1,7 @@
 {
   "name": "vite-template-solid",
   "version": "0.0.0",
-  "description": "My solid + vite project",
+  "description": "My solid + vite project + ts",
   "scripts": {
     "start": "vite",
     "build": "vite build"
@@ -9,7 +9,8 @@
   "license": "ISC",
   "devDependencies": {
     "@amoutonbrady/vite-plugin-solid": "^0.1.1",
-    "vite": "^1.0.0-rc.4"
+    "vite": "^1.0.0-rc.4",
+    "tailwindcss": "^1.6.2"
   },
   "dependencies": {
     "solid-js": "^0.18.14"
