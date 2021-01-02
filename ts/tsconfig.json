@@ -6,6 +6,6 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "jsx": "preserve",
-    "types": ["vite", "solid-js", "solid-js/dom"]
+    "jsxImportSource": "solid-js"
   }
 }
