@@ -1,10 +1,6 @@
-import { solidPlugin } from "vite-plugin-solid";
+import { defineConfig } from "vite";
+import solidPlugin from "vite-plugin-solid";
 
-/**
- * @type {import('vite').UserConfig}
- */
-const config = {
+export default defineConfig({
   plugins: [solidPlugin()],
-};
-
-export default config;
+});

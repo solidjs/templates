@@ -1,8 +1,6 @@
-import { UserConfig } from "vite";
-import { solidPlugin } from "vite-plugin-solid";
+import { defineConfig } from "vite";
+import solidPlugin from "vite-plugin-solid";
 
-const config: UserConfig = {
+export default defineConfig({
   plugins: [solidPlugin()],
-};
-
-export default config;
+});
