@@ -3,13 +3,13 @@
   "version": "0.0.0",
   "description": "My solid + vite project + ts",
   "scripts": {
-    "dev": "vite",
+    "start": "vite",
     "build": "vite build"
   },
   "license": "ISC",
   "devDependencies": {
-    "vite": "^2.0.0-beta.33",
-    "vite-plugin-solid": "^0.6.0"
+    "vite": "^2.0.0-beta.44",
+    "vite-plugin-solid": "^0.7.0"
   },
   "dependencies": {
     "solid-js": "^0.23.11"
