@@ -1,5 +1,0 @@
-packages:
-  - 'js/'
-  - 'ts/'
-  - 'ts-minimal/'
-  - 'ts-tailwind/'
