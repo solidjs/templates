@@ -8,8 +8,8 @@
   },
   "license": "ISC",
   "devDependencies": {
-    "vite": "^2.0.1",
-    "vite-plugin-solid": "^1.1.3",
+    "vite": "^2.0.2",
+    "vite-plugin-solid": "^1.2.0",
     "vite-plugin-windicss": "^0.4.7"
   },
   "dependencies": {
