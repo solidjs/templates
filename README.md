@@ -4,9 +4,9 @@ This repository holds most of the official starter templates for Vite.
 
 You get:
 
-* HMR out of the box
-* Minimal bundle size
-* All the vite features..
+- HMR out of the box
+- Minimal bundle size
+- All the vite features..
 
 ## Install
 
@@ -39,6 +39,13 @@ $ pnpm install # or npm install or yarn install
 ```bash
 # Typescript tailwind template
 $ npx degit amoutonbrady/vite-template-solid/ts-tailwind my-solid-project
+$ cd my-solid-project
+$ pnpm install # or npm install or yarn install
+```
+
+```bash
+# Typescript tailwind template + basic file base routing
+$ npx degit amoutonbrady/vite-template-solid/ts-router my-solid-project
 $ cd my-solid-project
 $ pnpm install # or npm install or yarn install
 ```
