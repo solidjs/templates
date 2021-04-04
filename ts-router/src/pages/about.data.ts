@@ -1,10 +1,9 @@
 import { DataFn } from "solid-app-router";
-import { mergeProps } from "solid-js";
 
-const HomeData: DataFn = (props) => {
-  return mergeProps(props, {
+const AboutData: DataFn = () => {
+  return {
     name: "about",
-  });
+  };
 };
 
-export default HomeData;
+export default AboutData;

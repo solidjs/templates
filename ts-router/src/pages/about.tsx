@@ -1,3 +1,5 @@
+import { Suspense } from "solid-js";
+
 export default function About(props) {
   return (
     <section class="bg-pink-100 text-gray-700 p-8">

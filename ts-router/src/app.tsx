@@ -2,7 +2,7 @@ import { Component } from "solid-js";
 import { Link, Route, useRouter } from "solid-app-router";
 
 const App: Component = () => {
-  const router = useRouter();
+  const [router] = useRouter();
 
   return (
     <>
