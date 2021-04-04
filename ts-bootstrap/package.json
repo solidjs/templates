@@ -1,0 +1,20 @@
+{
+  "name": "vite-template-solid",
+  "version": "0.0.0",
+  "description": "My solid + vite project + ts",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.32.8",
+    "vite": "^2.1.5",
+    "vite-plugin-solid": "^1.5.0"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.9.2",
+    "bootstrap": "^5.0.0-beta3",
+    "solid-js": "^0.25.1"
+  }
+}

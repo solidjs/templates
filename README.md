@@ -50,6 +50,13 @@ $ cd my-solid-project
 $ pnpm install # or npm install or yarn install
 ```
 
+```bash
+# Typescript bootstrap (5) template
+$ npx degit amoutonbrady/vite-template-solid/ts-bootstrap my-solid-project
+$ cd my-solid-project
+$ pnpm install # or npm install or yarn install
+```
+
 ## I don't see a template that matches my need?
 
 You wish there was a template with a router? Bootstrap? Your favorite library?
