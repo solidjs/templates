@@ -1,0 +1,25 @@
+{
+  "0 debug pnpm:scope": {
+    "selected": 6,
+    "total": 6
+  },
+  "1 info pnpm": {
+    "err": {
+      "name": "Error",
+      "message": "The node_modules structure at \"/home/alexandre/Lab/vite-template-solid/js/node_modules\" is not compatible with the current pnpm version. Run \"pnpm install --force\" to recreate node_modules.",
+      "code": "ERR_PNPM_MODULES_BREAKING_CHANGE",
+      "stack": "Error: The node_modules structure at \"/home/alexandre/Lab/vite-template-solid/js/node_modules\" is not compatible with the current pnpm version. Run \"pnpm install --force\" to recreate node_modules.\n    at checkCompatibility (/home/alexandre/.volta/tools/image/packages/pnpm/lib/node_modules/pnpm/dist/pnpm.cjs:86112:13)\n    at /home/alexandre/.volta/tools/image/packages/pnpm/lib/node_modules/pnpm/dist/pnpm.cjs:86661:42\n    at Array.map (<anonymous>)\n    at validateModules (/home/alexandre/.volta/tools/image/packages/pnpm/lib/node_modules/pnpm/dist/pnpm.cjs:86659:32)\n    at getContext (/home/alexandre/.volta/tools/image/packages/pnpm/lib/node_modules/pnpm/dist/pnpm.cjs:86557:30)\n    at async mutateModules (/home/alexandre/.volta/tools/image/packages/pnpm/lib/node_modules/pnpm/dist/pnpm.cjs:111327:17)\n    at async addDependenciesToPackage (/home/alexandre/.volta/tools/image/packages/pnpm/lib/node_modules/pnpm/dist/pnpm.cjs:111630:22)\n    at async /home/alexandre/.volta/tools/image/packages/pnpm/lib/node_modules/pnpm/dist/pnpm.cjs:113940:29"
+    }
+  },
+  "2 error pnpm": {
+    "code": "ERR_PNPM_MODULES_BREAKING_CHANGE",
+    "modulesPath": "/home/alexandre/Lab/vite-template-solid/js/node_modules",
+    "prefix": "/home/alexandre/Lab/vite-template-solid/js",
+    "err": {
+      "name": "Error",
+      "message": "The node_modules structure at \"/home/alexandre/Lab/vite-template-solid/js/node_modules\" is not compatible with the current pnpm version. Run \"pnpm install --force\" to recreate node_modules.",
+      "code": "ERR_PNPM_MODULES_BREAKING_CHANGE",
+      "stack": "Error: The node_modules structure at \"/home/alexandre/Lab/vite-template-solid/js/node_modules\" is not compatible with the current pnpm version. Run \"pnpm install --force\" to recreate node_modules.\n    at checkCompatibility (/home/alexandre/.volta/tools/image/packages/pnpm/lib/node_modules/pnpm/dist/pnpm.cjs:86112:13)\n    at /home/alexandre/.volta/tools/image/packages/pnpm/lib/node_modules/pnpm/dist/pnpm.cjs:86661:42\n    at Array.map (<anonymous>)\n    at validateModules (/home/alexandre/.volta/tools/image/packages/pnpm/lib/node_modules/pnpm/dist/pnpm.cjs:86659:32)\n    at getContext (/home/alexandre/.volta/tools/image/packages/pnpm/lib/node_modules/pnpm/dist/pnpm.cjs:86557:30)\n    at async mutateModules (/home/alexandre/.volta/tools/image/packages/pnpm/lib/node_modules/pnpm/dist/pnpm.cjs:111327:17)\n    at async addDependenciesToPackage (/home/alexandre/.volta/tools/image/packages/pnpm/lib/node_modules/pnpm/dist/pnpm.cjs:111630:22)\n    at async /home/alexandre/.volta/tools/image/packages/pnpm/lib/node_modules/pnpm/dist/pnpm.cjs:113940:29"
+    }
+  }
+}

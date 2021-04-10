@@ -9,11 +9,11 @@
   "license": "ISC",
   "devDependencies": {
     "vite": "^2.1.5",
-    "vite-plugin-solid": "^1.5.0",
-    "vite-plugin-windicss": "^0.12.2"
+    "vite-plugin-solid": "^1.5.1",
+    "vite-plugin-windicss": "^0.13.2"
   },
   "dependencies": {
     "solid-app-router": "^0.0.37",
-    "solid-js": "^0.25.1"
+    "solid-js": "^0.26.0"
   }
 }
