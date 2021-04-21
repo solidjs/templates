@@ -8,13 +8,13 @@
   },
   "license": "ISC",
   "devDependencies": {
-    "sass": "^1.32.8",
-    "vite": "^2.1.5",
-    "vite-plugin-solid": "^1.5.1"
+    "sass": "^1.32.11",
+    "vite": "^2.2.1",
+    "vite-plugin-solid": "^1.6.0"
   },
   "dependencies": {
     "@popperjs/core": "^2.9.2",
     "bootstrap": "^4.6.0",
-    "solid-js": "^0.26.0"
+    "solid-js": "^0.26.1"
   }
 }
