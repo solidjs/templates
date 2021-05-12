@@ -8,12 +8,12 @@
   },
   "license": "ISC",
   "devDependencies": {
-    "vite": "^2.2.1",
-    "vite-plugin-solid": "^1.6.0",
-    "vite-plugin-windicss": "^0.14.6"
+    "vite": "^2.3.1",
+    "vite-plugin-solid": "^1.7.0",
+    "vite-plugin-windicss": "^0.15.10"
   },
   "dependencies": {
-    "solid-app-router": "^0.0.38",
-    "solid-js": "^0.26.1"
+    "solid-app-router": "^0.0.40",
+    "solid-js": "^0.26.5"
   }
 }
