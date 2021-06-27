@@ -9,10 +9,10 @@
   "license": "ISC",
   "devDependencies": {
     "vite": "^2.3.8",
-    "vite-plugin-solid": "^2.0.0-rc.3",
-    "vite-plugin-windicss": "^1.0.4"
+    "vite-plugin-solid": "^2.0.0-rc.4",
+    "vite-plugin-windicss": "^1.1.1"
   },
   "dependencies": {
-    "solid-js": "^1.0.0-rc.6"
+    "solid-js": "^1.0.0-rc.10"
   }
 }
