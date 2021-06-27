@@ -1,73 +1,78 @@
-# Vite templates for Solid
+# Solid templates using [vite](https://vitejs.dev/)
 
-This repository holds most of the official starter templates for Vite.
+This repository holds most of the official starter templates for [vite](https://vitejs.dev/).
 
 You get:
 
 - HMR out of the box
 - Minimal bundle size
-- All the vite features..
+- All the vite features
 
-## Install
+## Get started
 
-Those templates dependencies are maintained via [pnpm](https://pnpm.js.org/) via `pnpm up -i --latest`.
-This is the reason you see a `pnpm-lock.yaml`. This is my favorite package manager because it's fast and doesn't bloat the `node_modules` folder.
+Those templates dependencies are maintained via [pnpm](https://pnpm.js.org/) via `pnpm up -Lri`.
 
-Note that any package manager should work. I'd just advice you to remove the `pnpm-lock.yml` file before doing an install via your package manager of choice.
+This is the reason you see a `pnpm-lock.yaml`. That being said, any package manager will work. This file can be safely be removed once you clone a template.
+
+These templates are meant to be used as is via the [degit](https://github.com/Rich-Harris/degit) utility.
 
 ```bash
 # Javascript template
-$ npx degit amoutonbrady/vite-template-solid/js my-solid-project
+$ npx degit solidjs/templates/js my-solid-project
 $ cd my-solid-project
-$ pnpm install # or npm install or yarn install
+$ npm install # or pnpm install or yarn install
 ```
 
 ```bash
 # Typescript template
-$ npx degit amoutonbrady/vite-template-solid/ts my-solid-project
+$ npx degit solidjs/templates/ts my-solid-project
 $ cd my-solid-project
-$ pnpm install # or npm install or yarn install
+$ npm install # or pnpm install or yarn install
 ```
 
 ```bash
 # Typescript minimal template
-$ npx degit amoutonbrady/vite-template-solid/ts-minimal my-solid-project
+$ npx degit solidjs/templates/ts-minimal my-solid-project
 $ cd my-solid-project
-$ pnpm install # or npm install or yarn install
+$ npm install # or pnpm install or yarn install
 ```
 
 ```bash
-# Typescript tailwind template
-$ npx degit amoutonbrady/vite-template-solid/ts-tailwind my-solid-project
+# Typescript windicss template
+$ npx degit solidjs/templates/ts-windicss my-solid-project
 $ cd my-solid-project
-$ pnpm install # or npm install or yarn install
+$ npm install # or pnpm install or yarn install
 ```
 
 ```bash
-# Typescript tailwind template + basic file base routing
-$ npx degit amoutonbrady/vite-template-solid/ts-router my-solid-project
+# Typescript windicss template + basic file base routing
+$ npx degit solidjs/templates/ts-router my-solid-project
 $ cd my-solid-project
-$ pnpm install # or npm install or yarn install
+$ npm install # or pnpm install or yarn install
 ```
 
 ```bash
 # Typescript bootstrap (5) template
-$ npx degit amoutonbrady/vite-template-solid/ts-bootstrap my-solid-project
+$ npx degit solidjs/templates/ts-bootstrap my-solid-project
 $ cd my-solid-project
-$ pnpm install # or npm install or yarn install
+$ npm install # or pnpm install or yarn install
 ```
 
 ## I don't see a template that matches my need?
 
-You wish there was a template with a router? Bootstrap? Your favorite library?
+You wish there was a template with your favorite library?
 
-Feel free to make a pull request. Copy on of the template already available, tweak, name it properly and make a PR.
+Feel free to make a pull request. Copy on of the template already available, tweak it, name it properly and make a PR. See [contributing](#contributing) below.
 
 ## Contributing
 
+This project is managed with [pnpm](https://pnpm.js.org/). You should [install it](https://pnpm.js.org/install) first to test out your template or contribute to an existing one. 
+
+You can create your own template and prefix it with `ts-` or `js-` and giving it a name that describe the purpose.
+
 To update all dependencies you can run:
 
-`pnpm up -r -L`
+`pnpm up -Lri`
 
 ## Troubleshooting
 

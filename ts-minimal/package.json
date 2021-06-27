@@ -1,12 +1,12 @@
 {
   "name": "vite-template-solid",
   "version": "0.0.0",
-  "description": "My solid + vite project + ts",
+  "description": "",
   "scripts": {
     "dev": "vite",
     "build": "vite build"
   },
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "vite": "^2.3.8",
     "vite-plugin-solid": "^2.0.0-rc.4"

@@ -1,18 +1,18 @@
 ## Usage
 
-Those templates dependencies are maintained via [pnpm](https://pnpm.js.org/) via `pnpm up -i --latest`.
-This is the reason you see a `pnpm-lock.yaml`. This is my favorite package manager because it's fast and doesn't bloat the `node_modules` folder.
+Those templates dependencies are maintained via [pnpm](https://pnpm.js.org/) via `pnpm up -Lri`.
 
-Note that any package manager should work. I'd just advice you to remove the `pnpm-lock.yml` file before doing an install via your package manager of choice.
+This is the reason you see a `pnpm-lock.yaml`. That being said, any package manager will work. This file can be safely be removed once you clone a template.
 
 ```bash
-$ pnpm install # or npm install or yarn install
+$ npm install # or pnpm install or yarn install
 ```
+
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `npm run dev`
+### `npm dev` or `npm start`
 
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
