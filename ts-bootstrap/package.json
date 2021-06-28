@@ -10,11 +10,11 @@
   "devDependencies": {
     "sass": "^1.35.1",
     "vite": "^2.3.8",
-    "vite-plugin-solid": "^2.0.0-rc.4"
+    "vite-plugin-solid": "^2.0.0"
   },
   "dependencies": {
     "@popperjs/core": "^2.9.2",
     "bootstrap": "^5.0.2",
-    "solid-js": "^1.0.0-rc.10"
+    "solid-js": "^1.0.0"
   }
 }
