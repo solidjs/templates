@@ -1,14 +1,14 @@
 lockfileVersion: 5.3
 
 specifiers:
-  solid-app-router: ^0.0.50-rc.0
+  solid-app-router: ^0.0.50
   solid-js: ^1.0.0
   vite: ^2.3.8
   vite-plugin-solid: ^2.0.0
   vite-plugin-windicss: ^1.1.1
 
 dependencies:
-  solid-app-router: 0.0.50-rc.0_solid-js@1.0.0
+  solid-app-router: 0.0.50_solid-js@1.0.0
   solid-js: 1.0.0
 
 devDependencies:
@@ -720,10 +720,10 @@ packages:
     hasBin: true
     dev: true
 
-  /solid-app-router/0.0.50-rc.0_solid-js@1.0.0:
-    resolution: {integrity: sha512-KH9SYQ2EvACxwqp2j7XaZ6rOE8z0GbQpmew7tEhUiJcY8vl0BR2ZQm+MBP3gGmcm+MObsYTZ2cPl8FBaxcp86g==}
+  /solid-app-router/0.0.50_solid-js@1.0.0:
+    resolution: {integrity: sha512-TjaTCuvDeBEqTiIYcvGltM/Ae9y/qurOr5g47DvMdgR/8XiMhoktBH9weISXcxqb4KE4cVaaoAV+G+5tboEDEA==}
     peerDependencies:
-      solid-js: '*'
+      solid-js: ^1.0.0
     dependencies:
       solid-js: 1.0.0
     dev: false

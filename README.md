@@ -8,6 +8,8 @@ You get:
 - Minimal bundle size
 - All the vite features
 
+### Learn more on the [Solid Website](https://solidjs.com) and come chat with us on our [Discord](https://discord.com/invite/solidjs)
+
 ## Get started
 
 Those templates dependencies are maintained via [pnpm](https://pnpm.js.org/) via `pnpm up -Lri`.
