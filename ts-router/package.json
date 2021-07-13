@@ -9,12 +9,12 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "vite": "^2.3.8",
+    "vite": "^2.4.2",
     "vite-plugin-solid": "^2.0.0",
-    "vite-plugin-windicss": "^1.1.1"
+    "vite-plugin-windicss": "^1.2.4"
   },
   "dependencies": {
-    "solid-app-router": "^0.0.50",
-    "solid-js": "^1.0.0"
+    "solid-app-router": "^0.0.51",
+    "solid-js": "^1.0.2"
   }
 }

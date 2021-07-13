@@ -1,15 +1,15 @@
 lockfileVersion: 5.3
 
 specifiers:
-  solid-js: ^1.0.0
-  vite: ^2.3.8
+  solid-js: ^1.0.2
+  vite: ^2.4.2
   vite-plugin-solid: ^2.0.0
 
 dependencies:
-  solid-js: 1.0.0
+  solid-js: 1.0.2
 
 devDependencies:
-  vite: 2.3.8
+  vite: 2.4.2
   vite-plugin-solid: 2.0.0
 
 packages:
@@ -40,7 +40,7 @@ packages:
       '@babel/traverse': 7.14.7
       '@babel/types': 7.14.5
       convert-source-map: 1.8.0
-      debug: 4.3.1
+      debug: 4.3.2
       gensync: 1.0.0-beta.2
       json5: 2.2.0
       semver: 6.3.0
@@ -290,7 +290,7 @@ packages:
       '@babel/helper-split-export-declaration': 7.14.5
       '@babel/parser': 7.14.7
       '@babel/types': 7.14.5
-      debug: 4.3.1
+      debug: 4.3.2
       globals: 11.12.0
     transitivePeerDependencies:
       - supports-color
@@ -311,8 +311,8 @@ packages:
       color-convert: 1.9.3
     dev: true
 
-  /babel-plugin-jsx-dom-expressions/0.29.0_@babel+core@7.14.6:
-    resolution: {integrity: sha512-p0uI9OpgRAGvym3LLzIMMaH+ZpW0khi0JwbnZ7cARE9nOBw1dVjrtGNGt8KyYzfIg0o9nkaYZ+Jaja8SgMy3/A==}
+  /babel-plugin-jsx-dom-expressions/0.29.3_@babel+core@7.14.6:
+    resolution: {integrity: sha512-toFz7FSgCvAtrUD7WZpzRf/BSTYd/XXcIYO1W0dNtldwrWpn3JU32zyYFr3BZzLT1SEvfRKxUVoWqMLSMG+zhA==}
     dependencies:
       '@babel/helper-module-imports': 7.14.5
       '@babel/plugin-syntax-jsx': 7.14.5_@babel+core@7.14.6
@@ -321,10 +321,10 @@ packages:
       - '@babel/core'
     dev: true
 
-  /babel-preset-solid/1.0.0_@babel+core@7.14.6:
-    resolution: {integrity: sha512-fXWDS+5Mh2PgjFvIEpfztMHORd1MutUsnpLYEl40HvwbdiM8zYaLxkHlSdAoRJ8B8HuWvEjBt8y9jzChq+SRAg==}
+  /babel-preset-solid/1.0.1_@babel+core@7.14.6:
+    resolution: {integrity: sha512-fd0rWjQ5h4CuOldXnikWe2SzepOojH6VoE0TfFjkRGnh21ExzVFiGjUq9bulCBR8KLzqCXPOBDt5+AKO9F14kw==}
     dependencies:
-      babel-plugin-jsx-dom-expressions: 0.29.0_@babel+core@7.14.6
+      babel-plugin-jsx-dom-expressions: 0.29.3_@babel+core@7.14.6
     transitivePeerDependencies:
       - '@babel/core'
     dev: true
@@ -334,15 +334,15 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001240
+      caniuse-lite: 1.0.30001244
       colorette: 1.2.2
-      electron-to-chromium: 1.3.759
+      electron-to-chromium: 1.3.774
       escalade: 3.1.1
       node-releases: 1.1.73
     dev: true
 
-  /caniuse-lite/1.0.30001240:
-    resolution: {integrity: sha512-nb8mDzfMdxBDN7ZKx8chWafAdBp5DAAlpWvNyUGe5tcDWd838zpzDN3Rah9cjCqhfOKkrvx40G2SDtP0qiWX/w==}
+  /caniuse-lite/1.0.30001244:
+    resolution: {integrity: sha512-Wb4UFZPkPoJoKKVfELPWytRzpemjP/s0pe22NriANru1NoI+5bGNxzKtk7edYL8rmCWTfQO8eRiF0pn1Dqzx7Q==}
     dev: true
 
   /chalk/2.4.2:
@@ -374,8 +374,8 @@ packages:
       safe-buffer: 5.1.2
     dev: true
 
-  /debug/4.3.1:
-    resolution: {integrity: sha512-doEwdvm4PCeK4K3RQN2ZC2BYUBaxwLARCqZmMjtF8a51J2Rb0xpVloFRnCODwqjpwnAoao4pelN8l3RJdv3gRQ==}
+  /debug/4.3.2:
+    resolution: {integrity: sha512-mOp8wKcvj7XxC78zLgw/ZA+6TSgkoE2C/ienthhRD298T7UNwAg9diBpLRxC0mOezLl4B0xV7M0cCO6P/O0Xhw==}
     engines: {node: '>=6.0'}
     peerDependencies:
       supports-color: '*'
@@ -386,12 +386,12 @@ packages:
       ms: 2.1.2
     dev: true
 
-  /electron-to-chromium/1.3.759:
-    resolution: {integrity: sha512-nM76xH0t2FBH5iMEZDVc3S/qbdKjGH7TThezxC8k1Q7w7WHvIAyJh8lAe2UamGfdRqBTjHfPDn82LJ0ksCiB9g==}
+  /electron-to-chromium/1.3.774:
+    resolution: {integrity: sha512-Fggh17Q1yyv1uMzq8Qn1Ci58P50qcRXMXd2MBcB9sxo6rJxjUutWcNw8uCm3gFWMdcblBO6mDT5HzX/RVRRECA==}
     dev: true
 
-  /esbuild/0.12.10:
-    resolution: {integrity: sha512-KTZ84HqvKL1V76cVwv5W2/es+Bhdv8O9DYRKhJ0wHf1d2iLH6WEGX0zh7W+UzniWnZbUZg2c7GsdH2aWeFsfzQ==}
+  /esbuild/0.12.15:
+    resolution: {integrity: sha512-72V4JNd2+48eOVCXx49xoSWHgC3/cCy96e7mbXKY+WOWghN00cCmlGnwVLRhRHorvv0dgCyuMYBZlM2xDM5OQw==}
     hasBin: true
     requiresBuild: true
     dev: true
@@ -439,8 +439,8 @@ packages:
       function-bind: 1.1.1
     dev: true
 
-  /is-core-module/2.4.0:
-    resolution: {integrity: sha512-6A2fkfq1rfeQZjxrZJGerpLCTHRNEBiSgnu0+obeJpEPZRUooHgsizvzv0ZjJwOz3iWIHdJtVWJ/tmPr3D21/A==}
+  /is-core-module/2.5.0:
+    resolution: {integrity: sha512-TXCMSDsEHMEEZ6eCA8rwRDbLu55MRGmrctljsBX/2v1d9/GzqHOxW5c5oPSgrUt2vBFXebu9rGqckXGPWOlYpg==}
     dependencies:
       has: 1.0.3
     dev: true
@@ -508,12 +508,12 @@ packages:
   /resolve/1.20.0:
     resolution: {integrity: sha512-wENBPt4ySzg4ybFQW2TT1zMQucPK95HSh/nq2CFTZVOGut2+pQvSsgtda4d26YrYcr067wjbmzOG8byDPBX63A==}
     dependencies:
-      is-core-module: 2.4.0
+      is-core-module: 2.5.0
       path-parse: 1.0.7
     dev: true
 
-  /rollup/2.52.3:
-    resolution: {integrity: sha512-QF3Sju8Kl2z0osI4unyOLyUudyhOMK6G0AeqJWgfiyigqLAlnNrfBcDWDx+f1cqn+JU2iIYVkDrgQ6/KtwEfrg==}
+  /rollup/2.53.1:
+    resolution: {integrity: sha512-yiTCvcYXZEulNWNlEONOQVlhXA/hgxjelFSjNcrwAAIfYx/xqjSHwqg/cCaWOyFRKr+IQBaXwt723m8tCaIUiw==}
     engines: {node: '>=10.0.0'}
     hasBin: true
     optionalDependencies:
@@ -529,15 +529,15 @@ packages:
     hasBin: true
     dev: true
 
-  /solid-js/1.0.0:
-    resolution: {integrity: sha512-5huTDVyMqZSjg5Sa4mwl15feK4il1cE68n4weL5NYGC8lX2wiDlcHhBdSB8trKgaJ50Q9/pwtLrQngFaDC+5Tw==}
+  /solid-js/1.0.2:
+    resolution: {integrity: sha512-zQIbVlBH9WNqXfUSOhZAGZv1bkuaeo5yke+M4r5QgG5IuFxP2+ltGJjGLBN7r+Nj9M+H9QK7ufHVeexQsDvg7A==}
 
-  /solid-refresh/0.2.1_solid-js@1.0.0:
+  /solid-refresh/0.2.1_solid-js@1.0.2:
     resolution: {integrity: sha512-8iqVw+FxDUj5CQnadAD+D5bLlzA/yBhMx2rHECGN2e3IQGtBArNdBUHduPBPpqfnufvnP2IwszLhgcg/IdABQQ==}
     peerDependencies:
       solid-js: ^1.0.0
     dependencies:
-      solid-js: 1.0.0
+      solid-js: 1.0.2
     dev: true
 
   /source-map-js/0.6.2:
@@ -571,24 +571,24 @@ packages:
     dependencies:
       '@babel/core': 7.14.6
       '@babel/preset-typescript': 7.14.5_@babel+core@7.14.6
-      babel-preset-solid: 1.0.0_@babel+core@7.14.6
+      babel-preset-solid: 1.0.1_@babel+core@7.14.6
       merge-anything: 4.0.1
-      solid-js: 1.0.0
-      solid-refresh: 0.2.1_solid-js@1.0.0
-      vite: 2.3.8
+      solid-js: 1.0.2
+      solid-refresh: 0.2.1_solid-js@1.0.2
+      vite: 2.4.2
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /vite/2.3.8:
-    resolution: {integrity: sha512-QiEx+iqNnJntSgSF2fWRQvRey9pORIrtNJzNyBJXwc+BdzWs83FQolX84cTBo393cfhObrtWa6180dAa4NLDiQ==}
+  /vite/2.4.2:
+    resolution: {integrity: sha512-2MifxD2I9fjyDmmEzbULOo3kOUoqX90A58cT6mECxoVQlMYFuijZsPQBuA14mqSwvV3ydUsqnq+BRWXyO9Qa+w==}
     engines: {node: '>=12.0.0'}
     hasBin: true
     dependencies:
-      esbuild: 0.12.10
+      esbuild: 0.12.15
       postcss: 8.3.5
       resolve: 1.20.0
-      rollup: 2.52.3
+      rollup: 2.53.1
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
