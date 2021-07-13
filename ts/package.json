@@ -5,7 +5,8 @@
   "scripts": {
     "start": "vite",
     "dev": "vite",
-    "build": "vite build"
+    "build": "vite build",
+    "serve": "vite preview"
   },
   "license": "MIT",
   "devDependencies": {
