@@ -13,7 +13,7 @@ const App: Component = () => {
         </p>
         <a
           class={styles.link}
-          href="https://github.com/ryansolid/solid"
+          href="https://github.com/solidjs/solid"
           target="_blank"
           rel="noopener noreferrer"
         >
