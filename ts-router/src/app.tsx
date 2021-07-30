@@ -1,8 +1,11 @@
 import { Component } from "solid-js";
-import { Link, Route, useRouter } from "solid-app-router";
+import { Link, useRoutes, useLocation } from "solid-app-router";
+
+import { routes } from "./routes";
 
 const App: Component = () => {
-  const [router] = useRouter();
+  const location = useLocation();
+  const Route = useRoutes(routes);
 
   return (
     <>
@@ -30,7 +33,7 @@ const App: Component = () => {
               class="w-75px p-1 bg-white text-sm rounded-lg"
               type="text"
               readOnly
-              value={router.location}
+              value={location.pathname}
             />
           </li>
         </ul>
