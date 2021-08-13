@@ -1,6 +1,6 @@
-import { DataFn } from "solid-app-router";
+import { RouteDataFunc } from "solid-app-router";
 
-const AboutData: DataFn = () => {
+const AboutData: RouteDataFunc = () => {
   return {
     name: "about",
   };
