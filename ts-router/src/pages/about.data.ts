@@ -1,4 +1,4 @@
-import { RouteDataFunc } from "solid-app-router";
+import type { RouteDataFunc } from "solid-app-router";
 
 const AboutData: RouteDataFunc = () => {
   return {

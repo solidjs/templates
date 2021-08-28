@@ -1,4 +1,5 @@
-import { Component, onCleanup, onMount } from "solid-js";
+import { onCleanup, onMount } from "solid-js";
+import type { Component } from "solid-js";
 import * as bootstrap from "bootstrap";
 
 const App: Component = () => {

@@ -1,4 +1,4 @@
-import { Component } from "solid-js";
+import type { Component } from "solid-js";
 import { Link, useRoutes, useLocation } from "solid-app-router";
 
 import { routes } from "./routes";
