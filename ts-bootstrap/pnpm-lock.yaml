@@ -3,10 +3,10 @@ lockfileVersion: 5.3
 specifiers:
   '@popperjs/core': ^2.9.3
   bootstrap: ^5.1.0
-  sass: ^1.38.1
+  sass: ^1.38.2
   solid-js: ^1.1.1
   vite: ^2.5.1
-  vite-plugin-solid: ^2.0.2
+  vite-plugin-solid: ^2.0.3
 
 dependencies:
   '@popperjs/core': 2.9.3
@@ -14,9 +14,9 @@ dependencies:
   solid-js: 1.1.1
 
 devDependencies:
-  sass: 1.38.1
+  sass: 1.38.2
   vite: 2.5.1
-  vite-plugin-solid: 2.0.2
+  vite-plugin-solid: 2.0.3
 
 packages:
 
@@ -374,7 +374,7 @@ packages:
     dependencies:
       caniuse-lite: 1.0.30001252
       colorette: 1.3.0
-      electron-to-chromium: 1.3.820
+      electron-to-chromium: 1.3.822
       escalade: 3.1.1
       node-releases: 1.1.75
     dev: true
@@ -439,8 +439,8 @@ packages:
       ms: 2.1.2
     dev: true
 
-  /electron-to-chromium/1.3.820:
-    resolution: {integrity: sha512-5cFwDmo2yzEA9hn55KZ9+cX/b6DSFvpKz8Hb2fiDmriXWB+DBoXKXmncQwNRFBBTlUdsvPHCoy594OoMLAO0Tg==}
+  /electron-to-chromium/1.3.822:
+    resolution: {integrity: sha512-k7jG5oYYHxF4jx6PcqwHX3JVME/OjzolqOZiIogi9xtsfsmTjTdie4x88OakYFPEa8euciTgCCzvVNwvmjHb1Q==}
     dev: true
 
   /esbuild/0.12.24:
@@ -632,8 +632,8 @@ packages:
     resolution: {integrity: sha512-Gd2UZBJDkXlY7GbJxfsE8/nvKkUEU1G38c1siN6QP6a9PT9MmHB8GnpscSmMJSoF8LOIrt8ud/wPtojys4G6+g==}
     dev: true
 
-  /sass/1.38.1:
-    resolution: {integrity: sha512-Lj8nPaSYOuRhgqdyShV50fY5jKnvaRmikUNalMPmbH+tKMGgEKVkltI/lP30PEfO2T1t6R9yc2QIBLgOc3uaFw==}
+  /sass/1.38.2:
+    resolution: {integrity: sha512-Bz1fG6qiyF0FX6m/I+VxtdVKz1Dfmg/e9kfDy2PhWOkq3T384q2KxwIfP0fXpeI+EyyETdOauH+cRHQDFASllA==}
     engines: {node: '>=8.9.0'}
     hasBin: true
     dependencies:
@@ -689,8 +689,8 @@ packages:
     resolution: {integrity: sha512-nsZd8ZeNUzukXPlJmTBwUAuABDe/9qtVDelJeT/qW0ow3ZS3BsQJtNkan1802aM9Uf68/Y8ljw86Hu0h5IUW3w==}
     dev: true
 
-  /vite-plugin-solid/2.0.2:
-    resolution: {integrity: sha512-WnEehzPy8dADKCAb2Po2lSVhasu0Ft9l1b4hp3m7G8nRvIhlF0w/M3vDyA6pr9IMQMkrj9U8TQz+BdVpc+aElg==}
+  /vite-plugin-solid/2.0.3:
+    resolution: {integrity: sha512-NiyYUGema6ODxEGFl9ytqQ0ucQNiHJ3XkzcfmtrBOsIna53F3FnU7n9NEss+RrsogAErgZK7eeSvYpdurgDVSA==}
     dependencies:
       '@babel/core': 7.15.0
       '@babel/preset-typescript': 7.15.0_@babel+core@7.15.0
