@@ -12,7 +12,7 @@ You get:
 
 ## Get started
 
-Those templates dependencies are maintained via [pnpm](https://pnpm.js.org/) via `pnpm up -Lri`.
+Those templates dependencies are maintained via [pnpm](https://pnpm.io) via `pnpm up -Lri`.
 
 This is the reason you see a `pnpm-lock.yaml`. That being said, any package manager will work. This file can be safely be removed once you clone a template.
 
@@ -68,7 +68,7 @@ Feel free to make a pull request. Copy on of the template already available, twe
 
 ## Contributing
 
-This project is managed with [pnpm](https://pnpm.js.org/). You should [install it](https://pnpm.js.org/install) first to test out your template or contribute to an existing one. 
+This project is managed with [pnpm](https://pnpm.io). You should [install it](https://pnpm.io/installation) first to test out your template or contribute to an existing one. 
 
 You can create your own template and prefix it with `ts-` or `js-` and giving it a name that describe the purpose.
 
