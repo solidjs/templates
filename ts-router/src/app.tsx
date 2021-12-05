@@ -3,7 +3,7 @@ import { Link, useRoutes, useLocation } from "solid-app-router";
 
 import { routes } from "./routes";
 
-const App: Component = () => {
+export const App: Component = () => {
   const location = useLocation();
   const Route = useRoutes(routes);
 
@@ -45,5 +45,3 @@ const App: Component = () => {
     </>
   );
 };
-
-export default App;

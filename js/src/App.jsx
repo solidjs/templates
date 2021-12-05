@@ -1,7 +1,7 @@
 import logo from "./logo.svg";
 import styles from "./App.module.css";
 
-function App() {
+export function App() {
   return (
     <div class={styles.App}>
       <header class={styles.header}>
@@ -21,5 +21,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
