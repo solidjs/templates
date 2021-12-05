@@ -10,4 +10,8 @@ import "./cheatsheet.scss";
 
 import App from "./App";
 
-render(() => <App />, document.getElementById("root") as HTMLElement);
+const root = document.getElementById("root")
+if (root !== null) {
+  // render App on the #root element
+  render(() => <App />, root);
+}
