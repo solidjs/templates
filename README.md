@@ -2,7 +2,7 @@
   <img width="100%" src="https://raw.githubusercontent.com/solidjs/templates/master/banner.png" alt="Solid Vite Templates">
 </p>
 
-# Solid Vite Templates (using [vite](https://vitejs.dev/))
+# Solid Templates (using [vite](https://vitejs.dev/))
 
 This repository holds most of the official starter templates for [vite](https://vitejs.dev/).
 
