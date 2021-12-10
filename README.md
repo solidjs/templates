@@ -66,7 +66,7 @@ $ npm install # or pnpm install or yarn install
 
 ```bash
 # Typescript + tailwindcss template
-$ npx degit solidjs/templates/ts-tailwind my-solid-project
+$ npx degit solidjs/templates/ts-tailwindcss my-solid-project
 $ cd my-solid-project
 $ npm install # or pnpm install or yarn install
 ```
