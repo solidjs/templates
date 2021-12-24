@@ -1,6 +1,6 @@
-import { onCleanup, onMount } from "solid-js";
-import type { Component } from "solid-js";
-import * as bootstrap from "bootstrap";
+import { onCleanup, onMount } from 'solid-js';
+import type { Component } from 'solid-js';
+import * as bootstrap from 'bootstrap';
 
 const App: Component = () => {
   /**
@@ -10,18 +10,18 @@ const App: Component = () => {
   function setActiveItem() {
     let hash = window.location.hash;
 
-    if (hash === "") {
+    if (hash === '') {
       return;
     }
 
     let link = document.querySelector('.bd-aside a[href="' + hash + '"]');
-    let active = document.querySelector(".bd-aside .active");
+    let active = document.querySelector('.bd-aside .active');
     // @ts-ignore
     let parent = link.parentNode.parentNode.previousElementSibling;
 
-    link.classList.add("active");
+    link.classList.add('active');
 
-    if (parent.classList.contains("collapsed")) {
+    if (parent.classList.contains('collapsed')) {
       parent.click();
     }
 
@@ -32,7 +32,7 @@ const App: Component = () => {
     // @ts-ignore
     let expanded = active.parentNode.parentNode.previousElementSibling;
 
-    active.classList.remove("active");
+    active.classList.remove('active');
 
     if (expanded && parent !== expanded) {
       expanded.click();
@@ -41,11 +41,11 @@ const App: Component = () => {
 
   onMount(() => {
     setActiveItem();
-    window.addEventListener("hashchange", setActiveItem);
+    window.addEventListener('hashchange', setActiveItem);
   });
 
   onCleanup(() => {
-    window.removeEventListener("hashchange", setActiveItem);
+    window.removeEventListener('hashchange', setActiveItem);
   });
 
   return (
@@ -427,7 +427,7 @@ const App: Component = () => {
                 <blockquote class="blockquote">
                   <p>A well-known quote, contained in a blockquote element.</p>
                   <footer class="blockquote-footer">
-                    Someone famous in{" "}
+                    Someone famous in{' '}
                     <cite title="Source Title">Source Title</cite>
                   </footer>
                 </blockquote>
@@ -1303,14 +1303,14 @@ const App: Component = () => {
                       <div class="accordion-body">
                         <strong>
                           This is the first item's accordion body.
-                        </strong>{" "}
+                        </strong>{' '}
                         It is hidden by default, until the collapse plugin adds
                         the appropriate classes that we use to style each
                         element. These classes control the overall appearance,
                         as well as the showing and hiding via CSS transitions.
                         You can modify any of this with custom CSS or overriding
                         our default variables. It's also worth noting that just
-                        about any HTML can go within the{" "}
+                        about any HTML can go within the{' '}
                         <code>.accordion-body</code>, though the transition does
                         limit overflow.
                       </div>
@@ -1338,14 +1338,14 @@ const App: Component = () => {
                       <div class="accordion-body">
                         <strong>
                           This is the second item's accordion body.
-                        </strong>{" "}
+                        </strong>{' '}
                         It is hidden by default, until the collapse plugin adds
                         the appropriate classes that we use to style each
                         element. These classes control the overall appearance,
                         as well as the showing and hiding via CSS transitions.
                         You can modify any of this with custom CSS or overriding
                         our default variables. It's also worth noting that just
-                        about any HTML can go within the{" "}
+                        about any HTML can go within the{' '}
                         <code>.accordion-body</code>, though the transition does
                         limit overflow.
                       </div>
@@ -1373,14 +1373,14 @@ const App: Component = () => {
                       <div class="accordion-body">
                         <strong>
                           This is the third item's accordion body.
-                        </strong>{" "}
+                        </strong>{' '}
                         It is hidden by default, until the collapse plugin adds
                         the appropriate classes that we use to style each
                         element. These classes control the overall appearance,
                         as well as the showing and hiding via CSS transitions.
                         You can modify any of this with custom CSS or overriding
                         our default variables. It's also worth noting that just
-                        about any HTML can go within the{" "}
+                        about any HTML can go within the{' '}
                         <code>.accordion-body</code>, though the transition does
                         limit overflow.
                       </div>
@@ -1404,7 +1404,7 @@ const App: Component = () => {
                   class="alert alert-primary alert-dismissible fade show"
                   aria-role="alert"
                 >
-                  A simple primary alert with{" "}
+                  A simple primary alert with{' '}
                   <a
                     href="#"
                     onClick={(e) => e.preventDefault()}
@@ -1424,7 +1424,7 @@ const App: Component = () => {
                   class="alert alert-secondary alert-dismissible fade show"
                   aria-role="alert"
                 >
-                  A simple secondary alert with{" "}
+                  A simple secondary alert with{' '}
                   <a
                     href="#"
                     onClick={(e) => e.preventDefault()}
@@ -1444,7 +1444,7 @@ const App: Component = () => {
                   class="alert alert-success alert-dismissible fade show"
                   aria-role="alert"
                 >
-                  A simple success alert with{" "}
+                  A simple success alert with{' '}
                   <a
                     href="#"
                     onClick={(e) => e.preventDefault()}
@@ -1464,7 +1464,7 @@ const App: Component = () => {
                   class="alert alert-danger alert-dismissible fade show"
                   aria-role="alert"
                 >
-                  A simple danger alert with{" "}
+                  A simple danger alert with{' '}
                   <a
                     href="#"
                     onClick={(e) => e.preventDefault()}
@@ -1484,7 +1484,7 @@ const App: Component = () => {
                   class="alert alert-warning alert-dismissible fade show"
                   aria-role="alert"
                 >
-                  A simple warning alert with{" "}
+                  A simple warning alert with{' '}
                   <a
                     href="#"
                     onClick={(e) => e.preventDefault()}
@@ -1504,7 +1504,7 @@ const App: Component = () => {
                   class="alert alert-info alert-dismissible fade show"
                   aria-role="alert"
                 >
-                  A simple info alert with{" "}
+                  A simple info alert with{' '}
                   <a
                     href="#"
                     onClick={(e) => e.preventDefault()}
@@ -1524,7 +1524,7 @@ const App: Component = () => {
                   class="alert alert-light alert-dismissible fade show"
                   aria-role="alert"
                 >
-                  A simple light alert with{" "}
+                  A simple light alert with{' '}
                   <a
                     href="#"
                     onClick={(e) => e.preventDefault()}
@@ -1544,7 +1544,7 @@ const App: Component = () => {
                   class="alert alert-dark alert-dismissible fade show"
                   aria-role="alert"
                 >
-                  A simple dark alert with{" "}
+                  A simple dark alert with{' '}
                   <a
                     href="#"
                     onClick={(e) => e.preventDefault()}
@@ -1603,15 +1603,15 @@ const App: Component = () => {
                   Example heading <span class="badge bg-danger">New</span>
                 </p>
                 <p class="h5">
-                  Example heading{" "}
+                  Example heading{' '}
                   <span class="badge bg-warning text-dark">New</span>
                 </p>
                 <p class="h6">
-                  Example heading{" "}
+                  Example heading{' '}
                   <span class="badge bg-info text-dark">New</span>
                 </p>
                 <p class="h6">
-                  Example heading{" "}
+                  Example heading{' '}
                   <span class="badge bg-light text-dark">New</span>
                 </p>
                 <p class="h6">

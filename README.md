@@ -79,7 +79,7 @@ Feel free to make a pull request. Copy on of the template already available, twe
 
 ## Contributing
 
-This project is managed with [pnpm](https://pnpm.io). You should [install it](https://pnpm.io/installation) first to test out your template or contribute to an existing one. 
+This project is managed with [pnpm](https://pnpm.io). You should [install it](https://pnpm.io/installation) first to test out your template or contribute to an existing one.
 
 You can create your own template and prefix it with `ts-` or `js-` and giving it a name that describe the purpose.
 
