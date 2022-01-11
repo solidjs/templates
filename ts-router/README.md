@@ -8,6 +8,13 @@ This is the reason you see a `pnpm-lock.yaml`. That being said, any package mana
 $ npm install # or pnpm install or yarn install
 ```
 
+## Exploring the template
+
+This template's goal is to showcase the routing features of Solid.
+It also showcase how the router and Suspense work together to parallelize data fetching tied to a route via the `.data.ts` pattern.
+
+You can learn more about it on the [`solid-app-router` repository](https://github.com/solidjs/solid-app-router)
+
 ### Learn more on the [Solid Website](https://solidjs.com) and come chat with us on our [Discord](https://discord.com/invite/solidjs)
 
 ## Available Scripts
