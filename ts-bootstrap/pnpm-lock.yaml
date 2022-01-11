@@ -3,8 +3,8 @@ lockfileVersion: 5.3
 specifiers:
   '@popperjs/core': ^2.11.2
   bootstrap: ^5.1.3
-  sass: ^1.46.0
-  solid-js: ^1.3.1
+  sass: ^1.47.0
+  solid-js: ^1.3.2
   typescript: ^4.5.4
   vite: ^2.7.10
   vite-plugin-solid: ^2.2.1
@@ -12,13 +12,13 @@ specifiers:
 dependencies:
   '@popperjs/core': 2.11.2
   bootstrap: 5.1.3_@popperjs+core@2.11.2
-  solid-js: 1.3.1
+  solid-js: 1.3.2
 
 devDependencies:
-  sass: 1.46.0
+  sass: 1.47.0
   typescript: 4.5.4
-  vite: 2.7.10_sass@1.46.0
-  vite-plugin-solid: 2.2.1_sass@1.46.0
+  vite: 2.7.10_sass@1.47.0
+  vite-plugin-solid: 2.2.1_sass@1.47.0
 
 packages:
 
@@ -817,8 +817,8 @@ packages:
     resolution: {integrity: sha512-Gd2UZBJDkXlY7GbJxfsE8/nvKkUEU1G38c1siN6QP6a9PT9MmHB8GnpscSmMJSoF8LOIrt8ud/wPtojys4G6+g==}
     dev: true
 
-  /sass/1.46.0:
-    resolution: {integrity: sha512-Z4BYTgioAOlMmo4LU3Ky2txR8KR0GRPLXxO38kklaYxgo7qMTgy+mpNN4eKsrXDTFlwS5vdruvazG4cihxHRVQ==}
+  /sass/1.47.0:
+    resolution: {integrity: sha512-GtXwvwgD7/6MLUZPnlA5/8cdRgC9SzT5kAnnJMRmEZQFRE3J56Foswig4NyyyQGsnmNvg6EUM/FP0Pe9Y2zywQ==}
     engines: {node: '>=8.9.0'}
     hasBin: true
     dependencies:
@@ -832,10 +832,10 @@ packages:
     hasBin: true
     dev: true
 
-  /solid-js/1.3.1:
-    resolution: {integrity: sha512-umBPwS/d7K5+NxojUok/t8xgXdMbIOkFLs/sk4DliFTsl3nbguHgkcAt3KWE6XhA8Xr1xKx5P+g75B8+VP0CzQ==}
+  /solid-js/1.3.2:
+    resolution: {integrity: sha512-BIY63BeKO4vCRqoj/PRcVkt90gnbIg4HhCYqZwsQdwsrFXiqhCycvyqZ1YDBIO8INJdxX5XNLZprmyrt9Mn5IA==}
 
-  /solid-refresh/0.4.0_solid-js@1.3.1:
+  /solid-refresh/0.4.0_solid-js@1.3.2:
     resolution: {integrity: sha512-5XCUz845n/sHPzKK2i2G2EeV61tAmzv6SqzqhXcPaYhrgzVy7nKTQaBpKK8InKrriq9Z2JFF/mguIU00t/73xw==}
     peerDependencies:
       solid-js: ^1.3.0
@@ -843,7 +843,7 @@ packages:
       '@babel/generator': 7.16.7
       '@babel/helper-module-imports': 7.16.7
       '@babel/types': 7.16.7
-      solid-js: 1.3.1
+      solid-js: 1.3.2
     dev: true
 
   /source-map-js/1.0.1:
@@ -890,16 +890,16 @@ packages:
     hasBin: true
     dev: true
 
-  /vite-plugin-solid/2.2.1_sass@1.46.0:
+  /vite-plugin-solid/2.2.1_sass@1.47.0:
     resolution: {integrity: sha512-iyat83wK4sgcRqWLRHoVufwjONZiPAIK/4micEWQEm54ArvF4dAHrdne5C7BJ14k71vapoB1pNryS78wL4UE2Q==}
     dependencies:
       '@babel/core': 7.16.7
       '@babel/preset-typescript': 7.16.7_@babel+core@7.16.7
       babel-preset-solid: 1.3.1_@babel+core@7.16.7
       merge-anything: 4.0.2
-      solid-js: 1.3.1
-      solid-refresh: 0.4.0_solid-js@1.3.1
-      vite: 2.7.10_sass@1.46.0
+      solid-js: 1.3.2
+      solid-refresh: 0.4.0_solid-js@1.3.2
+      vite: 2.7.10_sass@1.47.0
     transitivePeerDependencies:
       - less
       - sass
@@ -907,7 +907,7 @@ packages:
       - supports-color
     dev: true
 
-  /vite/2.7.10_sass@1.46.0:
+  /vite/2.7.10_sass@1.47.0:
     resolution: {integrity: sha512-KEY96ntXUid1/xJihJbgmLZx7QSC2D4Tui0FdS0Old5OokYzFclcofhtxtjDdGOk/fFpPbHv9yw88+rB93Tb8w==}
     engines: {node: '>=12.2.0'}
     hasBin: true
@@ -927,7 +927,7 @@ packages:
       postcss: 8.4.5
       resolve: 1.21.0
       rollup: 2.63.0
-      sass: 1.46.0
+      sass: 1.47.0
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
