@@ -1,8 +1,12 @@
-import { Suspense } from 'solid-js';
+import { Component, createEffect, Suspense } from 'solid-js';
 import { useData } from 'solid-app-router';
 
 export default function About() {
-  const data = useData();
+  const name = useData<() => string>();
+
+  createEffect(() => {
+    console.log(name());
+  });
 
   return (
     <section class="bg-pink-100 text-gray-700 p-8">
@@ -10,11 +14,12 @@ export default function About() {
 
       <p class="mt-4">A page all about this website.</p>
 
-      <Suspense>
-        <pre class="mt-4">
-          <code>{JSON.stringify(data, null, 2)}</code>
-        </pre>
-      </Suspense>
+      <p>
+        <span>We love</span>
+        <Suspense fallback={<span>...</span>}>
+          <span>&nbsp;{name()}</span>
+        </Suspense>
+      </p>
     </section>
   );
 }
