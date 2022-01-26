@@ -2,12 +2,12 @@ lockfileVersion: 5.3
 
 specifiers:
   husky: ^7.0.4
-  lint-staged: ^12.3.1
+  lint-staged: ^12.3.2
   prettier: ^2.5.1
 
 devDependencies:
   husky: 7.0.4
-  lint-staged: 12.3.1
+  lint-staged: 12.3.2
   prettier: 2.5.1
 
 packages:
@@ -215,8 +215,8 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /lint-staged/12.3.1:
-    resolution: {integrity: sha512-Ocht/eT+4/siWOZDJpNUKcKX2UeWW/pDbohJ4gRsrafAjBi79JK8kiNVk2ciIVNKdw0Q4ABptl2nr6uQAlRImw==}
+  /lint-staged/12.3.2:
+    resolution: {integrity: sha512-gtw4Cbj01SuVSfAOXC6ivd/7VKHTj51yj5xV8TgktFmYNMsZzXuSd5/brqJEA93v63wL7R6iDlunMANOechC0A==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     hasBin: true
     dependencies:
