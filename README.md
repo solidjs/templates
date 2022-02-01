@@ -44,6 +44,13 @@ $ npm install # or pnpm install or yarn install
 ```
 
 ```bash
+# Typescript unocss template
+$ npx degit solidjs/templates/ts-unocss my-solid-project
+$ cd my-solid-project
+$ npm install # or pnpm install or yarn install
+```
+
+```bash
 # Typescript windicss template
 $ npx degit solidjs/templates/ts-windicss my-solid-project
 $ cd my-solid-project
