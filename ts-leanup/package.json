@@ -4,7 +4,7 @@
   "description": "",
   "license": "MIT",
   "dependencies": {
-    "pnpm": "^6.29.1",
+    "@leanup/lib": "^1.3.0",
     "solid-js": "^1.3.5"
   },
   "devDependencies": {
