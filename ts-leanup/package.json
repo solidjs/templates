@@ -1,0 +1,14 @@
+{
+  "name": "leanup-template-solid",
+  "version": "0.0.0",
+  "description": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@leanup/cli": "1.3.0",
+    "@leanup/cli-solid": "1.3.0",
+    "typescript": "^4.5.5"
+  },
+  "dependencies": {
+    "solid-js": "^1.3.5"
+  }
+}
