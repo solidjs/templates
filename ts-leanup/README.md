@@ -14,7 +14,7 @@ $ npm install # or pnpm install or yarn install
 
 In the project directory, you can run:
 
-### `npm dev` or `npm start`
+### `npm start`
 
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -28,6 +28,26 @@ It correctly bundles Solid in production mode and optimizes the build for the be
 
 The build is minified and the filenames include the hashes.<br>
 Your app is ready to be deployed!
+
+### `npm run lint` or `npm run lint -- -fix`
+
+Executes the static code checks on the app code. With the additional argument `-fix`, all fixable findings are fixed automatically.
+
+### `npm run format` or `npm run format -- -w`
+
+Executes format checks on the app code. With the additional argument `-w` all app code is reformatted.
+
+### `npm run test` or `npm run test -- -w`
+
+Executes the unit tests.
+
+### `npm run coverage`
+
+Executes the unit tests and validates the cover watermarks. A coverage report is generated.
+
+### `npm run e2e -- -e chrome`
+
+Executes the e2e tests.
 
 ## Deployment
 

@@ -4,6 +4,7 @@
   "description": "",
   "license": "MIT",
   "dependencies": {
+    "pnpm": "^6.29.1",
     "solid-js": "^1.3.5"
   },
   "devDependencies": {
@@ -14,6 +15,7 @@
     "@unocss/webpack": "^0.22.6",
     "chromedriver": "^97.0.3",
     "npm-check-updates": "^12.2.1",
+    "selenium-server": "^3.141.59",
     "typescript": "^4.5.5"
   },
   "scripts": {
