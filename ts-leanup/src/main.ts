@@ -1,1 +1,2 @@
-import './index'
+import 'uno.css';
+import './index';
