@@ -1,0 +1,4 @@
+**/assets/**
+*.feature
+*.sass
+*.scss
