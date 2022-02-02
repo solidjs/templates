@@ -1,22 +1,25 @@
 {
   "name": "ts-solid-leanup-unocss",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "leanûp it a preconfigured stack for Solid with UnoCSS.",
   "license": "MIT",
   "dependencies": {
-    "@leanup/lib": "^1.3.0",
+    "@leanup/lib": "^1.3.1",
     "solid-js": "^1.3.5"
   },
   "devDependencies": {
-    "@leanup/stack": "^1.3.0",
-    "@leanup/stack-solid": "^1.3.0",
-    "@leanup/stack-webpack": "^1.3.0",
+    "@leanup/stack": "^1.3.1",
+    "@leanup/stack-solid": "^1.3.1",
+    "@leanup/stack-vite": "^1.3.1",
+    "@leanup/stack-webpack": "^1.3.1",
     "@unocss/preset-mini": "^0.22.6",
+    "@unocss/vite": "^0.22.6",
     "@unocss/webpack": "^0.22.6",
-    "chromedriver": "^97.0.3",
+    "chromedriver": "^97.0.4",
     "npm-check-updates": "^12.2.1",
     "selenium-server": "^3.141.59",
-    "typescript": "^4.5.5"
+    "typescript": "^4.5.5",
+    "vite-plugin-solid": "^2.2.5"
   },
   "scripts": {
     "coverage": "cross-env NODE_ENV=test nyc mocha",
@@ -26,9 +29,12 @@
     "reinstall": "npm run remove && npm install",
     "remove": "rm -rf node_modules package-lock.json",
     "update": "ncu -t minor -u && npm install && ncu",
-    "build": "cross-env NODE_ENV=production webpack",
-    "start": "npm run serve -- --open",
-    "serve": "cross-env NODE_ENV=development webpack serve --devtool=source-map --no-hot",
+    "vite:build": "cross-env NODE_ENV=production vite build",
+    "vite:dev": "cross-env NODE_ENV=development vite",
+    "webpack:build": "cross-env NODE_ENV=production webpack",
+    "webpack:dev": "cross-env NODE_ENV=development webpack serve --devtool=source-map --no-hot --open",
+    "build": "npm run vite:build",
+    "start": "npm run vite:dev -- --open",
     "test": "cross-env NODE_ENV=test mocha"
   }
 }
