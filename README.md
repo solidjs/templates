@@ -78,6 +78,13 @@ $ cd my-solid-project
 $ npm install # or pnpm install or yarn install
 ```
 
+```bash
+# Typescript + leanûp + unocss template
+$ npx degit solidjs/templates/ts-leanup my-solid-project
+$ cd my-solid-project
+$ npm install # or pnpm install or yarn install
+```
+
 ## I don't see a template that matches my need?
 
 You wish there was a template with your favorite library?
