@@ -1,22 +1,11 @@
-const { resolve } = require('path');
-import { defineConfig } from 'vite';
-import solidPlugin from 'vite-plugin-solid';
+import { mergeConfig } from 'vite';
+import config from '@leanup/stack-solid/vite.config';
 import UnocssPlugin from '@unocss/vite';
 
-export default defineConfig({
-  plugins: [
-    solidPlugin(),
-    UnocssPlugin({
-      // your config or in uno.config.ts
-    }),
-  ],
+export default mergeConfig(config, {
+  plugins: [UnocssPlugin()],
   build: {
     polyfillDynamicImport: false,
-    rollupOptions: {
-      input: {
-        main: resolve(process.cwd(), 'index.html'),
-      },
-    },
     target: 'esnext',
   },
 });
