@@ -67,3 +67,7 @@ Executes the e2e tests.
 ## Deployment
 
 You can deploy the `dist` folder to any static host provider (netlify, surge, now, etc.)
+
+### `npm run update`
+
+Updates all dependencies at the minor level.

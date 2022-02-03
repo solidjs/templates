@@ -21,7 +21,7 @@ const App: Component = () => {
       <h3>
         Stack <small>(preconfigured)</small>
       </h3>
-      <ul class="w-20 m-auto text-left">
+      <ul class="w-30 m-auto text-left">
         <li>Vite | Webpack</li>
         <li>ESLint</li>
         <li>Prettier</li>
