@@ -1,12 +1,12 @@
 lockfileVersion: 5.3
 
 specifiers:
-  solid-js: ^1.3.6
+  solid-js: ^1.3.7
   vite: ^2.8.0
   vite-plugin-solid: ^2.2.5
 
 dependencies:
-  solid-js: 1.3.6
+  solid-js: 1.3.7
 
 devDependencies:
   vite: 2.8.0
@@ -748,10 +748,10 @@ packages:
     hasBin: true
     dev: true
 
-  /solid-js/1.3.6:
-    resolution: {integrity: sha512-QHhItWPwlQPnJJI4kTsS81hPW0ty8rn4N1znBq5gfapXgg7Scc/Uxry50bXAa31pIb1YN8tHfXmnVp7b+x70fw==}
+  /solid-js/1.3.7:
+    resolution: {integrity: sha512-YAz0NQhIZ8yCR2VZK8aMjNrWMU4gnmCgzqy7EpMF7WsyWV3PSoO3HvDs3kR75Ejk/a4ohfxQNiLhC9TOQltXSA==}
 
-  /solid-refresh/0.4.0_solid-js@1.3.6:
+  /solid-refresh/0.4.0_solid-js@1.3.7:
     resolution: {integrity: sha512-5XCUz845n/sHPzKK2i2G2EeV61tAmzv6SqzqhXcPaYhrgzVy7nKTQaBpKK8InKrriq9Z2JFF/mguIU00t/73xw==}
     peerDependencies:
       solid-js: ^1.3.0
@@ -759,7 +759,7 @@ packages:
       '@babel/generator': 7.16.8
       '@babel/helper-module-imports': 7.16.7
       '@babel/types': 7.16.8
-      solid-js: 1.3.6
+      solid-js: 1.3.7
     dev: true
 
   /source-map-js/1.0.2:
@@ -800,8 +800,8 @@ packages:
       '@babel/preset-typescript': 7.16.7_@babel+core@7.16.12
       babel-preset-solid: 1.3.2_@babel+core@7.16.12
       merge-anything: 5.0.2
-      solid-js: 1.3.6
-      solid-refresh: 0.4.0_solid-js@1.3.6
+      solid-js: 1.3.7
+      solid-refresh: 0.4.0_solid-js@1.3.7
       vite: 2.8.0
     transitivePeerDependencies:
       - less
