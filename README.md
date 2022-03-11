@@ -96,7 +96,7 @@ $ npm install # or pnpm install or yarn install
 
 You wish there was a template with your favorite library?
 
-Feel free to make a pull request. Copy on of the template already available, tweak it, name it properly and make a PR. See [contributing](#contributing) below.
+Feel free to make a pull request. Copy one of the template already available, tweak it, name it properly and make a PR. See [contributing](#contributing) below.
 
 ## Contributing
 
