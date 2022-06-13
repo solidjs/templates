@@ -16,7 +16,7 @@ export default defineConfig({
     // solid needs to be inline to work around
     // a resolution issue in vitest:
     deps: {
-      inline: [/solid-js/],
+      inline: [/solid-js/, 'solid-testing-library'],
     },
     // if you have few tests, try commenting one
     // or both out to improve performance:
