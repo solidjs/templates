@@ -86,7 +86,7 @@ $ npm install # or pnpm install or yarn install
 ```
 
 ```bash
-# Javascript template
+# Javascript + vitest template
 $ npx degit solidjs/templates/js-vitest my-solid-project
 $ cd my-solid-project
 $ npm install # or pnpm install or yarn install
