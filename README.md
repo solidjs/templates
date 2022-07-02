@@ -22,6 +22,8 @@ This is the reason you see a `pnpm-lock.yaml`. That being said, any package mana
 
 These templates are meant to be used as is via the [degit](https://github.com/Rich-Harris/degit) utility.
 
+> Unless otherwise specified, these templates use the vite build tool.
+
 ```bash
 # Javascript template
 $ npx degit solidjs/templates/js my-solid-project
