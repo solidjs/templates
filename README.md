@@ -37,6 +37,13 @@ $ npm install # or pnpm install or yarn install
 ```
 
 ```bash
+# Typescript webpack template
+$ npx degit solidjs/templates/ts-webpack my-solid-project
+$ cd my-solid-project
+$ npm install # or pnpm install or yarn install
+```
+
+```bash
 # Typescript minimal template
 $ npx degit solidjs/templates/ts-minimal my-solid-project
 $ cd my-solid-project
