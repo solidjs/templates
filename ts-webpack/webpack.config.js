@@ -45,14 +45,14 @@ module.exports = {
         type: 'asset/resource',
       },
       {
-        test: /\.(tsx?|m?js)$/,
+        test: /\.(tsx?|m?jsx?)$/,
         exclude: /node_modules/,
         use: ['babel-loader'],
       },
     ],
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js', '.mjs'],
+    extensions: ['.tsx', '.ts', '.js', '.mjs', '.mjsx'],
   },
   output: {
     filename: 'bundle.js',
