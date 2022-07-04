@@ -2,24 +2,28 @@ import { defineConfig } from 'vite';
 import solidPlugin from 'vite-plugin-solid';
 
 export default defineConfig({
+  plugins: [solidPlugin()],
   test: {
-    globals: true,
     environment: 'jsdom',
+    globals: true,
     transformMode: {
       web: [/\.jsx?$/],
     },
     setupFiles: './setupVitest.js',
-    // solid needs to be inline to work around
-    // a resolution issue in vitest:
     deps: {
-      inline: [/solid-js/],
+      // solid and solid-testing-library need to be inline to work around a
+      // resolution issue in vitest. If you encounter an error like:
+      // `'solid-js/web' does not provide an export named 'hydrate'`,
+      // you probably need to add something to this list. Setting this to
+      // `[/node_modules/`] will almost certainly solve the problem, but might
+      // impact performance.
+      inline: [/solid-js/, /solid-testing-library/],
     },
     // if you have few tests, try commenting one
     // or both out to improve performance:
-    // threads: false,
-    // isolate: false,
+    threads: false,
+    isolate: false,
   },
-  plugins: [solidPlugin()],
   build: {
     target: 'esnext',
     polyfillDynamicImport: false,
