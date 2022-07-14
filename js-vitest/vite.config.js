@@ -20,9 +20,11 @@ export default defineConfig({
     // isolate: false,
   },
   plugins: [solidPlugin()],
+  server: {
+    port: 3000,
+  },
   build: {
     target: 'esnext',
-    polyfillDynamicImport: false,
   },
   resolve: {
     conditions: ['development', 'browser'],
