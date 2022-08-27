@@ -6,6 +6,9 @@ import solidPlugin from 'vite-plugin-solid';
 
 export default defineConfig({
   plugins: [solidPlugin()],
+  server: {
+    port: 3000,
+  },
   test: {
     environment: 'jsdom',
     globals: true,
@@ -25,9 +28,8 @@ export default defineConfig({
   },
   build: {
     target: 'esnext',
-    polyfillDynamicImport: false,
   },
   resolve: {
     conditions: ['development', 'browser'],
-  }
+  },
 });

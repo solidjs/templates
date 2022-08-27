@@ -9,8 +9,10 @@ export default defineConfig({
       // your config or in uno.config.ts
     }),
   ],
+  server: {
+    port: 3000,
+  },
   build: {
     target: 'esnext',
-    polyfillDynamicImport: false,
   },
 });
