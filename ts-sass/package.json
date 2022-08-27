@@ -9,12 +9,12 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "sass": "^1.53.0",
-    "typescript": "^4.7.4",
-    "vite": "^3.0.0",
+    "sass": "^1.54.5",
+    "typescript": "^4.8.2",
+    "vite": "^3.0.9",
     "vite-plugin-solid": "^2.3.0"
   },
   "dependencies": {
-    "solid-js": "^1.4.7"
+    "solid-js": "^1.5.1"
   }
 }

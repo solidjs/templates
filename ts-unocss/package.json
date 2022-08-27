@@ -9,13 +9,13 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@unocss/preset-mini": "^0.44.2",
-    "@unocss/vite": "^0.44.2",
-    "typescript": "^4.7.4",
-    "vite": "^3.0.0",
+    "@unocss/preset-mini": "^0.45.13",
+    "@unocss/vite": "^0.45.13",
+    "typescript": "^4.8.2",
+    "vite": "^3.0.9",
     "vite-plugin-solid": "^2.3.0"
   },
   "dependencies": {
-    "solid-js": "^1.4.7"
+    "solid-js": "^1.5.1"
   }
 }
