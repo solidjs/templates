@@ -8,8 +8,7 @@
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview",
-    "test": "vitest",
-    "postinstall": "node ./fix-jest-dom.mjs"
+    "test": "vitest"
   },
   "license": "MIT",
   "devDependencies": {
