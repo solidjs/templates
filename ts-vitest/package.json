@@ -13,6 +13,7 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "@types/testing-library__jest-dom": "^5.14.3",
     "@testing-library/jest-dom": "^5.16.5",
     "jsdom": "^20.0.0",
     "solid-testing-library": "^0.3.0",

@@ -5,7 +5,10 @@ const typesPath = path.resolve('node_modules', '@types', 'testing-library__jest-
 const refMatcher = /[\r\n]+\/\/\/ <reference types="jest" \/>/;
 
 fs.readFile(typesPath, 'utf8', (err, data) => {
-    if (err) throw err;
+    if (err) {
+        console.warn('\x1b[33m⚠️ this template expects @types/testing-library__jest-dom to be installed, but it is missing.\n Please run:\x1b[0m\n\npnpm i --save-dev @types/testing-library__jest-dom\n');
+        return;
+    }
 
     fs.writeFile(
         typesPath,
