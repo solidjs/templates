@@ -1,14 +1,14 @@
 lockfileVersion: 5.4
 
 specifiers:
-  solid-app-router: ^0.4.2
+  '@solidjs/router': ^0.4.3
   solid-js: ^1.5.1
   vite: ^3.0.9
   vite-plugin-solid: ^2.3.0
   vite-plugin-windicss: ^1.8.7
 
 dependencies:
-  solid-app-router: 0.4.2_solid-js@1.5.1
+  '@solidjs/router': 0.4.3_solid-js@1.5.1
   solid-js: 1.5.1
 
 devDependencies:
@@ -396,6 +396,14 @@ packages:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.13.0
     dev: true
+
+  /@solidjs/router/0.4.3_solid-js@1.5.1:
+    resolution: {integrity: sha512-mYpd4HxpH/3UZjHGTr2dhvPGXu034Ktxd05CJGA6nRjRGYCgUfhCQHRdEivyqJyb4LhHyDht4ny5xmwEOkUTaQ==}
+    peerDependencies:
+      solid-js: ^1.3.5
+    dependencies:
+      solid-js: 1.5.1
+    dev: false
 
   /@windicss/config/1.8.7:
     resolution: {integrity: sha512-8n+/Y36j5L3rw2tgMdLjeGRuNV7VYfKoHoraLK6Bk9OJ1MTPd5vv7pekof/uOPWVV7WWjVeZ6CTO8SDbDDW3iw==}
@@ -960,14 +968,6 @@ packages:
     resolution: {integrity: sha512-b39TBaTSfV6yBrapU89p5fKekE2m/NwnDocOVruQFS1/veMgdzuPcnOM34M6CwxW8jH/lxEa5rBoDeUwu5HHTw==}
     hasBin: true
     dev: true
-
-  /solid-app-router/0.4.2_solid-js@1.5.1:
-    resolution: {integrity: sha512-+NrLcmqYssx8DcbpcLBaYPqfTRtS+rkfbxMhLH8MHfTcTkdZfrkWQK7lsUvuPCebGEzfaPZJvHqBwhPrCXAmxg==}
-    peerDependencies:
-      solid-js: ^1.3.5
-    dependencies:
-      solid-js: 1.5.1
-    dev: false
 
   /solid-js/1.5.1:
     resolution: {integrity: sha512-Y6aKystIxnrB0quV5nhqNuJV+l2Fk3/PQy1mMya/bzxlGiMHAym7v1NaqEgqDIvctbkxOi5dBj0ER/ewrH060g==}
