@@ -1,18 +1,14 @@
-import { For, createSignal } from 'solid-js';
+import { For } from 'solid-js';
+import { createStore } from 'solid-js/store';
 
 export const TodoList = () => {
   let input;
-  let todoId = 0;
-  const [todos, setTodos] = createSignal([]);
+  const [todos, setTodos] = createStore([]);
   const addTodo = (text) => {
-    setTodos([...todos(), { id: ++todoId, text, completed: false }]);
+    setTodos(todos.length, { id: todos.length, text, completed: false });
   };
   const toggleTodo = (id) => {
-    setTodos(
-      todos().map((todo) =>
-        todo.id === id ? { ...todo, completed: !todo.completed } : todo,
-      ),
-    );
+    setTodos(id, 'completed', (c) => !c);
   };
 
   return (
@@ -29,7 +25,7 @@ export const TodoList = () => {
           Add Todo
         </button>
       </div>
-      <For each={todos()}>
+      <For each={todos}>
         {(todo) => {
           const { id, text } = todo;
           return (
