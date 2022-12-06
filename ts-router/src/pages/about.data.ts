@@ -20,3 +20,4 @@ const AboutData: RouteDataFunc = () => {
 };
 
 export default AboutData;
+export type AboutDataType = typeof AboutData;
