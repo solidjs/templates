@@ -12,6 +12,7 @@
   "devDependencies": {
     "autoprefixer": "^10.4.13",
     "postcss": "^8.4.20",
+    "solid-devtools": "^0.24.3",
     "tailwindcss": "^3.2.4",
     "vite": "^4.0.3",
     "vite-plugin-solid": "^2.5.0"

@@ -9,6 +9,7 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "solid-devtools": "^0.24.3",
     "vite": "^4.0.3",
     "vite-plugin-solid": "^2.5.0",
     "vite-plugin-windicss": "^1.8.10"
