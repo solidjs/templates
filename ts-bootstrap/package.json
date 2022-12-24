@@ -9,14 +9,14 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "sass": "^1.54.5",
-    "typescript": "^4.8.2",
-    "vite": "^3.0.9",
-    "vite-plugin-solid": "^2.3.0"
+    "sass": "^1.57.1",
+    "typescript": "^4.9.4",
+    "vite": "^4.0.3",
+    "vite-plugin-solid": "^2.5.0"
   },
   "dependencies": {
     "@popperjs/core": "^2.11.6",
-    "bootstrap": "^5.2.0",
-    "solid-js": "^1.5.1"
+    "bootstrap": "^5.2.3",
+    "solid-js": "^1.6.6"
   }
 }
