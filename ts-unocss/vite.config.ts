@@ -11,7 +11,6 @@ export default defineConfig({
     */
     // devtools(),
     solidPlugin(),
-    ,
     UnocssPlugin({
       // your config or in uno.config.ts
     }),

@@ -11,7 +11,6 @@ export default defineConfig({
     */
     // devtools(),
     solidPlugin(),
-    ,
     WindiCSS({
       scan: {
         fileExtensions: ['html', 'js', 'ts', 'jsx', 'tsx'],
