@@ -3,6 +3,7 @@ import solidPlugin from 'vite-plugin-solid';
 import UnocssPlugin from '@unocss/vite';
 
 export default defineConfig({
+  base: './',
   plugins: [
     solidPlugin(),
     UnocssPlugin({
