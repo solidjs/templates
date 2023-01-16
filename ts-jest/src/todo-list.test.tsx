@@ -1,4 +1,4 @@
-import { render, fireEvent } from 'solid-testing-library';
+import { render, fireEvent } from '@solidjs/testing-library';
 
 import { TodoList } from './todo-list';
 
