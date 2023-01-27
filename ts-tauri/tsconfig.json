@@ -1,0 +1,78 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "strict": true,
+        "target": "ESNext",
+        "module": "ESNext",
+        "moduleResolution": "node",
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "jsx": "preserve",
+        "jsxImportSource": "solid-js",
+        "types": [
+            "vite/client"
+        ],
+        "useDefineForClassFields": true,
+        "noImplicitAny": false,
+        "isolatedModules": true,
+        "noEmit": true,
+        "lib": [
+            "DOM",
+            "DOM.Iterable",
+            "ESNext"
+        ],
+        "allowJs": true,
+        "skipLibCheck": false,
+        "forceConsistentCasingInFileNames": true,
+        "resolveJsonModule": true,
+        "paths": {
+            "@interfaces/*": [
+                "src/interfaces/*"
+            ],
+            "@components/*": [
+                "src/components/*"
+            ],
+            "@redux/*": [
+                "src/redux/*"
+            ],
+            "@pages/*": [
+                "src/pages/*"
+            ],
+            "@styles/*": [
+                "src/styles/*"
+            ],
+            "@config/*": [
+                "src/config/*"
+            ],
+            "@src/*": [
+                "src/*"
+            ],
+            "@assets/*": [
+                "./assets/*"
+            ],
+            "@hooks/*": [
+                "src/utils/hooks/*"
+            ],
+            "@static/*": [
+                "src/static/*"
+            ],
+            "@utils/*": [
+                "src/utils/*"
+            ]
+        }
+    },
+    "include": [
+        "src",
+        "**/*.ts",
+        "**/*.tsx",
+        "index.js"
+    ],
+    "references": [
+        {
+            "path": "./tsconfig.node.json"
+        }
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}
