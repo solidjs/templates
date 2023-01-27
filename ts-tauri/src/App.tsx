@@ -1,4 +1,3 @@
-import styles from './App.module.css'
 import logo from './logo.svg'
 import type { Component } from 'solid-js'
 import CountingComponent from '@components/Counter'
