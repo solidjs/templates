@@ -15,7 +15,7 @@
     "vite-plugin-windicss": "^1.8.10"
   },
   "dependencies": {
-    "@solidjs/router": "^0.7.0",
+    "@solidjs/router": "^0.8.2",
     "solid-js": "^1.6.10"
   }
 }
