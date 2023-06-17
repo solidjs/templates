@@ -1,8 +1,11 @@
-import { defineConfig } from 'vite-plugin-windicss';
+import type { Config } from 'tailwindcss';
 
-export default defineConfig({
-  darkMode: false,
+const config: Config = {
+  content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {},
   },
-});
+  plugins: [],
+};
+
+export default config;

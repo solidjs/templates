@@ -51,14 +51,7 @@ $ npm install # or pnpm install or yarn install
 ```
 
 ```bash
-# Typescript windicss template
-$ npx degit solidjs/templates/ts-windicss my-solid-project
-$ cd my-solid-project
-$ npm install # or pnpm install or yarn install
-```
-
-```bash
-# Typescript windicss template + basic file base routing
+# Typescript tailwindcss template + basic file base routing
 $ npx degit solidjs/templates/ts-router my-solid-project
 $ cd my-solid-project
 $ npm install # or pnpm install or yarn install
