@@ -1,9 +1,9 @@
 import { Component, createEffect, Suspense } from 'solid-js';
 import { useRouteData } from '@solidjs/router';
-import type {AboutDataType} from './about.data';
+import type { AboutDataType } from './about.data';
 
 export default function About() {
-  const name = useRouteData<AboutDataType>;
+  const name = useRouteData<AboutDataType>();
 
   createEffect(() => {
     console.log(name());
