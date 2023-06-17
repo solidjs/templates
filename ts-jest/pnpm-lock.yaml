@@ -19,12 +19,18 @@ devDependencies:
   '@babel/preset-typescript':
     specifier: ^7.22.5
     version: 7.22.5(@babel/core@7.22.5)
+  '@solidjs/testing-library':
+    specifier: ^0.6.0
+    version: 0.6.0(solid-js@1.7.6)
   '@testing-library/jest-dom':
     specifier: ^5.16.5
     version: 5.16.5
   '@types/jest':
     specifier: ^29.5.2
     version: 29.5.2
+  '@types/testing-library__jest-dom':
+    specifier: ^5.14.5
+    version: 5.14.6
   babel-jest:
     specifier: ^29.5.0
     version: 29.5.0(@babel/core@7.22.5)
@@ -1902,6 +1908,16 @@ packages:
     resolution: {integrity: sha512-w1qd368vtrwttm1PRJWPW1QHlbmHrVDGs1eBH/jZvRPUFS4MNXV9Q33EQdjOdeAxZ7O8+3wM7zxztm2nfUSyKw==}
     dependencies:
       '@sinonjs/commons': 3.0.0
+    dev: true
+
+  /@solidjs/testing-library@0.6.0(solid-js@1.7.6):
+    resolution: {integrity: sha512-Hnm1lF2qkwyqYb2BM2pZw1gw1yzJUrFgfpvTSHi/iVRHpeZbSbPgPMCQSsLN5+iCSCYepAi7D8MBmWoH3M7voA==}
+    engines: {node: '>= 14'}
+    peerDependencies:
+      solid-js: '>=1.0.0'
+    dependencies:
+      '@testing-library/dom': 8.20.1
+      solid-js: 1.7.6
     dev: true
 
   /@testing-library/dom@8.20.1:
