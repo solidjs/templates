@@ -16,7 +16,7 @@ export default function Home() {
           -
         </button>
 
-        <output class="p-10px">Count: {count}</output>
+        <output class="p-10px">Count: {count()}</output>
 
         <button
           class="border rounded-lg px-2 border-gray-900"
