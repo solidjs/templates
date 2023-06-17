@@ -21,7 +21,7 @@ You can learn more about it on the [`@solidjs/router` repository](https://github
 
 In the project directory, you can run:
 
-### `npm dev` or `npm start`
+### `npm run dev` or `npm start`
 
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
