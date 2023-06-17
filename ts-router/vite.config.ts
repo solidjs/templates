@@ -1,7 +1,5 @@
 import { defineConfig } from 'vite';
 import solidPlugin from 'vite-plugin-solid';
-// import devtools from 'solid-devtools/vite';
-import WindiCSS from 'vite-plugin-windicss';
 
 export default defineConfig({
   plugins: [
@@ -11,7 +9,6 @@ export default defineConfig({
     */
     // devtools(),
     solidPlugin(),
-    WindiCSS(),
   ],
   server: {
     port: 3000,

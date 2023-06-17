@@ -13,10 +13,11 @@ function fetchName(): Promise<string> {
   return wait(random(500, 1000), 'Solid');
 }
 
-const AboutData: RouteDataFunc = () => {
+const AboutData: RouteDataFunc<never, Resource<string>> = () => {
   const [data] = createResource(fetchName);
 
   return data;
 };
 
 export default AboutData;
+export type AboutDataType = typeof AboutData;

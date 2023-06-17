@@ -11,6 +11,7 @@ const test = suite<ReturnType<typeof render>>('<TodoList />');
 test.before.each((context) => {
   const returnValue = render(() => <TodoList />);
   Object.getOwnPropertyNames(returnValue).forEach((name) => {
+    // @ts-expect-error
     context[name] = returnValue[name];
   });
 });
