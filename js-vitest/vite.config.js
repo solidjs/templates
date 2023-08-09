@@ -10,8 +10,7 @@ export default defineConfig({
       web: [/\.jsx?$/],
     },
     setupFiles: ['node_modules/@testing-library/jest-dom/extend-expect.js'],
-    // otherwise, solid would be loaded twice:
-    deps: { registerNodeLoader: true },
+    deps: { registerNodeLoader: false },
     // if you have few tests, try commenting one
     // or both out to improve performance:
     // threads: false,
