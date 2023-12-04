@@ -22,6 +22,6 @@ jobs:
             pushd "$template"
             echo Testing template $template
             npm install
-            npm test
+            npm test --if-present
             popd
           done
