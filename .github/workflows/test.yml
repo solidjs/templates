@@ -17,7 +17,7 @@ jobs:
 
       - name: Test Templates
         run: |
-          templates=$(find . -maxdepth 1 -type d -name 'js*' -o -name 'ts*')
+          templates=$(find . -maxdepth 1 -s -type d -name 'js*' -o -name 'ts*')
           for template in $templates; do
             pushd "$template"
             echo Testing template $template
