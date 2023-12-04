@@ -20,6 +20,7 @@ jobs:
           templates=$(find . -maxdepth 1 -type d -name 'js*' -o -name 'ts*')
           for template in $templates; do
             pushd "$template"
+            echo Testing template $template
             npm install
             npm test
             popd
