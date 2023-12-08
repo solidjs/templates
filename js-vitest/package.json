@@ -17,7 +17,7 @@
     "jsdom": "^22.1.0",
     "solid-devtools": "^0.27.3",
     "vite": "^4.3.9",
-    "vite-plugin-solid": "^2.7.0",
+    "vite-plugin-solid": "^2.8.0",
     "vitest": "^0.32.2"
   },
   "dependencies": {
