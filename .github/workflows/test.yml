@@ -1,0 +1,27 @@
+name: Run Tests
+
+on: [push, pull_request]
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Test Templates
+        run: |
+          templates=$(find . -maxdepth 1 -type d -name 'js*' -o -name 'ts*' | sort)
+          for template in $templates; do
+            pushd "$template"
+            echo Testing template $template
+            npm install
+            npm test --if-present
+            popd
+          done
