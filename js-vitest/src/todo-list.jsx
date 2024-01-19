@@ -25,27 +25,29 @@ export const TodoList = () => {
           Add Todo
         </button>
       </div>
-      <For each={todos}>
-        {(todo) => {
-          const { id, text } = todo;
-          return (
-            <div>
-              <input
-                type="checkbox"
-                checked={todo.completed}
-                onchange={[toggleTodo, id]}
-              />
-              <span
-                style={{
-                  'text-decoration': todo.completed ? 'line-through' : 'none',
-                }}
-              >
-                {text}
-              </span>
-            </div>
-          );
-        }}
-      </For>
+      <div>
+        <For each={todos}>
+          {(todo) => {
+            const { id, text } = todo;
+            return (
+              <div>
+                <input
+                  type="checkbox"
+                  checked={todo.completed}
+                  onchange={[toggleTodo, id]}
+                />
+                <span
+                  style={{
+                    'text-decoration': todo.completed ? 'line-through' : 'none',
+                  }}
+                >
+                  {text}
+                </span>
+              </div>
+            );
+          }}
+        </For>
+      </div>
     </>
   );
 };

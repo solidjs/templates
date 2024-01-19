@@ -6,8 +6,8 @@
   },
   "devDependencies": {
     "husky": "^8.0.3",
-    "lint-staged": "^13.2.2",
-    "prettier": "^2.8.8"
+    "lint-staged": "^15.2.0",
+    "prettier": "^3.2.4"
   },
   "lint-staged": {
     "*.{js,json,md,yml,ts,tsx,jsx,css,scss}": "prettier --write"
