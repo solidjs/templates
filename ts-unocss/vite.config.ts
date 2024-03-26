@@ -10,10 +10,10 @@ export default defineConfig({
     For more info see https://github.com/thetarnav/solid-devtools/tree/main/packages/extension#readme
     */
     // devtools(),
-    solidPlugin(),
     UnocssPlugin({
       // your config or in uno.config.ts
     }),
+    solidPlugin(),
   ],
   server: {
     port: 3000,
