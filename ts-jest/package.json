@@ -10,40 +10,6 @@
     "serve": "vite preview",
     "test": "jest"
   },
-  "jest": {
-    "preset": "solid-jest/preset/browser",
-    "setupFilesAfterEnv": [
-      "<rootDir>/node_modules/@testing-library/jest-dom"
-    ],
-    "extensionsToTreatAsEsm": [
-      ".ts",
-      ".tsx"
-    ],
-    "transform": {
-      "^.+\\.(t|j)sx?$": [
-        "babel-jest",
-        {
-          "presets": [
-            [
-              "@babel/preset-env",
-              {
-                "targets": {
-                  "node": "current"
-                }
-              }
-            ],
-            "@babel/preset-typescript",
-            "babel-preset-solid"
-          ]
-        }
-      ]
-    },
-    "testEnvironment": "jsdom",
-    "moduleNameMapper": {
-      "^solid-js$": "solid-js/dist/solid.cjs",
-      "^solid-js/web$": "solid-js/web/dist/web.cjs"
-    }
-  },
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.26.0",
@@ -62,8 +28,8 @@
     "solid-devtools": "^0.30.1",
     "solid-jest": "^0.2.0",
     "typescript": "^5.7.2",
-    "vite": "^5.0.11",
-    "vite-plugin-solid": "^2.10.2"
+    "vite": "^6.0.0",
+    "vite-plugin-solid": "^2.11.0"
   },
   "dependencies": {
     "solid-js": "^1.9.3"
