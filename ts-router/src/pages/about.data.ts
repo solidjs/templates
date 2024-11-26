@@ -1,5 +1,4 @@
-import type { RouteDataFunc } from '@solidjs/router';
-import { createResource, Resource } from 'solid-js';
+import { createAsync, query } from '@solidjs/router';
 
 function wait<T>(ms: number, data: T): Promise<T> {
   return new Promise((resolve) => setTimeout(resolve, ms, data));
@@ -9,14 +8,10 @@ function random(min: number, max: number): number {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function fetchName(): Promise<string> {
-  return wait(random(500, 1000), 'Solid');
-}
+const getName = query(() => wait(random(500, 1000), 'Solid'), 'aboutName');
 
-const AboutData: RouteDataFunc<never, Resource<string>> = () => {
-  const [data] = createResource(fetchName);
-
-  return data;
+const AboutData = () => {
+  return createAsync(() => getName());
 };
 
 export default AboutData;
