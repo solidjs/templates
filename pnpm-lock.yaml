@@ -21,12 +21,12 @@ importers:
   js:
     dependencies:
       solid-js:
-        specifier: ^1.8.11
+        specifier: ^1.9.3
         version: 1.9.3
     devDependencies:
       solid-devtools:
-        specifier: ^0.29.2
-        version: 0.29.3(solid-js@1.9.3)(vite@5.4.11(@types/node@22.10.0)(sass@1.81.0))
+        specifier: ^0.30.1
+        version: 0.30.1(solid-js@1.9.3)(vite@5.4.11(@types/node@22.10.0)(sass@1.81.0))
       vite:
         specifier: ^5.0.11
         version: 5.4.11(@types/node@22.10.0)(sass@1.81.0)
@@ -37,7 +37,7 @@ importers:
   js-tailwindcss:
     dependencies:
       solid-js:
-        specifier: ^1.8.11
+        specifier: ^1.9.3
         version: 1.9.3
     devDependencies:
       autoprefixer:
@@ -47,8 +47,8 @@ importers:
         specifier: ^8.4.33
         version: 8.4.49
       solid-devtools:
-        specifier: ^0.29.2
-        version: 0.29.3(solid-js@1.9.3)(vite@5.4.11(@types/node@22.10.0)(sass@1.81.0))
+        specifier: ^0.30.1
+        version: 0.30.1(solid-js@1.9.3)(vite@5.4.11(@types/node@22.10.0)(sass@1.81.0))
       tailwindcss:
         specifier: ^3.4.1
         version: 3.4.15
@@ -62,7 +62,7 @@ importers:
   js-vitest:
     dependencies:
       solid-js:
-        specifier: ^1.8.11
+        specifier: ^1.9.3
         version: 1.9.3
     devDependencies:
       '@solidjs/testing-library':
@@ -75,8 +75,8 @@ importers:
         specifier: ^23.2.0
         version: 23.2.0
       solid-devtools:
-        specifier: ^0.29.2
-        version: 0.29.3(solid-js@1.9.3)(vite@5.4.11(@types/node@22.10.0)(sass@1.81.0))
+        specifier: ^0.30.1
+        version: 0.30.1(solid-js@1.9.3)(vite@5.4.11(@types/node@22.10.0)(sass@1.81.0))
       vite:
         specifier: ^5.0.11
         version: 5.4.11(@types/node@22.10.0)(sass@1.81.0)
@@ -90,14 +90,14 @@ importers:
   ts:
     dependencies:
       solid-js:
-        specifier: ^1.8.11
+        specifier: ^1.9.3
         version: 1.9.3
     devDependencies:
       solid-devtools:
-        specifier: ^0.29.2
-        version: 0.29.3(solid-js@1.9.3)(vite@5.4.11(@types/node@22.10.0)(sass@1.81.0))
+        specifier: ^0.30.1
+        version: 0.30.1(solid-js@1.9.3)(vite@5.4.11(@types/node@22.10.0)(sass@1.81.0))
       typescript:
-        specifier: ^5.3.3
+        specifier: ^5.7.2
         version: 5.7.2
       vite:
         specifier: ^5.0.11
@@ -115,17 +115,17 @@ importers:
         specifier: ^5.3.2
         version: 5.3.3(@popperjs/core@2.11.8)
       solid-js:
-        specifier: ^1.8.11
+        specifier: ^1.9.3
         version: 1.9.3
     devDependencies:
       sass:
         specifier: ^1.70.0
         version: 1.81.0
       solid-devtools:
-        specifier: ^0.29.2
-        version: 0.29.3(solid-js@1.9.3)(vite@5.4.11(@types/node@22.10.0)(sass@1.81.0))
+        specifier: ^0.30.1
+        version: 0.30.1(solid-js@1.9.3)(vite@5.4.11(@types/node@22.10.0)(sass@1.81.0))
       typescript:
-        specifier: ^5.3.3
+        specifier: ^5.7.2
         version: 5.7.2
       vite:
         specifier: ^5.0.11
@@ -137,7 +137,7 @@ importers:
   ts-jest:
     dependencies:
       solid-js:
-        specifier: ^1.8.11
+        specifier: ^1.9.3
         version: 1.9.3
     devDependencies:
       '@babel/core':
@@ -183,8 +183,8 @@ importers:
         specifier: 0.14.1
         version: 0.14.1
       solid-devtools:
-        specifier: ^0.29.2
-        version: 0.29.3(solid-js@1.9.3)(vite@5.4.11(@types/node@22.10.0)(sass@1.81.0))
+        specifier: ^0.30.1
+        version: 0.30.1(solid-js@1.9.3)(vite@5.4.11(@types/node@22.10.0)(sass@1.81.0))
       solid-jest:
         specifier: ^0.2.0
         version: 0.2.0(@babel/core@7.26.0)(babel-preset-solid@1.9.3(@babel/core@7.26.0))
@@ -192,7 +192,7 @@ importers:
         specifier: ^0.5.1
         version: 0.5.1(solid-js@1.9.3)
       typescript:
-        specifier: ^5.3.3
+        specifier: ^5.7.2
         version: 5.7.2
       vite:
         specifier: ^5.0.11
@@ -204,14 +204,14 @@ importers:
   ts-minimal:
     dependencies:
       solid-js:
-        specifier: ^1.8.11
+        specifier: ^1.9.3
         version: 1.9.3
     devDependencies:
       solid-devtools:
-        specifier: ^0.29.2
-        version: 0.29.3(solid-js@1.9.3)(vite@5.4.11(@types/node@22.10.0)(sass@1.81.0))
+        specifier: ^0.30.1
+        version: 0.30.1(solid-js@1.9.3)(vite@5.4.11(@types/node@22.10.0)(sass@1.81.0))
       typescript:
-        specifier: ^5.3.3
+        specifier: ^5.7.2
         version: 5.7.2
       vite:
         specifier: ^5.0.11
@@ -226,7 +226,7 @@ importers:
         specifier: ^0.15.1
         version: 0.15.1(solid-js@1.9.3)
       solid-js:
-        specifier: ^1.8.11
+        specifier: ^1.9.3
         version: 1.9.3
     devDependencies:
       autoprefixer:
@@ -236,8 +236,8 @@ importers:
         specifier: ^8.4.33
         version: 8.4.49
       solid-devtools:
-        specifier: ^0.29.2
-        version: 0.29.3(solid-js@1.9.3)(vite@5.4.11(@types/node@22.10.0)(sass@1.81.0))
+        specifier: ^0.30.1
+        version: 0.30.1(solid-js@1.9.3)(vite@5.4.11(@types/node@22.10.0)(sass@1.81.0))
       tailwindcss:
         specifier: ^3.4.1
         version: 3.4.15
@@ -251,17 +251,17 @@ importers:
   ts-sass:
     dependencies:
       solid-js:
-        specifier: ^1.8.11
+        specifier: ^1.9.3
         version: 1.9.3
     devDependencies:
       sass:
         specifier: ^1.70.0
         version: 1.81.0
       solid-devtools:
-        specifier: ^0.29.2
-        version: 0.29.3(solid-js@1.9.3)(vite@5.4.11(@types/node@22.10.0)(sass@1.81.0))
+        specifier: ^0.30.1
+        version: 0.30.1(solid-js@1.9.3)(vite@5.4.11(@types/node@22.10.0)(sass@1.81.0))
       typescript:
-        specifier: ^5.3.3
+        specifier: ^5.7.2
         version: 5.7.2
       vite:
         specifier: ^5.0.11
@@ -273,7 +273,7 @@ importers:
   ts-tailwindcss:
     dependencies:
       solid-js:
-        specifier: ^1.8.11
+        specifier: ^1.9.3
         version: 1.9.3
     devDependencies:
       autoprefixer:
@@ -283,13 +283,13 @@ importers:
         specifier: ^8.4.33
         version: 8.4.49
       solid-devtools:
-        specifier: ^0.29.2
-        version: 0.29.3(solid-js@1.9.3)(vite@5.4.11(@types/node@22.10.0)(sass@1.81.0))
+        specifier: ^0.30.1
+        version: 0.30.1(solid-js@1.9.3)(vite@5.4.11(@types/node@22.10.0)(sass@1.81.0))
       tailwindcss:
         specifier: ^3.4.1
         version: 3.4.15
       typescript:
-        specifier: ^5.3.3
+        specifier: ^5.7.2
         version: 5.7.2
       vite:
         specifier: ^5.0.11
@@ -301,7 +301,7 @@ importers:
   ts-unocss:
     dependencies:
       solid-js:
-        specifier: ^1.8.11
+        specifier: ^1.9.3
         version: 1.9.3
     devDependencies:
       '@unocss/preset-mini':
@@ -311,10 +311,10 @@ importers:
         specifier: ^0.64.1
         version: 0.64.1(rollup@4.27.4)(vite@5.4.11(@types/node@22.10.0)(sass@1.81.0))(vue@3.5.13(typescript@5.7.2))
       solid-devtools:
-        specifier: ^0.29.2
-        version: 0.29.3(solid-js@1.9.3)(vite@5.4.11(@types/node@22.10.0)(sass@1.81.0))
+        specifier: ^0.30.1
+        version: 0.30.1(solid-js@1.9.3)(vite@5.4.11(@types/node@22.10.0)(sass@1.81.0))
       typescript:
-        specifier: ^5.3.3
+        specifier: ^5.7.2
         version: 5.7.2
       vite:
         specifier: ^5.4.11
@@ -326,7 +326,7 @@ importers:
   ts-uvu:
     dependencies:
       solid-js:
-        specifier: ^1.8.11
+        specifier: ^1.9.3
         version: 1.9.3
     devDependencies:
       '@babel/core':
@@ -339,8 +339,8 @@ importers:
         specifier: ^23.2.0
         version: 23.2.0
       solid-devtools:
-        specifier: ^0.29.2
-        version: 0.29.3(solid-js@1.9.3)(vite@5.4.11(@types/node@22.10.0)(sass@1.81.0))
+        specifier: ^0.30.1
+        version: 0.30.1(solid-js@1.9.3)(vite@5.4.11(@types/node@22.10.0)(sass@1.81.0))
       solid-dom-testing:
         specifier: ^0.0.3
         version: 0.0.3
@@ -351,7 +351,7 @@ importers:
         specifier: ^0.5.1
         version: 0.5.1(solid-js@1.9.3)
       typescript:
-        specifier: ^5.3.3
+        specifier: ^5.7.2
         version: 5.7.2
       uvu:
         specifier: ^0.5.6
@@ -366,7 +366,7 @@ importers:
   ts-vitest:
     dependencies:
       solid-js:
-        specifier: ^1.8.11
+        specifier: ^1.9.3
         version: 1.9.3
     devDependencies:
       '@solidjs/testing-library':
@@ -382,10 +382,10 @@ importers:
         specifier: ^23.2.0
         version: 23.2.0
       solid-devtools:
-        specifier: ^0.29.2
-        version: 0.29.3(solid-js@1.9.3)(vite@5.4.11(@types/node@22.10.0)(sass@1.81.0))
+        specifier: ^0.30.1
+        version: 0.30.1(solid-js@1.9.3)(vite@5.4.11(@types/node@22.10.0)(sass@1.81.0))
       typescript:
-        specifier: ^5.3.3
+        specifier: ^5.7.2
         version: 5.7.2
       vite:
         specifier: ^5.0.11
@@ -3770,8 +3770,8 @@ packages:
     resolution: {integrity: sha512-bSiSngZ/jWeX93BqeIAbImyTbEihizcwNjFoRUIY/T1wWQsfsm2Vw1agPKylXvQTU7iASGdHhyqRlqQzfz+Htg==}
     engines: {node: '>=18'}
 
-  solid-devtools@0.29.3:
-    resolution: {integrity: sha512-9j3VxVbEoC54ML22gAMytR8ZS1nk9xKatsWziKSkI4c/Bcyh4sxQBGESHuXSLs9xaxpyGVTmFl3hknoxEpKzlA==}
+  solid-devtools@0.30.1:
+    resolution: {integrity: sha512-axpXL4JV1dnGhuei+nSGS8ewGeNkmIgFDsAlO90YyYY5t8wU1R0aYAQtL+I+5KICLKPBvfkzdcFa2br7AV4lAw==}
     peerDependencies:
       solid-js: ^1.8.0
       solid-start: ^0.3.0
@@ -8139,7 +8139,7 @@ snapshots:
       ansi-styles: 6.2.1
       is-fullwidth-code-point: 5.0.0
 
-  solid-devtools@0.29.3(solid-js@1.9.3)(vite@5.4.11(@types/node@22.10.0)(sass@1.81.0)):
+  solid-devtools@0.30.1(solid-js@1.9.3)(vite@5.4.11(@types/node@22.10.0)(sass@1.81.0)):
     dependencies:
       '@babel/core': 7.26.0
       '@babel/plugin-syntax-typescript': 7.25.9(@babel/core@7.26.0)

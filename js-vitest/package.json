@@ -15,12 +15,12 @@
     "@solidjs/testing-library": "^0.8.5",
     "@testing-library/jest-dom": "^6.2.0",
     "jsdom": "^23.2.0",
-    "solid-devtools": "^0.29.2",
+    "solid-devtools": "^0.30.1",
     "vite": "^5.0.11",
     "vite-plugin-solid": "^2.8.2",
     "vitest": "^1.2.1"
   },
   "dependencies": {
-    "solid-js": "^1.8.11"
+    "solid-js": "^1.9.3"
   }
 }
