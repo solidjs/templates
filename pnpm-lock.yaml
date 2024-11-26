@@ -31,7 +31,7 @@ importers:
         specifier: ^5.0.11
         version: 5.4.11(@types/node@22.10.0)(sass@1.81.0)
       vite-plugin-solid:
-        specifier: ^2.8.2
+        specifier: ^2.10.2
         version: 2.10.2(@testing-library/jest-dom@6.6.3)(solid-js@1.9.3)(vite@5.4.11(@types/node@22.10.0)(sass@1.81.0))
 
   js-tailwindcss:
@@ -41,22 +41,22 @@ importers:
         version: 1.9.3
     devDependencies:
       autoprefixer:
-        specifier: ^10.4.17
+        specifier: ^10.4.20
         version: 10.4.20(postcss@8.4.49)
       postcss:
-        specifier: ^8.4.33
+        specifier: ^8.4.49
         version: 8.4.49
       solid-devtools:
         specifier: ^0.30.1
         version: 0.30.1(solid-js@1.9.3)(vite@5.4.11(@types/node@22.10.0)(sass@1.81.0))
       tailwindcss:
-        specifier: ^3.4.1
+        specifier: ^3.4.15
         version: 3.4.15
       vite:
         specifier: ^5.0.11
         version: 5.4.11(@types/node@22.10.0)(sass@1.81.0)
       vite-plugin-solid:
-        specifier: ^2.8.2
+        specifier: ^2.10.2
         version: 2.10.2(@testing-library/jest-dom@6.6.3)(solid-js@1.9.3)(vite@5.4.11(@types/node@22.10.0)(sass@1.81.0))
 
   js-vitest:
@@ -66,10 +66,10 @@ importers:
         version: 1.9.3
     devDependencies:
       '@solidjs/testing-library':
-        specifier: ^0.8.5
+        specifier: ^0.8.10
         version: 0.8.10(@solidjs/router@0.15.1(solid-js@1.9.3))(solid-js@1.9.3)
       '@testing-library/jest-dom':
-        specifier: ^6.2.0
+        specifier: ^6.6.3
         version: 6.6.3
       jsdom:
         specifier: ^23.2.0
@@ -81,7 +81,7 @@ importers:
         specifier: ^5.0.11
         version: 5.4.11(@types/node@22.10.0)(sass@1.81.0)
       vite-plugin-solid:
-        specifier: ^2.8.2
+        specifier: ^2.10.2
         version: 2.10.2(@testing-library/jest-dom@6.6.3)(solid-js@1.9.3)(vite@5.4.11(@types/node@22.10.0)(sass@1.81.0))
       vitest:
         specifier: ^1.2.1
@@ -103,7 +103,7 @@ importers:
         specifier: ^5.0.11
         version: 5.4.11(@types/node@22.10.0)(sass@1.81.0)
       vite-plugin-solid:
-        specifier: ^2.8.2
+        specifier: ^2.10.2
         version: 2.10.2(@testing-library/jest-dom@6.6.3)(solid-js@1.9.3)(vite@5.4.11(@types/node@22.10.0)(sass@1.81.0))
 
   ts-bootstrap:
@@ -112,14 +112,14 @@ importers:
         specifier: ^2.11.8
         version: 2.11.8
       bootstrap:
-        specifier: ^5.3.2
+        specifier: ^5.3.3
         version: 5.3.3(@popperjs/core@2.11.8)
       solid-js:
         specifier: ^1.9.3
         version: 1.9.3
     devDependencies:
       sass:
-        specifier: ^1.70.0
+        specifier: ^1.81.0
         version: 1.81.0
       solid-devtools:
         specifier: ^0.30.1
@@ -131,7 +131,7 @@ importers:
         specifier: ^5.0.11
         version: 5.4.11(@types/node@22.10.0)(sass@1.81.0)
       vite-plugin-solid:
-        specifier: ^2.8.2
+        specifier: ^2.10.2
         version: 2.10.2(@testing-library/jest-dom@6.6.3)(solid-js@1.9.3)(vite@5.4.11(@types/node@22.10.0)(sass@1.81.0))
 
   ts-jest:
@@ -141,22 +141,22 @@ importers:
         version: 1.9.3
     devDependencies:
       '@babel/core':
-        specifier: ^7.23.7
+        specifier: ^7.26.0
         version: 7.26.0
       '@babel/preset-env':
-        specifier: ^7.23.8
+        specifier: ^7.26.0
         version: 7.26.0(@babel/core@7.26.0)
       '@babel/preset-typescript':
-        specifier: ^7.23.3
+        specifier: ^7.26.0
         version: 7.26.0(@babel/core@7.26.0)
       '@solidjs/testing-library':
-        specifier: ^0.8.5
+        specifier: ^0.8.10
         version: 0.8.10(@solidjs/router@0.15.1(solid-js@1.9.3))(solid-js@1.9.3)
       '@testing-library/jest-dom':
-        specifier: ^6.2.0
+        specifier: ^6.6.3
         version: 6.6.3
       '@types/jest':
-        specifier: ^29.5.11
+        specifier: ^29.5.14
         version: 29.5.14
       '@types/testing-library__jest-dom':
         specifier: ^5.14.9
@@ -168,7 +168,7 @@ importers:
         specifier: ^29.6.3
         version: 29.6.3(@babel/core@7.26.0)
       babel-preset-solid:
-        specifier: ^1.8.9
+        specifier: ^1.9.3
         version: 1.9.3(@babel/core@7.26.0)
       jest:
         specifier: ^29.7.0
@@ -198,7 +198,7 @@ importers:
         specifier: ^5.0.11
         version: 5.4.11(@types/node@22.10.0)(sass@1.81.0)
       vite-plugin-solid:
-        specifier: ^2.8.2
+        specifier: ^2.10.2
         version: 2.10.2(@testing-library/jest-dom@6.6.3)(solid-js@1.9.3)(vite@5.4.11(@types/node@22.10.0)(sass@1.81.0))
 
   ts-minimal:
@@ -217,7 +217,7 @@ importers:
         specifier: ^5.0.11
         version: 5.4.11(@types/node@22.10.0)(sass@1.81.0)
       vite-plugin-solid:
-        specifier: ^2.8.2
+        specifier: ^2.10.2
         version: 2.10.2(@testing-library/jest-dom@6.6.3)(solid-js@1.9.3)(vite@5.4.11(@types/node@22.10.0)(sass@1.81.0))
 
   ts-router:
@@ -230,22 +230,22 @@ importers:
         version: 1.9.3
     devDependencies:
       autoprefixer:
-        specifier: ^10.4.17
+        specifier: ^10.4.20
         version: 10.4.20(postcss@8.4.49)
       postcss:
-        specifier: ^8.4.33
+        specifier: ^8.4.49
         version: 8.4.49
       solid-devtools:
         specifier: ^0.30.1
         version: 0.30.1(solid-js@1.9.3)(vite@5.4.11(@types/node@22.10.0)(sass@1.81.0))
       tailwindcss:
-        specifier: ^3.4.1
+        specifier: ^3.4.15
         version: 3.4.15
       vite:
         specifier: ^5.0.11
         version: 5.4.11(@types/node@22.10.0)(sass@1.81.0)
       vite-plugin-solid:
-        specifier: ^2.8.2
+        specifier: ^2.10.2
         version: 2.10.2(@testing-library/jest-dom@6.6.3)(solid-js@1.9.3)(vite@5.4.11(@types/node@22.10.0)(sass@1.81.0))
 
   ts-sass:
@@ -255,7 +255,7 @@ importers:
         version: 1.9.3
     devDependencies:
       sass:
-        specifier: ^1.70.0
+        specifier: ^1.81.0
         version: 1.81.0
       solid-devtools:
         specifier: ^0.30.1
@@ -267,7 +267,7 @@ importers:
         specifier: ^5.0.11
         version: 5.4.11(@types/node@22.10.0)(sass@1.81.0)
       vite-plugin-solid:
-        specifier: ^2.8.2
+        specifier: ^2.10.2
         version: 2.10.2(@testing-library/jest-dom@6.6.3)(solid-js@1.9.3)(vite@5.4.11(@types/node@22.10.0)(sass@1.81.0))
 
   ts-tailwindcss:
@@ -277,16 +277,16 @@ importers:
         version: 1.9.3
     devDependencies:
       autoprefixer:
-        specifier: ^10.4.17
+        specifier: ^10.4.20
         version: 10.4.20(postcss@8.4.49)
       postcss:
-        specifier: ^8.4.33
+        specifier: ^8.4.49
         version: 8.4.49
       solid-devtools:
         specifier: ^0.30.1
         version: 0.30.1(solid-js@1.9.3)(vite@5.4.11(@types/node@22.10.0)(sass@1.81.0))
       tailwindcss:
-        specifier: ^3.4.1
+        specifier: ^3.4.15
         version: 3.4.15
       typescript:
         specifier: ^5.7.2
@@ -295,7 +295,7 @@ importers:
         specifier: ^5.0.11
         version: 5.4.11(@types/node@22.10.0)(sass@1.81.0)
       vite-plugin-solid:
-        specifier: ^2.8.2
+        specifier: ^2.10.2
         version: 2.10.2(@testing-library/jest-dom@6.6.3)(solid-js@1.9.3)(vite@5.4.11(@types/node@22.10.0)(sass@1.81.0))
 
   ts-unocss:
@@ -320,7 +320,7 @@ importers:
         specifier: ^5.4.11
         version: 5.4.11(@types/node@22.10.0)(sass@1.81.0)
       vite-plugin-solid:
-        specifier: ^2.8.2
+        specifier: ^2.10.2
         version: 2.10.2(@testing-library/jest-dom@6.6.3)(solid-js@1.9.3)(vite@5.4.11(@types/node@22.10.0)(sass@1.81.0))
 
   ts-uvu:
@@ -330,10 +330,10 @@ importers:
         version: 1.9.3
     devDependencies:
       '@babel/core':
-        specifier: ^7.23.7
+        specifier: ^7.26.0
         version: 7.26.0
       babel-preset-solid:
-        specifier: ^1.8.9
+        specifier: ^1.9.3
         version: 1.9.3(@babel/core@7.26.0)
       jsdom:
         specifier: ^23.2.0
@@ -360,7 +360,7 @@ importers:
         specifier: ^5.0.11
         version: 5.4.11(@types/node@22.10.0)(sass@1.81.0)
       vite-plugin-solid:
-        specifier: ^2.8.2
+        specifier: ^2.10.2
         version: 2.10.2(@testing-library/jest-dom@6.6.3)(solid-js@1.9.3)(vite@5.4.11(@types/node@22.10.0)(sass@1.81.0))
 
   ts-vitest:
@@ -370,10 +370,10 @@ importers:
         version: 1.9.3
     devDependencies:
       '@solidjs/testing-library':
-        specifier: ^0.8.5
+        specifier: ^0.8.10
         version: 0.8.10(@solidjs/router@0.15.1(solid-js@1.9.3))(solid-js@1.9.3)
       '@testing-library/jest-dom':
-        specifier: ^6.2.0
+        specifier: ^6.6.3
         version: 6.6.3
       '@types/testing-library__jest-dom':
         specifier: ^5.14.9
@@ -391,7 +391,7 @@ importers:
         specifier: ^5.0.11
         version: 5.4.11(@types/node@22.10.0)(sass@1.81.0)
       vite-plugin-solid:
-        specifier: ^2.8.2
+        specifier: ^2.10.2
         version: 2.10.2(@testing-library/jest-dom@6.6.3)(solid-js@1.9.3)(vite@5.4.11(@types/node@22.10.0)(sass@1.81.0))
       vitest:
         specifier: ^1.2.1
@@ -3178,10 +3178,6 @@ packages:
     resolution: {integrity: sha512-utWOt/GHzuUxnLKxB6dk81RoOeoNeHgbrXiuGk4yyF5qlRz+iIVWu56E2fqGHFrXz0QNUhLB/8nKqvRH66JKGQ==}
     engines: {node: '>=10'}
 
-  lilconfig@3.0.0:
-    resolution: {integrity: sha512-K2U4W2Ff5ibV7j7ydLr+zLAkIg5JJ4lPn1Ltsdt+Tz/IjQ8buJ55pZAxoP34lqIiwtF9iAvtLv3JGv7CAyAg+g==}
-    engines: {node: '>=14'}
-
   lilconfig@3.1.2:
     resolution: {integrity: sha512-eop+wDAvpItUys0FWkHIKeC9ybYrTGbU41U5K7+bttZZeohvnY7M9dZ5kB21GNWiFT2q1OoPTvncPCgSOVO5ow==}
     engines: {node: '>=14'}
@@ -4285,10 +4281,6 @@ packages:
   yallist@3.1.1:
     resolution: {integrity: sha512-a4UGQaWPH59mOXUYnAG2ewncQS4i4F43Tv3JoAM+s2VDAmS9NsK8GpDMLrCHPksFT7h3K6TOoUNn2pb7RoXx4g==}
 
-  yaml@2.3.4:
-    resolution: {integrity: sha512-8aAvwVUSHpfEqTQ4w/KMlf3HcRdt50E5ODIQJBw1fQ5RL34xabzxtUlzTXVqc4rkZsPbvrXKWnABCD7kWSmocA==}
-    engines: {node: '>= 14'}
-
   yaml@2.5.1:
     resolution: {integrity: sha512-bLQOjaX/ADgQ20isPJRvF0iRUHIxVhYvr53Of7wGcWlO2jvtUlH5m87DsmulFVxRpNLOnI4tB6p/oh8D7kpn9Q==}
     engines: {node: '>= 14'}
@@ -4350,7 +4342,7 @@ snapshots:
       '@babel/traverse': 7.25.9
       '@babel/types': 7.26.0
       convert-source-map: 2.0.0
-      debug: 4.3.4
+      debug: 4.3.7
       gensync: 1.0.0-beta.2
       json5: 2.2.3
       semver: 6.3.1
@@ -5402,7 +5394,7 @@ snapshots:
       jest-haste-map: 27.5.1
       jest-regex-util: 27.5.1
       jest-util: 27.5.1
-      micromatch: 4.0.5
+      micromatch: 4.0.8
       pirates: 4.0.6
       slash: 3.0.0
       source-map: 0.6.1
@@ -5521,7 +5513,7 @@ snapshots:
     dependencies:
       detect-libc: 1.0.3
       is-glob: 4.0.3
-      micromatch: 4.0.5
+      micromatch: 4.0.8
       node-addon-api: 7.1.1
     optionalDependencies:
       '@parcel/watcher-android-arm64': 2.5.0
@@ -7260,7 +7252,7 @@ snapshots:
       jest-serializer: 27.5.1
       jest-util: 27.5.1
       jest-worker: 27.5.1
-      micromatch: 4.0.5
+      micromatch: 4.0.8
       walker: 1.0.8
     optionalDependencies:
       fsevents: 2.3.3
@@ -7276,7 +7268,7 @@ snapshots:
       jest-regex-util: 29.6.3
       jest-util: 29.7.0
       jest-worker: 29.7.0
-      micromatch: 4.0.5
+      micromatch: 4.0.8
       walker: 1.0.8
     optionalDependencies:
       fsevents: 2.3.3
@@ -7572,8 +7564,6 @@ snapshots:
 
   lilconfig@2.1.0: {}
 
-  lilconfig@3.0.0: {}
-
   lilconfig@3.1.2: {}
 
   lines-and-columns@1.2.4: {}
@@ -7868,8 +7858,8 @@ snapshots:
 
   postcss-load-config@4.0.2(postcss@8.4.49):
     dependencies:
-      lilconfig: 3.0.0
-      yaml: 2.3.4
+      lilconfig: 3.1.2
+      yaml: 2.5.1
     optionalDependencies:
       postcss: 8.4.49
 
@@ -8654,8 +8644,6 @@ snapshots:
   y18n@5.0.8: {}
 
   yallist@3.1.1: {}
-
-  yaml@2.3.4: {}
 
   yaml@2.5.1: {}
 
