@@ -2,10 +2,10 @@
   "name": "solid-templates",
   "scripts": {
     "format": "prettier --write \"**/*.{js,json,md,yml,ts,tsx,jsx,css,scss}\"",
-    "prepare": "husky install"
+    "prepare": "husky"
   },
   "devDependencies": {
-    "husky": "^8.0.3",
+    "husky": "^9.1.7",
     "lint-staged": "^15.2.10",
     "prettier": "^3.4.1"
   },
