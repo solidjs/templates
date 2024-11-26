@@ -18,387 +18,14 @@ importers:
         specifier: ^3.4.1
         version: 3.4.1
 
-  js:
-    dependencies:
-      solid-js:
-        specifier: ^1.9.3
-        version: 1.9.3
-    devDependencies:
-      solid-devtools:
-        specifier: ^0.30.1
-        version: 0.30.1(solid-js@1.9.3)(vite@5.4.11(@types/node@22.10.0)(sass@1.81.0))
-      vite:
-        specifier: ^5.0.11
-        version: 5.4.11(@types/node@22.10.0)(sass@1.81.0)
-      vite-plugin-solid:
-        specifier: ^2.10.2
-        version: 2.10.2(@testing-library/jest-dom@6.6.3)(solid-js@1.9.3)(vite@5.4.11(@types/node@22.10.0)(sass@1.81.0))
-
-  js-tailwindcss:
-    dependencies:
-      solid-js:
-        specifier: ^1.9.3
-        version: 1.9.3
-    devDependencies:
-      autoprefixer:
-        specifier: ^10.4.20
-        version: 10.4.20(postcss@8.4.49)
-      postcss:
-        specifier: ^8.4.49
-        version: 8.4.49
-      solid-devtools:
-        specifier: ^0.30.1
-        version: 0.30.1(solid-js@1.9.3)(vite@5.4.11(@types/node@22.10.0)(sass@1.81.0))
-      tailwindcss:
-        specifier: ^3.4.15
-        version: 3.4.15
-      vite:
-        specifier: ^5.0.11
-        version: 5.4.11(@types/node@22.10.0)(sass@1.81.0)
-      vite-plugin-solid:
-        specifier: ^2.10.2
-        version: 2.10.2(@testing-library/jest-dom@6.6.3)(solid-js@1.9.3)(vite@5.4.11(@types/node@22.10.0)(sass@1.81.0))
-
-  js-vitest:
-    dependencies:
-      solid-js:
-        specifier: ^1.9.3
-        version: 1.9.3
-    devDependencies:
-      '@solidjs/testing-library':
-        specifier: ^0.8.10
-        version: 0.8.10(@solidjs/router@0.15.1(solid-js@1.9.3))(solid-js@1.9.3)
-      '@testing-library/jest-dom':
-        specifier: ^6.6.3
-        version: 6.6.3
-      jsdom:
-        specifier: ^25.0.1
-        version: 25.0.1
-      solid-devtools:
-        specifier: ^0.30.1
-        version: 0.30.1(solid-js@1.9.3)(vite@5.4.11(@types/node@22.10.0)(sass@1.81.0))
-      vite:
-        specifier: ^5.0.11
-        version: 5.4.11(@types/node@22.10.0)(sass@1.81.0)
-      vite-plugin-solid:
-        specifier: ^2.10.2
-        version: 2.10.2(@testing-library/jest-dom@6.6.3)(solid-js@1.9.3)(vite@5.4.11(@types/node@22.10.0)(sass@1.81.0))
-      vitest:
-        specifier: ^2.1.6
-        version: 2.1.6(@types/node@22.10.0)(jsdom@25.0.1)(sass@1.81.0)
-
-  ts:
-    dependencies:
-      solid-js:
-        specifier: ^1.9.3
-        version: 1.9.3
-    devDependencies:
-      solid-devtools:
-        specifier: ^0.30.1
-        version: 0.30.1(solid-js@1.9.3)(vite@5.4.11(@types/node@22.10.0)(sass@1.81.0))
-      typescript:
-        specifier: ^5.7.2
-        version: 5.7.2
-      vite:
-        specifier: ^5.0.11
-        version: 5.4.11(@types/node@22.10.0)(sass@1.81.0)
-      vite-plugin-solid:
-        specifier: ^2.10.2
-        version: 2.10.2(@testing-library/jest-dom@6.6.3)(solid-js@1.9.3)(vite@5.4.11(@types/node@22.10.0)(sass@1.81.0))
-
-  ts-bootstrap:
-    dependencies:
-      '@popperjs/core':
-        specifier: ^2.11.8
-        version: 2.11.8
-      bootstrap:
-        specifier: ^5.3.3
-        version: 5.3.3(@popperjs/core@2.11.8)
-      solid-js:
-        specifier: ^1.9.3
-        version: 1.9.3
-    devDependencies:
-      sass:
-        specifier: ^1.81.0
-        version: 1.81.0
-      solid-devtools:
-        specifier: ^0.30.1
-        version: 0.30.1(solid-js@1.9.3)(vite@5.4.11(@types/node@22.10.0)(sass@1.81.0))
-      typescript:
-        specifier: ^5.7.2
-        version: 5.7.2
-      vite:
-        specifier: ^5.0.11
-        version: 5.4.11(@types/node@22.10.0)(sass@1.81.0)
-      vite-plugin-solid:
-        specifier: ^2.10.2
-        version: 2.10.2(@testing-library/jest-dom@6.6.3)(solid-js@1.9.3)(vite@5.4.11(@types/node@22.10.0)(sass@1.81.0))
-
-  ts-jest:
-    dependencies:
-      solid-js:
-        specifier: ^1.9.3
-        version: 1.9.3
-    devDependencies:
-      '@babel/core':
-        specifier: ^7.26.0
-        version: 7.26.0
-      '@babel/preset-env':
-        specifier: ^7.26.0
-        version: 7.26.0(@babel/core@7.26.0)
-      '@babel/preset-typescript':
-        specifier: ^7.26.0
-        version: 7.26.0(@babel/core@7.26.0)
-      '@solidjs/testing-library':
-        specifier: ^0.8.10
-        version: 0.8.10(@solidjs/router@0.15.1(solid-js@1.9.3))(solid-js@1.9.3)
-      '@testing-library/jest-dom':
-        specifier: ^6.6.3
-        version: 6.6.3
-      '@types/jest':
-        specifier: ^29.5.14
-        version: 29.5.14
-      babel-jest:
-        specifier: ^29.7.0
-        version: 29.7.0(@babel/core@7.26.0)
-      babel-preset-jest:
-        specifier: ^29.6.3
-        version: 29.6.3(@babel/core@7.26.0)
-      babel-preset-solid:
-        specifier: ^1.9.3
-        version: 1.9.3(@babel/core@7.26.0)
-      jest:
-        specifier: ^29.7.0
-        version: 29.7.0(@types/node@22.10.0)
-      jest-environment-jsdom:
-        specifier: ^29.7.0
-        version: 29.7.0
-      jsdom:
-        specifier: ^25.0.1
-        version: 25.0.1
-      regenerator-runtime:
-        specifier: 0.14.1
-        version: 0.14.1
-      solid-devtools:
-        specifier: ^0.30.1
-        version: 0.30.1(solid-js@1.9.3)(vite@5.4.11(@types/node@22.10.0)(sass@1.81.0))
-      solid-jest:
-        specifier: ^0.2.0
-        version: 0.2.0(@babel/core@7.26.0)(babel-preset-solid@1.9.3(@babel/core@7.26.0))
-      solid-testing-library:
-        specifier: ^0.5.1
-        version: 0.5.1(solid-js@1.9.3)
-      typescript:
-        specifier: ^5.7.2
-        version: 5.7.2
-      vite:
-        specifier: ^5.0.11
-        version: 5.4.11(@types/node@22.10.0)(sass@1.81.0)
-      vite-plugin-solid:
-        specifier: ^2.10.2
-        version: 2.10.2(@testing-library/jest-dom@6.6.3)(solid-js@1.9.3)(vite@5.4.11(@types/node@22.10.0)(sass@1.81.0))
-
-  ts-minimal:
-    dependencies:
-      solid-js:
-        specifier: ^1.9.3
-        version: 1.9.3
-    devDependencies:
-      solid-devtools:
-        specifier: ^0.30.1
-        version: 0.30.1(solid-js@1.9.3)(vite@5.4.11(@types/node@22.10.0)(sass@1.81.0))
-      typescript:
-        specifier: ^5.7.2
-        version: 5.7.2
-      vite:
-        specifier: ^5.0.11
-        version: 5.4.11(@types/node@22.10.0)(sass@1.81.0)
-      vite-plugin-solid:
-        specifier: ^2.10.2
-        version: 2.10.2(@testing-library/jest-dom@6.6.3)(solid-js@1.9.3)(vite@5.4.11(@types/node@22.10.0)(sass@1.81.0))
-
-  ts-router:
-    dependencies:
-      '@solidjs/router':
-        specifier: ^0.15.1
-        version: 0.15.1(solid-js@1.9.3)
-      solid-js:
-        specifier: ^1.9.3
-        version: 1.9.3
-    devDependencies:
-      autoprefixer:
-        specifier: ^10.4.20
-        version: 10.4.20(postcss@8.4.49)
-      postcss:
-        specifier: ^8.4.49
-        version: 8.4.49
-      solid-devtools:
-        specifier: ^0.30.1
-        version: 0.30.1(solid-js@1.9.3)(vite@5.4.11(@types/node@22.10.0)(sass@1.81.0))
-      tailwindcss:
-        specifier: ^3.4.15
-        version: 3.4.15
-      vite:
-        specifier: ^5.0.11
-        version: 5.4.11(@types/node@22.10.0)(sass@1.81.0)
-      vite-plugin-solid:
-        specifier: ^2.10.2
-        version: 2.10.2(@testing-library/jest-dom@6.6.3)(solid-js@1.9.3)(vite@5.4.11(@types/node@22.10.0)(sass@1.81.0))
-
-  ts-sass:
-    dependencies:
-      solid-js:
-        specifier: ^1.9.3
-        version: 1.9.3
-    devDependencies:
-      sass:
-        specifier: ^1.81.0
-        version: 1.81.0
-      solid-devtools:
-        specifier: ^0.30.1
-        version: 0.30.1(solid-js@1.9.3)(vite@5.4.11(@types/node@22.10.0)(sass@1.81.0))
-      typescript:
-        specifier: ^5.7.2
-        version: 5.7.2
-      vite:
-        specifier: ^5.0.11
-        version: 5.4.11(@types/node@22.10.0)(sass@1.81.0)
-      vite-plugin-solid:
-        specifier: ^2.10.2
-        version: 2.10.2(@testing-library/jest-dom@6.6.3)(solid-js@1.9.3)(vite@5.4.11(@types/node@22.10.0)(sass@1.81.0))
-
-  ts-tailwindcss:
-    dependencies:
-      solid-js:
-        specifier: ^1.9.3
-        version: 1.9.3
-    devDependencies:
-      autoprefixer:
-        specifier: ^10.4.20
-        version: 10.4.20(postcss@8.4.49)
-      postcss:
-        specifier: ^8.4.49
-        version: 8.4.49
-      solid-devtools:
-        specifier: ^0.30.1
-        version: 0.30.1(solid-js@1.9.3)(vite@5.4.11(@types/node@22.10.0)(sass@1.81.0))
-      tailwindcss:
-        specifier: ^3.4.15
-        version: 3.4.15
-      typescript:
-        specifier: ^5.7.2
-        version: 5.7.2
-      vite:
-        specifier: ^5.0.11
-        version: 5.4.11(@types/node@22.10.0)(sass@1.81.0)
-      vite-plugin-solid:
-        specifier: ^2.10.2
-        version: 2.10.2(@testing-library/jest-dom@6.6.3)(solid-js@1.9.3)(vite@5.4.11(@types/node@22.10.0)(sass@1.81.0))
-
-  ts-unocss:
-    dependencies:
-      solid-js:
-        specifier: ^1.9.3
-        version: 1.9.3
-    devDependencies:
-      '@unocss/preset-mini':
-        specifier: ^0.64.1
-        version: 0.64.1
-      '@unocss/vite':
-        specifier: ^0.64.1
-        version: 0.64.1(rollup@4.27.4)(vite@5.4.11(@types/node@22.10.0)(sass@1.81.0))(vue@3.5.13(typescript@5.7.2))
-      solid-devtools:
-        specifier: ^0.30.1
-        version: 0.30.1(solid-js@1.9.3)(vite@5.4.11(@types/node@22.10.0)(sass@1.81.0))
-      typescript:
-        specifier: ^5.7.2
-        version: 5.7.2
-      vite:
-        specifier: ^5.4.11
-        version: 5.4.11(@types/node@22.10.0)(sass@1.81.0)
-      vite-plugin-solid:
-        specifier: ^2.10.2
-        version: 2.10.2(@testing-library/jest-dom@6.6.3)(solid-js@1.9.3)(vite@5.4.11(@types/node@22.10.0)(sass@1.81.0))
-
-  ts-uvu:
-    dependencies:
-      solid-js:
-        specifier: ^1.9.3
-        version: 1.9.3
-    devDependencies:
-      '@babel/core':
-        specifier: ^7.26.0
-        version: 7.26.0
-      babel-preset-solid:
-        specifier: ^1.9.3
-        version: 1.9.3(@babel/core@7.26.0)
-      jsdom:
-        specifier: ^25.0.0
-        version: 25.0.1
-      solid-devtools:
-        specifier: ^0.30.1
-        version: 0.30.1(solid-js@1.9.3)(vite@5.4.11(@types/node@22.10.0)(sass@1.81.0))
-      solid-dom-testing:
-        specifier: ^0.0.3
-        version: 0.0.3
-      solid-register:
-        specifier: ^0.2.5
-        version: 0.2.5(@babel/core@7.26.0)(babel-preset-solid@1.9.3(@babel/core@7.26.0))(jsdom@25.0.1)(postcss@8.4.49)
-      solid-testing-library:
-        specifier: ^0.5.1
-        version: 0.5.1(solid-js@1.9.3)
-      typescript:
-        specifier: ^5.7.2
-        version: 5.7.2
-      uvu:
-        specifier: ^0.5.6
-        version: 0.5.6
-      vite:
-        specifier: ^5.0.11
-        version: 5.4.11(@types/node@22.10.0)(sass@1.81.0)
-      vite-plugin-solid:
-        specifier: ^2.10.2
-        version: 2.10.2(@testing-library/jest-dom@6.6.3)(solid-js@1.9.3)(vite@5.4.11(@types/node@22.10.0)(sass@1.81.0))
-
-  ts-vitest:
-    dependencies:
-      solid-js:
-        specifier: ^1.9.3
-        version: 1.9.3
-    devDependencies:
-      '@solidjs/testing-library':
-        specifier: ^0.8.10
-        version: 0.8.10(@solidjs/router@0.15.1(solid-js@1.9.3))(solid-js@1.9.3)
-      '@testing-library/jest-dom':
-        specifier: ^6.6.3
-        version: 6.6.3
-      jsdom:
-        specifier: ^25.0.1
-        version: 25.0.1
-      solid-devtools:
-        specifier: ^0.30.1
-        version: 0.30.1(solid-js@1.9.3)(vite@5.4.11(@types/node@22.10.0)(sass@1.81.0))
-      typescript:
-        specifier: ^5.7.2
-        version: 5.7.2
-      vite:
-        specifier: ^5.0.11
-        version: 5.4.11(@types/node@22.10.0)(sass@1.81.0)
-      vite-plugin-solid:
-        specifier: ^2.10.2
-        version: 2.10.2(@testing-library/jest-dom@6.6.3)(solid-js@1.9.3)(vite@5.4.11(@types/node@22.10.0)(sass@1.81.0))
-      vitest:
-        specifier: ^2.1.6
-        version: 2.1.6(@types/node@22.10.0)(jsdom@25.0.1)(sass@1.81.0)
-
 packages:
 
   ansi-escapes@7.0.0:
     resolution: {integrity: sha512-GdYO7a61mR0fOlAsvC9/rIHf7L96sBc6dEWzeOu+KAea5bZyQRPIpojrVoI4AXGJS/ycu/fBTdLrUkA4ODrvjw==}
     engines: {node: '>=18'}
 
-  ansi-regex@6.0.1:
-    resolution: {integrity: sha512-n5M855fKb2SsfMIiFFoVrABHJC8QtHwVx+mHWP3QcEqBHYienj5dHSgjbxtC0WEZXYt4wcD6zrQElDPhFuZgfA==}
+  ansi-regex@6.1.0:
+    resolution: {integrity: sha512-7HSX4QQb4CspciLpVFwyRe79O3xsIZDDLER21kERQ71oaPodF8jL725AgJMFAYbooIqolJoRLuM81SpeUkpkvA==}
     engines: {node: '>=12'}
 
   ansi-styles@6.2.1:
@@ -428,8 +55,8 @@ packages:
     resolution: {integrity: sha512-Vw8qHK3bZM9y/P10u3Vib8o/DdkvA2OtPtZvD871QKjy74Wj1WSKFILMPRPSdUSx5RFK1arlJzEtA4PkFgnbuA==}
     engines: {node: '>=18'}
 
-  cross-spawn@7.0.3:
-    resolution: {integrity: sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w==}
+  cross-spawn@7.0.6:
+    resolution: {integrity: sha512-uV2QOWP2nWzsy2aMp8aRibhi9dlzF5Hgh5SHaB9OiTGEyDTiJJyx0uy51QXdyWbtAHNua4XJzUKca3OzKUd3vA==}
     engines: {node: '>= 8'}
 
   debug@4.3.7:
@@ -530,8 +157,8 @@ packages:
   ms@2.1.3:
     resolution: {integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==}
 
-  npm-run-path@5.1.0:
-    resolution: {integrity: sha512-sJOdmRGrY2sjNTRMbSvluQqg+8X7ZK61yvzBEIDhz4f8z1TZFYABsqjjCBd/0PUNE9M6QDgHJXQkGUEm7Q+l9Q==}
+  npm-run-path@5.3.0:
+    resolution: {integrity: sha512-ppwTtiJZq0O/ai0z7yfudtBpWIoxM8yE6nHi1X47eFR2EWORqfbu6CnPlNsjeN683eT0qG6H/Pyf9fCcvjnnnQ==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
 
   onetime@6.0.0:
@@ -631,7 +258,7 @@ snapshots:
     dependencies:
       environment: 1.1.0
 
-  ansi-regex@6.0.1: {}
+  ansi-regex@6.1.0: {}
 
   ansi-styles@6.2.1: {}
 
@@ -654,7 +281,7 @@ snapshots:
 
   commander@12.1.0: {}
 
-  cross-spawn@7.0.3:
+  cross-spawn@7.0.6:
     dependencies:
       path-key: 3.1.1
       shebang-command: 2.0.0
@@ -672,12 +299,12 @@ snapshots:
 
   execa@8.0.1:
     dependencies:
-      cross-spawn: 7.0.3
+      cross-spawn: 7.0.6
       get-stream: 8.0.1
       human-signals: 5.0.0
       is-stream: 3.0.0
       merge-stream: 2.0.0
-      npm-run-path: 5.1.0
+      npm-run-path: 5.3.0
       onetime: 6.0.0
       signal-exit: 4.1.0
       strip-final-newline: 3.0.0
@@ -753,7 +380,7 @@ snapshots:
 
   ms@2.1.3: {}
 
-  npm-run-path@5.1.0:
+  npm-run-path@5.3.0:
     dependencies:
       path-key: 4.0.0
 
@@ -810,7 +437,7 @@ snapshots:
 
   strip-ansi@7.1.0:
     dependencies:
-      ansi-regex: 6.0.1
+      ansi-regex: 6.1.0
 
   strip-final-newline@3.0.0: {}
 
