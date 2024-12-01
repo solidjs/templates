@@ -1,30 +1,27 @@
-import type { Component } from 'solid-js';
-import { Link, useRoutes, useLocation } from '@solidjs/router';
+import { Suspense, type Component } from 'solid-js';
+import { A, useLocation } from '@solidjs/router';
 
-import { routes } from './routes';
-
-const App: Component = () => {
+const App: Component = (props: { children: Element }) => {
   const location = useLocation();
-  const Route = useRoutes(routes);
 
   return (
     <>
       <nav class="bg-gray-200 text-gray-900 px-4">
         <ul class="flex items-center">
           <li class="py-2 px-4">
-            <Link href="/" class="no-underline hover:underline">
+            <A href="/" class="no-underline hover:underline">
               Home
-            </Link>
+            </A>
           </li>
           <li class="py-2 px-4">
-            <Link href="/about" class="no-underline hover:underline">
+            <A href="/about" class="no-underline hover:underline">
               About
-            </Link>
+            </A>
           </li>
           <li class="py-2 px-4">
-            <Link href="/error" class="no-underline hover:underline">
+            <A href="/error" class="no-underline hover:underline">
               Error
-            </Link>
+            </A>
           </li>
 
           <li class="text-sm flex items-center space-x-1 ml-auto">
@@ -40,7 +37,7 @@ const App: Component = () => {
       </nav>
 
       <main>
-        <Route />
+        <Suspense>{props.children}</Suspense>
       </main>
     </>
   );

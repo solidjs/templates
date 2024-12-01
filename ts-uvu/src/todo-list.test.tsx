@@ -1,7 +1,7 @@
 import { suite } from 'uvu';
 import * as assert from 'uvu/assert';
 
-import { render, fireEvent, waitFor } from 'solid-testing-library';
+import { render, fireEvent, waitFor } from '@solidjs/testing-library';
 import { isInDocument, hasStyle } from 'solid-dom-testing';
 
 import { TodoList } from './todo-list';
