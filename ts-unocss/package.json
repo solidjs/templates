@@ -13,6 +13,7 @@
   "devDependencies": {
     "@unocss/preset-mini": "^0.64.1",
     "@unocss/vite": "^0.64.1",
+    "solid-devtools": "^0.31.6",
     "typescript": "^5.7.2",
     "vite": "^6.0.0",
     "vite-plugin-solid": "^2.11.0"

@@ -1,5 +1,5 @@
 import { render } from 'solid-js/web';
-
+import 'solid-devtools';
 import { TodoList } from './todo-list';
 
 const root = document.getElementById('root');

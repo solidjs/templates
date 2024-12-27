@@ -16,6 +16,7 @@
     "@solidjs/testing-library": "^0.8.10",
     "babel-preset-solid": "^1.9.3",
     "jsdom": "^25.0.0",
+    "solid-devtools": "^0.31.6",
     "solid-dom-testing": "^0.0.3",
     "solid-register": "^0.2.5",
     "typescript": "^5.7.2",

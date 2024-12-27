@@ -2,6 +2,7 @@
 import './index.css';
 
 import { render, Suspense } from 'solid-js/web';
+import 'solid-devtools';
 
 import App from './app';
 import { Router } from '@solidjs/router';
