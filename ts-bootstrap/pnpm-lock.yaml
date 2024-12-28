@@ -18,6 +18,9 @@ importers:
         specifier: ^1.9.3
         version: 1.9.3
     devDependencies:
+      '@types/bootstrap':
+        specifier: ^5.2.10
+        version: 5.2.10
       sass:
         specifier: ^1.81.0
         version: 1.81.0
@@ -29,7 +32,7 @@ importers:
         version: 6.0.0(sass@1.81.0)
       vite-plugin-solid:
         specifier: ^2.11.0
-        version: 2.11.0(solid-js@1.9.3)(vite@6.0.0)
+        version: 2.11.0(solid-js@1.9.3)(vite@6.0.0(sass@1.81.0))
 
 packages:
 
@@ -462,6 +465,9 @@ packages:
 
   '@types/babel__traverse@7.20.6':
     resolution: {integrity: sha512-r1bzfrm0tomOI8g1SzvCaQHo6Lcv6zu0EA+W2kHrt8dyrHQxGzBBL4kdkzIS+jBMV+EYcMAEAqXqYaLJq5rOZg==}
+
+  '@types/bootstrap@5.2.10':
+    resolution: {integrity: sha512-F2X+cd6551tep0MvVZ6nM8v7XgGN/twpdNDjqS1TUM7YFNEtQYWk+dKAnH+T1gr6QgCoGMPl487xw/9hXooa2g==}
 
   '@types/estree@1.0.6':
     resolution: {integrity: sha512-AYnb1nQyY49te+VRAVgmzfcgjYS91mY5P0TKUDCLEM+gNnA+3T6rWITXRLYCpahpqSQbN5cE+gHpnPyXjHWxcw==}
@@ -1086,6 +1092,10 @@ snapshots:
     dependencies:
       '@babel/types': 7.26.0
 
+  '@types/bootstrap@5.2.10':
+    dependencies:
+      '@popperjs/core': 2.11.8
+
   '@types/estree@1.0.6': {}
 
   babel-plugin-jsx-dom-expressions@0.39.3(@babel/core@7.26.0):
@@ -1316,7 +1326,7 @@ snapshots:
 
   validate-html-nesting@1.2.2: {}
 
-  vite-plugin-solid@2.11.0(solid-js@1.9.3)(vite@6.0.0):
+  vite-plugin-solid@2.11.0(solid-js@1.9.3)(vite@6.0.0(sass@1.81.0)):
     dependencies:
       '@babel/core': 7.26.0
       '@types/babel__core': 7.20.5
@@ -1325,7 +1335,7 @@ snapshots:
       solid-js: 1.9.3
       solid-refresh: 0.6.3(solid-js@1.9.3)
       vite: 6.0.0(sass@1.81.0)
-      vitefu: 1.0.4(vite@6.0.0)
+      vitefu: 1.0.4(vite@6.0.0(sass@1.81.0))
     transitivePeerDependencies:
       - supports-color
 
@@ -1334,12 +1344,12 @@ snapshots:
       esbuild: 0.24.0
       postcss: 8.4.49
       rollup: 4.27.4
-      sass: 1.81.0
     optionalDependencies:
       fsevents: 2.3.3
+      sass: 1.81.0
 
-  vitefu@1.0.4(vite@6.0.0):
-    dependencies:
+  vitefu@1.0.4(vite@6.0.0(sass@1.81.0)):
+    optionalDependencies:
       vite: 6.0.0(sass@1.81.0)
 
   yallist@3.1.1: {}

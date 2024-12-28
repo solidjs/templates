@@ -1,4 +1,5 @@
 import { render, fireEvent } from '@solidjs/testing-library';
+import { describe, test, expect } from 'vitest';
 
 import { TodoList } from './todo-list';
 

@@ -1,6 +1,6 @@
 import './App.scss';
 
-import { Component, createSignal } from 'solid-js';
+import { type Component, createSignal } from 'solid-js';
 import Counter from './Counter';
 
 const App: Component = () => {

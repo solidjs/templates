@@ -1,7 +1,7 @@
 /* @refresh reload */
 import './index.css';
 
-import { render, Suspense } from 'solid-js/web';
+import { render } from 'solid-js/web';
 
 import App from './app';
 import { Router } from '@solidjs/router';
@@ -17,5 +17,5 @@ if (import.meta.env.DEV && !(root instanceof HTMLElement)) {
 
 render(
   () => <Router root={(props) => <App>{props.children}</App>}>{routes}</Router>,
-  root,
+  root!,
 );

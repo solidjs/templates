@@ -1,5 +1,5 @@
 import { onCleanup, onMount } from 'solid-js';
-import type { Component } from 'solid-js';
+import { type Component } from 'solid-js';
 import * as bootstrap from 'bootstrap';
 
 const App: Component = () => {
@@ -19,7 +19,7 @@ const App: Component = () => {
     // @ts-ignore
     let parent = link.parentNode.parentNode.previousElementSibling;
 
-    link.classList.add('active');
+    link?.classList.add('active');
 
     if (parent.classList.contains('collapsed')) {
       parent.click();

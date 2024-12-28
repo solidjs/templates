@@ -24,6 +24,9 @@ importers:
       tailwindcss:
         specifier: ^3.4.15
         version: 3.4.15
+      typescript:
+        specifier: ^5.7.2
+        version: 5.7.2
       vite:
         specifier: ^6.0.0
         version: 6.0.0(jiti@1.21.6)(yaml@2.6.1)
@@ -979,6 +982,11 @@ packages:
 
   ts-interface-checker@0.1.13:
     resolution: {integrity: sha512-Y/arvbn+rrz3JCKl9C4kVNfTfSm2/mEp5FSz5EsZSANGPSlQrpRI5M4PKF+mJnE52jOO90PnPSc3Ur3bTQw0gA==}
+
+  typescript@5.7.2:
+    resolution: {integrity: sha512-i5t66RHxDvVN40HfDd1PsEThGNnlMCMT3jMUuoh9/0TaqWevNontacunWyN02LA9/fIbEWlcHZcgTKb9QoaLfg==}
+    engines: {node: '>=14.17'}
+    hasBin: true
 
   update-browserslist-db@1.0.13:
     resolution: {integrity: sha512-xebP81SNcPuNpPP3uzeW1NYXxI3rxyJzF3pD6sH4jE7o/IX+WtSpwnVU+qIsDPyk0d3hmFQ7mjqc6AtV604hbg==}
@@ -1957,6 +1965,8 @@ snapshots:
       is-number: 7.0.0
 
   ts-interface-checker@0.1.13: {}
+
+  typescript@5.7.2: {}
 
   update-browserslist-db@1.0.13(browserslist@4.22.2):
     dependencies:
