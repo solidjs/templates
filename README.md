@@ -51,8 +51,15 @@ $ npm install # or pnpm install or yarn install
 ```
 
 ```bash
-# Typescript tailwindcss template + basic file base routing
+# Typescript tailwindcss template + solid-router with config-based routing
 $ npx degit solidjs/templates/ts-router my-solid-project
+$ cd my-solid-project
+$ npm install # or pnpm install or yarn install
+```
+
+```bash
+# Typescript tailwindcss template + solid-router with file-based routing
+$ npx degit solidjs/templates/ts-router-file-based my-solid-project
 $ cd my-solid-project
 $ npm install # or pnpm install or yarn install
 ```
