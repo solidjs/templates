@@ -42,14 +42,6 @@ function RootComponent() {
           Layout
         </Link>{' '}
         <Link
-          to="/anchor"
-          activeProps={{
-            class: 'font-bold',
-          }}
-        >
-          Anchor
-        </Link>{' '}
-        <Link
           // @ts-expect-error
           to="/this-route-does-not-exist"
           activeProps={{
