@@ -108,7 +108,7 @@ $ npm install # or pnpm install or yarn install
 
 ```bash
 # TanStack Router
-$ npx degit solidjs/templates/tanstack-router my-solid-project
+$ npx degit solidjs/templates/tanstack-router-config-based my-solid-project
 $ cd my-solid-project
 $ npm install # or pnpm install or yarn install
 ```
