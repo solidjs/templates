@@ -34,6 +34,14 @@ function RootComponent() {
           Posts
         </Link>{' '}
         <Link
+          to="/layout-a"
+          activeProps={{
+            class: 'font-bold',
+          }}
+        >
+          Layout
+        </Link>{' '}
+        <Link
           to="/anchor"
           activeProps={{
             class: 'font-bold',
