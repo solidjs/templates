@@ -106,6 +106,20 @@ $ cd my-solid-project
 $ npm install # or pnpm install or yarn install
 ```
 
+```bash
+# TanStack Router
+$ npx degit solidjs/templates/tanstack-router my-solid-project
+$ cd my-solid-project
+$ npm install # or pnpm install or yarn install
+```
+
+```bash
+# TanStack Router File Based
+$ npx degit solidjs/templates/tanstack-router-file-based my-solid-project
+$ cd my-solid-project
+$ npm install # or pnpm install or yarn install
+```
+
 ## I don't see a template that matches my need?
 
 You wish there was a template with your favorite library?
