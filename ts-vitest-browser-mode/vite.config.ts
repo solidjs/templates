@@ -10,12 +10,13 @@ export default defineConfig({
     port: 3000,
   },
   test: {
-    environment: 'jsdom',
-    globals: false,
-    setupFiles: ['node_modules/@testing-library/jest-dom/vitest'],
-    // if you have few tests, try commenting this
-    // out to improve performance:
-    isolate: false,
+    globals: true,
+    browser: {
+      provider: 'playwright', // or 'webdriverio'
+      enabled: true,
+      // at least one instance is required
+      instances: [{ browser: 'chromium' }],
+    },
   },
   build: {
     target: 'esnext',
