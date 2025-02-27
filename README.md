@@ -100,6 +100,13 @@ $ npm install # or pnpm install or yarn install
 ```
 
 ```bash
+# Typescript + vitest browser mode template
+$ npx degit solidjs/templates/ts-vitest-browser-mode my-solid-project
+$ cd my-solid-project
+$ npm install # or pnpm install or yarn install
+```
+
+```bash
 # Typescript + uvu template
 $ npx degit solidjs/templates/ts-uvu my-solid-project
 $ cd my-solid-project
