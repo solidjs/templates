@@ -11,11 +11,11 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@unocss/preset-mini": "^0.64.1",
-    "@unocss/vite": "^0.64.1",
+    "@unocss/preset-mini": "^66.0.0",
+    "@unocss/vite": "^66.0.0",
     "typescript": "^5.7.2",
     "vite": "^6.0.0",
-    "vite-plugin-solid": "^2.11.1"
+    "vite-plugin-solid": "^2.11.4"
   },
   "dependencies": {
     "solid-js": "^1.9.3"
