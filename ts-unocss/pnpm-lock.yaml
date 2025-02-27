@@ -25,8 +25,8 @@ importers:
         specifier: ^6.0.0
         version: 6.0.0(jiti@2.4.2)(tsx@4.19.2)
       vite-plugin-solid:
-        specifier: ^2.11.4
-        version: 2.11.4(solid-js@1.9.3)(vite@6.0.0(jiti@2.4.2)(tsx@4.19.2))
+        specifier: ^2.11.5
+        version: 2.11.5(solid-js@1.9.3)(vite@6.0.0(jiti@2.4.2)(tsx@4.19.2))
 
 packages:
 
@@ -795,9 +795,6 @@ packages:
   lru-cache@5.1.1:
     resolution: {integrity: sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==}
 
-  magic-string@0.30.14:
-    resolution: {integrity: sha512-5c99P1WKTed11ZC0HMJOj6CDIue6F8ySu+bJL+85q1zBEIY8IklrJ1eiKC2NDRh3Ct3FcvmJPyQHb9erXMTJNw==}
-
   magic-string@0.30.17:
     resolution: {integrity: sha512-sNPKHvyjVf7gyjwS4xGTaW/mCnF8wnjtifKBEhxfZ7E/S8tQ0rssrwGNn6q8JH/ohItJfSQp9mBtQYuTlH5QnA==}
 
@@ -926,8 +923,8 @@ packages:
   validate-html-nesting@1.2.2:
     resolution: {integrity: sha512-hGdgQozCsQJMyfK5urgFcWEqsSSrK63Awe0t/IMR0bZ0QMtnuaiHzThW81guu3qx9abLi99NEuiaN6P9gVYsNg==}
 
-  vite-plugin-solid@2.11.4:
-    resolution: {integrity: sha512-qTy8FbA1oAwIaCl8+lmAJwMZ9fR7UcwQ68nVuX4VH6b1l059MrbKffgmJharcMJhqD/yJ+pD/EdSna6HEddEmw==}
+  vite-plugin-solid@2.11.5:
+    resolution: {integrity: sha512-XRXToYfVPDMZmlLzPoyYebGLCNa5pI/jv6LQxJBIadclaR1chyl8IDwdwJ7GY49whjDlom3cfDAI+00JQLgpzw==}
     peerDependencies:
       '@testing-library/jest-dom': ^5.16.6 || ^5.17.0 || ^6.*
       solid-js: ^1.7.2
@@ -1454,7 +1451,7 @@ snapshots:
       '@vue/compiler-ssr': 3.5.13
       '@vue/shared': 3.5.13
       estree-walker: 2.0.2
-      magic-string: 0.30.14
+      magic-string: 0.30.17
       postcss: 8.4.49
       source-map-js: 1.2.1
 
@@ -1688,10 +1685,6 @@ snapshots:
     dependencies:
       yallist: 3.1.1
 
-  magic-string@0.30.14:
-    dependencies:
-      '@jridgewell/sourcemap-codec': 1.5.0
-
   magic-string@0.30.17:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.0
@@ -1828,7 +1821,7 @@ snapshots:
 
   validate-html-nesting@1.2.2: {}
 
-  vite-plugin-solid@2.11.4(solid-js@1.9.3)(vite@6.0.0(jiti@2.4.2)(tsx@4.19.2)):
+  vite-plugin-solid@2.11.5(solid-js@1.9.3)(vite@6.0.0(jiti@2.4.2)(tsx@4.19.2)):
     dependencies:
       '@babel/core': 7.23.7
       '@types/babel__core': 7.20.5

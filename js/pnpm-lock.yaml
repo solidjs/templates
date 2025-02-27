@@ -16,8 +16,8 @@ importers:
         specifier: ^6.0.0
         version: 6.0.0
       vite-plugin-solid:
-        specifier: ^2.11.4
-        version: 2.11.4(solid-js@1.9.3)(vite@6.0.0)
+        specifier: ^2.11.5
+        version: 2.11.5(solid-js@1.9.3)(vite@6.0.0)
 
 packages:
 
@@ -519,8 +519,8 @@ packages:
   validate-html-nesting@1.2.2:
     resolution: {integrity: sha512-hGdgQozCsQJMyfK5urgFcWEqsSSrK63Awe0t/IMR0bZ0QMtnuaiHzThW81guu3qx9abLi99NEuiaN6P9gVYsNg==}
 
-  vite-plugin-solid@2.11.4:
-    resolution: {integrity: sha512-qTy8FbA1oAwIaCl8+lmAJwMZ9fR7UcwQ68nVuX4VH6b1l059MrbKffgmJharcMJhqD/yJ+pD/EdSna6HEddEmw==}
+  vite-plugin-solid@2.11.5:
+    resolution: {integrity: sha512-XRXToYfVPDMZmlLzPoyYebGLCNa5pI/jv6LQxJBIadclaR1chyl8IDwdwJ7GY49whjDlom3cfDAI+00JQLgpzw==}
     peerDependencies:
       '@testing-library/jest-dom': ^5.16.6 || ^5.17.0 || ^6.*
       solid-js: ^1.7.2
@@ -1027,7 +1027,7 @@ snapshots:
 
   validate-html-nesting@1.2.2: {}
 
-  vite-plugin-solid@2.11.4(solid-js@1.9.3)(vite@6.0.0):
+  vite-plugin-solid@2.11.5(solid-js@1.9.3)(vite@6.0.0):
     dependencies:
       '@babel/core': 7.26.0
       '@types/babel__core': 7.20.5
