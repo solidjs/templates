@@ -9,8 +9,11 @@ importers:
   .:
     dependencies:
       '@tanstack/solid-router':
-        specifier: ^1.108.0
-        version: 1.108.0(solid-js@1.9.5)
+        specifier: ^1.112.18
+        version: 1.112.18(solid-js@1.9.5)
+      '@tanstack/solid-router-devtools':
+        specifier: ^1.114.0
+        version: 1.114.0(@tanstack/router-devtools-core@1.114.0(@tanstack/router-core@1.112.18)(csstype@3.1.3)(solid-js@1.9.5)(tiny-invariant@1.3.3))(@tanstack/solid-router@1.112.18(solid-js@1.9.5))(solid-js@1.9.5)
       autoprefixer:
         specifier: ^10.4.20
         version: 10.4.20(postcss@8.5.3)
@@ -495,19 +498,44 @@ packages:
     peerDependencies:
       solid-js: ^1.6.12
 
-  '@tanstack/history@1.99.13':
-    resolution: {integrity: sha512-JMd7USmnp8zV8BRGIjALqzPxazvKtQ7PGXQC7n39HpbqdsmfV2ePCzieO84IvN+mwsTrXErpbjI4BfKCa+ZNCg==}
+  '@solidjs/meta@0.29.4':
+    resolution: {integrity: sha512-zdIWBGpR9zGx1p1bzIPqF5Gs+Ks/BH8R6fWhmUa/dcK1L2rUC8BAcZJzNRYBQv74kScf1TSOs0EY//Vd/I0V8g==}
+    peerDependencies:
+      solid-js: '>=1.8.4'
+
+  '@tanstack/history@1.112.18':
+    resolution: {integrity: sha512-57QWQ0DWkhJGwUxFqzHD51tfCZmU5Bnl7KY7x3yaKvk/+uU7i0Pz7d4HFTFMl+pxq/Q/zmV8TyQSctM5MIZWvw==}
     engines: {node: '>=12'}
 
-  '@tanstack/router-core@1.108.0':
-    resolution: {integrity: sha512-lo6Nqdp8gxWNZ8YZ6UhiQgR0CgcAiMaw1cxgKK7M4u3nFFwqW7Hzycl5ik1l3NRh5/pQVK+OVzlKok5rrrHxSg==}
+  '@tanstack/router-core@1.112.18':
+    resolution: {integrity: sha512-OQ7qxpK6l0727LUzaDBNj6Wg4yBtYyIgTqThMFN2a5Tl7nNAFfjh4xfSljmXEMRmrcZTprdDpbD8NHq1wgLVvA==}
     engines: {node: '>=12'}
 
-  '@tanstack/solid-router@1.108.0':
-    resolution: {integrity: sha512-DKtrdy/BHCGvc8wP8xW0tuc8bgA6lPGynbT50Zq8PgYD0ObIUWVHO4kKBwAPBRJQwsesDGdInir1nRMa+8c6iw==}
+  '@tanstack/router-devtools-core@1.114.0':
+    resolution: {integrity: sha512-r+fmLwnUt99WRzSlmeD8gke7rbWyGH7H7HWAvsPuWFJWMxQ2CaKEBQe+kOSXpyV/WDrQwyNO8x7Vq6RF4iGahg==}
     engines: {node: '>=12'}
     peerDependencies:
-      solid-js: ^1
+      '@tanstack/router-core': ^1.112.18
+      csstype: ^3.0.10
+      solid-js: '>=1.9.5'
+      tiny-invariant: ^1.3.3
+    peerDependenciesMeta:
+      csstype:
+        optional: true
+
+  '@tanstack/solid-router-devtools@1.114.0':
+    resolution: {integrity: sha512-pEUY6OE+/Bt0p6vwsmsEOqfUA3RYE6Z+8A4voiDAHibwOypamaGfc8XyO7jS72X6F/i11FkLhkLwSObE/Z+yuQ==}
+    engines: {node: '>=12'}
+    peerDependencies:
+      '@tanstack/router-devtools-core': ^1.114.0
+      '@tanstack/solid-router': ^1.112.18
+      solid-js: ^1.9.5
+
+  '@tanstack/solid-router@1.112.18':
+    resolution: {integrity: sha512-VtVkyDrYEaoAQJLZ4oUofLhJeUy+Om+/iKKALxrfSOOfWUZsXV4xO72E+yxiMiTPpfXqrBdKOKbTXzLY7lizBA==}
+    engines: {node: '>=12'}
+    peerDependencies:
+      solid-js: ^1.9.5
 
   '@tanstack/solid-store@0.7.0':
     resolution: {integrity: sha512-uDQYkUuH3MppitiduZLTEcItkTr8vEJ33jzp2rH2VvlNRMGbuU54GQcqf3dLIlTbZ1/Z2TtIBtBjjl+N/OhwRg==}
@@ -604,6 +632,10 @@ packages:
   chokidar@3.6.0:
     resolution: {integrity: sha512-7VT13fmjotKpGipCW9JEQAusEPE+Ei8nl6/g4FBAmIm0GOOLMua9NDDo/DWp0ZAxCr3cPq5ZpBqmPAQgDda2Pw==}
     engines: {node: '>= 8.10.0'}
+
+  clsx@2.1.1:
+    resolution: {integrity: sha512-eYm0QWBtUrBWZWG0d386OGAw16Z995PiOVo2B7bjWSbHedGl5e0ZWaq65kOGgUSNesEIDkB9ISbTg/JK9dhCZA==}
+    engines: {node: '>=6'}
 
   color-convert@2.0.1:
     resolution: {integrity: sha512-RRECPsj7iu/xb5oKYcsFHSppFNnsj/52OVTRKb4zP5onXwVF3zVmmToNcOfGC+CRDpfK/U584fMg38ZHCaElKQ==}
@@ -716,6 +748,11 @@ packages:
   globals@11.12.0:
     resolution: {integrity: sha512-WOBp/EEGUiIsJSp7wcv/y6MO+lV9UoncWqxuFfm8eBwzWNgyfBd6Gz+IeKQ9jCmyhoH99g15M3T+QaVHFjizVA==}
     engines: {node: '>=4'}
+
+  goober@2.1.16:
+    resolution: {integrity: sha512-erjk19y1U33+XAMe1VTvIONHYoSqE4iS7BYUZfHaqeohLmnC0FdxEh7rQU+6MZ4OajItzjZFSRtVANrQwNq6/g==}
+    peerDependencies:
+      csstype: ^3.0.10
 
   hasown@2.0.2:
     resolution: {integrity: sha512-0hJU9SCPvmMzIBdZFqNPXWa6dqh7WdH0cII9y+CyS8rG3nL48Bclra9HmKhVVUHyPWNH5Y7xDwAB7bfgSjkUMQ==}
@@ -1533,19 +1570,40 @@ snapshots:
     dependencies:
       solid-js: 1.9.5
 
-  '@tanstack/history@1.99.13': {}
-
-  '@tanstack/router-core@1.108.0':
+  '@solidjs/meta@0.29.4(solid-js@1.9.5)':
     dependencies:
-      '@tanstack/history': 1.99.13
+      solid-js: 1.9.5
+
+  '@tanstack/history@1.112.18': {}
+
+  '@tanstack/router-core@1.112.18':
+    dependencies:
+      '@tanstack/history': 1.112.18
       '@tanstack/store': 0.7.0
 
-  '@tanstack/solid-router@1.108.0(solid-js@1.9.5)':
+  '@tanstack/router-devtools-core@1.114.0(@tanstack/router-core@1.112.18)(csstype@3.1.3)(solid-js@1.9.5)(tiny-invariant@1.3.3)':
+    dependencies:
+      '@tanstack/router-core': 1.112.18
+      clsx: 2.1.1
+      goober: 2.1.16(csstype@3.1.3)
+      solid-js: 1.9.5
+      tiny-invariant: 1.3.3
+    optionalDependencies:
+      csstype: 3.1.3
+
+  '@tanstack/solid-router-devtools@1.114.0(@tanstack/router-devtools-core@1.114.0(@tanstack/router-core@1.112.18)(csstype@3.1.3)(solid-js@1.9.5)(tiny-invariant@1.3.3))(@tanstack/solid-router@1.112.18(solid-js@1.9.5))(solid-js@1.9.5)':
+    dependencies:
+      '@tanstack/router-devtools-core': 1.114.0(@tanstack/router-core@1.112.18)(csstype@3.1.3)(solid-js@1.9.5)(tiny-invariant@1.3.3)
+      '@tanstack/solid-router': 1.112.18(solid-js@1.9.5)
+      solid-js: 1.9.5
+
+  '@tanstack/solid-router@1.112.18(solid-js@1.9.5)':
     dependencies:
       '@solid-devtools/logger': 0.9.7(solid-js@1.9.5)
       '@solid-primitives/refs': 1.1.0(solid-js@1.9.5)
-      '@tanstack/history': 1.99.13
-      '@tanstack/router-core': 1.108.0
+      '@solidjs/meta': 0.29.4(solid-js@1.9.5)
+      '@tanstack/history': 1.112.18
+      '@tanstack/router-core': 1.112.18
       '@tanstack/solid-store': 0.7.0(solid-js@1.9.5)
       jsesc: 3.1.0
       solid-js: 1.9.5
@@ -1660,6 +1718,8 @@ snapshots:
       readdirp: 3.6.0
     optionalDependencies:
       fsevents: 2.3.3
+
+  clsx@2.1.1: {}
 
   color-convert@2.0.1:
     dependencies:
@@ -1777,6 +1837,10 @@ snapshots:
       path-scurry: 1.11.1
 
   globals@11.12.0: {}
+
+  goober@2.1.16(csstype@3.1.3):
+    dependencies:
+      csstype: 3.1.3
 
   hasown@2.0.2:
     dependencies:

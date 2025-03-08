@@ -11,6 +11,7 @@ import {
 import { NotFoundError, fetchPost, fetchPosts } from './posts';
 import type { ErrorComponentProps } from '@tanstack/solid-router';
 import './styles.css';
+import { TanStackRouterDevtools } from '@tanstack/solid-router-devtools';
 
 const rootRoute = createRootRoute({
   component: RootComponent,
@@ -64,6 +65,7 @@ function RootComponent() {
         </Link>
       </div>
       <Outlet />
+      <TanStackRouterDevtools position="bottom-right" />
     </>
   );
 }
