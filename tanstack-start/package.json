@@ -10,9 +10,9 @@
     "start": "vinxi start"
   },
   "dependencies": {
-    "@tanstack/solid-router": "https://pkg.pr.new/TanStack/router/@tanstack/solid-router@3696",
-    "@tanstack/solid-router-devtools": "^1.114.1",
-    "@tanstack/solid-start": "https://pkg.pr.new/TanStack/router/@tanstack/solid-start@3696",
+    "@tanstack/solid-router": "^1.114.29",
+    "@tanstack/solid-router-devtools": "^1.114.29",
+    "@tanstack/solid-start": "^1.114.29",
     "solid-js": "^1.9.5",
     "redaxios": "^0.5.1",
     "tailwind-merge": "^2.6.0",
@@ -28,9 +28,5 @@
     "tailwindcss": "^3.4.17",
     "typescript": "^5.7.2",
     "vite-tsconfig-paths": "^5.1.4"
-  },
-  "resolutions": {
-    "@tanstack/solid-router": "https://pkg.pr.new/TanStack/router/@tanstack/solid-router@3696",
-    "@tanstack/solid-start": "https://pkg.pr.new/TanStack/router/@tanstack/solid-start@3696"
   }
 }
