@@ -14,8 +14,8 @@
     "@tailwindcss/postcss": "^4.1.13",
     "postcss": "^8.4.49",
     "tailwindcss": "^4.1.13",
-    "vite": "^6.0.0",
-    "vite-plugin-solid": "^2.11.6"
+    "vite": "^6.3.5",
+    "vite-plugin-solid": "^2.11.8"
   },
   "dependencies": {
     "@solidjs/router": "^0.15.1",
