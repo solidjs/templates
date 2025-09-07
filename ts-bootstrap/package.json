@@ -11,6 +11,7 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "@types/bootstrap": "^5.2.10",
     "solid-devtools": "^0.34.3",
     "sass": "^1.81.0",
     "typescript": "^5.7.2",
