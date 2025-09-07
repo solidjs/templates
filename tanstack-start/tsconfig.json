@@ -1,23 +1,30 @@
 {
-  "include": ["**/*.ts", "**/*.tsx", "public/script*.js"],
   "compilerOptions": {
-    "strict": true,
-    "esModuleInterop": true,
+    // General
     "jsx": "preserve",
     "jsxImportSource": "solid-js",
+    "lib": ["DOM", "DOM.Iterable", "ES2022"],
+    "target": "ES2022",
+
+    // Modules
+    "esModuleInterop": true,
+    "isolatedModules": true,
     "module": "ESNext",
     "moduleResolution": "bundler",
-    "lib": ["DOM", "DOM.Iterable", "ES2022"],
-    "isolatedModules": true,
+    "noEmit": true,
     "resolveJsonModule": true,
-    "skipLibCheck": true,
-    "target": "ES2022",
+
+    // Type Checking & Safety
     "allowJs": true,
-    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "strict": true,
+
+    // Project / Resolution
     "baseUrl": ".",
+    "forceConsistentCasingInFileNames": true,
     "paths": {
       "~/*": ["./app/*"]
-    },
-    "noEmit": true
-  }
+    }
+  },
+  "include": ["**/*.ts", "**/*.tsx", "public/script*.js"]
 }
