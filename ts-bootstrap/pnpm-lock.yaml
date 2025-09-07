@@ -13,7 +13,7 @@ importers:
         version: 2.11.8
       bootstrap:
         specifier: ^5.3.3
-        version: 5.3.3(@popperjs/core@2.11.8)
+        version: 5.3.8(@popperjs/core@2.11.8)
       solid-js:
         specifier: ^1.9.5
         version: 1.9.9
@@ -492,8 +492,8 @@ packages:
       solid-js:
         optional: true
 
-  bootstrap@5.3.3:
-    resolution: {integrity: sha512-8HLCdWgyoMguSO9o+aH+iuZ+aht+mzW0u3HIMzVu7Srrpv7EBBxTnrFlSCskwdY1+EOFQSm7uMJhNQHkdPcmjg==}
+  bootstrap@5.3.8:
+    resolution: {integrity: sha512-HP1SZDqaLDPwsNiqRqi5NcP0SSXciX2s9E+RyqJIIqGo+vJeN5AJVM98CXmW/Wux0nQ5L7jeWUdplCEf0Ee+tg==}
     peerDependencies:
       '@popperjs/core': ^2.11.8
 
@@ -1130,7 +1130,7 @@ snapshots:
     optionalDependencies:
       solid-js: 1.9.9
 
-  bootstrap@5.3.3(@popperjs/core@2.11.8):
+  bootstrap@5.3.8(@popperjs/core@2.11.8):
     dependencies:
       '@popperjs/core': 2.11.8
 
