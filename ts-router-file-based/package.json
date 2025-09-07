@@ -11,6 +11,7 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "solid-devtools": "^0.34.3",
     "@tailwindcss/postcss": "^4.1.13",
     "postcss": "^8.4.49",
     "tailwindcss": "^4.1.13",

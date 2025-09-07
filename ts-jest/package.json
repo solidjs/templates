@@ -12,6 +12,7 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "solid-devtools": "^0.34.3",
     "@babel/core": "^7.26.0",
     "@babel/preset-env": "^7.26.0",
     "@babel/preset-typescript": "^7.26.0",

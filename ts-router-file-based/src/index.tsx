@@ -1,4 +1,6 @@
 /* @refresh reload */
+
+import 'solid-devtools';
 import './index.css';
 
 import { render, Suspense } from 'solid-js/web';

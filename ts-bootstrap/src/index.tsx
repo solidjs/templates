@@ -2,6 +2,7 @@
 import 'bootstrap/scss/bootstrap.scss';
 
 import { render } from 'solid-js/web';
+import 'solid-devtools';
 
 /**
  * This file was taken from the cheatsheet example of bootstrap.

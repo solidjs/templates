@@ -12,6 +12,7 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "solid-devtools": "^0.34.3",
     "@babel/core": "^7.26.0",
     "@solidjs/testing-library": "^0.8.10",
     "babel-preset-solid": "^1.9.3",
