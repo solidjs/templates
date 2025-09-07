@@ -26,5 +26,5 @@
       "~/*": ["./app/*"]
     }
   },
-  "include": ["***.tsx", "public/script*.js"]
+  "include": ["**/*.ts", "**/*.tsx", "public/script*.js"]
 }
