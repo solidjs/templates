@@ -12,10 +12,10 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "solid-devtools": "^0.34.3",
     "@solidjs/testing-library": "^0.8.10",
     "@testing-library/jest-dom": "^6.6.3",
     "jsdom": "^25.0.1",
+    "solid-devtools": "^0.34.3",
     "typescript": "^5.7.2",
     "vite": "^7.1.4",
     "vite-plugin-solid": "2.11.8",

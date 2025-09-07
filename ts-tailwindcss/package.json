@@ -11,8 +11,8 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "solid-devtools": "^0.34.3",
     "@tailwindcss/vite": "^4.1.13",
+    "solid-devtools": "^0.34.3",
     "tailwindcss": "^4.1.13",
     "typescript": "^5.9.2",
     "vite": "^7.1.4",
