@@ -20,7 +20,7 @@
     "@types/jest": "^29.5.14",
     "babel-jest": "^29.7.0",
     "babel-preset-jest": "^29.6.3",
-    "babel-preset-solid": "^1.9.3",
+    "babel-preset-solid": "^1.9.9",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
     "jsdom": "^25.0.1",
@@ -31,6 +31,6 @@
     "vite-plugin-solid": "^2.11.6"
   },
   "dependencies": {
-    "solid-js": "^1.9.5"
+    "solid-js": "^1.9.9"
   }
 }
