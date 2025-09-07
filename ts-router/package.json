@@ -14,7 +14,7 @@
     "@tailwindcss/postcss": "^4.1.13",
     "postcss": "^8.4.49",
     "tailwindcss": "^4.1.13",
-    "vite": "^6.3.5",
+    "vite": "^7.1.4",
     "vite-plugin-solid": "^2.11.8"
   },
   "dependencies": {
