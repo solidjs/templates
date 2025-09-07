@@ -2,7 +2,8 @@ version: 2
 
 updates:
   - package-ecosystem: 'npm'
-    directory: '**/*'
+    directories:
+      - '**/*'
     schedule:
       interval: 'weekly'
     groups:
@@ -55,6 +56,3 @@ updates:
           - 'uvu'
           - '@testing-library/*'
           - 'jsdom'
-      all-other:
-        patterns:
-          - '*'
