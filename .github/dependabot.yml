@@ -1,0 +1,58 @@
+version: 2
+
+updates:
+  - package-ecosystem: 'npm'
+    directories:
+      - '/'
+    schedule:
+      interval: 'weekly'
+    groups:
+      tailwind:
+        patterns:
+          - 'tailwindcss*'
+          - '@tailwindcss/*'
+      typescript:
+        patterns:
+          - 'typescript*'
+          - '@types/*'
+      vitest:
+        patterns:
+          - 'vitest*'
+          - '@vitest/*'
+      jest:
+        patterns:
+          - 'jest*'
+          - '@jest/*'
+      tanstack:
+        patterns:
+          - '@tanstack/*'
+      solidjs:
+        patterns:
+          - 'solid-js'
+          - '@solidjs/*'
+          - 'babel-preset-solid'
+      vite:
+        patterns:
+          - 'vite*'
+          - '@vitejs/*'
+      bootstrap:
+        patterns:
+          - 'bootstrap*'
+          - '@popperjs/*'
+      unocss:
+        patterns:
+          - 'unocss*'
+          - '@unocss/*'
+      sass:
+        patterns:
+          - 'sass'
+          - 'node-sass'
+      postcss:
+        patterns:
+          - 'postcss*'
+          - 'autoprefixer'
+      testing:
+        patterns:
+          - 'uvu'
+          - '@testing-library/*'
+          - 'jsdom'
