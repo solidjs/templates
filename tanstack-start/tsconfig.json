@@ -5,6 +5,7 @@
     "jsxImportSource": "solid-js",
     "lib": ["DOM", "DOM.Iterable", "ES2022"],
     "target": "ES2022",
+
     // Modules
     "esModuleInterop": true,
     "isolatedModules": true,
@@ -12,10 +13,12 @@
     "moduleResolution": "bundler",
     "noEmit": true,
     "resolveJsonModule": true,
+
     // Type Checking & Safety
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
+
     // Project / Resolution
     "baseUrl": ".",
     "forceConsistentCasingInFileNames": true,
