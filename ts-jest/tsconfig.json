@@ -1,5 +1,4 @@
 {
-  "types": ["jest", "@testing-library/jest-dom"],
   "compilerOptions": {
     "strict": true,
     "target": "ESNext",
@@ -9,7 +8,7 @@
     "esModuleInterop": true,
     "jsx": "preserve",
     "jsxImportSource": "solid-js",
-    "types": ["vite/client"],
+    "types": ["jest", "@testing-library/jest-dom", "vite/client"],
     "noEmit": true,
     "isolatedModules": true
   }
