@@ -11,6 +11,7 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "solid-devtools": "^0.34.3",
     "sass": "^1.81.0",
     "typescript": "^5.7.2",
     "vite": "^7.1.4",

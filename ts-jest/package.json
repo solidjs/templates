@@ -25,6 +25,7 @@
     "jest-environment-jsdom": "^30.1.2",
     "jsdom": "^25.0.1",
     "regenerator-runtime": "0.14.1",
+    "solid-devtools": "^0.34.3",
     "solid-jest": "^0.2.0",
     "typescript": "^5.9.2",
     "vite": "^7.1.4",
