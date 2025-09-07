@@ -19,7 +19,7 @@ const App: Component = () => {
     // @ts-ignore
     let parent = link.parentNode.parentNode.previousElementSibling;
 
-    link.classList.add('active');
+    link?.classList.add('active');
 
     if (parent.classList.contains('collapsed')) {
       parent.click();

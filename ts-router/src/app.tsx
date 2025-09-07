@@ -1,7 +1,7 @@
 import { Suspense, type Component } from 'solid-js';
 import { A, useLocation } from '@solidjs/router';
 
-const App: Component = (props: { children: Element }) => {
+const App: Component<{ children: Element }> = (props) => {
   const location = useLocation();
 
   return (
