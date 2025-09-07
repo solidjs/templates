@@ -18,7 +18,7 @@
     "jsdom": "^25.0.1",
     "playwright": "^1.50.1",
     "typescript": "^5.7.2",
-    "vite": "^6.3.5",
+    "vite": "^7.1.4",
     "vite-plugin-solid": "2.11.8",
     "vitest": "^3.0.7"
   },
