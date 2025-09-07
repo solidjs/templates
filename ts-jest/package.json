@@ -26,7 +26,7 @@
     "jsdom": "^25.0.1",
     "regenerator-runtime": "0.14.1",
     "solid-jest": "^0.2.0",
-    "typescript": "^5.7.2",
+    "typescript": "^5.9.2",
     "vite": "^6.0.0",
     "vite-plugin-solid": "^2.11.6"
   },
