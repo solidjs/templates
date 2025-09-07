@@ -12,16 +12,16 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@solidjs/testing-library": "^0.8.10",
-    "@testing-library/jest-dom": "^6.6.3",
-    "jsdom": "^25.0.1",
-    "solid-devtools": "^0.34.3",
-    "typescript": "^5.7.2",
-    "vite": "^7.1.4",
-    "vite-plugin-solid": "2.11.8",
-    "vitest": "^3.0.0"
+    "@solidjs/testing-library": "workspace:*",
+    "@testing-library/jest-dom": "workspace:*",
+    "jsdom": "workspace:*",
+    "solid-devtools": "workspace:*",
+    "typescript": "workspace:*",
+    "vite": "workspace:*",
+    "vite-plugin-solid": "workspace:*",
+    "vitest": "workspace:*"
   },
   "dependencies": {
-    "solid-js": "^1.9.5"
+    "solid-js": "workspace:*"
   }
 }

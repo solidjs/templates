@@ -12,19 +12,19 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@babel/core": "^7.26.0",
-    "@solidjs/testing-library": "^0.8.10",
-    "babel-preset-solid": "^1.9.3",
-    "jsdom": "^25.0.0",
-    "solid-devtools": "^0.34.3",
-    "solid-dom-testing": "^0.0.3",
-    "solid-register": "^0.2.5",
-    "typescript": "^5.7.2",
-    "uvu": "^0.5.6",
-    "vite": "^7.1.4",
-    "vite-plugin-solid": "^2.11.8"
+    "@babel/core": "workspace:*",
+    "@solidjs/testing-library": "workspace:*",
+    "babel-preset-solid": "workspace:*",
+    "jsdom": "workspace:*",
+    "solid-devtools": "workspace:*",
+    "solid-dom-testing": "workspace:*",
+    "solid-register": "workspace:*",
+    "typescript": "workspace:*",
+    "uvu": "workspace:*",
+    "vite": "workspace:*",
+    "vite-plugin-solid": "workspace:*"
   },
   "dependencies": {
-    "solid-js": "^1.9.5"
+    "solid-js": "workspace:*"
   }
 }
