@@ -1,0 +1,1 @@
+import{ssr as t,ssrHydrationKey as r,escape as o,createComponent as e}from"solid-js/web";import{T as a}from"./assets/index-BdnVf8ln.js";import"solid-js";var i=["<main","><!--$-->","<!--/--><h1>About</h1></main>"];function s(){return t(i,r(),o(e(a,{children:"About"})))}export{s as default};

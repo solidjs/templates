@@ -1,0 +1,13 @@
+{
+  "name": "example-basic-prod",
+  "version": "0.0.0",
+  "type": "module",
+  "private": true,
+  "dependencies": {
+    "pathe": "1.1.2",
+    "seroval": "1.3.2",
+    "seroval-plugins": "1.3.2",
+    "solid-js": "1.9.7",
+    "vinxi": "0.5.8"
+  }
+}
