@@ -1,0 +1,6 @@
+.env
+!.env.example
+.vinxi/
+node_modules/
+.output/
+dist/
