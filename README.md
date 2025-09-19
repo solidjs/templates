@@ -1,5 +1,5 @@
 <p>
-  <img width="100%" src="https://raw.githubusercontent.com/solidjs/templates/master/banner.png" alt="Solid Vite Templates">
+  <img width="100%" src="https://raw.githubusercontent.com/solidjs/templates/vanilla/master/banner.png" alt="Solid Vite Templates">
 </p>
 
 # Solid Templates (using [vite](https://vitejs.dev/))
@@ -23,106 +23,92 @@ This is the reason you see a `pnpm-lock.yaml`. That being said, any package mana
 These templates are meant to be used as is via the [degit](https://github.com/Rich-Harris/degit) utility.
 
 ```bash
-# Javascript template
-$ npx degit solidjs/templates/js my-solid-project
+# Typescript basic template
+$ npx degit solidjs/templates/vanilla/basic my-solid-project
 $ cd my-solid-project
 $ npm install # or pnpm install or yarn install
 ```
 
 ```bash
-# Typescript template
-$ npx degit solidjs/templates/ts my-solid-project
-$ cd my-solid-project
-$ npm install # or pnpm install or yarn install
-```
-
-```bash
-# Typescript minimal template
-$ npx degit solidjs/templates/ts-minimal my-solid-project
+# Typescript bare template
+$ npx degit solidjs/templates/vanilla/bare my-solid-project
 $ cd my-solid-project
 $ npm install # or pnpm install or yarn install
 ```
 
 ```bash
 # Typescript unocss template
-$ npx degit solidjs/templates/ts-unocss my-solid-project
+$ npx degit solidjs/templates/vanilla/with-unocss my-solid-project
 $ cd my-solid-project
 $ npm install # or pnpm install or yarn install
 ```
 
 ```bash
 # Typescript tailwindcss template + solid-router with config-based routing
-$ npx degit solidjs/templates/ts-router my-solid-project
+$ npx degit solidjs/templates/vanilla/with-solid-router my-solid-project
 $ cd my-solid-project
 $ npm install # or pnpm install or yarn install
 ```
 
 ```bash
-# Typescript tailwindcss template + solid-router with file-based routing
-$ npx degit solidjs/templates/ts-router-file-based my-solid-project
+# Typescript vite-plugin-pages file-based routing
+$ npx degit solidjs/templates/vanilla/with-vite-plugin-pages my-solid-project
 $ cd my-solid-project
 $ npm install # or pnpm install or yarn install
 ```
 
 ```bash
 # Typescript bootstrap (5) template
-$ npx degit solidjs/templates/ts-bootstrap my-solid-project
+$ npx degit solidjs/templates/vanilla/with-bootstrap my-solid-project
 $ cd my-solid-project
 $ npm install # or pnpm install or yarn install
 ```
 
 ```bash
 # Typescript + tailwindcss template
-$ npx degit solidjs/templates/ts-tailwindcss my-solid-project
+$ npx degit solidjs/templates/vanilla/with-tailwindcss my-solid-project
 $ cd my-solid-project
 $ npm install # or pnpm install or yarn install
 ```
 
 ```bash
 # Typescript + sass template
-$ npx degit solidjs/templates/ts-sass my-solid-project
-$ cd my-solid-project
-$ npm install # or pnpm install or yarn install
-```
-
-```bash
-# Javascript + vitest template
-$ npx degit solidjs/templates/js-vitest my-solid-project
+$ npx degit solidjs/templates/vanilla/with-sass my-solid-project
 $ cd my-solid-project
 $ npm install # or pnpm install or yarn install
 ```
 
 ```bash
 # Typescript + vitest template
-$ npx degit solidjs/templates/ts-vitest my-solid-project
+$ npx degit solidjs/templates/vanilla/with-vitest my-solid-project
 $ cd my-solid-project
 $ npm install # or pnpm install or yarn install
 ```
 
 ```bash
 # Typescript + vitest browser mode template
-$ npx degit solidjs/templates/ts-vitest-browser-mode my-solid-project
+$ npx degit solidjs/templates/vanilla/with-vitest-browser-mode my-solid-project
 $ cd my-solid-project
 $ npm install # or pnpm install or yarn install
 ```
 
 ```bash
 # Typescript + uvu template
-$ npx degit solidjs/templates/ts-uvu my-solid-project
+$ npx degit solidjs/templates/vanilla/with-uvu my-solid-project
 $ cd my-solid-project
 $ npm install # or pnpm install or yarn install
 ```
 
 ```bash
 # TanStack Router
-$ npx degit solidjs/templates/tanstack-router-config-based my-solid-project
+$ npx degit solidjs/templates/vanilla/with-tanstack-router-config-based my-solid-project
 $ cd my-solid-project
 $ npm install # or pnpm install or yarn install
 ```
 
 ```bash
 # TanStack Router File Based
-$ npx degit solidjs/templates/tanstack-router-file-based my-solid-project
+$ npx degit solidjs/templates/vanilla/with-tanstack-router-file-based my-solid-project
 $ cd my-solid-project
 $ npm install # or pnpm install or yarn install
 ```
@@ -144,7 +130,7 @@ Feel free to make a pull request. Copy one of the template already available, tw
 
 This project is managed with [pnpm](https://pnpm.io). You should [install it](https://pnpm.io/installation) first to test out your template or contribute to an existing one.
 
-You can create your own template and prefix it with `ts-` or `js-` and giving it a name that describe the purpose.
+You can create your own template and prefix it `with-` and give it a name that describe the purpose.
 
 To update all dependencies you can run:
 
