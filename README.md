@@ -23,14 +23,14 @@ This is the reason you see a `pnpm-lock.yaml`. That being said, any package mana
 These templates are meant to be used as is via the [degit](https://github.com/Rich-Harris/degit) utility.
 
 ```bash
-# Typescript template
+# Typescript basic template
 $ npx degit solidjs/templates/vanilla/basic my-solid-project
 $ cd my-solid-project
 $ npm install # or pnpm install or yarn install
 ```
 
 ```bash
-# Typescript minimal template
+# Typescript bare template
 $ npx degit solidjs/templates/vanilla/bare my-solid-project
 $ cd my-solid-project
 $ npm install # or pnpm install or yarn install
@@ -45,14 +45,14 @@ $ npm install # or pnpm install or yarn install
 
 ```bash
 # Typescript tailwindcss template + solid-router with config-based routing
-$ npx degit solidjs/templates/vanilla/with-router my-solid-project
+$ npx degit solidjs/templates/vanilla/with-solid-router my-solid-project
 $ cd my-solid-project
 $ npm install # or pnpm install or yarn install
 ```
 
 ```bash
-# Typescript tailwindcss template + solid-router with file-based routing
-$ npx degit solidjs/templates/vanilla/with-router-file-based my-solid-project
+# Typescript vite-plugin-pages file-based routing
+$ npx degit solidjs/templates/vanilla/with-vite-plugin-pages my-solid-project
 $ cd my-solid-project
 $ npm install # or pnpm install or yarn install
 ```
