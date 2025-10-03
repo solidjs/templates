@@ -1,7 +1,7 @@
 {
   "name": "example-with-authjs",
   "scripts": {
-    "dev": "vinxi dev",
+    "dev": "vinxi dev --port 3000",
     "build": "vinxi build",
     "start": "vinxi start",
     "lint": "eslint --fix \"**/*.{ts,tsx,js,jsx}\""

@@ -1,6 +1,6 @@
 # SolidStart Template
 
-The **with-auth** example demonstrates native, context-based authentication featuring OAuth and email-password login.
+The **with-auth** example showcases native, context-based authentication using both OAuth and email-password login. For more information on SolidStart, refer to the [README](https://github.com/solidjs/solid-start/tree/main/packages/start#readme) or visit the official [documentation](https://docs.solidjs.com/solid-start/).
 
 ## Installation
 

@@ -1,7 +1,7 @@
 {
   "name": "example-with-vitest",
   "scripts": {
-    "dev": "vinxi dev",
+    "dev": "vinxi dev --port 3000",
     "build": "vinxi build",
     "start": "vinxi start",
     "test": "vitest run",

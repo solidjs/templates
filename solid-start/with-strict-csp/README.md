@@ -1,37 +1,22 @@
-# Content Security Policy with Nonce
+# SolidStart Template
 
-This example demonstrates how to implement a strict Content Security Policy (CSP) with a nonce in a SolidStart application.
+For more information on SolidStart, refer to the [README](https://github.com/solidjs/solid-start/tree/main/packages/start#readme) or visit the official [documentation](https://docs.solidjs.com/solid-start/).
 
-## How to Use
+## Installation
 
-You can use the Solid CLI to bootstrap the example with one of the following commands based on your package manager preference:
-
-**npm:**
+Generate the **with-strict-csp** template using your preferred package manager
 
 ```bash
-npm init solid@latest --solidstart --ts --template with-strict-csp my-app-with-strict-csp
+# using npm
+npm create solid@latest -- -s -t with-strict-csp
 ```
 
-**pnpm:**
-
 ```bash
-pnpm create solid --solidstart --ts --template with-strict-csp my-app-with-strict-csp
+# using pnpm
+pnpm create solid@latest -s -t with-strict-csp
 ```
 
-**yarn:**
-
 ```bash
-yarn create solid@latest --solidstart --ts --template with-strict-csp my-app-with-strict-csp
-```
-
-**bun:**
-
-```bash
-bun create solid@latest --solidstart --ts --template with-strict-csp my-app-with-strict-csp
-```
-
-**deno:**
-
-```bash
-deno init --npm solid@latest --solidstart --ts --template with-strict-csp my-app-with-strict-csp
+# using bun
+bun create solid@latest --s --t with-strict-csp
 ```
