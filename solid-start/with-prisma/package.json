@@ -7,7 +7,7 @@
     "start": "vinxi start"
   },
   "devDependencies": {
-    "@types/node": "^20.12.7"
+    "@types/node": "^24.7.0"
   },
   "dependencies": {
     "@prisma/client": "^5.12.1",
