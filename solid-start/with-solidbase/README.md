@@ -8,12 +8,12 @@ Generate the **with-solidbase** template using your preferred package manager
 
 ```bash
 # using npm
-npm create solid@latest -- -s -t with-solidbase
+npm create solid@latest -- -st with-solidbase
 ```
 
 ```bash
 # using pnpm
-pnpm create solid@latest -s -t with-solidbase
+pnpm create solid@latest -st with-solidbase
 ```
 
 ```bash

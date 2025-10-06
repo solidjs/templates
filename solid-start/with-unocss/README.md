@@ -8,12 +8,12 @@ Generate the **with-unocss** template using your preferred package manager
 
 ```bash
 # using npm
-npm create solid@latest -- -s -t with-unocss
+npm create solid@latest -- -st with-unocss
 ```
 
 ```bash
 # using pnpm
-pnpm create solid@latest -s -t with-unocss
+pnpm create solid@latest -st with-unocss
 ```
 
 ```bash

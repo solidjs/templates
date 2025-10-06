@@ -8,12 +8,12 @@ Generate the **with-mdx** template using your preferred package manager
 
 ```bash
 # using npm
-npm create solid@latest -- -s -t with-mdx
+npm create solid@latest -- -st with-mdx
 ```
 
 ```bash
 # using pnpm
-pnpm create solid@latest -s -t with-mdx
+pnpm create solid@latest -st with-mdx
 ```
 
 ```bash

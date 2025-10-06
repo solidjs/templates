@@ -8,12 +8,12 @@ Generate the **basic** template using your preferred package manager
 
 ```bash
 # using npm
-npm create solid@latest -- -s -t basic
+npm create solid@latest -- -st basic
 ```
 
 ```bash
 # using pnpm
-pnpm create solid@latest -s -t basic
+pnpm create solid@latest -st basic
 ```
 
 ```bash

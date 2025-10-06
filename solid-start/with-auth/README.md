@@ -8,12 +8,12 @@ Generate the **with-auth** template using your preferred package manager
 
 ```bash
 # using npm
-npm create solid@latest -- -s -t with-auth
+npm create solid@latest -- -st with-auth
 ```
 
 ```bash
 # using pnpm
-pnpm create solid@latest -s -t with-auth
+pnpm create solid@latest -st with-auth
 ```
 
 ```bash

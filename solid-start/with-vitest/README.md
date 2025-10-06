@@ -8,12 +8,12 @@ Generate the **with-vitest** template using your preferred package manager
 
 ```bash
 # using npm
-npm create solid@latest -- -s -t with-vitest
+npm create solid@latest -- -st with-vitest
 ```
 
 ```bash
 # using pnpm
-pnpm create solid@latest -s -t with-vitest
+pnpm create solid@latest -st with-vitest
 ```
 
 ```bash

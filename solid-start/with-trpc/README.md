@@ -8,12 +8,12 @@ Generate the **with-trpc** template using your preferred package manager
 
 ```bash
 # using npm
-npm create solid@latest -- -s -t with-trpc
+npm create solid@latest -- -st with-trpc
 ```
 
 ```bash
 # using pnpm
-pnpm create solid@latest -s -t with-trpc
+pnpm create solid@latest -st with-trpc
 ```
 
 ```bash

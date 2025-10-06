@@ -8,12 +8,12 @@ Generate the **with-strict-csp** template using your preferred package manager
 
 ```bash
 # using npm
-npm create solid@latest -- -s -t with-strict-csp
+npm create solid@latest -- -st with-strict-csp
 ```
 
 ```bash
 # using pnpm
-pnpm create solid@latest -s -t with-strict-csp
+pnpm create solid@latest -st with-strict-csp
 ```
 
 ```bash

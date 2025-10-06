@@ -8,12 +8,12 @@ Generate the **with-prisma** template using your preferred package manager
 
 ```bash
 # using npm
-npm create solid@latest -- -s -t with-prisma
+npm create solid@latest -- -st with-prisma
 ```
 
 ```bash
 # using pnpm
-pnpm create solid@latest -s -t with-prisma
+pnpm create solid@latest -st with-prisma
 ```
 
 ```bash

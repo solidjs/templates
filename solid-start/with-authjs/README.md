@@ -8,12 +8,12 @@ Generate the **with-authjs** template using your preferred package manager
 
 ```bash
 # using npm
-npm create solid@latest -- -s -t with-authjs
+npm create solid@latest -- -st with-authjs
 ```
 
 ```bash
 # using pnpm
-pnpm create solid@latest -s -t with-authjs
+pnpm create solid@latest -st with-authjs
 ```
 
 ```bash

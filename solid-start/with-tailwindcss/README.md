@@ -8,12 +8,12 @@ Generate the **with-tailwindcss** template using your preferred package manager
 
 ```bash
 # using npm
-npm create solid@latest -- -s -t with-tailwindcss
+npm create solid@latest -- -st with-tailwindcss
 ```
 
 ```bash
 # using pnpm
-pnpm create solid@latest -s -t with-tailwindcss
+pnpm create solid@latest -st with-tailwindcss
 ```
 
 ```bash

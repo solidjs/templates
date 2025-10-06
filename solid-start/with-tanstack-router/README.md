@@ -8,12 +8,12 @@ Generate the **with-tanstack-router** template using your preferred package mana
 
 ```bash
 # using npm
-npm create solid@latest -- -s -t with-tanstack-router
+npm create solid@latest -- -st with-tanstack-router
 ```
 
 ```bash
 # using pnpm
-pnpm create solid@latest -s -t with-tanstack-router
+pnpm create solid@latest -st with-tanstack-router
 ```
 
 ```bash

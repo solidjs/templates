@@ -8,12 +8,12 @@ Generate the **bare** template using your preferred package manager
 
 ```bash
 # using npm
-npm create solid@latest -- -s -t bare
+npm create solid@latest -- -st bare
 ```
 
 ```bash
 # using pnpm
-pnpm create solid@latest -s -t bare
+pnpm create solid@latest -st bare
 ```
 
 ```bash

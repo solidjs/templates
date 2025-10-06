@@ -8,12 +8,12 @@ Generate the **with-solid-styled** template using your preferred package manager
 
 ```bash
 # using npm
-npm create solid@latest -- -s -t with-solid-styled
+npm create solid@latest -- -st with-solid-styled
 ```
 
 ```bash
 # using pnpm
-pnpm create solid@latest -s -t with-solid-styled
+pnpm create solid@latest -st with-solid-styled
 ```
 
 ```bash
