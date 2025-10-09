@@ -1,5 +1,5 @@
 {
-  "name": "example-bare",
+  "name": "example-with-strict-csp",
   "type": "module",
   "scripts": {
     "dev": "vinxi dev --port 3000",

@@ -1,6 +1,6 @@
 # SolidStart Template
 
-For more information on SolidStart, refer to the [README](https://github.com/solidjs/solid-start/tree/main/packages/start#readme) or visit the official [documentation](https://docs.solidjs.com/solid-start/).
+[Tanstack Router](https://tanstack.com/router/latest) enables type safe routing. For more information on SolidStart, refer to the [README](https://github.com/solidjs/solid-start/tree/main/packages/start#readme) or visit the official [documentation](https://docs.solidjs.com/solid-start/).
 
 ## Installation
 

@@ -1,6 +1,6 @@
 # SolidStart Template
 
-The **with-drizzle** example demonstrates how to use [Drizzle](https://orm.drizzle.team) with SQLite. For more information on SolidStart, refer to the [README](https://github.com/solidjs/solid-start/tree/main/packages/start#readme) or visit the official [documentation](https://docs.solidjs.com/solid-start/).
+The **with-drizzle** example shows how to use [Drizzle](https://orm.drizzle.team) with local SQLite storage. For more information on SolidStart, refer to the [README](https://github.com/solidjs/solid-start/tree/main/packages/start#readme) or visit the official [documentation](https://docs.solidjs.com/solid-start/).
 
 ## Installation
 

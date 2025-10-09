@@ -1,6 +1,6 @@
 # SolidStart Template
 
-For more information on SolidStart, refer to the [README](https://github.com/solidjs/solid-start/tree/main/packages/start#readme) or visit the official [documentation](https://docs.solidjs.com/solid-start/).
+[SolidBase](https://solidbase.dev) simplifies SSG development with built-in support for fast, pre-rendered Markdown and MDX pages. For more information on SolidStart, refer to the [README](https://github.com/solidjs/solid-start/tree/main/packages/start#readme) or visit the official [documentation](https://docs.solidjs.com/solid-start/).
 
 ## Installation
 

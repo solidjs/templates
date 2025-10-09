@@ -1,6 +1,6 @@
 # SolidStart Template
 
-For more information on SolidStart, refer to the [README](https://github.com/solidjs/solid-start/tree/main/packages/start#readme) or visit the official [documentation](https://docs.solidjs.com/solid-start/).
+[Prisma](https://www.prisma.io) is a serverless Postgres database. For more information on SolidStart, refer to the [README](https://github.com/solidjs/solid-start/tree/main/packages/start#readme) or visit the official [documentation](https://docs.solidjs.com/solid-start/).
 
 ## Installation
 
