@@ -1,11 +1,7 @@
-<div align="center">
-
 [![Banner](https://assets.solidjs.com/banner?project=templates&type=core)](https://github.com/solidjs)
 
 [![Discord](https://img.shields.io/discord/722131463138705510?label=join%20server&style=for-the-badge&color=5865F2&logo=discord&logoColor=white)](https://discord.com/invite/solidjs)
 [![Reddit](https://img.shields.io/reddit/subreddit-subscribers/solidjs?style=for-the-badge&color=FF4500&logo=reddit&logoColor=white)](https://reddit.com/r/solidjs)
-
-</div>
 
 ## Get Started
 
