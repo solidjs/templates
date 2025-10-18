@@ -28,8 +28,8 @@
     "solid-devtools": "^0.34.3",
     "solid-jest": "^0.2.0",
     "typescript": "^5.9.2",
-    "vite": "^7.1.4",
-    "vite-plugin-solid": "^2.11.8"
+    "vite": "^7.1.10",
+    "vite-plugin-solid": "^2.11.9"
   },
   "dependencies": {
     "solid-js": "^1.9.9"
