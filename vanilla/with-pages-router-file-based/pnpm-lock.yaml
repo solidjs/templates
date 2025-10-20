@@ -23,19 +23,19 @@ importers:
         version: 8.5.6
       solid-devtools:
         specifier: ^0.34.3
-        version: 0.34.3(solid-js@1.9.9)(vite@7.1.10(jiti@2.5.1)(lightningcss@1.30.1)(yaml@2.8.1))
+        version: 0.34.3(solid-js@1.9.9)(vite@7.1.11(jiti@2.5.1)(lightningcss@1.30.1)(yaml@2.8.1))
       tailwindcss:
         specifier: ^4.1.13
         version: 4.1.13
       vite:
         specifier: ^7.1.4
-        version: 7.1.10(jiti@2.5.1)(lightningcss@1.30.1)(yaml@2.8.1)
+        version: 7.1.11(jiti@2.5.1)(lightningcss@1.30.1)(yaml@2.8.1)
       vite-plugin-pages:
         specifier: ^0.33.1
-        version: 0.33.1(@solidjs/router@0.15.3(solid-js@1.9.9))(vite@7.1.10(jiti@2.5.1)(lightningcss@1.30.1)(yaml@2.8.1))
+        version: 0.33.1(@solidjs/router@0.15.3(solid-js@1.9.9))(vite@7.1.11(jiti@2.5.1)(lightningcss@1.30.1)(yaml@2.8.1))
       vite-plugin-solid:
         specifier: ^2.11.8
-        version: 2.11.9(solid-js@1.9.9)(vite@7.1.10(jiti@2.5.1)(lightningcss@1.30.1)(yaml@2.8.1))
+        version: 2.11.9(solid-js@1.9.9)(vite@7.1.11(jiti@2.5.1)(lightningcss@1.30.1)(yaml@2.8.1))
 
 packages:
 
@@ -1003,8 +1003,8 @@ packages:
       '@testing-library/jest-dom':
         optional: true
 
-  vite@7.1.10:
-    resolution: {integrity: sha512-CmuvUBzVJ/e3HGxhg6cYk88NGgTnBoOo7ogtfJJ0fefUWAxN/WDSUa50o+oVBxuIhO8FoEZW0j2eW7sfjs5EtA==}
+  vite@7.1.11:
+    resolution: {integrity: sha512-uzcxnSDVjAopEUjljkWh8EIrg6tlzrjFUfMcR1EVsRDGwf/ccef0qQPRyOrROwhrTDaApueq+ja+KLPlzR/zdg==}
     engines: {node: ^20.19.0 || >=22.12.0}
     hasBin: true
     peerDependencies:
@@ -1848,7 +1848,7 @@ snapshots:
 
   seroval@1.3.2: {}
 
-  solid-devtools@0.34.3(solid-js@1.9.9)(vite@7.1.10(jiti@2.5.1)(lightningcss@1.30.1)(yaml@2.8.1)):
+  solid-devtools@0.34.3(solid-js@1.9.9)(vite@7.1.11(jiti@2.5.1)(lightningcss@1.30.1)(yaml@2.8.1)):
     dependencies:
       '@babel/core': 7.28.4
       '@babel/plugin-syntax-typescript': 7.27.1(@babel/core@7.28.4)
@@ -1857,7 +1857,7 @@ snapshots:
       '@solid-devtools/shared': 0.20.0(solid-js@1.9.9)
       solid-js: 1.9.9
     optionalDependencies:
-      vite: 7.1.10(jiti@2.5.1)(lightningcss@1.30.1)(yaml@2.8.1)
+      vite: 7.1.11(jiti@2.5.1)(lightningcss@1.30.1)(yaml@2.8.1)
     transitivePeerDependencies:
       - supports-color
 
@@ -1910,7 +1910,7 @@ snapshots:
 
   validate-html-nesting@1.2.3: {}
 
-  vite-plugin-pages@0.33.1(@solidjs/router@0.15.3(solid-js@1.9.9))(vite@7.1.10(jiti@2.5.1)(lightningcss@1.30.1)(yaml@2.8.1)):
+  vite-plugin-pages@0.33.1(@solidjs/router@0.15.3(solid-js@1.9.9))(vite@7.1.11(jiti@2.5.1)(lightningcss@1.30.1)(yaml@2.8.1)):
     dependencies:
       '@types/debug': 4.1.12
       debug: 4.4.1
@@ -1921,14 +1921,14 @@ snapshots:
       micromatch: 4.0.8
       picocolors: 1.1.1
       tinyglobby: 0.2.15
-      vite: 7.1.10(jiti@2.5.1)(lightningcss@1.30.1)(yaml@2.8.1)
+      vite: 7.1.11(jiti@2.5.1)(lightningcss@1.30.1)(yaml@2.8.1)
       yaml: 2.8.1
     optionalDependencies:
       '@solidjs/router': 0.15.3(solid-js@1.9.9)
     transitivePeerDependencies:
       - supports-color
 
-  vite-plugin-solid@2.11.9(solid-js@1.9.9)(vite@7.1.10(jiti@2.5.1)(lightningcss@1.30.1)(yaml@2.8.1)):
+  vite-plugin-solid@2.11.9(solid-js@1.9.9)(vite@7.1.11(jiti@2.5.1)(lightningcss@1.30.1)(yaml@2.8.1)):
     dependencies:
       '@babel/core': 7.28.4
       '@types/babel__core': 7.20.5
@@ -1936,12 +1936,12 @@ snapshots:
       merge-anything: 5.1.7
       solid-js: 1.9.9
       solid-refresh: 0.6.3(solid-js@1.9.9)
-      vite: 7.1.10(jiti@2.5.1)(lightningcss@1.30.1)(yaml@2.8.1)
-      vitefu: 1.1.1(vite@7.1.10(jiti@2.5.1)(lightningcss@1.30.1)(yaml@2.8.1))
+      vite: 7.1.11(jiti@2.5.1)(lightningcss@1.30.1)(yaml@2.8.1)
+      vitefu: 1.1.1(vite@7.1.11(jiti@2.5.1)(lightningcss@1.30.1)(yaml@2.8.1))
     transitivePeerDependencies:
       - supports-color
 
-  vite@7.1.10(jiti@2.5.1)(lightningcss@1.30.1)(yaml@2.8.1):
+  vite@7.1.11(jiti@2.5.1)(lightningcss@1.30.1)(yaml@2.8.1):
     dependencies:
       esbuild: 0.25.11
       fdir: 6.5.0(picomatch@4.0.3)
@@ -1955,9 +1955,9 @@ snapshots:
       lightningcss: 1.30.1
       yaml: 2.8.1
 
-  vitefu@1.1.1(vite@7.1.10(jiti@2.5.1)(lightningcss@1.30.1)(yaml@2.8.1)):
+  vitefu@1.1.1(vite@7.1.11(jiti@2.5.1)(lightningcss@1.30.1)(yaml@2.8.1)):
     optionalDependencies:
-      vite: 7.1.10(jiti@2.5.1)(lightningcss@1.30.1)(yaml@2.8.1)
+      vite: 7.1.11(jiti@2.5.1)(lightningcss@1.30.1)(yaml@2.8.1)
 
   yallist@3.1.1: {}
 
