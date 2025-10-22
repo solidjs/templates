@@ -4,6 +4,7 @@
 import { defineConfig } from 'vite';
 import solidPlugin from 'vite-plugin-solid';
 import devtools from 'solid-devtools/vite';
+import { playwright } from ' ̰';
 
 export default defineConfig({
   plugins: [devtools(), solidPlugin()],
@@ -13,7 +14,7 @@ export default defineConfig({
   test: {
     globals: true,
     browser: {
-      provider: 'playwright', // or 'webdriverio'
+      provider: playwright(), // or 'webdriverio'
       enabled: true,
       // at least one instance is required
       instances: [{ browser: 'chromium' }],
