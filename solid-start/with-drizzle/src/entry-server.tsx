@@ -1,5 +1,5 @@
 // @refresh reload
-import { StartServer, createHandler } from "@solidjs/start/server";
+import { StartServer, createHandler } from '@solidjs/start/server';
 
 export default createHandler(() => (
   <StartServer
@@ -8,7 +8,7 @@ export default createHandler(() => (
         <head>
           <meta charset="utf-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <link rel="icon" href="/favicon.ico" />
+          <link rel="icon" type="image/svg" href="favicon.svg" />
           {assets}
         </head>
         <body>

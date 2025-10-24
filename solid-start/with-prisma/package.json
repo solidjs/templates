@@ -2,7 +2,7 @@
   "name": "example-with-prisma",
   "type": "module",
   "scripts": {
-    "dev": "vinxi dev",
+    "dev": "vinxi dev --port 3000",
     "build": "vinxi build",
     "start": "vinxi start"
   },

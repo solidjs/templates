@@ -1,16 +1,16 @@
 // @refresh reload
-import { createHandler, FetchEvent, StartServer } from "@solidjs/start/server";
-import { createMemoryHistory } from "@tanstack/solid-router";
-import { router } from "./router";
+import { createHandler, FetchEvent, StartServer } from '@solidjs/start/server';
+import { createMemoryHistory } from '@tanstack/solid-router';
+import { router } from './router';
 
 const routerLoad = async (event: FetchEvent) => {
   const url = new URL(event.request.url);
-  const path = url.href.replace(url.origin, "");
+  const path = url.href.replace(url.origin, '');
 
   router.update({
     history: createMemoryHistory({
-      initialEntries: [path]
-    })
+      initialEntries: [path],
+    }),
   });
 
   await router.load();
@@ -23,8 +23,11 @@ export default createHandler(
         <html lang="en">
           <head>
             <meta charset="utf-8" />
-            <meta name="viewport" content="width=device-width, initial-scale=1" />
-            <link rel="icon" href="/favicon.ico" />
+            <meta
+              name="viewport"
+              content="width=device-width, initial-scale=1"
+            />
+            <link rel="icon" type="image/svg" href="favicon.svg" />
             {assets}
           </head>
           <body>
@@ -36,5 +39,5 @@ export default createHandler(
     />
   ),
   undefined,
-  routerLoad
+  routerLoad,
 );

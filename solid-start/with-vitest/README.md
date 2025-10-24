@@ -1,33 +1,25 @@
-# SolidStart
+# SolidStart Template
 
-Everything you need to build a Solid project, powered by [`solid-start`](https://start.solidjs.com);
+[Vitest](https://vitest.dev) enables unit tests in your app. For more information on SolidStart, refer to the [README](https://github.com/solidjs/solid-start/tree/main/packages/start#readme) or visit the official [documentation](https://docs.solidjs.com/solid-start/).
 
-## Creating a project
+## Installation
 
-```bash
-# create a new project in the current directory
-npm init solid@latest
-
-# create a new project in my-app
-npm init solid@latest my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Generate the **with-vitest** template using your preferred package manager
 
 ```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+# using npm
+npm create solid@latest -- -st with-vitest
 ```
 
-## Building
+```bash
+# using pnpm
+pnpm create solid@latest -st with-vitest
+```
 
-Solid apps are built with _presets_, which optimise your project for deployment to different environments.
-
-By default, `npm run build` will generate a Node app that you can run with `npm start`. To use a different preset, add it to the `devDependencies` in `package.json` and specify in your `app.config.js`.
+```bash
+# using bun
+bun create solid@latest --s --t with-vitest
+```
 
 ## Testing
 
@@ -35,6 +27,6 @@ Tests are written with `vitest`, `@solidjs/testing-library` and `@testing-librar
 
 To run them, simply start:
 
-```sh
+```bash
 npm test
 ```

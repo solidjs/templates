@@ -1,16 +1,31 @@
-# SolidStart + AuthJS
+# SolidStart Template
 
-## Setup a Discord app
+Everything you need to build an [AuthJS](https://authjs.dev) authenticated Solid project. For more information on SolidStart, refer to the [README](https://github.com/solidjs/solid-start/tree/main/packages/start#readme) or visit the official [documentation](https://docs.solidjs.com/solid-start/).
+
+## Installation
+
+Generate the **with-authjs** template using your preferred package manager
+
+```bash
+# using npm
+npm create solid@latest -- -st with-authjs
+```
+
+```bash
+# using pnpm
+pnpm create solid@latest -st with-authjs
+```
+
+```bash
+# using bun
+bun create solid@latest --s --t with-authjs
+```
+
+## Configuration
 
 In order to run this example, you need to setup i.e. a Discord app in here: https://discord.com/developers/applications/, to get a client secret and client id which should be added to the .env file. Also, in the Discord app settings under OAuth2, set the Return URL to: http://localhost:3000/api/auth/callback/discord
 
-## AuthJS
-
-Everything you need to build an [AuthJS](https://authjs.dev/) authenticated Solid project, powered by [`solid-start`](https://start.solidjs.com);
-
-This will start a production server on port `3000`.
-
-### Enviroment Variables
+Enviroment Variables:
 
 - `DISCORD_ID`=
 - `DISCORD_SECRET`=
