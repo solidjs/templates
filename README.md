@@ -115,7 +115,7 @@ $ npm install # or pnpm install or yarn install
 
 ```bash
 # TanStack Start
-$ npx degit solidjs/templates/tanstack-start my-solid-project
+$ npx degit solidjs/templates/vanilla/with-tanstack-start my-solid-project
 $ cd my-solid-project
 $ npm install # or pnpm install or yarn install
 ```
