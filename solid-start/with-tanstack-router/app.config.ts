@@ -1,8 +1,9 @@
-import { defineConfig } from "@solidjs/start/config";
-import { TanStackRouterVite } from "@tanstack/router-plugin/vite";
+import { defineConfig } from '@solidjs/start/config';
+import { tanstackRouter } from '@tanstack/router-plugin/vite';
 
 export default defineConfig({
   vite: {
-    plugins: [TanStackRouterVite({ target: "solid" })]
-  }
+    // @ts-expect-error Vite 7 plugin types
+    plugins: [tanstackRouter({ target: 'solid' })],
+  },
 });
