@@ -20,13 +20,13 @@ importers:
         version: 6.6.3
       '@vitest/browser-playwright':
         specifier: ^4.0.0
-        version: 4.0.1(msw@2.7.3(typescript@5.9.2))(playwright@1.50.1)(vite@7.1.10)(vitest@4.0.1)
+        version: 4.0.1(msw@2.7.3(typescript@5.9.2))(playwright@1.55.1)(vite@7.1.10)(vitest@4.0.1)
       jsdom:
         specifier: ^25.0.1
         version: 25.0.1
       playwright:
         specifier: ^1.50.1
-        version: 1.50.1
+        version: 1.55.1
       solid-devtools:
         specifier: ^0.34.3
         version: 0.34.3(solid-js@1.9.9)(vite@7.1.10)
@@ -854,8 +854,8 @@ packages:
     resolution: {integrity: sha512-DyFP3BM/3YHTQOCUL/w0OZHR0lpKeGrxotcHWcqNEdnltqFwXVfhEBQ94eIo34AfQpo0rGki4cyIiftY06h2Fg==}
     engines: {node: 6.* || 8.* || >= 10.*}
 
-  graphql@16.11.0:
-    resolution: {integrity: sha512-mS1lbMsxgQj6hge1XZ6p7GPhbrtFwUFYi3wRzXAC/FmYnyXMTvvI3td3rjmQ2u8ewXueaSvRPWaEcgVVOT9Jnw==}
+  graphql@16.12.0:
+    resolution: {integrity: sha512-DKKrynuQRne0PNpEbzuEdHlYOMksHSUI8Zc9Unei5gTsMNA2/vMpoMz/yKba50pejK56qj98qM0SjYxAKi13gQ==}
     engines: {node: ^12.22.0 || ^14.16.0 || ^16.0.0 || >=17.0.0}
 
   has-flag@4.0.0:
@@ -1011,13 +1011,13 @@ packages:
     resolution: {integrity: sha512-1wrVzJ2STrpmONHKBy228LM1b84msXDUoAzVEl0R8Mz4Ce6EPr+IVtxm8+yvrqLYMHswREkjYFaMxnyGnaY3Ng==}
     hasBin: true
 
-  playwright-core@1.50.1:
-    resolution: {integrity: sha512-ra9fsNWayuYumt+NiM069M6OkcRb1FZSK8bgi66AtpFoWkg2+y0bJSNmkFrWhMbEBbVKC/EruAHH3g0zmtwGmQ==}
+  playwright-core@1.55.1:
+    resolution: {integrity: sha512-Z6Mh9mkwX+zxSlHqdr5AOcJnfp+xUWLCt9uKV18fhzA8eyxUd8NUWzAjxUh55RZKSYwDGX0cfaySdhZJGMoJ+w==}
     engines: {node: '>=18'}
     hasBin: true
 
-  playwright@1.50.1:
-    resolution: {integrity: sha512-G8rwsOQJ63XG6BbKj2w5rHeavFjy5zynBA9zsJMMtBoe/Uf757oG12NXz6e6OirF7RCrTVAKFXbLmn1RbL7Qaw==}
+  playwright@1.55.1:
+    resolution: {integrity: sha512-cJW4Xd/G3v5ovXtJJ52MAOclqeac9S/aGGgRzLabuF8TnIb6xHvMzKIa6JmrRzUkeXJgfL1MhukP0NK6l39h3A==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -1913,11 +1913,11 @@ snapshots:
   '@types/tough-cookie@4.0.5':
     optional: true
 
-  '@vitest/browser-playwright@4.0.1(msw@2.7.3(typescript@5.9.2))(playwright@1.50.1)(vite@7.1.10)(vitest@4.0.1)':
+  '@vitest/browser-playwright@4.0.1(msw@2.7.3(typescript@5.9.2))(playwright@1.55.1)(vite@7.1.10)(vitest@4.0.1)':
     dependencies:
       '@vitest/browser': 4.0.1(msw@2.7.3(typescript@5.9.2))(vite@7.1.10)(vitest@4.0.1)
       '@vitest/mocker': 4.0.1(msw@2.7.3(typescript@5.9.2))(vite@7.1.10)
-      playwright: 1.50.1
+      playwright: 1.55.1
       tinyrainbow: 3.0.3
       vitest: 4.0.1(@vitest/browser-playwright@4.0.1)(jsdom@25.0.1)(msw@2.7.3(typescript@5.9.2))
     transitivePeerDependencies:
@@ -2171,7 +2171,7 @@ snapshots:
   get-caller-file@2.0.5:
     optional: true
 
-  graphql@16.11.0:
+  graphql@16.12.0:
     optional: true
 
   has-flag@4.0.0: {}
@@ -2288,7 +2288,7 @@ snapshots:
       '@open-draft/until': 2.1.0
       '@types/cookie': 0.6.0
       '@types/statuses': 2.0.6
-      graphql: 16.11.0
+      graphql: 16.12.0
       headers-polyfill: 4.0.3
       is-node-process: 1.2.0
       outvariant: 1.4.3
@@ -2336,11 +2336,11 @@ snapshots:
     dependencies:
       pngjs: 7.0.0
 
-  playwright-core@1.50.1: {}
+  playwright-core@1.55.1: {}
 
-  playwright@1.50.1:
+  playwright@1.55.1:
     dependencies:
-      playwright-core: 1.50.1
+      playwright-core: 1.55.1
     optionalDependencies:
       fsevents: 2.3.2
 
@@ -2610,7 +2610,7 @@ snapshots:
       vite: 7.1.10
       why-is-node-running: 2.3.0
     optionalDependencies:
-      '@vitest/browser-playwright': 4.0.1(msw@2.7.3(typescript@5.9.2))(playwright@1.50.1)(vite@7.1.10)(vitest@4.0.1)
+      '@vitest/browser-playwright': 4.0.1(msw@2.7.3(typescript@5.9.2))(playwright@1.55.1)(vite@7.1.10)(vitest@4.0.1)
       jsdom: 25.0.1
     transitivePeerDependencies:
       - jiti
