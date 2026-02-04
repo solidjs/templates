@@ -15,6 +15,9 @@
     "vinxi": "^0.5.7",
     "solid-mdx": "^0.0.7"
   },
+  "overrides": {
+    "h3": "^1.15.5"
+  },
   "engines": {
     "node": ">=22"
   }
