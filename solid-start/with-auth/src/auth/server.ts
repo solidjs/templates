@@ -1,5 +1,5 @@
 import { redirect } from "@solidjs/router";
-import { useSession } from "vinxi/http";
+import { useSession } from "@solidjs/start/http";
 import { getRandomValues, subtle, timingSafeEqual } from "crypto";
 import { createUser, findUser } from "./db";
 
@@ -10,7 +10,7 @@ export interface Session {
 
 export const getSession = () =>
   useSession<Session>({
-    password: process.env.SESSION_SECRET!
+    password: process.env.SESSION_SECRET ?? "default_password_which_should_be_long_enough"
   });
 
 export async function createSession(user: Session, redirectTo?: string) {
