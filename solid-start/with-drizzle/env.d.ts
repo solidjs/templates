@@ -1,4 +1,4 @@
-/// <reference types="vinxi/types/client" />
+/// <reference types="vite/client" />
 
 interface ImportMetaEnv {
   DB_URL: string;

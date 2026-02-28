@@ -1,6 +1,6 @@
 "use server";
 import { redirect } from "@solidjs/router";
-import { useSession } from "vinxi/http";
+import { useSession } from "@solidjs/start/http";
 import { eq } from "drizzle-orm";
 import { db } from "./db";
 import { Users } from "../../drizzle/schema";

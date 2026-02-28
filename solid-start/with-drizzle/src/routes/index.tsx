@@ -3,7 +3,7 @@ import { getUser, logout } from "~/api";
 
 export const route = {
   preload() {
-    getUser();
+    return getUser();
   }
 } satisfies RouteDefinition;
 
