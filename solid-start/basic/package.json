@@ -2,19 +2,21 @@
   "name": "example-basic",
   "type": "module",
   "scripts": {
-    "dev": "vinxi dev",
-    "build": "vinxi build",
-    "start": "vinxi start",
-    "version": "vinxi version"
+    "dev": "vite dev",
+    "build": "vite build",
+    "start": "vite start",
+    "preview": "vite preview"
   },
   "dependencies": {
     "@solidjs/meta": "^0.29.4",
     "@solidjs/router": "^0.15.0",
-    "@solidjs/start": "^1.1.0",
+    "@solidjs/start": "2.0.0-alpha.2",
     "solid-js": "^1.9.5",
-    "vinxi": "^0.5.7"
+    "vite": "^7.0.0",
+    "nitro": "3.0.1-alpha.2"
   },
   "engines": {
     "node": ">=22"
-  }
+  },
+  "devDependencies": {}
 }

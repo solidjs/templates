@@ -1,12 +1,13 @@
 {
   "name": "example-with-vitest",
   "scripts": {
-    "dev": "vinxi dev",
-    "build": "vinxi build",
-    "start": "vinxi start",
+    "dev": "vite dev",
+    "build": "vite build",
+    "start": "vite start",
     "test": "vitest run",
     "test-watch": "vitest",
-    "test-ui": "vitest --ui"
+    "test-ui": "vitest --ui",
+    "preview": "vite preview"
   },
   "type": "module",
   "devDependencies": {
@@ -20,9 +21,11 @@
     "jsdom": "^25.0.1",
     "solid-js": "^1.9.3",
     "typescript": "^5.6.3",
-    "vinxi": "^0.5.7",
-    "vite": "^7.1.10",
+    "vite": "^7.0.0",
     "vite-plugin-solid": "^2.11.6",
     "vitest": "^4.0.0"
+  },
+  "dependencies": {
+    "nitro": "3.0.1-alpha.2"
   }
 }
