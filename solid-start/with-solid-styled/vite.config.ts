@@ -1,5 +1,5 @@
 import { defineConfig } from "vite";
-import { nitro } from "nitro/vite";
+import { nitroV2Plugin as nitro } from "@solidjs/vite-plugin-nitro-2";
 import { solidStart } from "@solidjs/start/config";
 import type { PluginOption } from "vite";
 import solidStyled from "unplugin-solid-styled";
