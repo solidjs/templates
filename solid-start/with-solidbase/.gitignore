@@ -4,5 +4,5 @@
 node_modules/
 .output/
 dist/
-.solid-start/
 .nitro/
+.solid-start/
