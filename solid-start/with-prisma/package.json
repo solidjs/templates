@@ -8,13 +8,15 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13",
     "@types/node": "^24.7.0"
   },
   "dependencies": {
-    "@prisma/client": "^5.12.1",
+    "@prisma/adapter-better-sqlite3": "^7.5.0",
+    "@prisma/client": "^7.5.0",
     "@solidjs/router": "^0.15.0",
     "@solidjs/start": "2.0.0-alpha.2",
-    "prisma": "^5.12.1",
+    "prisma": "^7.5.0",
     "solid-js": "^1.9.5",
     "vite": "^7.0.0",
     "@solidjs/vite-plugin-nitro-2": "^0.1.0"
