@@ -1,0 +1,23 @@
+{
+  "name": "with-tanstack-router",
+  "type": "module",
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build",
+    "start": "vite start",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@tanstack/solid-router": "^1.135.2",
+    "@tanstack/solid-router-devtools": "^1.135.2",
+    "@tanstack/router-plugin": "^1.135.2",
+    "@solidjs/start": "2.0.0-alpha.2",
+    "solid-js": "^1.9.10",
+    "vite": "^7.0.0",
+    "@solidjs/vite-plugin-nitro-2": "^0.1.0"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {}
+}

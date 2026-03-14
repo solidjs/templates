@@ -1,0 +1,23 @@
+{
+  "name": "example-with-unocss",
+  "type": "module",
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build",
+    "start": "vite start",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@solidjs/router": "^0.15.3",
+    "@solidjs/start": "2.0.0-alpha.2",
+    "@solidjs/vite-plugin-nitro-2": "^0.1.0",
+    "@unocss/preset-wind4": "^66.5.2",
+    "@unocss/reset": "^66.5.2",
+    "solid-js": "^1.9.9",
+    "unocss": "^66.5.2",
+    "vite": "^7.0.0"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

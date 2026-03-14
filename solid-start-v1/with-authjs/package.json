@@ -1,0 +1,36 @@
+{
+  "name": "example-with-authjs",
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build",
+    "start": "vite start",
+    "lint": "eslint --fix \"**/*.{ts,tsx,js,jsx}\"",
+    "preview": "vite preview"
+  },
+  "type": "module",
+  "devDependencies": {
+    "@types/node": "^24.7.0",
+    "@typescript-eslint/eslint-plugin": "^7.6.0",
+    "@typescript-eslint/parser": "^7.6.0",
+    "eslint": "^8.56.0",
+    "eslint-plugin-solid": "^0.14.3",
+    "typescript": "^5.6.2"
+  },
+  "dependencies": {
+    "@solidjs/router": "^0.15.1",
+    "@solidjs/start": "2.0.0-alpha.2",
+    "solid-js": "^1.9.5",
+    "@solidjs/meta": "^0.29.4",
+    "zod": "^3.22.4",
+    "@auth/core": "^0.41.1",
+    "start-authjs": "^1.0.0",
+    "postcss": "^8.4.40",
+    "autoprefixer": "^10.4.19",
+    "tailwindcss": "^3.4.7",
+    "vite": "^7.0.0",
+    "@solidjs/vite-plugin-nitro-2": "^0.1.0"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
