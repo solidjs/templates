@@ -5,6 +5,8 @@ import { eq } from "drizzle-orm";
 import { db } from "./db";
 import { Users } from "../../drizzle/schema";
 
+const SESSION_COOKIE_NAME = "solid_start_drizzle_session";
+
 function validateUsername(username: unknown) {
   if (typeof username !== "string" || username.length < 3) {
     return `Usernames must be at least 3 characters long`;
@@ -31,7 +33,14 @@ async function register(username: string, password: string) {
 
 function getSession() {
   return useSession({
-    password: process.env.SESSION_SECRET ?? "areallylongsecretthatyoushouldreplace"
+    name: SESSION_COOKIE_NAME,
+    password: process.env.SESSION_SECRET ?? "areallylongsecretthatyoushouldreplace",
+    cookie: {
+      httpOnly: true,
+      path: "/",
+      sameSite: "lax",
+      secure: process.env.NODE_ENV === "production"
+    }
   });
 }
 
