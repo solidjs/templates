@@ -5,10 +5,10 @@ import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   plugins: [
+    tailwindcss(),
     solidStart({
       ssr: true
     }),
-    tailwindcss(),
     nitro()
   ]
 });
