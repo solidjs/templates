@@ -3,7 +3,7 @@
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
-    "start": "vite start",
+    "start": "node .output/server/index.mjs",
     "test": "vitest run",
     "test-watch": "vitest",
     "test-ui": "vitest --ui",
