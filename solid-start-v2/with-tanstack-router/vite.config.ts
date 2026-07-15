@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite';
-import { nitroV2Plugin as nitro } from "@solidjs/vite-plugin-nitro-2";
+import { nitro } from "nitro/vite";
 import { solidStart } from '@solidjs/start/config';
 import { tanstackRouter } from '@tanstack/router-plugin/vite';
 

@@ -12,13 +12,13 @@
     "@kobalte/solidbase": "https://pkg.pr.new/kobaltedev/solidbase/@kobalte/solidbase@5b1e2c1",
     "@solidjs/meta": "^0.29.4",
     "@solidjs/router": "^0.15.3",
-    "@solidjs/start": "2.0.0-alpha.2",
-    "@solidjs/vite-plugin-nitro-2": "~0.2.0",
+    "@solidjs/start": "^2.0.0-beta.0",
+    "nitro": "^3.0.260610-beta",
     "solid-js": "^1.9.5",
-    "vite": "^7.0.0"
+    "vite": "^8.0.0"
   },
   "engines": {
-    "node": ">=22"
+    "node": ">=24"
   },
   "devDependencies": {}
 }
