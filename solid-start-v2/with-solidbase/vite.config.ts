@@ -1,5 +1,5 @@
 import { defineConfig } from "vite";
-import { nitroV2Plugin as nitro } from "@solidjs/vite-plugin-nitro-2";
+import { nitro } from "nitro/vite";
 import { solidStart } from "@solidjs/start/config";
 import { createSolidBase } from "@kobalte/solidbase/config";
 import defaultTheme from "@kobalte/solidbase/default-theme";
