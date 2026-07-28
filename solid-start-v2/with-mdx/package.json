@@ -9,9 +9,9 @@
   },
   "dependencies": {
     "@mdx-js/mdx": "^2.3.0",
-    "@solidjs/router": "^0.16.2",
-    "@solidjs/start": "^2.0.0-beta.0",
-    "solid-js": "^1.9.5",
+    "@solidjs/router": "^1.0.0",
+    "@solidjs/start": "^2.0.0-rc.6",
+    "solid-js": "^1.9.14",
     "solid-mdx": "^0.0.7",
     "vite": "^8.0.0",
     "@mdx-js/rollup": "^3.0.0",
