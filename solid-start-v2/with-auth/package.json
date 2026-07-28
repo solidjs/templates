@@ -9,9 +9,9 @@
   },
   "dependencies": {
     "@solidjs/meta": "^0.29.4",
-    "@solidjs/router": "^0.16.2",
-    "@solidjs/start": "^2.0.0-beta.0",
-    "solid-js": "^1.9.9",
+    "@solidjs/router": "^1.0.0",
+    "@solidjs/start": "^2.0.0-rc.6",
+    "solid-js": "^1.9.14",
     "start-oauth": "^1.3.0",
     "unstorage": "1.17.1",
     "vite": "^8.0.0",
