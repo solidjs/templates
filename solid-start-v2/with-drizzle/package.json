@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@solidjs/router": "^1.0.0",
-    "@solidjs/start": "^2.0.0-rc.6",
+    "@solidjs/start": "^2.0.0",
     "better-sqlite3": "^11.0.0",
     "drizzle-orm": "^0.45.2",
     "solid-js": "^1.9.14",

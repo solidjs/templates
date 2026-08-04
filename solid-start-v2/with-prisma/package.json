@@ -13,7 +13,7 @@
   "dependencies": {
     "@prisma/client": "^5.12.1",
     "@solidjs/router": "^1.0.0",
-    "@solidjs/start": "^2.0.0-rc.6",
+    "@solidjs/start": "^2.0.0",
     "prisma": "^5.12.1",
     "solid-js": "^1.9.14",
     "vite": "^8.0.0",

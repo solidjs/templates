@@ -10,7 +10,7 @@
   "dependencies": {
     "@solidjs/meta": "^0.29.4",
     "@solidjs/router": "^1.0.0",
-    "@solidjs/start": "^2.0.0-rc.6",
+    "@solidjs/start": "^2.0.0",
     "solid-js": "^1.9.14",
     "solid-styled": "^0.12.0",
     "unplugin-solid-styled": "^0.12.0",

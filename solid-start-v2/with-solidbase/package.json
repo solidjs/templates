@@ -12,7 +12,7 @@
     "@kobalte/solidbase": "https://pkg.pr.new/kobaltedev/solidbase/@kobalte/solidbase@5b1e2c1",
     "@solidjs/meta": "^0.29.4",
     "@solidjs/router": "^1.0.0",
-    "@solidjs/start": "^2.0.0-rc.6",
+    "@solidjs/start": "^2.0.0",
     "nitro": "^3.0.260610-beta",
     "solid-js": "^1.9.14",
     "vite": "^8.0.0"
