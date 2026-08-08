@@ -1,3 +1,12 @@
+> **PARKED — do not ship as-is.** The structure (routes, the four server
+> pillars) is final, but two load-bearing patterns are interim idioms awaiting
+> first-party API: `src/lib/session.ts` + the middleware's cookie handling
+> (awaiting the `@solidjs/web` session/cookie helper) and the env baseline —
+> the `SESSION_SECRET` startup assertion, the `loadEnv` line in
+> `vite.config.ts`, and `.env.example` (awaiting the plugin's `start.env`
+> typed-env feature). This README is not final either; rewrite those sections
+> when the APIs land.
+
 ## Solid `fullstack` template
 
 `basic` plus a server. Same structure, same routes, same tests — the diff against `basic` is what a server adds:
