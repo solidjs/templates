@@ -1,14 +1,33 @@
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
   text-align: center;
+}
+
+nav {
+  padding: 1rem;
+  background-color: #282c34;
+}
+
+nav a {
+  margin: 0 0.5rem;
+  color: #b318f0;
 }
 
 main {
   padding: 3rem 1rem;
 }
 
-button.increment {
+.logo {
+  animation: logo-spin infinite 20s linear;
+  height: 24vmin;
+  pointer-events: none;
+}
+
+.increment {
   font-size: 1rem;
   padding: 0.5rem 1.5rem;
   cursor: pointer;
@@ -16,4 +35,13 @@ button.increment {
 
 a {
   color: #2c4f7c;
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }

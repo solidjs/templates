@@ -1,8 +1,8 @@
-## Solid 2.0 SSR template
+## Solid `basic` template
 
-Streaming server-side rendering on the Solid 2.0 stack via `vite-plugin-solid`'s turnkey SSR mode (`ssr: {}`): `solid-js` + `@solidjs/web` 2.0, `@solidjs/router` 2.0 with file-system routing (`filesystem-routing` + `@solidjs/router/fs`), and `@solidjs/meta` 1.0.
+A routed Solid 2.0 app that still deploys as pure static files: `solid-js` + `@solidjs/web`, `@solidjs/router` with file-system routes (`filesystem-routing` + `@solidjs/router/fs`), per-page titles via `@solidjs/meta`, and a `vitest` test suite. There are no server dependencies — `vite build` produces a purely static site with a prerendered document shell; deploy `dist/client` anywhere.
 
-There are no entry files to maintain: the plugin generates the server and client entries around `src/App.tsx`, wrapped in the `src/Document.tsx` shell. This is the same app shape as the `solid-v2/basic` SPA template — `src/App.tsx`, `src/routes`, and `src/components` are identical; the SSR part is the one plugin flag plus the document/server files.
+There is no `index.html` and no mount file: `vite-plugin-solid`'s turnkey mode generates the entries around `src/App.tsx`, wrapped in the `src/Document.tsx` shell. `Document.tsx` is where site-wide head tags go; it is compiled only into the static shell and adds zero client-side JS. Per-page head tags (like `<Title>`) live in the route modules.
 
 ## Usage
 
@@ -20,45 +20,41 @@ $ npm install # or pnpm install or yarn install
 
 In the project directory, you can run:
 
-### `npm run dev`
+### `npm run dev` or `npm start`
 
-Runs the app in the development mode: the vite dev server streams the server render (with the entry graph's CSS inlined) and hydrates on the client.<br>
+Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+The page will reload if you make edits.<br>
 
 ### `npm run build`
 
-Builds client assets (+ manifest) to `dist/client` and the server bundle to `dist/server/server.js`.
-
-### `npm start`
-
-Runs the production build with the included `server.js` — a minimal node server that serves `dist/client` statically and dispatches everything else through the built handler.
+Builds the app for production: prerenders the document shell into `dist/client/index.html` and emits the static client assets alongside it. Routes are code-split automatically.
 
 ### `npm run serve`
 
-`vite preview` also runs the production artifact with no server file: preview statics serve `dist/client` and pages dispatch through the built handler.
+Serves the production build locally.
+
+### `npm test`
+
+Runs the test suite with [vitest](https://vitest.dev) + [@solidjs/testing-library](https://github.com/solidjs/solid-testing-library). See `src/components/Counter.test.tsx` for the pattern.
 
 ## File-system routing
 
-Route modules live in `src/routes`: `index.tsx` is `/`, `about.tsx` is `/about`, `blog/[id].tsx` would be `/blog/:id`, and `[...404].tsx` catches everything else. A module is a page when it has a default export, and may export a `route` config object (preload etc.). See the [filesystem-routing](https://github.com/solidjs/filesystem-routing) README for the full convention.
+Route modules live in `src/routes` and are wired through the `fileRoutes()` vite plugin plus `@solidjs/router/fs` inside `src/App.tsx`:
 
-API routes are available through the `ssr.middleware` option: point it at a module default-exporting `[createAPIHandler(routes)]` from `filesystem-routing/api`, and uppercase `GET`/`POST`/... exports in route modules answer requests.
+- `index.tsx` is `/`, `about.tsx` would be `/about`, `users/[id].tsx` is `/users/:id`, and `[...404].tsx` would catch everything else.
+- Pairing `users.tsx` with the `users/` directory makes it a layout wrapping every page inside.
+- A module is a page when it has a default export, and may export a `route` config object (preload etc.).
+
+See the [filesystem-routing](https://github.com/solidjs/filesystem-routing) README for the full convention.
 
 ## Deployment
 
-The built server entry exports `handleRequest(request)`, an adapter-agnostic web `Request -> Response` handler:
+Deploy the `dist/client` folder to any static host provider (netlify, surge, now, etc.)
 
-```js
-import { handleRequest } from './dist/server/server.js';
-// serve dist/client statically, everything else:
-const response = await handleRequest(request);
-```
+## Growing out of `basic`
 
-`server.js` is the node version of exactly that; on web-native platforms (workers, Deno, Bun.serve) use `handleRequest` directly.
-
-## Conventions
-
-- `src/App.tsx` — the app root, a plain content component with the router inside (also probed as `src/app.*`, or set `ssr.app`).
-- `src/Document.tsx` — the document shell wrapping the app; must render the full `<html>` including `<HydrationScript />`. Optional: delete it for the built-in shell.
-- `src/entry-server.*` / `src/entry-client.*` — bring-your-own entries escape hatch; if present the plugin uses them instead of generating entries.
-- `ssr.middleware` — a fetch-style middleware chain module fronting every request (see the `vite-plugin-solid` README).
-- `server-only` / `client-only` — import these markers (typed via `vite-plugin-solid/boundary-modules` in `src/vite-env.d.ts`) in a module to fail the build if it leaks to the other side.
+- **Streaming SSR** is one flag: add `ssr: true` next to `start: true` in `vite.config.ts`. `src/App.tsx` and `src/Document.tsx` carry over unchanged (`<HydrationScript />` is already in place; in client mode it is stripped from the static shell).
+- **A server** (data loading via server functions, mutations, sessions, API routes) is the `fullstack` template — same structure, more floors.
+- Want less? The `bare` template is the same shape without the router.

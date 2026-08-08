@@ -1,32 +1,27 @@
-import { createSignal } from 'solid-js';
+import { pageRoutes } from 'virtual:file-routes';
+import { Title } from '@solidjs/meta';
+import { createRouter } from '@solidjs/router';
+import { fileRoutes } from '@solidjs/router/fs';
+import { Loading } from 'solid-js';
 import './App.css';
 
-// The app root: a plain content component — the document shell lives in
-// src/Document.tsx. This file is the whole demo; replace its contents to
-// start your app.
-export default function App() {
-  const [count, setCount] = createSignal(0);
+const Router = createRouter({ routes: fileRoutes(pageRoutes) });
 
+// The app root: the router and the site-wide layout live here. Pages are
+// the modules under src/routes.
+export default function App() {
   return (
-    <main>
-      <h1>Hello Solid!</h1>
-      <button
-        class="increment"
-        onClick={() => setCount(count() + 1)}
-        type="button"
-      >
-        Clicks: {count()}
-      </button>
-      <p>
-        Edit <code>src/App.tsx</code> and save to reload.
-      </p>
-      <a
-        href="https://docs.solidjs.com"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Learn Solid
-      </a>
-    </main>
+    <Router>
+      {(props) => (
+        <>
+          <Title>Solid App</Title>
+          <nav>
+            <a href="/">Home</a>
+            <a href="/users/1">Users</a>
+          </nav>
+          <Loading fallback={<main>Loading…</main>}>{props.children}</Loading>
+        </>
+      )}
+    </Router>
   );
 }
