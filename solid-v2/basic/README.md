@@ -1,8 +1,33 @@
 ## Solid `basic` template
 
-A routed Solid 2.0 app that still deploys as pure static files: `solid-js` + `@solidjs/web`, `@solidjs/router` with file-system routes (`filesystem-routing` + `@solidjs/router/fs`), per-page titles via `@solidjs/meta`, and a `vitest` test suite. There are no server dependencies — `vite build` produces a purely static site with a prerendered document shell; deploy `dist/client` anywhere.
+`bare` plus the app floors most projects want: `@solidjs/router` with file-system routes, per-page titles via `@solidjs/meta`, and a `vitest` test suite.
 
-There is no `index.html` and no mount file: `vite-plugin-solid`'s turnkey mode generates the entries around `src/App.tsx`, wrapped in the `src/Document.tsx` shell. `Document.tsx` is where site-wide head tags go; it is compiled only into the static shell and adds zero client-side JS. Per-page head tags (like `<Title>`) live in the route modules.
+**Deployment contract:** still zero server dependencies — `vite build` emits a purely static site; deploy `dist/client` to any static host.
+
+## How it works
+
+There is no `index.html` and no mount file. `vite-plugin-solid`'s turnkey mode (`start: true` in `vite.config.ts`) generates the entries around two conventions:
+
+- **`src/App.tsx`** — the app, router included. The `<Router>` wraps a shared nav and a `<Loading>` boundary; its routes come from the file system (below).
+- **`src/Document.tsx`** — the document shell, the new `index.html`. Site-wide head tags go here; it is compiled only into the prerendered static shell and adds **zero client-side JS**. Per-page head tags (`<Title>` from `@solidjs/meta`) live in the route modules.
+
+## File-system routing
+
+The `fileRoutes()` plugin (from `filesystem-routing/vite`) scans `src/routes` and exposes the result as the `virtual:file-routes` module, which `@solidjs/router/fs` turns into router routes inside `src/App.tsx`. You edit files under `src/routes`; the route table follows:
+
+- `index.tsx` is `/`, `users/[id].tsx` is `/users/:id`, `[...404].tsx` catches everything else.
+- Pairing `users.tsx` with the `users/` directory makes it a layout wrapping every page inside.
+- A module is a page when it has a **default export** (a file without one is not a route), and may export a `route` config object — `src/routes/users/[id].tsx` uses `preload` to start its data fetch as navigation begins.
+
+Every route is code-split automatically; navigating loads only that page's module.
+
+## Data loading
+
+`src/routes/users/[id].tsx` shows the data pattern: a `query()` (from `@solidjs/router`) over a plain `fetch`, read through a memo. The surrounding `<Loading>` boundary in `App.tsx` shows its fallback until the promise settles, and `query()` caches by key so preload and render share one request. Swap the static `/users.json` for any API endpoint.
+
+## Testing
+
+`vitest` runs component tests in jsdom via `@solidjs/testing-library` — add `*.test.tsx` files next to what they test. See `src/components/Counter.test.tsx` for the pattern; note Solid 2.0 batches DOM updates, so tests call `flush()` after firing events before asserting on the DOM.
 
 ## Usage
 
@@ -29,7 +54,7 @@ The page will reload if you make edits.<br>
 
 ### `npm run build`
 
-Builds the app for production: prerenders the document shell into `dist/client/index.html` and emits the static client assets alongside it. Routes are code-split automatically.
+Builds the static production site to `dist/client`, routes code-split.
 
 ### `npm run serve`
 
@@ -37,24 +62,13 @@ Serves the production build locally.
 
 ### `npm test`
 
-Runs the test suite with [vitest](https://vitest.dev) + [@solidjs/testing-library](https://github.com/solidjs/solid-testing-library). See `src/components/Counter.test.tsx` for the pattern.
+Runs the test suite.
 
-## File-system routing
+## The `ssr` flip
 
-Route modules live in `src/routes` and are wired through the `fileRoutes()` vite plugin plus `@solidjs/router/fs` inside `src/App.tsx`:
-
-- `index.tsx` is `/`, `about.tsx` would be `/about`, `users/[id].tsx` is `/users/:id`, and `[...404].tsx` would catch everything else.
-- Pairing `users.tsx` with the `users/` directory makes it a layout wrapping every page inside.
-- A module is a page when it has a default export, and may export a `route` config object (preload etc.).
-
-See the [filesystem-routing](https://github.com/solidjs/filesystem-routing) README for the full convention.
-
-## Deployment
-
-Deploy the `dist/client` folder to any static host provider (netlify, surge, now, etc.)
+Streaming SSR is one boolean: add `ssr: true` next to `start: true` in `vite.config.ts`. `src/App.tsx`, `src/Document.tsx`, and the routes carry over unchanged — `<HydrationScript />` is already in place in the Document (in client mode it is stripped from the static shell).
 
 ## Growing out of `basic`
 
-- **Streaming SSR** is one flag: add `ssr: true` next to `start: true` in `vite.config.ts`. `src/App.tsx` and `src/Document.tsx` carry over unchanged (`<HydrationScript />` is already in place; in client mode it is stripped from the static shell).
 - **A server** (data loading via server functions, mutations, sessions, API routes) is the `fullstack` template — same structure, more floors.
 - Want less? The `bare` template is the same shape without the router.

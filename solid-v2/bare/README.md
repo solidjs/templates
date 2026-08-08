@@ -1,8 +1,17 @@
 ## Solid `bare` template
 
-The smallest useful Solid 2.0 app: `solid-js` + `@solidjs/web`, no router, no server dependencies. `vite build` produces a purely static site with a prerendered document shell — deploy `dist/client` anywhere — and the client ships only Solid and your component.
+The smallest useful Solid 2.0 app: `solid-js` + `@solidjs/web`, no router, no server dependencies.
 
-There is no `index.html` and no mount file: `vite-plugin-solid`'s turnkey mode generates the entries around `src/App.tsx`, wrapped in the `src/Document.tsx` shell. `Document.tsx` is where head tags go (title, meta, favicon); it is compiled only into the static shell and adds zero client-side JS.
+**Deployment contract:** `vite build` emits a purely static site — deploy `dist/client` to any static host. The client ships only Solid and your component.
+
+## How it works
+
+There is no `index.html` and no mount file. `vite-plugin-solid`'s turnkey mode (`start: true` in `vite.config.ts`) generates the entries around two conventions:
+
+- **`src/App.tsx`** — the app. A plain default-exported component; everything you build lives under it.
+- **`src/Document.tsx`** — the document shell, the new `index.html`. It renders the full `<html>` and is where head tags go (title, meta, favicon). It is compiled only into the prerendered static shell and adds **zero client-side JS**. Delete it to fall back to the plugin's built-in shell.
+
+`vite build` prerenders the shell into `dist/client/index.html` and emits the client assets alongside it.
 
 ## Usage
 
@@ -29,18 +38,17 @@ The page will reload if you make edits.<br>
 
 ### `npm run build`
 
-Builds the app for production: prerenders the document shell into `dist/client/index.html` and emits the static client assets alongside it.
+Builds the static production site to `dist/client`.
 
 ### `npm run serve`
 
 Serves the production build locally.
 
-## Deployment
+## The `ssr` flip
 
-Deploy the `dist/client` folder to any static host provider (netlify, surge, now, etc.)
+Streaming SSR is one boolean: add `ssr: true` next to `start: true` in `vite.config.ts`. `src/App.tsx` and `src/Document.tsx` carry over unchanged — `<HydrationScript />` is already in place in the Document (in client mode it is stripped from the static shell). The build then emits a request handler to `dist/server` instead of a purely static site.
 
 ## Growing out of `bare`
 
-- **Streaming SSR** is one flag: add `ssr: true` next to `start: true` in `vite.config.ts`. `src/App.tsx` and `src/Document.tsx` carry over unchanged (`<HydrationScript />` is already in place; in client mode it is stripped from the static shell).
 - **A router, file-system routes, per-page titles, and testing** come with the `basic` template — same structure, more floors.
 - **A server** (data loading, mutations, sessions, API routes) is the `fullstack` template.
