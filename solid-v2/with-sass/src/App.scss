@@ -1,0 +1,50 @@
+// basic's App.css, expressed as Sass: variables for the palette, nesting
+// for scope. Vite compiles it because the file ends in .scss — no config.
+$nav-bg: #282c34;
+$nav-link: #b318f0;
+$link: #2c4f7c;
+
+body {
+  margin: 0;
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
+  text-align: center;
+}
+
+nav {
+  padding: 1rem;
+  background-color: $nav-bg;
+
+  a {
+    margin: 0 0.5rem;
+    color: $nav-link;
+  }
+}
+
+main {
+  padding: 3rem 1rem;
+}
+
+.logo {
+  animation: logo-spin infinite 20s linear;
+  height: 24vmin;
+  pointer-events: none;
+}
+
+.increment {
+  font-size: 1rem;
+  padding: 0.5rem 1.5rem;
+  cursor: pointer;
+}
+
+a {
+  color: $link;
+}
+
+@keyframes logo-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
