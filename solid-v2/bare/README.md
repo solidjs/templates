@@ -41,6 +41,6 @@ Deploy the `dist/client` folder to any static host provider (netlify, surge, now
 
 ## Growing out of `bare`
 
-- **Streaming SSR** is one flag: add `ssr: true` next to `start: true` in `vite.config.ts`, and add `<HydrationScript />` (from `@solidjs/web`) to the `<head>` in `src/Document.tsx`. `src/App.tsx` carries over unchanged.
+- **Streaming SSR** is one flag: add `ssr: true` next to `start: true` in `vite.config.ts`. `src/App.tsx` and `src/Document.tsx` carry over unchanged (`<HydrationScript />` is already in place; in client mode it is stripped from the static shell).
 - **A router, file-system routes, per-page titles, and testing** come with the `basic` template — same structure, more floors.
 - **A server** (data loading, mutations, sessions, API routes) is the `fullstack` template.

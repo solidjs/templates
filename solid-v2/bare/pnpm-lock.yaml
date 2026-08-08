@@ -547,7 +547,7 @@ packages:
     resolution: {integrity: sha512-doQi7e8EJ2OWneSG1aZpJluS6A49aZM0+EICXWKm1i6WvqTLmq0tpUcImc4KTWG50mORO0C4YDBtOCSYvElftw==}
 
   vite-plugin-solid@file:vite-plugin-solid-local.tgz:
-    resolution: {integrity: sha512-BCrYJYxrFVEaekwD0X3sHayLspv+8GXT047wQyxmLzIJVGuFKIPjdqapzEEukKuJ7NjA4DtD4nDFyQY+ATsKhw==, tarball: file:vite-plugin-solid-local.tgz}
+    resolution: {integrity: sha512-5xpn8qT51okfXjGw9ZfjiekTrOdLavYkmiFMLzQj/exbP3rpnDV4gkFhRygSXoWPatM2O4ypZh0J+MZsBkQpog==, tarball: file:vite-plugin-solid-local.tgz}
     version: 3.0.0-next.23
     peerDependencies:
       '@solidjs/web': '>=2.0.0-beta.32 <2.0.0-experimental.0'
