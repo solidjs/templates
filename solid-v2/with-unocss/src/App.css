@@ -1,0 +1,10 @@
+/* The one thing utility classes don't cover: the logo's slow spin. */
+.logo-spin {
+  animation: logo-spin infinite 20s linear;
+}
+
+@keyframes logo-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
