@@ -14,5 +14,7 @@ export default defineConfig({
   },
   build: {
     target: 'esnext',
+    // Keep images as asset files instead of inlining them into the JS bundle.
+    assetsInlineLimit: 0,
   },
 });
