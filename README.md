@@ -24,7 +24,7 @@ These templates are meant to be used as is via the [degit](https://github.com/Ri
 
 ## Solid 2.0 templates (preview)
 
-The `solid-v2` group targets the Solid 2.0 beta stack. Three tiers, each a strict superset of the last, each a deployment contract: `bare` (no router, pure static — the size showcase), `basic` (router + file-system routes + testing, still pure static), and `fullstack` (streaming SSR with server functions, sessions, and API routes). Every tier flips between client rendering and SSR with one boolean; see each template's README.
+The `solid-v2` group targets the Solid 2.0 beta stack. Three tiers, each a strict superset of the last, each a deployment contract: `bare` (no router, pure static — the size showcase), `basic` (router + file-system routes + testing, still pure static), and `fullstack` (streaming SSR with server functions, sessions, and API routes). Every tier flips between client rendering and SSR with one boolean; see each template's README. `with-*` variants (tailwindcss, unocss, sass, bootstrap, vitest-browser-mode, tanstack-router) add one tool each on top of `basic` — their READMEs lead with the delta.
 
 ```bash
 $ npx degit solidjs/templates/solid-v2/basic my-solid-project # or solid-v2/bare, solid-v2/fullstack
