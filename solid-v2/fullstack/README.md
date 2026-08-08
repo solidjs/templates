@@ -19,11 +19,20 @@ Inside a server function, `getRequestEvent()` (from `@solidjs/web`) is the curre
 
 `src/lib/db.ts` imports the `server-only` marker: if any code path would pull it into the client bundle, the build **fails at resolve time**, naming the importer — instead of silently shipping your data layer to the browser. (`client-only` marks the reverse.) The db module is the only file that knows the data source; swap the in-memory `Map` for a real database client and nothing else changes.
 
+## Environment variables
+
+Two kinds, with a hard line between them:
+
+- **`VITE_`-prefixed vars** are client-visible: Vite statically inlines them into the browser bundle via `import.meta.env.VITE_*`. Never put secrets behind the prefix.
+- **Unprefixed vars** are server-only and read from `process.env` at runtime. Vite does not feed `.env` files into `process.env` by itself — the `loadEnv` line at the top of `vite.config.ts` does that for dev and build; in production the platform provides the real environment (or run `node --env-file=.env server.js`).
+
+Server vars are validated at startup so misconfiguration fails loud with an actionable message instead of misbehaving quietly — see the `SESSION_SECRET` assertion in `src/lib/session.ts`. Copy `.env.example` to `.env` to get started; `.env` is git-ignored.
+
 ## Middleware and sessions
 
 `src/middleware.ts` (wired via `start.middleware` in `vite.config.ts`) exports a chain of fetch-style functions fronting every request — page renders, server function calls, and API routes alike. It runs inside the request-event scope, so `getRequestEvent()` works exactly as in application code.
 
-The session middleware decodes the cookie into `event.locals.session` and re-serializes it onto the returned response's headers after the chain runs (they stay mutable until the outermost middleware returns — streamed pages included). `event.locals` is typed by augmenting `RequestEventLocals` in `src/types.ts`. For real apps, sign or encrypt the cookie value — the shape of `src/lib/session.ts` stays the same.
+The session middleware decodes the cookie into `event.locals.session` and re-serializes it onto the returned response's headers after the chain runs (they stay mutable until the outermost middleware returns — streamed pages included). The cookie is HMAC-signed with `SESSION_SECRET`, so tampered values fall back to a fresh session; encrypt the payload too if it must be confidential. `event.locals` is typed by augmenting `RequestEventLocals` in `src/types.ts`.
 
 ## File-system routing and API routes
 
@@ -40,6 +49,7 @@ This is the reason you see a `pnpm-lock.yaml`. That being said, any package mana
 
 ```bash
 $ npm install # or pnpm install or yarn install
+$ cp .env.example .env # then fill in SESSION_SECRET
 ```
 
 ### Learn more on the [Solid Website](https://solidjs.com) and come chat with us on our [Discord](https://discord.com/invite/solidjs)
