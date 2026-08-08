@@ -3,6 +3,6 @@
 // middleware in src/middleware.ts. No default export means no page.
 import type { APIHandler } from 'filesystem-routing/api';
 
-import { listUsers } from '../../lib/db';
+import { listUsers } from '../../server/db';
 
 export const GET: APIHandler = () => Response.json(listUsers());

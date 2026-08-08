@@ -4,9 +4,9 @@
 // query() caches reads per key; action() marks writes, and the router
 // revalidates queries after an action settles.
 import { action, query } from '@solidjs/router';
-import { getRequestEvent } from '@solidjs/web';
 
-import { findUser, listUsers, updateUser } from './db';
+import { findUser, listUsers, updateUser } from '../server/db';
+import { clearSession, getSession, setSession } from '../server/session';
 
 export const getUsers = query(async () => {
   'use server';
@@ -15,23 +15,35 @@ export const getUsers = query(async () => {
 
 export const getUser = query(async (id: string) => {
   'use server';
-  // Record the visit in the session (decoded by src/middleware.ts, which
-  // also commits the change back into the cookie).
-  const session = getRequestEvent()!.locals.session;
-  session.viewed = [id, ...session.viewed.filter((v) => v !== id)].slice(0, 3);
   return findUser(id) ?? { name: 'Unknown', title: 'No such user' };
 }, 'user');
 
-export const getViewedUsers = query(async () => {
+// The session read: who is signed in. The cookie write in login/logout
+// rides the outgoing response (see src/server/session.ts), and because
+// they are actions, the router refetches this query when they settle.
+export const getCurrentUser = query(async () => {
   'use server';
-  const { viewed } = getRequestEvent()!.locals.session;
-  return viewed.flatMap((id) => {
-    const user = findUser(id);
-    return user ? [{ id, ...user }] : [];
-  });
-}, 'viewed-users');
+  const userId = (await getSession())?.userId;
+  const user = userId ? findUser(userId) : undefined;
+  return user ? { id: userId!, ...user } : null;
+}, 'current-user');
+
+export const login = action(async (formData: FormData) => {
+  'use server';
+  const id = String(formData.get('id') ?? '');
+  if (!findUser(id)) throw new Error(`No user "${id}"`);
+  await setSession({ userId: id });
+});
+
+export const logout = action(async () => {
+  'use server';
+  await clearSession();
+});
 
 export const renameUser = action(async (id: string, formData: FormData) => {
   'use server';
+  // Server-side authorization off the session — the UI hiding the form is
+  // cosmetic; this check is the real gate.
+  if (!(await getSession())?.userId) throw new Error('Sign in to rename users');
   updateUser(id, { name: String(formData.get('name') ?? '') });
 });

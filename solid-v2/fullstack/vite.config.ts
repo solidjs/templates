@@ -1,69 +1,109 @@
 import { fileURLToPath } from 'node:url';
-import { PageFileSystemRouter } from 'filesystem-routing';
-import { DEFAULT_EXTENSIONS, fileRoutes } from 'filesystem-routing/vite';
-import { loadEnv } from 'vite';
+import { fileRoutes } from 'filesystem-routing/vite';
 import { defineConfig } from 'vitest/config';
 import solid from 'vite-plugin-solid';
 
-const routes = (httpMethods: boolean) =>
-  new PageFileSystemRouter({
-    dir: fileURLToPath(new URL('./src/routes', import.meta.url)),
-    extensions: DEFAULT_EXTENSIONS,
-    httpMethods,
-  });
-
-export default defineConfig(({ mode }) => {
-  // Vite only injects VITE_-prefixed vars into import.meta.env; this line
-  // makes .env files feed unprefixed server vars (SESSION_SECRET) into
-  // process.env for dev and build. In production the platform's real
-  // environment provides them.
-  process.env = { ...process.env, ...loadEnv(mode, process.cwd(), '') };
-
-  return {
-    // Turnkey streaming SSR: no index.html and no entry files — the plugin
-    // generates the entries around src/App.tsx, wrapped in src/Document.tsx.
-    // `vite build` emits static client assets to dist/client and the request
-    // handler to dist/server; `npm start` serves both with server.js.
-    plugins: [
-      // Per-environment routers: only the server scans route modules for
-      // GET/POST/... exports (API routes), so handler modules — and the
-      // server-only code they import — stay out of the client bundle.
-      fileRoutes({
-        routers: { client: routes(false), ssr: routes(true) },
-      }),
-      solid({
-        start: {
-          // Fetch-style chain fronting every request: decodes the session
-          // cookie into event.locals and dispatches API routes.
-          middleware: './src/middleware.ts',
+export default defineConfig({
+  // Turnkey streaming SSR: no index.html and no entry files — the plugin
+  // generates the entries around src/App.tsx, wrapped in src/Document.tsx.
+  // `vite build` emits static client assets to dist/client and the request
+  // handler to dist/server; `npm start` serves both with server.js.
+  plugins: [
+    solid({
+      start: {
+        // Fetch-style chain fronting every request: dispatches API routes.
+        middleware: './src/middleware.ts',
+        // Typed env is on by convention: ./env.ts is probed automatically
+        // and validated — server vars are read from process.env when the
+        // server boots, client vars are baked at build time. (Set
+        // `env: false` here to opt out.)
+      },
+      // Set to false for a static shell + API server: pages render on the
+      // client while server functions, sessions, and API routes keep
+      // working. (Tests always compile with the client posture.)
+      ssr: true,
+      // Compiles 'use server' functions into fetch calls on the client and
+      // serves them from the /_server endpoint. The configure module runs
+      // in the handler graph before any dispatch — it registers the
+      // router's single-flight collector (see src/server-config.ts).
+      serverFunctions: { configure: './src/server-config.ts' },
+      // `extensions` makes vite-plugin-solid also compile the `?pick=` route
+      // modules the fileRoutes plugin emits (their ids end in a query string).
+      extensions: ['.jsx', '.tsx'],
+    }),
+    // `httpMethods` also scans route modules for GET/POST/... exports (API
+    // routes). One router serves both sides: handler modules — and the
+    // server-only code they import — never enter the client bundle.
+    fileRoutes({ httpMethods: true }),
+  ],
+  server: {
+    port: 3000,
+  },
+  test: {
+    globals: false,
+    setupFiles: ['./vitest-setup.ts'],
+    // Two projects because they need different halves of the framework:
+    // component tests run in a DOM against the browser build (the test
+    // pipeline's default posture), while server-runtime tests (the session
+    // suite) run in node against the real server build.
+    projects: [
+      {
+        extends: true,
+        test: {
+          name: 'client',
+          environment: 'jsdom',
+          include: ['src/**/*.test.tsx'],
         },
-        // Set to false for a static shell + API server: pages render on the
-        // client while server functions and API routes keep working.
-        // (Component tests always compile with the client posture.)
-        ssr: mode !== 'test',
-        // Compiles 'use server' functions into fetch calls on the client and
-        // serves them from the /_server endpoint.
-        serverFunctions: true,
-        // `extensions` makes vite-plugin-solid also compile the `?pick=` route
-        // modules the fileRoutes plugin emits (their ids end in a query string).
-        extensions: ['.jsx', '.tsx'],
-      }),
+      },
+      {
+        extends: true,
+        test: {
+          name: 'server',
+          environment: 'node',
+          include: ['src/server/**/*.test.ts'],
+          // Inline the framework so the aliases below decide which build
+          // loads (externalized modules resolve through node instead).
+          server: { deps: { inline: [/@solidjs[+/]web/] } },
+          alias: [
+            // The test pipeline resolves the framework's browser build even
+            // in node (the client posture applies pipeline-wide), so the
+            // main entry is pinned to the server build here.
+            {
+              find: /^@solidjs\/web$/,
+              replacement: fileURLToPath(
+                new URL(
+                  './node_modules/@solidjs/web/dist/server.js',
+                  import.meta.url,
+                ),
+              ),
+            },
+            // Inlines the storage module so its own framework import goes
+            // through the alias above instead of node's externalized copy.
+            {
+              find: /^@solidjs\/web\/storage$/,
+              replacement: fileURLToPath(
+                new URL(
+                  './node_modules/@solidjs/web/storage/dist/storage.js',
+                  import.meta.url,
+                ),
+              ),
+            },
+            // Tests run outside the turnkey server: the plugin's env module
+            // is stubbed with the same contract (live process.env reads).
+            {
+              find: 'virtual:env/server',
+              replacement: fileURLToPath(
+                new URL('./vitest-env-server-stub.ts', import.meta.url),
+              ),
+            },
+          ],
+        },
+      },
     ],
-    server: {
-      port: 3000,
-    },
-    test: {
-      environment: 'jsdom',
-      globals: false,
-      setupFiles: ['./vitest-setup.ts'],
-      // if you have few tests, try commenting this
-      // out to improve performance:
-      isolate: false,
-    },
-    build: {
-      target: 'esnext',
-      // Keep images as asset files instead of inlining them into the JS bundle.
-      assetsInlineLimit: 0,
-    },
-  };
+  },
+  build: {
+    target: 'esnext',
+    // Keep images as asset files instead of inlining them into the JS bundle.
+    assetsInlineLimit: 0,
+  },
 });
