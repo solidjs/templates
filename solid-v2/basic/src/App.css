@@ -1,0 +1,19 @@
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+  text-align: center;
+}
+
+main {
+  padding: 3rem 1rem;
+}
+
+button.increment {
+  font-size: 1rem;
+  padding: 0.5rem 1.5rem;
+  cursor: pointer;
+}
+
+a {
+  color: #2c4f7c;
+}
