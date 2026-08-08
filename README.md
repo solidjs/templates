@@ -22,6 +22,18 @@ This is the reason you see a `pnpm-lock.yaml`. That being said, any package mana
 
 These templates are meant to be used as is via the [degit](https://github.com/Rich-Harris/degit) utility.
 
+## Solid 2.0 templates (preview)
+
+The `solid-v2` group targets the Solid 2.0 beta stack. Three tiers, each a strict superset of the last, each a deployment contract: `bare` (no router, pure static — the size showcase), `basic` (router + file-system routes + testing, still pure static), and `fullstack` (streaming SSR with server functions, sessions, and API routes). Every tier flips between client rendering and SSR with one boolean; see each template's README.
+
+```bash
+$ npx degit solidjs/templates/solid-v2/basic my-solid-project # or solid-v2/bare, solid-v2/fullstack
+$ cd my-solid-project
+$ npm install # or pnpm install or yarn install
+```
+
+## Solid 1.0 templates
+
 ```bash
 # Typescript basic template
 $ npx degit solidjs/templates/vanilla/basic my-solid-project
