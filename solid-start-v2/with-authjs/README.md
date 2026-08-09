@@ -17,4 +17,3 @@ This will start a production server on port `3000`.
 - `AUTH_SECRET`=b198e07a64406260b98f06e21c457b84
 - `AUTH_TRUST_HOST`=true
 - `AUTH_URL`=http://localhost:3000/api/auth
-
