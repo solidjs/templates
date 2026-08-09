@@ -7,7 +7,7 @@
 ## Who owns what
 
 - **Solid + the plugin** own the RPC (`'use server'` functions compiled to typed fetches), the single-flight envelope, serialization, the turnkey entries, `src/Document.tsx`, sessions, and typed env.
-- **TanStack Router** owns routing: the file-based route tree under `src/routes` (generated into `src/routeTree.gen.ts` by `@tanstack/router-plugin` — full typesafety for `<Link>`, params, and loaders), navigation, and intent-based preloading (hover a link and its loader runs early).
+- **TanStack Router** owns routing: the file-based route tree under `src/routes` (generated into `src/routeTree.gen.ts` by `@tanstack/router-plugin` — full typesafety for `<Link>`, params, and loaders), navigation, intent-based preloading (hover a link and its loader runs early), and automatic code splitting (each route's component compiles to its own lazy chunk).
 - **TanStack Query** owns the client data cache: route loaders prefetch into it, components read from it with `useQuery`, and everything the server hands back lands in it.
 
 Single-flight crosses all three — through public seams only. No package here patches or wraps another.
@@ -29,6 +29,8 @@ The seams that make this work are all public, on both sides: the server-function
 ## SSR under a router Solid doesn't own
 
 The plugin's `start.setup` hook (`src/setup.tsx`) is the per-request seam: it builds this request's router + QueryClient, `await router.load()` runs the matched loaders, the fetches settle, and the returned component renders in App's place inside the Document. The dehydrated cache is parked on the request event, and `src/Document.tsx` inlines it as `window.__QUERY_STATE__` — the client boot (`src/App.tsx`) hydrates its cache from that before anything renders, then pre-loads its router (top-level await), so the first client render is synchronous and claims the server markup.
+
+That top-level `await router.load()` is also what makes `autoCodeSplitting: true` safe here. Route components compile to lazy chunks, and hydration needs the matched route's code present on the first client render — TanStack Start solves that with a chunk-preload manifest in its own stream layer, which this template doesn't use. It doesn't need to: `router.load()` resolves the matched routes' lazy chunks as part of loading, so by the time the entry hydrates, a deep link like `/users/1` has its route code in hand and claims the server markup cleanly. Unmatched routes stay off the wire until navigation (watch the network tab: hovering or clicking a `<Link>` fetches that route's chunk on demand).
 
 Two boundaries, stated honestly:
 

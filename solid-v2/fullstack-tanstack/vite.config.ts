@@ -14,10 +14,13 @@ export default defineConfig({
   plugins: [
     // Scans src/routes and generates src/routeTree.gen.ts — the typed route
     // tree — on dev and build. Must be registered before solid(). Code
-    // splitting stays off: hydration needs the matched route's code present
-    // on the first client render, and the chunk preloading that squares
-    // that circle belongs to TanStack's own start layer, not this template.
-    tanstackRouter({ target: 'solid', autoCodeSplitting: false }),
+    // splitting is on: each route's component compiles to a lazy chunk, and
+    // hydration still finds the matched route's code present because the
+    // client boot awaits `router.load()` before hydrating (src/App.tsx) —
+    // TanStack resolves the matched routes' lazy chunks as part of that
+    // load, so no chunk-preload manifest from TanStack's own start layer is
+    // needed. See the README's SSR section.
+    tanstackRouter({ target: 'solid', autoCodeSplitting: true }),
     solid({
       start: {
         // Fetch-style chain fronting every request: dispatches API routes.
