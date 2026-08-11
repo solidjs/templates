@@ -16,18 +16,18 @@
     "@tanstack/router-plugin": "1.168.27",
     "@testing-library/jest-dom": "^6.6.3",
     "@types/node": "^26.2.0",
-    "filesystem-routing": "file:./filesystem-routing-local.tgz",
+    "filesystem-routing": "0.2.1",
     "jsdom": "^25.0.1",
     "typescript": "^5.9.2",
     "vite": "^8.1.5",
-    "vite-plugin-solid": "file:./vite-plugin-solid-local.tgz",
+    "vite-plugin-solid": "3.0.0-next.24",
     "vitest": "^4.0.0"
   },
   "dependencies": {
     "@remix-run/cookie": "^0.5.4",
-    "@solidjs/web": "2.0.0-beta.32",
+    "@solidjs/web": "2.0.0-beta.33",
     "@tanstack/solid-router": "2.0.0-beta.29",
-    "solid-js": "2.0.0-beta.32",
+    "solid-js": "2.0.0-beta.33",
     "zod": "^4.1.13",
     "@tanstack/solid-query": "6.0.0-beta.7"
   }
