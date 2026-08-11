@@ -15,8 +15,8 @@ importers:
         specifier: 2.0.0-beta.33
         version: 2.0.0-beta.33(solid-js@2.0.0-beta.33)
       '@tanstack/solid-query':
-        specifier: 6.0.0-beta.7
-        version: 6.0.0-beta.7(solid-js@2.0.0-beta.33)
+        specifier: 6.0.0-beta.8
+        version: 6.0.0-beta.8(solid-js@2.0.0-beta.33)
       '@tanstack/solid-router':
         specifier: 2.0.0-beta.29
         version: 2.0.0-beta.29(@solidjs/web@2.0.0-beta.33(solid-js@2.0.0-beta.33))(solid-js@2.0.0-beta.33)
@@ -648,10 +648,10 @@ packages:
     resolution: {integrity: sha512-hTWqJtqIFFdvuCl8WXNyrodp2L9zo2G37xKRrcVmVRWpAB2h+U1LuRAfS4tsFTiWOIoE/B+WDVFB8JpoEdw6jQ==}
     engines: {node: '>=20.19'}
 
-  '@tanstack/solid-query@6.0.0-beta.7':
-    resolution: {integrity: sha512-wrUpCKOsJk1p3Tnj47F1g+MQEoyJV3R1zrTyOJCCcKbTi6D7Hv+IiTMzKHd/P1/JE59A+Od24ikkpMyLip14Kw==}
+  '@tanstack/solid-query@6.0.0-beta.8':
+    resolution: {integrity: sha512-6oc88fPiPIxSfj6u2A1flvPq7WKCd4wB5/K2tgDvdiTc5DJkc0Mn2teihVpZzQR/ZjmLXSKSwZpmf6iNb7NygQ==}
     peerDependencies:
-      solid-js: '>=2.0.0-beta.0 <3.0.0'
+      solid-js: '>=2.0.0-beta.33 <3.0.0'
 
   '@tanstack/solid-router@2.0.0-beta.29':
     resolution: {integrity: sha512-UAZhtkZkIRb+lH98FHIrVBBMFJN4vf89NRUYNoq0FYnJQywUQ0c9GlZL6yqhMF5Vzs8AnQ2hDGiLgYZUGu38gg==}
@@ -2131,7 +2131,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@tanstack/solid-query@6.0.0-beta.7(solid-js@2.0.0-beta.33)':
+  '@tanstack/solid-query@6.0.0-beta.8(solid-js@2.0.0-beta.33)':
     dependencies:
       '@tanstack/query-core': 5.101.0
       solid-js: 2.0.0-beta.33

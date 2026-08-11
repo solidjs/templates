@@ -4,7 +4,7 @@ import { For, Show } from 'solid-js';
 
 import Counter from '../components/Counter';
 import { formAction } from '../lib/form-action';
-import { currentUserQuery, usersQuery } from '../lib/queries';
+import { currentUserQuery, prefetch, usersQuery } from '../lib/queries';
 import { login, logout } from '../lib/users';
 import logo from '../logo.svg';
 
@@ -13,10 +13,11 @@ import logo from '../logo.svg';
 // blocking on them — components suspend at the read point instead. It
 // doubles as the page's single-flight manifest: after a mutation, the
 // server reruns it to put the refreshed data on the action response itself.
+// (`prefetch` is hydration-boot aware — see src/lib/queries.ts.)
 export const Route = createFileRoute('/')({
   loader: ({ context }) => {
-    void context.queryClient.prefetchQuery(currentUserQuery());
-    void context.queryClient.prefetchQuery(usersQuery());
+    prefetch(context.queryClient, currentUserQuery());
+    prefetch(context.queryClient, usersQuery());
   },
   head: () => ({ meta: [{ title: 'Home - Solid App' }] }),
   component: Home,

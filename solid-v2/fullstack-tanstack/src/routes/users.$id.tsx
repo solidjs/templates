@@ -3,7 +3,7 @@ import { createFileRoute } from '@tanstack/solid-router';
 import { Show } from 'solid-js';
 
 import { formAction } from '../lib/form-action';
-import { currentUserQuery, userQuery } from '../lib/queries';
+import { currentUserQuery, prefetch, userQuery } from '../lib/queries';
 import { renameUser } from '../lib/users';
 
 // The prefetch-hint loader again — and again the single-flight manifest:
@@ -12,8 +12,8 @@ import { renameUser } from '../lib/users';
 // own response.
 export const Route = createFileRoute('/users/$id')({
   loader: ({ context, params }) => {
-    void context.queryClient.prefetchQuery(userQuery(params.id));
-    void context.queryClient.prefetchQuery(currentUserQuery());
+    prefetch(context.queryClient, userQuery(params.id));
+    prefetch(context.queryClient, currentUserQuery());
   },
   head: ({ params }) => ({
     meta: [{ title: `User ${params.id} - Solid App` }],

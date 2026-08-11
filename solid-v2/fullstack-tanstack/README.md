@@ -28,11 +28,13 @@ The seams that make this work are all public, on both sides: the server-function
 
 ## SSR under a router Solid doesn't own
 
-The plugin's `start.setup` hook (`src/setup.tsx`) is the per-request seam: it builds this request's router + QueryClient, `await router.load()` runs the matched loaders, the fetches settle, and the returned component renders in App's place inside the Document. The dehydrated cache is parked on the request event, and `src/Document.tsx` inlines it as `window.__QUERY_STATE__` — the client boot (`src/App.tsx`) hydrates its cache from that before anything renders, then pre-loads its router (top-level await), so the first client render is synchronous and claims the server markup.
+The plugin's `start.setup` hook (`src/setup.tsx`) is the per-request seam: it builds this request's router + QueryClient, `await router.load()` starts the matched loaders' prefetches, and the returned component renders in App's place inside the Document — the render begins while the fetches are still in flight, each `useQuery` suspending on its own query.
+
+The SSR → client cache handoff is `QueryClientProvider`'s own: the provider owns a serialization channel that streams each query's dehydrated entry into the HTML stream as it settles, and the client provider primes its cache from those entries as they arrive — per query, progressively, not a single end-of-render blob. No `dehydrate()` collector, no inline `window.__QUERY_STATE__` script: mount the same `QueryClientProvider` on both sides and hydration renders from data instead of refetching it. The client boot still pre-loads its router (top-level await), so the first client render claims the server markup.
 
 Two boundaries, stated honestly:
 
-- TanStack ships its own SSR protocol (`RouterServer`/`RouterClient` and stream handlers that emit `window.$_TSR` bootstrap data), but that pipeline expects to own the HTML stream — under turnkey, the plugin owns it. This template uses the standard `dehydrate`/`hydrate` pair across the boundary instead: same public seams single-flight uses.
+- TanStack ships its own SSR protocol (`RouterServer`/`RouterClient` and stream handlers that emit `window.$_TSR` bootstrap data), but that pipeline expects to own the HTML stream — under turnkey, the plugin owns it. This template rides solid-query's provider-owned hydration channel across the boundary instead (with the `dehydrate`/`hydrate` pair still carrying single-flight payloads: same public seams).
 - `disableGlobalCatchBoundary: true` in `src/router.tsx` is what keeps the client tree structurally identical to the server one (without it, TanStack wraps the client render in a pending boundary it never renders server-side, and hydration cannot claim the markup). Route-level `errorComponent`/`pendingComponent` options still work.
 
 ## Sessions, env, API routes, server-only modules
