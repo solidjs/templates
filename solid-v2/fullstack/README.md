@@ -111,4 +111,118 @@ import { handleRequest } from './dist/server/server.js';
 const response = await handleRequest(request);
 ```
 
-`server.js` is the node version of exactly that; on web-native platforms (workers, Deno, Bun.serve) use `handleRequest` directly.
+`server.js` is the node version of exactly that; on web-native platforms (workers, Deno, Bun.serve) use `handleRequest` directly. Any target needs exactly three things:
+
+1. **Serve `dist/client` statically**, and route everything else — pages, `/_server`, API routes — to `handleRequest`.
+2. **Provide the server env vars** (`SESSION_SECRET` here) in the process environment: the server bundle reads and validates them **at boot**, not at build time, so they come from the platform's env/secret settings — never from a build artifact. Client `VITE_` vars are the opposite: baked in at `vite build`, so set those on the build machine/CI.
+3. **Resolve the bundle's dependencies**: `dist/server` imports its npm deps (`solid-js`, `@solidjs/web`, `zod`, ...) as bare specifiers rather than inlining them, so whatever runs or re-bundles it needs `node_modules` present — true in every recipe below. The bundle itself is pure web-standard code (no `node:` imports; it does use top-level `await`).
+
+### Node
+
+The default — nothing to add. `npm run build`, then `npm start` runs `server.js` (loading `.env` if present; real deployments set the environment instead). Any node host (a VPS, Fly.io, Railway, ...) that runs `node server.js` with `PORT` and `SESSION_SECRET` set is done.
+
+### Nitro
+
+[Nitro](https://nitro.build) wraps the handler in its server toolkit — useful for its compression/route rules and its many deploy presets. Two files, no change to the app:
+
+```ts
+// nitro.config.ts
+import { defineNitroConfig } from 'nitropack/config';
+
+export default defineNitroConfig({
+  compatibilityDate: '2026-08-11',
+  // The Vite build is the input: dist/client served statically,
+  // routes/[...].ts mounts the handler for everything else.
+  publicAssets: [{ dir: 'dist/client' }],
+  // The server bundle uses top-level await (boot-time env validation);
+  // nitro's default es2019 target rejects it.
+  esbuild: { options: { target: 'esnext' } },
+});
+```
+
+```ts
+// routes/[...].ts  (nitro's routes dir — not src/routes)
+import { fromWebHandler } from 'h3';
+import { handleRequest } from '../dist/server/server.js';
+
+export default fromWebHandler(handleRequest);
+```
+
+Install (`npm i -D nitropack h3`), then build both halves and run:
+
+```bash
+$ npm run build && npx nitropack build
+$ node --env-file=.env .output/server/index.mjs
+```
+
+Nitro's presets retarget the same wrapper: `NITRO_PRESET=cloudflare_module npx nitropack build` emits a worker that runs with `npx wrangler dev .output/server/index.mjs --assets .output/public --compatibility-date 2026-08-11 --compatibility-flags nodejs_compat` and deploys with the same arguments to `wrangler deploy`. One preset caveat: `NITRO_PRESET=netlify` defaults its public output to `dist/`, which would clobber the Vite build it consumes — pin `output: { publicDir: '.netlify/public' }` in `nitro.config.ts` and publish that directory instead.
+
+### Cloudflare Workers
+
+The handler mounts directly in a worker — no adapter. Two files:
+
+```js
+// worker.js — the assets config serves dist/client before the worker runs;
+// everything else is the handler.
+import { handleRequest } from './dist/server/server.js';
+
+export default {
+  fetch(request) {
+    return handleRequest(request);
+  },
+};
+```
+
+```jsonc
+// wrangler.jsonc
+{
+  "name": "my-app",
+  "main": "worker.js",
+  "compatibility_date": "2026-08-11",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": { "directory": "./dist/client" }
+}
+```
+
+`nodejs_compat` is required, for two things the server runtime needs: `node:async_hooks` (the per-request event scope) and a populated `process.env` (boot-time env validation — populated from your worker's vars/secrets with a compatibility date of 2025-04-01 or later). Everything else in the bundle is web-standard, and Solid resolves to its server build through the package's `worker` export condition.
+
+```bash
+$ npm run build
+$ echo "SESSION_SECRET=..." > .dev.vars    # local dev secrets
+$ npx wrangler dev                          # local workerd — no account needed
+$ npx wrangler secret put SESSION_SECRET    # production secret
+$ npx wrangler deploy
+```
+
+Streaming SSR, server functions, and the session cookie (pure WebCrypto) all work in workerd unchanged. Remember the flip side of baked client env: `VITE_` vars are fixed at `vite build`, not by worker vars.
+
+### Netlify
+
+One function file in the [web-standard Functions format](https://docs.netlify.com/functions/get-started/) plus a `netlify.toml`:
+
+```js
+// netlify/functions/ssr.mjs — static files win first (preferStatic),
+// everything else is the handler.
+import { handleRequest } from '../../dist/server/server.js';
+
+export default (request) => handleRequest(request);
+
+export const config = {
+  path: '/*',
+  preferStatic: true,
+};
+```
+
+```toml
+# netlify.toml
+[build]
+command = "npm run build"
+publish = "dist/client"
+```
+
+Set `SESSION_SECRET` in the site's environment variables (UI or `netlify env:set`); functions read it from `process.env` as usual. Locally, `npx netlify-cli serve` runs the whole thing — build, function, statics — and injects your `.env` for you.
+
+Two notes on Netlify's official Vite integrations, as of `@netlify/vite-plugin` 2.x:
+
+- Its opt-in build integration (`netlify({ build: { enabled: true } })`) generates almost exactly the function above, but expects the server entry to `export default { fetch }` — this plugin's entry exports `handleRequest` by name, so the generated wrapper doesn't work yet. The two-file recipe above is the same thing, written out.
+- Don't combine `@netlify/vite-plugin` in `vite.config.ts` with a catch-all function like the one above: the plugin's dev emulation dispatches `netlify/functions` inside `vite dev`, so a `path: '/*'` function shadows dev SSR with your last production build. The recipe above deliberately needs no Vite plugin.

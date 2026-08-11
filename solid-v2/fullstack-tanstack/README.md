@@ -30,8 +30,6 @@ The seams that make this work are all public, on both sides: the server-function
 
 The plugin's `start.setup` hook (`src/setup.tsx`) is the per-request seam: it builds this request's router + QueryClient, `await router.load()` runs the matched loaders, the fetches settle, and the returned component renders in App's place inside the Document. The dehydrated cache is parked on the request event, and `src/Document.tsx` inlines it as `window.__QUERY_STATE__` — the client boot (`src/App.tsx`) hydrates its cache from that before anything renders, then pre-loads its router (top-level await), so the first client render is synchronous and claims the server markup.
 
-That top-level `await router.load()` is also what makes `autoCodeSplitting: true` safe here. Route components compile to lazy chunks, and hydration needs the matched route's code present on the first client render — TanStack Start solves that with a chunk-preload manifest in its own stream layer, which this template doesn't use. It doesn't need to: `router.load()` resolves the matched routes' lazy chunks as part of loading, so by the time the entry hydrates, a deep link like `/users/1` has its route code in hand and claims the server markup cleanly. Unmatched routes stay off the wire until navigation (watch the network tab: hovering or clicking a `<Link>` fetches that route's chunk on demand).
-
 Two boundaries, stated honestly:
 
 - TanStack ships its own SSR protocol (`RouterServer`/`RouterClient` and stream handlers that emit `window.$_TSR` bootstrap data), but that pipeline expects to own the HTML stream — under turnkey, the plugin owns it. This template uses the standard `dehydrate`/`hydrate` pair across the boundary instead: same public seams single-flight uses.
@@ -99,3 +97,5 @@ const response = await handleRequest(request);
 ```
 
 `server.js` is the node version of exactly that; on web-native platforms (workers, Deno, Bun.serve) use `handleRequest` directly.
+
+The server posture is identical to `fullstack` — same build layout (`dist/client` + `dist/server`), same handler export, same boot-time env contract — so the platform recipes in [`fullstack`'s README](../fullstack/README.md#deployment) (Node, Nitro, Cloudflare Workers, Netlify) apply here verbatim.
