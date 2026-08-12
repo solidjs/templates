@@ -1,6 +1,6 @@
 import { tanstackRouter } from '@tanstack/router-plugin/vite';
 import { defineConfig } from 'vitest/config';
-import solid from 'vite-plugin-solid';
+import solid from '@solidjs/vite-plugin';
 
 export default defineConfig({
   // Turnkey client mode: no index.html and no mount file — the plugin

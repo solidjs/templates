@@ -6,7 +6,7 @@ The smallest useful Solid 2.0 app: `solid-js` + `@solidjs/web`, no router, no se
 
 ## How it works
 
-There is no `index.html` and no mount file. `vite-plugin-solid`'s turnkey mode (`start: true` in `vite.config.ts`) generates the entries around two conventions:
+There is no `index.html` and no mount file. `@solidjs/vite-plugin`'s turnkey mode (`start: true` in `vite.config.ts`) generates the entries around two conventions:
 
 - **`src/App.tsx`** — the app. A plain default-exported component; everything you build lives under it.
 - **`src/Document.tsx`** — the document shell, the new `index.html`. It renders the full `<html>` and is where head tags go (title, meta, favicon). It is compiled only into the prerendered static shell and adds **zero client-side JS**. Delete it to fall back to the plugin's built-in shell.

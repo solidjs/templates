@@ -1,6 +1,6 @@
 // The data source, as a server-only module: importing it from code that
 // could reach the client bundle fails the build (the `server-only` marker
-// comes typed via vite-plugin-solid/boundary-modules). Swap the Map for a
+// comes typed via @solidjs/vite-plugin/boundary-modules). Swap the Map for a
 // real database client — this file is the only place that knows.
 import 'server-only';
 

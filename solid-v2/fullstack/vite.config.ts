@@ -1,7 +1,7 @@
 import { fileURLToPath } from 'node:url';
 import { fileRoutes } from 'filesystem-routing/vite';
 import { defineConfig } from 'vitest/config';
-import solid from 'vite-plugin-solid';
+import solid from '@solidjs/vite-plugin';
 
 export default defineConfig({
   // Turnkey streaming SSR: no index.html and no entry files — the plugin
@@ -27,7 +27,7 @@ export default defineConfig({
       // in the handler graph before any dispatch — it registers the
       // router's single-flight collector (see src/server-config.ts).
       serverFunctions: { configure: './src/server-config.ts' },
-      // `extensions` makes vite-plugin-solid also compile the `?pick=` route
+      // `extensions` makes @solidjs/vite-plugin also compile the `?pick=` route
       // modules the fileRoutes plugin emits (their ids end in a query string).
       extensions: ['.jsx', '.tsx'],
     }),

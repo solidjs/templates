@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite';
-import solid from 'vite-plugin-solid';
+import solid from '@solidjs/vite-plugin';
 
 export default defineConfig({
   // Turnkey client mode: no index.html and no mount file — the plugin

@@ -3,7 +3,7 @@ import { routePathFromFile } from 'filesystem-routing';
 import { fileRoutes } from 'filesystem-routing/vite';
 import { tanstackRouter } from '@tanstack/router-plugin/vite';
 import { defineConfig } from 'vitest/config';
-import solid from 'vite-plugin-solid';
+import solid from '@solidjs/vite-plugin';
 
 export default defineConfig({
   // Turnkey streaming SSR under a third-party router: no index.html and no

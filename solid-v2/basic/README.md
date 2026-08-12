@@ -6,7 +6,7 @@
 
 ## How it works
 
-There is no `index.html` and no mount file. `vite-plugin-solid`'s turnkey mode (`start: true` in `vite.config.ts`) generates the entries around two conventions:
+There is no `index.html` and no mount file. `@solidjs/vite-plugin`'s turnkey mode (`start: true` in `vite.config.ts`) generates the entries around two conventions:
 
 - **`src/App.tsx`** — the app, router included. The `<Router>` wraps a shared nav and a `<Loading>` boundary; its routes come from the file system (below).
 - **`src/Document.tsx`** — the document shell, the new `index.html`. Site-wide head tags go here; it is compiled only into the prerendered static shell and adds **zero client-side JS**. Per-page head tags (`<Title>` from `@solidjs/meta`) live in the route modules.

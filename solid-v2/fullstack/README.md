@@ -217,7 +217,7 @@ export default defineConfig({
 });
 ```
 
-Keep Solid's normal server build enabled — do not set `start.external`. For a direct vite-plugin-solid project, set the build defaults explicitly:
+Keep Solid's normal server build enabled — do not set `start.external`. For a direct @solidjs/vite-plugin project, set the build defaults explicitly:
 
 ```toml
 [build]

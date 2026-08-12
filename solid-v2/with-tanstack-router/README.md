@@ -6,7 +6,7 @@ This is `basic` with the routing layer swapped for [TanStack Router](https://tan
 
 ## Who owns what
 
-- **`vite-plugin-solid` owns** the compile and the app shell: the JSX transform (including TanStack's own components — the adapter ships Solid source through its `solid` export condition and compiles like your code), the turnkey entries around `src/App.tsx`, and the `src/Document.tsx` document shell. It neither knows nor cares which router renders inside.
+- **`@solidjs/vite-plugin` owns** the compile and the app shell: the JSX transform (including TanStack's own components — the adapter ships Solid source through its `solid` export condition and compiles like your code), the turnkey entries around `src/App.tsx`, and the `src/Document.tsx` document shell. It neither knows nor cares which router renders inside.
 - **TanStack owns** everything routing: the route files under `src/routes` (their naming convention — `__root.tsx`, `index.tsx`, `users.$id.tsx`), loaders, and navigation. `@tanstack/router-plugin` in `vite.config.ts` watches those files and regenerates `src/routeTree.gen.ts`, the typed route tree `src/App.tsx` feeds to `createRouter`.
 
 ## The TanStack idioms in this template

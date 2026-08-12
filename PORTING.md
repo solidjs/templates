@@ -1,7 +1,7 @@
 # Porting ledger — what did NOT move to `solid-v2`
 
 The `solid-v2` group is a port of the existing templates onto the Solid 2.0 stack
-(`solid-js` 2.0 beta, `vite-plugin-solid` turnkey `start` mode). This file records
+(`solid-js` 2.0 beta, `@solidjs/vite-plugin` turnkey `start` mode). This file records
 every template that was **not** ported, and why — so the decision survives the people
 who made it.
 
