@@ -4,7 +4,7 @@
 import { defineConfig } from 'vite';
 import solidPlugin from 'vite-plugin-solid';
 import devtools from 'solid-devtools/vite';
-import { playwright } from ' ̰';
+import { playwright } from '@vitest/browser-playwright';
 
 export default defineConfig({
   plugins: [devtools(), solidPlugin()],
