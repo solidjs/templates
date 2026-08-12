@@ -20,6 +20,12 @@ export default defineConfig({
   test: {
     globals: false,
     setupFiles: ['./vitest-setup.ts'],
+    // Browser mode ignores `environment`, but set it explicitly so
+    // vite-plugin-solid's jsdom default doesn't fire — vitest's startup
+    // probe for the jsdom package fails the run (exit 1) even though the
+    // tests pass in Chromium. Removable once the plugin gates its default
+    // on `browser.enabled`.
+    environment: 'node',
     // Tests run in a real Chromium page instead of a simulated jsdom
     // document. `vitest --ui` (or headless: false) opens it visibly.
     browser: {
