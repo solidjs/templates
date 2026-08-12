@@ -16,7 +16,7 @@
     "vite": "^8.1.5"
   },
   "dependencies": {
-    "@solidjs/web": "2.0.0-beta.34",
-    "solid-js": "2.0.0-beta.34"
+    "@solidjs/web": "^2.0.0-rc.0",
+    "solid-js": "^2.0.0-rc.0"
   }
 }

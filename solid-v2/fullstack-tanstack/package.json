@@ -25,9 +25,9 @@
   },
   "dependencies": {
     "@remix-run/cookie": "^0.5.4",
-    "@solidjs/web": "2.0.0-beta.34",
+    "@solidjs/web": "^2.0.0-rc.0",
     "@tanstack/solid-router": "2.0.0-beta.29",
-    "solid-js": "2.0.0-beta.34",
+    "solid-js": "^2.0.0-rc.0",
     "zod": "^4.1.13",
     "@tanstack/solid-query": "6.0.0-beta.8"
   }

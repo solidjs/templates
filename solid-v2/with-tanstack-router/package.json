@@ -22,8 +22,8 @@
     "vitest": "^4.0.0"
   },
   "dependencies": {
-    "@solidjs/web": "2.0.0-beta.34",
+    "@solidjs/web": "^2.0.0-rc.0",
     "@tanstack/solid-router": "2.0.0-beta.29",
-    "solid-js": "2.0.0-beta.34"
+    "solid-js": "^2.0.0-rc.0"
   }
 }
