@@ -19,7 +19,7 @@ Inside a server function, `getRequestEvent()` (from `@solidjs/web`) is the curre
 
 The payoff the whole stack builds toward. When a form submits, the router sends the action call with a single-flight marker; on the server, after the mutation runs, the registered collector (`src/server-config.ts`) reruns the target route's `preload` and folds the refreshed `query()` data into the **same response**. The router seeds its cache from that envelope — no follow-up refetch, no stale frame in between.
 
-Watch the network tab while renaming a user: exactly one `POST /_server` — the heading *and* the user list in the layout both update from that one response. Without single-flight that interaction is a POST followed by one GET per revalidated query.
+Watch the network tab while renaming a user: exactly one `POST /_server` — the heading _and_ the user list in the layout both update from that one response. Without single-flight that interaction is a POST followed by one GET per revalidated query.
 
 Two things make a route single-flight-complete, and both are already good practice: reads go through `query()`, and the route's `preload` touches every query the page renders (that is what the server reruns — `src/routes/users/[id].tsx` calls it "the page's single-flight manifest"). The no-JS fallback is the same machinery minus the envelope: the plain form POST runs the action and answers `303 See Other` back to the page, which re-renders with fresh data — one round trip there too.
 
@@ -32,7 +32,7 @@ Semantics worth knowing (all covered by `src/server/session.test.ts`):
 - **Signed, not encrypted** — the payload is tamper-proof but client-readable; never put secrets in it, and keep it small (cookies cap at ~4KB).
 - **Expiry is enforced server-side** via an `exp` claim in the payload; the cookie's `Max-Age` is browser hygiene a client is free to ignore.
 - **Rotation**: `SESSION_SECRET` is comma-separated, newest first — the first entry signs, every entry verifies. Deploy `"new,old"`, drop `old` after a week.
-- `getSession()` returns `null` uniformly for absent, tampered, rotated-out, and expired cookies — and it reads the *request's* cookie, so a `setSession` in the same request does not read back.
+- `getSession()` returns `null` uniformly for absent, tampered, rotated-out, and expired cookies — and it reads the _request's_ cookie, so a `setSession` in the same request does not read back.
 
 The demo wires it as auth: `login`/`logout` actions write the cookie, `getCurrentUser` reads it, and `renameUser` checks it server-side — the UI hiding the form when signed out is cosmetic; the check in the server function is the real gate.
 
@@ -103,15 +103,18 @@ Runs both test projects: the component tests inherited from `basic` and the sess
 
 ## Deployment
 
-The built server entry exports `handleRequest(request)` — an adapter-agnostic web `Request -> Response` handler:
+The built server entry exposes one adapter-agnostic web `Request -> Response` handler in two forms:
 
 ```js
-import { handleRequest } from './dist/server/server.js';
+import app, { handleRequest } from './dist/server/server.js';
 // serve dist/client statically; everything else:
 const response = await handleRequest(request);
+const sameResponse = await app.fetch(request);
 ```
 
-`server.js` is the node version of exactly that; on web-native platforms (workers, Deno, Bun.serve) use `handleRequest` directly. Any target needs exactly three things:
+The default `{ fetch(request) }` export follows the Fetchable convention used by deployment integrations. It intentionally ignores host arguments after the request instead of forwarding them as Solid handler options.
+
+`server.js` is the Node version of the same contract. Any target needs exactly three things:
 
 1. **Serve `dist/client` statically**, and route everything else — pages, `/_server`, API routes — to `handleRequest`.
 2. **Provide the server env vars** (`SESSION_SECRET` here) in the process environment: the server bundle reads and validates them **at boot**, not at build time, so they come from the platform's env/secret settings — never from a build artifact. Client `VITE_` vars are the opposite: baked in at `vite build`, so set those on the build machine/CI.
@@ -123,68 +126,63 @@ The default — nothing to add. `npm run build`, then `npm start` runs `server.j
 
 ### Nitro
 
-[Nitro](https://nitro.build) wraps the handler in its server toolkit — useful for its compression/route rules and its many deploy presets. Two files, no change to the app:
+[Nitro v3](https://nitro.build) should own the server environment so its presets, route rules, tasks, and runtime features apply to the Solid handler. Install `nitro`, then add `nitro({ serverEntry: false })` after `solid()`:
 
 ```ts
-// nitro.config.ts
-import { defineNitroConfig } from 'nitropack/config';
+import { nitro } from 'nitro/vite';
 
-export default defineNitroConfig({
-  compatibilityDate: '2026-08-11',
-  // The Vite build is the input: dist/client served statically,
-  // routes/[...].ts mounts the handler for everything else.
-  publicAssets: [{ dir: 'dist/client' }],
-  // The server bundle uses top-level await (boot-time env validation);
-  // nitro's default es2019 target rejects it.
-  esbuild: { options: { target: 'esnext' } },
+export default defineConfig({
+  plugins: [
+    solid({
+      start: { middleware: './src/middleware.ts' },
+      ssr: true,
+      serverFunctions: { configure: './src/server-config.ts' },
+      extensions: ['.jsx', '.tsx'],
+    }),
+    nitro({ serverEntry: false }),
+    fileRoutes({ httpMethods: true }),
+  ],
 });
 ```
 
-```ts
-// routes/[...].ts  (nitro's routes dir — not src/routes)
-import { fromWebHandler } from 'h3';
-import { handleRequest } from '../dist/server/server.js';
-
-export default fromWebHandler(handleRequest);
-```
-
-Install (`npm i -D nitropack h3`), then build both halves and run:
-
-```bash
-$ npm run build && npx nitropack build
-$ node --env-file=.env .output/server/index.mjs
-```
-
-Nitro's presets retarget the same wrapper: `NITRO_PRESET=cloudflare_module npx nitropack build` emits a worker that runs with `npx wrangler dev .output/server/index.mjs --assets .output/public --compatibility-date 2026-08-11 --compatibility-flags nodejs_compat` and deploys with the same arguments to `wrangler deploy`. One preset caveat: `NITRO_PRESET=netlify` defaults its public output to `dist/`, which would clobber the Vite build it consumes — pin `output: { publicDir: '.netlify/public' }` in `nitro.config.ts` and publish that directory instead.
+Nitro adopts Solid's normal `ssr` environment and its `index` Fetchable service entry. No `start.external`, custom source entry, or Rollup input is needed.
 
 ### Cloudflare Workers
 
-The handler mounts directly in a worker — no adapter. Two files:
+The [Cloudflare Vite plugin](https://developers.cloudflare.com/workers/vite-plugin/) should own the server environment so development runs in workerd with the same bindings and runtime behavior as production. Install `@cloudflare/vite-plugin` and `wrangler`, then map the Worker to Solid's normal `ssr` environment:
 
-```js
-// worker.js — the assets config serves dist/client before the worker runs;
-// everything else is the handler.
-import { handleRequest } from './dist/server/server.js';
+```ts
+import { cloudflare } from '@cloudflare/vite-plugin';
 
-export default {
-  fetch(request) {
-    return handleRequest(request);
-  },
-};
+export default defineConfig({
+  plugins: [
+    cloudflare({ viteEnvironment: { name: 'ssr' } }),
+    solid({
+      start: { middleware: './src/middleware.ts' },
+      ssr: true,
+      serverFunctions: { configure: './src/server-config.ts' },
+      extensions: ['.jsx', '.tsx'],
+    }),
+    fileRoutes({ httpMethods: true }),
+  ],
+});
 ```
 
 ```jsonc
 // wrangler.jsonc
 {
   "name": "my-app",
-  "main": "worker.js",
+  "main": "virtual:solid-ssr-handler",
   "compatibility_date": "2026-08-11",
   "compatibility_flags": ["nodejs_compat"],
-  "assets": { "directory": "./dist/client" }
+  "assets": {
+    "directory": "./dist/client",
+    "binding": "ASSETS",
+  },
 }
 ```
 
-`nodejs_compat` is required, for two things the server runtime needs: `node:async_hooks` (the per-request event scope) and a populated `process.env` (boot-time env validation — populated from your worker's vars/secrets with a compatibility date of 2025-04-01 or later). Everything else in the bundle is web-standard, and Solid resolves to its server build through the package's `worker` export condition.
+The Cloudflare plugin adopts the `ssr` environment and resolves its virtual Fetchable entry directly. `nodejs_compat` provides `node:async_hooks` for the per-request event scope and exposes Worker variables through `process.env` with a compatibility date of 2025-04-01 or later.
 
 ```bash
 $ npm run build
@@ -198,31 +196,33 @@ Streaming SSR, server functions, and the session cookie (pure WebCrypto) all wor
 
 ### Netlify
 
-One function file in the [web-standard Functions format](https://docs.netlify.com/functions/get-started/) plus a `netlify.toml`:
+The [Netlify Vite plugin](https://www.npmjs.com/package/@netlify/vite-plugin) consumes Solid's normal `ssr` build and turns its default Fetchable entry into a streaming Netlify Function. Install `@netlify/vite-plugin`, then add it after `solid()`:
 
-```js
-// netlify/functions/ssr.mjs — static files win first (preferStatic),
-// everything else is the handler.
-import { handleRequest } from '../../dist/server/server.js';
+```ts
+import netlify from '@netlify/vite-plugin';
 
-export default (request) => handleRequest(request);
-
-export const config = {
-  path: '/*',
-  preferStatic: true,
-};
+export default defineConfig({
+  plugins: [
+    solid({
+      start: {
+        middleware: './src/middleware.ts',
+      },
+      ssr: true,
+      serverFunctions: { configure: './src/server-config.ts' },
+      extensions: ['.jsx', '.tsx'],
+    }),
+    netlify({ build: { enabled: true } }),
+    fileRoutes({ httpMethods: true }),
+  ],
+});
 ```
 
+Keep Solid's normal server build enabled — do not set `start.external`. For a direct vite-plugin-solid project, set the build defaults explicitly:
+
 ```toml
-# netlify.toml
 [build]
 command = "npm run build"
 publish = "dist/client"
 ```
 
-Set `SESSION_SECRET` in the site's environment variables (UI or `netlify env:set`); functions read it from `process.env` as usual. Locally, `npx netlify-cli serve` runs the whole thing — build, function, statics — and injects your `.env` for you.
-
-Two notes on Netlify's official Vite integrations, as of `@netlify/vite-plugin` 2.x:
-
-- Its opt-in build integration (`netlify({ build: { enabled: true } })`) generates almost exactly the function above, but expects the server entry to `export default { fetch }` — this plugin's entry exports `handleRequest` by name, so the generated wrapper doesn't work yet. The two-file recipe above is the same thing, written out.
-- Don't combine `@netlify/vite-plugin` in `vite.config.ts` with a catch-all function like the one above: the plugin's dev emulation dispatches `netlify/functions` inside `vite dev`, so a `path: '/*'` function shadows dev SSR with your last production build. The recipe above deliberately needs no Vite plugin.
+The plugin generates the catch-all function, gives static files precedence, preserves streaming, and emulates Netlify platform features during `vite dev`. Set `SESSION_SECRET` in the site's environment settings. No handwritten Netlify Function or Netlify CLI is required.

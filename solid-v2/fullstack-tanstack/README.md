@@ -90,14 +90,15 @@ Runs both test projects: the component test and the session suite.
 
 ## Deployment
 
-The built server entry exports `handleRequest(request)` — an adapter-agnostic web `Request -> Response` handler:
+The built server entry exposes one adapter-agnostic web `Request -> Response` handler in two forms:
 
 ```js
-import { handleRequest } from './dist/server/server.js';
+import app, { handleRequest } from './dist/server/server.js';
 // serve dist/client statically; everything else:
 const response = await handleRequest(request);
+const sameResponse = await app.fetch(request);
 ```
 
-`server.js` is the node version of exactly that; on web-native platforms (workers, Deno, Bun.serve) use `handleRequest` directly.
+The default `{ fetch(request) }` export follows the Fetchable convention used by deployment integrations. `server.js` is the Node version of the same contract.
 
 The server posture is identical to `fullstack` — same build layout (`dist/client` + `dist/server`), same handler export, same boot-time env contract — so the platform recipes in [`fullstack`'s README](../fullstack/README.md#deployment) (Node, Nitro, Cloudflare Workers, Netlify) apply here verbatim.
