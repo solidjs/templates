@@ -13,7 +13,7 @@
   "license": "MIT",
   "devDependencies": {
     "@solidjs/testing-library": "1.0.0-beta.2",
-    "@solidjs/vite-plugin": "3.0.0-next.27",
+    "@solidjs/vite-plugin": "3.0.0-next.28",
     "@testing-library/jest-dom": "^6.6.3",
     "@vitest/browser-playwright": "^4.0.0",
     "filesystem-routing": "0.2.1",
@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "@solidjs/meta": "1.0.0-next.1",
-    "@solidjs/router": "2.0.0-next.15",
+    "@solidjs/router": "2.0.0-next.16",
     "@solidjs/web": "^2.0.0-rc.0",
     "solid-js": "^2.0.0-rc.0"
   }
