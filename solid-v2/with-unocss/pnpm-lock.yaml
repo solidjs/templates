@@ -9,10 +9,10 @@ importers:
   .:
     dependencies:
       '@solidjs/meta':
-        specifier: 1.0.0-next.1
-        version: 1.0.0-next.1(@solidjs/web@2.0.0-rc.0(solid-js@2.0.0-rc.0))(solid-js@2.0.0-rc.0)
+        specifier: ^1.0.0-next.2
+        version: 1.0.0-next.2(@solidjs/web@2.0.0-rc.0(solid-js@2.0.0-rc.0))(solid-js@2.0.0-rc.0)
       '@solidjs/router':
-        specifier: 2.0.0-next.16
+        specifier: ^2.0.0-next.16
         version: 2.0.0-next.16(@solidjs/web@2.0.0-rc.0(solid-js@2.0.0-rc.0))(solid-js@2.0.0-rc.0)
       '@solidjs/web':
         specifier: ^2.0.0-rc.0
@@ -25,7 +25,7 @@ importers:
         specifier: 1.0.0-beta.2
         version: 1.0.0-beta.2(@solidjs/web@2.0.0-rc.0(solid-js@2.0.0-rc.0))(solid-js@2.0.0-rc.0)
       '@solidjs/vite-plugin':
-        specifier: 3.0.0-next.28
+        specifier: ^3.0.0-next.28
         version: 3.0.0-next.28(@solidjs/web@2.0.0-rc.0(solid-js@2.0.0-rc.0))(@testing-library/jest-dom@6.10.0(@testing-library/dom@10.4.1))(solid-js@2.0.0-rc.0)(vite@8.2.1(jiti@2.7.0))
       '@testing-library/jest-dom':
         specifier: ^6.6.3
@@ -649,11 +649,11 @@ packages:
   '@rolldown/pluginutils@1.0.1':
     resolution: {integrity: sha512-2j9bGt5Jh8hj+vPtgzPtl72j0yRxHAyumoo6TNfAjsLB04UtpSvPbPcDcBMxz7n+9CYB0c1GxQFxYRg2jimqGw==}
 
-  '@solidjs/meta@1.0.0-next.1':
-    resolution: {integrity: sha512-qOp5eUdgNDee7/9FbODbWHPe5XV1Ywdd7G2AkhD4Xa35TJqy18/GbY0S8zT8R5t/kE4JVvIvdZ4yOURr6BsQrw==}
+  '@solidjs/meta@1.0.0-next.2':
+    resolution: {integrity: sha512-4aqPczFqDdep4JTAUXfh4nyfq7InbTgimd7NuN6ZWWE29UPv0uR5dyr53yFcf2YgVXjFdX+JGhXtsE0njGL+fA==}
     peerDependencies:
-      '@solidjs/web': '>=2.0.0-beta.31 <2.0.0'
-      solid-js: '>=2.0.0-beta.30 <2.0.0'
+      '@solidjs/web': ^2.0.0-rc.0
+      solid-js: ^2.0.0-rc.0
 
   '@solidjs/router@2.0.0-next.16':
     resolution: {integrity: sha512-sYaq5h4ISdDVZKhA1R0X4NHFg4Kao7HpK3QRfbFcE25/x2PFl4VxlHLZIoBUfv3T3L9g4GVTD376pvArwgGlDA==}
@@ -2176,7 +2176,7 @@ snapshots:
 
   '@rolldown/pluginutils@1.0.1': {}
 
-  '@solidjs/meta@1.0.0-next.1(@solidjs/web@2.0.0-rc.0(solid-js@2.0.0-rc.0))(solid-js@2.0.0-rc.0)':
+  '@solidjs/meta@1.0.0-next.2(@solidjs/web@2.0.0-rc.0(solid-js@2.0.0-rc.0))(solid-js@2.0.0-rc.0)':
     dependencies:
       '@solidjs/web': 2.0.0-rc.0(solid-js@2.0.0-rc.0)
       solid-js: 2.0.0-rc.0
