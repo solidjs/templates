@@ -12,7 +12,7 @@ export default defineConfig({
     // `extensions` makes @solidjs/vite-plugin also compile the `?pick=` route
     // modules the fileRoutes plugin emits (their ids end in a query string).
     solid({ start: true, extensions: ['.jsx', '.tsx'] }), // add `ssr: true` for streaming SSR
-    fileRoutes(),
+    fileRoutes({ types: true }),
     // Scans source files for class names and generates their CSS into the
     // stylesheet that imports tailwindcss (src/App.css).
     tailwindcss(),

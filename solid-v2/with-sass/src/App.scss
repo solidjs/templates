@@ -1,8 +1,8 @@
 // basic's App.css, expressed as Sass: variables for the palette, nesting
 // for scope. Vite compiles it because the file ends in .scss — no config.
 $nav-bg: #282c34;
-$nav-link: #b318f0;
-$link: #2c4f7c;
+$nav-link: #93c5fd;
+$link: #1d5f91;
 
 body {
   margin: 0;
@@ -17,9 +17,22 @@ nav {
   padding: 1rem;
   background-color: $nav-bg;
 
-  a {
-    margin: 0 0.5rem;
+  > a {
+    display: inline-block;
+    margin: 0 0.125rem;
+    padding: 0.4rem 0.75rem;
+    border-radius: 0.5rem;
     color: $nav-link;
+    font-weight: 600;
+    text-decoration: none;
+    transition:
+      background-color 150ms ease,
+      color 150ms ease;
+
+    &:hover {
+      background-color: rgb(255 255 255 / 10%);
+      color: #dbeafe;
+    }
   }
 }
 
@@ -39,8 +52,23 @@ main {
   cursor: pointer;
 }
 
-a {
+main a {
   color: $link;
+  font-weight: 600;
+  text-decoration-color: #7bb6df;
+  text-decoration-thickness: 0.1em;
+  text-underline-offset: 0.2em;
+  transition: color 150ms ease;
+
+  &:hover {
+    color: #123f63;
+  }
+}
+
+a:focus-visible {
+  outline: 3px solid #0284c7;
+  outline-offset: 3px;
+  border-radius: 0.2rem;
 }
 
 @keyframes logo-spin {

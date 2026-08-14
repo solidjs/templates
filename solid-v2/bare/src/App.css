@@ -31,8 +31,23 @@ body {
 }
 
 .link {
-  color: #b318f0;
   margin-top: 1rem;
+  color: #93c5fd;
+  font-weight: 600;
+  text-decoration-color: #38bdf8;
+  text-decoration-thickness: 0.1em;
+  text-underline-offset: 0.2em;
+  transition: color 150ms ease;
+}
+
+.link:hover {
+  color: #dbeafe;
+}
+
+.link:focus-visible {
+  outline: 3px solid #38bdf8;
+  outline-offset: 4px;
+  border-radius: 0.2rem;
 }
 
 @keyframes logo-spin {

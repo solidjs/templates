@@ -2,6 +2,7 @@ import { Title } from '@solidjs/meta';
 import { query, type RouteDefinition, type RouteProps } from '@solidjs/router';
 import { getRequestEvent } from '@solidjs/web';
 import { createMemo } from 'solid-js';
+import { paths } from '../../router';
 
 // Async data loading: a query (cached per key) read through a memo — the
 // surrounding <Loading> boundary (in App.tsx) shows its fallback until the
@@ -30,7 +31,12 @@ export default function User(props: RouteProps<'/users/:id'>) {
       <h2>{user().name}</h2>
       <p>{user().title}</p>
       <p>
-        <a href={`/users/${Number(props.params.id) + 1}`}>Next user</a>
+        <a
+          class="fw-semibold link-primary link-offset-2 link-underline-opacity-50 link-underline-opacity-100-hover focus-ring rounded-1"
+          href={paths.users(Number(props.params.id) + 1)}
+        >
+          Next user
+        </a>
       </p>
     </section>
   );

@@ -2,6 +2,7 @@ import { Title } from '@solidjs/meta';
 import { query, type RouteDefinition, type RouteProps } from '@solidjs/router';
 import { getRequestEvent } from '@solidjs/web';
 import { createMemo } from 'solid-js';
+import { paths } from '../../router';
 
 // Async data loading: a query (cached per key) read through a memo — the
 // surrounding <Loading> boundary (in App.tsx) shows its fallback until the
@@ -31,8 +32,8 @@ export default function User(props: RouteProps<'/users/:id'>) {
       <p>{user().title}</p>
       <p class="my-4">
         <a
-          class="text-sky-700 underline"
-          href={`/users/${Number(props.params.id) + 1}`}
+          class="font-semibold text-sky-700 underline decoration-sky-400 decoration-2 underline-offset-4 transition-colors hover:text-sky-900 focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sky-600"
+          href={paths.users(Number(props.params.id) + 1)}
         >
           Next user
         </a>

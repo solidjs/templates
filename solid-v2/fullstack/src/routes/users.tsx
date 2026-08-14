@@ -3,6 +3,7 @@ import type { ParentProps } from 'solid-js';
 import { For, createMemo } from 'solid-js';
 
 import { getUsers } from '../lib/users';
+import { paths } from '../router';
 
 export const route = {
   preload: () => void getUsers(),
@@ -18,9 +19,9 @@ export default function UsersLayout(props: ParentProps) {
   return (
     <main>
       <h1>Users</h1>
-      <nav>
+      <nav class="users-nav" aria-label="Users">
         <For each={users()}>
-          {(user) => <a href={`/users/${user.id}`}>{user.name}</a>}
+          {(user) => <a href={paths.users(user.id)}>{user.name}</a>}
         </For>
       </nav>
       {props.children}
