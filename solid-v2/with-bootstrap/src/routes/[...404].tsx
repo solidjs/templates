@@ -16,7 +16,12 @@ export default function NotFound() {
       <h1>Page Not Found</h1>
       <p>
         Visit{' '}
-        <a href="https://docs.solidjs.com" target="_blank" rel="noreferrer">
+        <a
+          class="fw-semibold link-primary link-offset-2 link-underline-opacity-50 link-underline-opacity-100-hover focus-ring rounded-1"
+          href="https://docs.solidjs.com"
+          target="_blank"
+          rel="noreferrer"
+        >
           docs.solidjs.com
         </a>{' '}
         to learn how to build Solid apps.

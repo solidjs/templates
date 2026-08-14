@@ -13,7 +13,7 @@ export default defineConfig({
     // `extensions` makes @solidjs/vite-plugin also compile the `?pick=` route
     // modules the fileRoutes plugin emits (their ids end in a query string).
     solid({ start: true, extensions: ['.jsx', '.tsx'] }), // add `ssr: true` for streaming SSR
-    fileRoutes(),
+    fileRoutes({ types: true }),
     // Scans source files for class names and serves their CSS as the
     // virtual:uno.css module (imported by src/App.tsx). Config can grow
     // into uno.config.ts; the wind4 preset is Tailwind-compatible utilities.

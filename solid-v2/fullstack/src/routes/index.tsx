@@ -53,7 +53,7 @@ export default function Home() {
         )}
       </Show>
       <a
-        href="https://docs.solidjs.com"
+        href="https://v2.solidjs.com/"
         target="_blank"
         rel="noopener noreferrer"
       >

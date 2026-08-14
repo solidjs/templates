@@ -34,7 +34,7 @@ export default defineConfig({
     // `httpMethods` also scans route modules for GET/POST/... exports (API
     // routes). One router serves both sides: handler modules — and the
     // server-only code they import — never enter the client bundle.
-    fileRoutes({ httpMethods: true }),
+    fileRoutes({ httpMethods: true, types: true }),
   ],
   server: {
     port: 3000,

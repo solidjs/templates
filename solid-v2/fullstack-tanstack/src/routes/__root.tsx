@@ -16,7 +16,7 @@ export const Route = createRootRouteWithContext<RouterContext>()({
   component: () => (
     <>
       <HeadContent />
-      <nav>
+      <nav class="site-nav">
         <Link to="/">Home</Link>
         <Link to="/users">Users</Link>
       </nav>

@@ -18,7 +18,8 @@ export default function Home() {
         Edit <code>src/routes/index.tsx</code> and save to reload.
       </p>
       <a
-        href="https://docs.solidjs.com"
+        class="fw-semibold link-primary link-offset-2 link-underline-opacity-50 link-underline-opacity-100-hover focus-ring rounded-1"
+        href="https://v2.solidjs.com/"
         target="_blank"
         rel="noopener noreferrer"
       >

@@ -1,2 +1,2 @@
 /// <reference types="vite/client" />
-/// <reference types="filesystem-routing/types" />
+/// <reference types="../file-routes.d.ts" />

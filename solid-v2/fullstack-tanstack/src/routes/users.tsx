@@ -19,7 +19,7 @@ function UsersLayout() {
   return (
     <main>
       <h1>Users</h1>
-      <nav>
+      <nav class="users-nav" aria-label="Users">
         <For each={users.data}>
           {(user) => (
             <Link to="/users/$id" params={{ id: user.id }}>

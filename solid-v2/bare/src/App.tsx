@@ -19,7 +19,7 @@ export default function App() {
       </button>
       <a
         class="link"
-        href="https://docs.solidjs.com"
+        href="https://v2.solidjs.com/"
         target="_blank"
         rel="noopener noreferrer"
       >

@@ -13,7 +13,7 @@ export default function Home() {
         Edit <code>src/routes/index.tsx</code> and save to reload.
       </p>
       <a
-        href="https://docs.solidjs.com"
+        href="https://v2.solidjs.com/"
         target="_blank"
         rel="noopener noreferrer"
       >

@@ -1,12 +1,8 @@
-import { pageRoutes } from 'virtual:file-routes';
 import { Title } from '@solidjs/meta';
-import { createRouter } from '@solidjs/router';
-import { fileRoutes } from '@solidjs/router/fs';
 import { Loading } from 'solid-js';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { paths, Router } from './router';
 import './App.css';
-
-const Router = createRouter({ routes: fileRoutes(pageRoutes) });
 
 // The app root: the router and the site-wide layout live here. Pages are
 // the modules under src/routes.
@@ -17,10 +13,16 @@ export default function App() {
         <>
           <Title>Solid App</Title>
           <nav class="navbar justify-content-center gap-3 bg-dark p-3" data-bs-theme="dark">
-            <a class="nav-link" href="/">
+            <a
+              class="nav-link rounded px-3 fw-semibold focus-ring focus-ring-info"
+              href={paths()}
+            >
               Home
             </a>
-            <a class="nav-link" href="/users/1">
+            <a
+              class="nav-link rounded px-3 fw-semibold focus-ring focus-ring-info"
+              href={paths.users(1)}
+            >
               Users
             </a>
           </nav>
