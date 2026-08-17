@@ -28,7 +28,7 @@
     "@solidjs/web": "^2.0.0-rc.0",
     "@tanstack/solid-router": "^2.0.0-rc.0",
     "solid-js": "^2.0.0-rc.0",
-    "zod": "^4.1.13",
+    "valibot": "^1.4.2",
     "@tanstack/solid-query": "^6.0.0-rc.0"
   }
 }
