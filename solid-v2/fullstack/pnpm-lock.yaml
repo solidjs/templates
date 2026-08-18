@@ -23,9 +23,9 @@ importers:
       solid-js:
         specifier: ^2.0.0-rc.0
         version: 2.0.0-rc.0
-      zod:
-        specifier: ^4.1.13
-        version: 4.4.3
+      valibot:
+        specifier: ^1.4.2
+        version: 1.4.2(typescript@5.9.3)
     devDependencies:
       '@solidjs/testing-library':
         specifier: 1.0.0-beta.2
@@ -1199,6 +1199,14 @@ packages:
     peerDependencies:
       browserslist: '>= 4.21.0'
 
+  valibot@1.4.2:
+    resolution: {integrity: sha512-gjdCvJ6d3RyHAneqxMYMW9QMCwYMb3jpOO0IyHZV1bnRHFBHrX3VkIILt5XYR0WhwHiH7Mty8ovuPZ/O3gamrg==}
+    peerDependencies:
+      typescript: '>=5'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+
   validate-html-nesting@1.2.4:
     resolution: {integrity: sha512-doQi7e8EJ2OWneSG1aZpJluS6A49aZM0+EICXWKm1i6WvqTLmq0tpUcImc4KTWG50mORO0C4YDBtOCSYvElftw==}
 
@@ -1341,9 +1349,6 @@ packages:
 
   yallist@3.1.1:
     resolution: {integrity: sha512-a4UGQaWPH59mOXUYnAG2ewncQS4i4F43Tv3JoAM+s2VDAmS9NsK8GpDMLrCHPksFT7h3K6TOoUNn2pb7RoXx4g==}
-
-  zod@4.4.3:
-    resolution: {integrity: sha512-ytENFjIJFl2UwYglde2jchW2Hwm4GJFLDiSXWdTrJQBIN9Fcyp7n4DhxJEiWNAJMV1/BqWfW/kkg71UDcHJyTQ==}
 
 snapshots:
 
@@ -2412,6 +2417,10 @@ snapshots:
       escalade: 3.2.0
       picocolors: 1.1.1
 
+  valibot@1.4.2(typescript@5.9.3):
+    optionalDependencies:
+      typescript: 5.9.3
+
   validate-html-nesting@1.2.4: {}
 
   vite@8.2.1(@types/node@26.2.0):
@@ -2486,5 +2495,3 @@ snapshots:
   xmlchars@2.2.0: {}
 
   yallist@3.1.1: {}
-
-  zod@4.4.3: {}

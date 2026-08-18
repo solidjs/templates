@@ -23,9 +23,9 @@ importers:
       solid-js:
         specifier: ^2.0.0-rc.0
         version: 2.0.0-rc.0
-      zod:
-        specifier: ^4.1.13
-        version: 4.4.3
+      valibot:
+        specifier: ^1.4.2
+        version: 1.4.2(typescript@5.9.3)
     devDependencies:
       '@solidjs/testing-library':
         specifier: 1.0.0-beta.2
@@ -1409,6 +1409,14 @@ packages:
     hasBin: true
     peerDependencies:
       browserslist: '>= 4.21.0'
+
+  valibot@1.4.2:
+    resolution: {integrity: sha512-gjdCvJ6d3RyHAneqxMYMW9QMCwYMb3jpOO0IyHZV1bnRHFBHrX3VkIILt5XYR0WhwHiH7Mty8ovuPZ/O3gamrg==}
+    peerDependencies:
+      typescript: '>=5'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
 
   validate-html-nesting@1.2.4:
     resolution: {integrity: sha512-doQi7e8EJ2OWneSG1aZpJluS6A49aZM0+EICXWKm1i6WvqTLmq0tpUcImc4KTWG50mORO0C4YDBtOCSYvElftw==}
@@ -2849,6 +2857,10 @@ snapshots:
       browserslist: 4.28.8
       escalade: 3.2.0
       picocolors: 1.1.1
+
+  valibot@1.4.2(typescript@5.9.3):
+    optionalDependencies:
+      typescript: 5.9.3
 
   validate-html-nesting@1.2.4: {}
 

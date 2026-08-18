@@ -38,7 +38,7 @@ The demo wires it as auth: `login`/`logout` actions write the cookie, `getCurren
 
 ## Typed environment variables
 
-`env.ts` at the project root declares every variable as a [Standard Schema](https://standardschema.dev) validator (zod here; valibot or arktype work identically — nothing is imported from the plugin). The plugin probes it automatically and serves two fully typed virtual modules; generated types land in `solid-env.d.ts`.
+`env.ts` at the project root declares every variable as a [Standard Schema](https://standardschema.dev) validator (valibot here; zod or arktype work identically — nothing is imported from the plugin). The plugin probes it automatically and serves two fully typed virtual modules; generated types land in `solid-env.d.ts`.
 
 - **`virtual:env/server`** — every var, **read from `process.env` when the server boots** and validated then: secrets rotate without a rebuild, platform-injected vars work, and no secret value exists in any build artifact. A misconfigured server fails at boot with a per-key report (delete `SESSION_SECRET` from `.env` and run `npm start` to see it). Importing this module from client code fails the build, naming the importer.
 - **`virtual:env/client`** — the `VITE_`-prefixed vars, validated and **baked into the bundle** at build time (defaults applied, zero schema-library bytes shipped). The prefix is the line: client values are public, server values never leave the server.
@@ -118,7 +118,7 @@ The default `{ fetch(request) }` export follows the Fetchable convention used by
 
 1. **Serve `dist/client` statically**, and route everything else — pages, `/_server`, API routes — to `handleRequest`.
 2. **Provide the server env vars** (`SESSION_SECRET` here) in the process environment: the server bundle reads and validates them **at boot**, not at build time, so they come from the platform's env/secret settings — never from a build artifact. Client `VITE_` vars are the opposite: baked in at `vite build`, so set those on the build machine/CI.
-3. **Resolve the bundle's dependencies**: `dist/server` imports its npm deps (`solid-js`, `@solidjs/web`, `zod`, ...) as bare specifiers rather than inlining them, so whatever runs or re-bundles it needs `node_modules` present — true in every recipe below. The bundle itself is pure web-standard code (no `node:` imports, no top-level `await`).
+3. **Resolve the bundle's dependencies**: `dist/server` imports its npm deps (`solid-js`, `@solidjs/web`, `valibot`, ...) as bare specifiers rather than inlining them, so whatever runs or re-bundles it needs `node_modules` present — true in every recipe below. The bundle itself is pure web-standard code (no `node:` imports, no top-level `await`).
 
 ### Node
 
