@@ -118,11 +118,13 @@ The default `{ fetch(request) }` export follows the Fetchable convention used by
 
 1. **Serve `dist/client` statically**, and route everything else — pages, `/_server`, API routes — to `handleRequest`.
 2. **Provide the server env vars** (`SESSION_SECRET` here) in the process environment: the server bundle reads and validates them **at boot**, not at build time, so they come from the platform's env/secret settings — never from a build artifact. Client `VITE_` vars are the opposite: baked in at `vite build`, so set those on the build machine/CI.
-3. **Resolve the bundle's dependencies**: `dist/server` imports its npm deps (`solid-js`, `@solidjs/web`, `zod`, ...) as bare specifiers rather than inlining them, so whatever runs or re-bundles it needs `node_modules` present — true in every recipe below. The bundle itself is pure web-standard code (no `node:` imports; it does use top-level `await`).
+3. **Resolve the bundle's dependencies**: `dist/server` imports its npm deps (`solid-js`, `@solidjs/web`, `zod`, ...) as bare specifiers rather than inlining them, so whatever runs or re-bundles it needs `node_modules` present — true in every recipe below. The bundle itself is pure web-standard code (no `node:` imports, no top-level `await`).
 
 ### Node
 
 The default — nothing to add. `npm run build`, then `npm start` runs `server.js` (loading `.env` if present; real deployments set the environment instead). Any node host (a VPS, Fly.io, Railway, ...) that runs `node server.js` with `PORT` and `SESSION_SECRET` set is done.
+
+**Client IP:** `server.js` passes the raw Node request into the request event — `handleRequest(request, { event: { nativeEvent: req } })` — so anywhere in a request (middleware, server functions) `getRequestEvent().nativeEvent.socket.remoteAddress` is the peer address. Behind a proxy or load balancer that address is the proxy's: read the forwarding headers off `getRequestEvent().request` instead (`x-forwarded-for` and friends) — only when you trust the proxy that set them.
 
 ### Nitro
 

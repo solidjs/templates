@@ -52,7 +52,11 @@ const server = createServer(async (req, res) => {
   }
 
   try {
-    const response = await handleRequest(webRequest(req));
+    // The `options.event` seam: extra fields spread into the request event,
+    // conventionally the platform's raw request as `nativeEvent` — app code
+    // reads it back via getRequestEvent() (e.g. the client IP from
+    // event.nativeEvent.socket.remoteAddress on bare Node).
+    const response = await handleRequest(webRequest(req), { event: { nativeEvent: req } });
     res.statusCode = response.status;
     const cookies = response.headers.getSetCookie?.();
     response.headers.forEach((value, key) => {
