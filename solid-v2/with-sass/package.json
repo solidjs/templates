@@ -8,15 +8,18 @@
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview",
-    "test": "vitest"
+    "test": "vitest",
+    "lint": "oxlint -c oxlint.config.mjs src"
   },
   "license": "MIT",
   "devDependencies": {
     "@solidjs/testing-library": "1.0.0-beta.2",
     "@solidjs/vite-plugin": "^3.0.0-next.29",
     "@testing-library/jest-dom": "^6.6.3",
+    "eslint-plugin-solid": "~0.16.0",
     "filesystem-routing": "0.2.1",
     "jsdom": "^25.0.1",
+    "oxlint": "~1.79.0",
     "sass": "^1.83.0",
     "typescript": "^5.9.2",
     "vite": "^8.1.5",

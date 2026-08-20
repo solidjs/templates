@@ -8,7 +8,8 @@
     "build": "vite build",
     "start": "node --env-file-if-exists=.env server.js",
     "serve": "vite preview",
-    "test": "vitest"
+    "test": "vitest",
+    "lint": "oxlint -c oxlint.config.mjs src"
   },
   "license": "MIT",
   "devDependencies": {
@@ -17,8 +18,10 @@
     "@tanstack/router-plugin": "1.168.27",
     "@testing-library/jest-dom": "^6.6.3",
     "@types/node": "^26.2.0",
+    "eslint-plugin-solid": "~0.16.0",
     "filesystem-routing": "0.2.1",
     "jsdom": "^25.0.1",
+    "oxlint": "~1.79.0",
     "typescript": "^5.9.2",
     "vite": "^8.1.5",
     "vitest": "^4.0.0"
