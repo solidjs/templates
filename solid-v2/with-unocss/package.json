@@ -8,7 +8,8 @@
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview",
-    "test": "vitest"
+    "test": "vitest",
+    "lint": "oxlint -c oxlint.config.mjs src"
   },
   "license": "MIT",
   "devDependencies": {
@@ -17,8 +18,10 @@
     "@testing-library/jest-dom": "^6.6.3",
     "@unocss/preset-wind4": "^66.5.2",
     "@unocss/reset": "^66.5.2",
+    "eslint-plugin-solid": "~0.16.0",
     "filesystem-routing": "0.2.1",
     "jsdom": "^25.0.1",
+    "oxlint": "~1.79.0",
     "typescript": "^5.9.2",
     "unocss": "^66.5.2",
     "vite": "^8.1.5",

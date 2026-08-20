@@ -7,11 +7,14 @@
     "start": "vite",
     "dev": "vite",
     "build": "vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "lint": "oxlint -c oxlint.config.mjs src"
   },
   "license": "MIT",
   "devDependencies": {
     "@solidjs/vite-plugin": "^3.0.0-next.29",
+    "eslint-plugin-solid": "~0.16.0",
+    "oxlint": "~1.79.0",
     "typescript": "^5.9.2",
     "vite": "^8.1.5"
   },
