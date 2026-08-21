@@ -8,9 +8,18 @@ export interface Session {
   email: string;
 }
 
+const SESSION_COOKIE_NAME = "solid_start_auth_session";
+
 export const getSession = () =>
   useSession<Session>({
-    password: process.env.SESSION_SECRET ?? "default_password_which_should_be_long_enough"
+    name: SESSION_COOKIE_NAME,
+    password: process.env.SESSION_SECRET ?? "default_password_which_should_be_long_enough",
+    cookie: {
+      httpOnly: true,
+      path: "/",
+      sameSite: "lax",
+      secure: process.env.NODE_ENV === "production"
+    }
   });
 
 export async function createSession(user: Session, redirectTo?: string) {
