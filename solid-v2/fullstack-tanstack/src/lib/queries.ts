@@ -57,11 +57,24 @@ export function prefetch(
 // paused for its duration. Only ever called on the client, so the module
 // flag cannot leak across concurrent server requests.
 export async function bootLoad(router: { load: () => Promise<void> }) {
+  const entryHref = window.location.href;
   bootLoading = true;
   try {
     await router.load();
   } finally {
     bootLoading = false;
+  }
+  // Server-side redirects answer a real 30x (src/setup.tsx), so this load
+  // normally lands where the server rendered. But a `beforeLoad` can still
+  // diverge on the client — client-only state, a session expiring between
+  // the two runs — and the router will have already moved the URL while the
+  // markup below is still the abandoned route's. Hydration cannot claim
+  // that; it would come up blank. A full document load of the target gets
+  // its real SSR instead, and the never-resolving await keeps the doomed
+  // hydration from starting while the navigation tears this page down.
+  if (window.location.href !== entryHref) {
+    window.location.reload();
+    await new Promise(() => {});
   }
 }
 
