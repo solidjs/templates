@@ -9,7 +9,7 @@ export default function NotFound() {
       <p class="mt-8">
         Visit{" "}
         <a
-          href="https://solidjs.com"
+          href="https://www.solidjs.com/"
           target="_blank"
           class="text-sky-600 hover:underline"
         >

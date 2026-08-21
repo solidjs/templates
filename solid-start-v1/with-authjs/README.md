@@ -10,7 +10,7 @@ Everything you need to build an [AuthJS](https://authjs.dev/) authenticated Soli
 
 This will start a production server on port `3000`.
 
-### Enviroment Variables
+### Environment Variables
 
 - `DISCORD_ID`=
 - `DISCORD_SECRET`=
