@@ -70,7 +70,6 @@
 				{ "name": "bare" },
 				{ "name": "with-bootstrap" },
 				{ "name": "with-jest" },
-				{ "name": "with-pages-router-file-based" },
 				{ "name": "with-sass" },
 				{ "name": "with-solid-router" },
 				{ "name": "with-tailwindcss" },
