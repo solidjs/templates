@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/solid-query';
 import { Link, Outlet, createFileRoute } from '@tanstack/solid-router';
-import { For } from 'solid-js';
+import { For, Loading } from 'solid-js';
 
 import { prefetch, usersQuery } from '../lib/queries';
 
@@ -14,21 +14,35 @@ export const Route = createFileRoute('/users')({
 });
 
 function UsersLayout() {
-  const users = useQuery(usersQuery);
-
   return (
     <main>
       <h1>Users</h1>
-      <nav class="users-nav" aria-label="Users">
-        <For each={users.data}>
-          {(user) => (
-            <Link to="/users/$id" params={{ id: user.id }}>
-              {user.name}
-            </Link>
-          )}
-        </For>
-      </nav>
-      <Outlet />
+      {/* Each data-dependent slot gets its own Loading boundary: under
+          streaming SSR the shell flushes with the fallbacks, and each
+          boundary's content flushes as its query settles — the nav after
+          the (faster) users list, the outlet after the user detail. */}
+      <Loading fallback={<p>Loading users…</p>}>
+        <UsersNav />
+      </Loading>
+      <Loading fallback={<p>Loading user…</p>}>
+        <Outlet />
+      </Loading>
     </main>
+  );
+}
+
+function UsersNav() {
+  const users = useQuery(usersQuery);
+
+  return (
+    <nav class="users-nav" aria-label="Users">
+      <For each={users.data}>
+        {(user) => (
+          <Link to="/users/$id" params={{ id: user.id }}>
+            {user.name}
+          </Link>
+        )}
+      </For>
+    </nav>
   );
 }

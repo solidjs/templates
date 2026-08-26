@@ -10,7 +10,7 @@ import logo from '../logo.svg';
 
 // The loader as a prefetch hint: it *starts* these queries as navigation
 // begins (and on link hover, via the router's intent preloading) without
-// blocking on them — components suspend at the read point instead. It
+// blocking on them — components pick the data up at the read point. It
 // doubles as the page's single-flight manifest: after a mutation, the
 // server reruns it to put the refreshed data on the action response itself.
 // (`prefetch` is hydration-boot aware — see src/lib/queries.ts.)
