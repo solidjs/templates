@@ -13,8 +13,9 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@solidjs/testing-library": "1.0.0-beta.2",
-    "@solidjs/vite-plugin": "^3.0.0-next.33",
+    "@solidjs/diagnostics": "^2.0.0-rc.3",
+    "@solidjs/testing-library": "^1.0.0-beta.2",
+    "@solidjs/vite-plugin": "^3.0.0-next.34",
     "@testing-library/jest-dom": "^6.6.3",
     "@vitest/browser-playwright": "^4.0.0",
     "eslint-plugin-solid": "~0.16.0",
@@ -27,8 +28,8 @@
   },
   "dependencies": {
     "@solidjs/meta": "^1.0.0-next.2",
-    "@solidjs/router": "^2.0.0-next.16",
-    "@solidjs/web": "^2.0.0-rc.2",
-    "solid-js": "^2.0.0-rc.2"
+    "@solidjs/router": "^2.0.0-next.17",
+    "@solidjs/web": "^2.0.0-rc.3",
+    "solid-js": "^2.0.0-rc.3"
   }
 }

@@ -38,6 +38,9 @@ export default defineConfig({
       // client while server functions, sessions, and API routes keep
       // working. (Tests always compile with the client posture.)
       ssr: true,
+      // Dev-only agent/diagnostics surface: exposes capture control at
+      // /__solid/diagnostics on the dev server (see AGENTS.md). No-op in build.
+      diagnostics: true,
       // Compiles 'use server' functions into fetch calls on the client and
       // serves them from the /_server endpoint. The configure module runs
       // in the handler graph before any dispatch — it registers the Query

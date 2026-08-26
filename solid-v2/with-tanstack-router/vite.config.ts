@@ -14,7 +14,7 @@ export default defineConfig({
     // Client mode only for now: TanStack's SSR needs per-request router
     // wiring (router.load() + dehydration) that the generated streaming
     // entry doesn't perform — see the README's SSR note.
-    solid({ start: true }),
+    solid({ start: true, diagnostics: true }),
   ],
   server: {
     port: 3000,

@@ -7,7 +7,7 @@ export default defineConfig({
   // (or a built-in shell). `vite build` prerenders the shell into
   // dist/client/index.html and emits a purely static dist/client.
   plugins: [
-    solid({ start: true }), // add `ssr: true` for streaming SSR
+    solid({ start: true, diagnostics: true }), // add `ssr: true` for streaming SSR
   ],
   server: {
     port: 3000,
