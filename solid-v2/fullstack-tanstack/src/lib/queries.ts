@@ -33,16 +33,19 @@ export function createQueryClient() {
   });
 }
 
-// The loaders' prefetch hint, hydration-boot aware. Loaders run inside the
-// client boot's pre-hydrate `router.load()` (src/App.tsx) — before the app
-// has hydrated, so before QueryClientProvider's channel has primed the cache
-// with the entries the server is shipping. Prefetching then would refetch
-// everything the server just rendered; the boot load's job on that pass is
-// resolving matched route chunks and committing matches, so the hint stands
-// down. Everywhere else — SSR (src/setup.tsx), the single-flight collector
-// (src/server-config.ts), client navigations and hover preloads — it
-// prefetches as usual. (A query SSR failed to dehydrate is not stranded:
-// the channel's done marker releases its useQuery, which then fetches.)
+// The loaders' prefetch hint, hydration-boot aware. Fire-and-forget on
+// every side: loaders *start* their queries as navigation begins (and on
+// hover preloads) without blocking the router — the navigation commits
+// immediately and components pick the data up at the read point. On the
+// server this is what lets SSR stream each Loading boundary as its query
+// settles instead of collapsing TTFB to the slowest fetch.
+//
+// The one exception is the client boot: loaders run inside the pre-hydrate
+// `router.load()` (src/App.tsx), before QueryClientProvider's channel has
+// primed the cache with the entries the server is shipping — fetching then
+// would refetch everything the server just rendered, so the hint stands
+// down. (A query SSR failed to dehydrate is not stranded: the channel's
+// done marker releases its useQuery, which then fetches.)
 let bootLoading = false;
 
 export function prefetch(

@@ -61,7 +61,7 @@ function UserPage() {
           }}
         >
           <input type="hidden" name="id" value={params().id} />
-          <input name="name" value={user.data?.name ?? ''} required />
+          <input name="name" defaultValue={user.data?.name ?? ''} required />
           <button type="submit" disabled={rename.isPending}>
             Rename
           </button>
