@@ -1,30 +1,19 @@
-import type { DehydratedState } from '@tanstack/solid-query';
-import { QueryClientProvider, hydrate } from '@tanstack/solid-query';
+import { QueryClientProvider } from '@tanstack/solid-query';
 import { RouterProvider } from '@tanstack/solid-router';
-import { subscribeFlightData } from '@solidjs/web/server-functions';
 
 import { bootLoad, createQueryClient } from './lib/queries';
 import { createAppRouter } from './router';
 import './App.css';
 
 // The client's Query cache: one instance for the session. Everything the
-// server hands back — the SSR hydration entries QueryClientProvider consumes
-// below, single-flight payloads after mutations — lands here, and useQuery
-// reads throughout the app follow. (No hand-rolled SSR handoff: the provider
-// owns the hydration channel, priming this cache from the server's streamed
-// dehydrated entries as they arrive.)
+// server hands back lands here and useQuery reads throughout the app
+// follow — with no hand-rolled handoffs on this side: the provider owns
+// both channels, priming this cache from the server's streamed hydration
+// entries AND hydrating single-flight payloads after mutations (the
+// dehydrated QueryClient src/server-config.ts folds into each mutation
+// response, applied before `mutate` settles so no follow-up refetch
+// happens).
 const queryClient = createQueryClient();
-
-// The client half of single-flight — and the opt-in: while a consumer is
-// subscribed, every mutation call asks the server to fold refreshed data
-// into its own response. That payload is a dehydrated QueryClient (see
-// src/server-config.ts), so consuming it is TanStack's own `hydrate`: the
-// entries land in the cache, every useQuery on those keys updates, and no
-// follow-up refetch happens. The consumer runs before the mutation's
-// promise resolves, so by the time `mutate` settles the UI is current.
-subscribeFlightData<DehydratedState>((data) => {
-  hydrate(queryClient, data);
-});
 
 const router = createAppRouter(queryClient);
 

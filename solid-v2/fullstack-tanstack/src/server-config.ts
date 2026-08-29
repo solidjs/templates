@@ -3,23 +3,26 @@
 // dispatch, on the dev middleware and the production handler alike).
 //
 // This is the server half of single-flight on a router Solid doesn't own.
-// The hook's contract is router-agnostic: core hands it the pre-digested
-// mutation outcome (the URL the client will show, the mutation's folded
-// cookie headers) and takes back an opaque payload to fold into the SAME
-// response. The strategy here is pure TanStack: build a router + Query
-// cache for the target URL, run its loaders, and ship `dehydrate(cache)` —
-// the payload IS a dehydrated QueryClient, which the client half
-// (src/App.tsx) consumes with TanStack's own `hydrate`.
-import { configureServerFunctionsServer } from '@solidjs/web/server-functions/server';
+// The collector registers under the query cache's source id
+// (FLIGHT_DATA_SOURCE, "sq") on Solid's multi-source single-flight
+// channel: core hands it the pre-digested mutation outcome (the URL the
+// client will show, the mutation's folded cookie headers) and folds the
+// returned slice into the SAME response, alongside any other cache's. The
+// strategy here is pure TanStack: build a router + Query cache for the
+// target URL, run its loaders, and ship `dehydrate(cache)` — the payload
+// IS a dehydrated QueryClient, which QueryClientProvider's built-in
+// consumer hydrates on the client (no app wiring on that side).
+import { registerFlightDataSource } from '@solidjs/web/server-functions/server';
 import { provideRequestEvent } from '@solidjs/web/storage';
-import { dehydrate } from '@tanstack/solid-query';
+import { FLIGHT_DATA_SOURCE, dehydrate } from '@tanstack/solid-query';
 import { createMemoryHistory } from '@tanstack/solid-router';
 
 import { createQueryClient, settled } from './lib/queries';
 import { createAppRouter } from './router';
 
-configureServerFunctionsServer({
-  async collectFlightData(sourceEvent, outcome) {
+registerFlightDataSource(
+  FLIGHT_DATA_SOURCE,
+  async function collectFlightData(sourceEvent, outcome) {
     // No target (a non-browser caller, or a redirect leaving the app) means
     // nothing to produce data for.
     if (!outcome.targetUrl) return undefined;
@@ -51,4 +54,4 @@ configureServerFunctionsServer({
       return state.queries.length > 0 ? state : undefined;
     });
   },
-});
+);
