@@ -1,6 +1,6 @@
 import { useMutation, useQuery } from '@tanstack/solid-query';
 import { createFileRoute } from '@tanstack/solid-router';
-import { Show } from 'solid-js';
+import { isPending, Show } from 'solid-js';
 
 import { currentUserQuery, prefetch, userQuery } from '../lib/queries';
 import { renameUser } from '../lib/users';
@@ -35,7 +35,7 @@ function UserPage() {
   }));
 
   return (
-    <section>
+    <section style={{ opacity: isPending(() => user.data) ? 0.5 : 1 }}>
       {/* Reads suspend to the surrounding boundary until the query settles —
           no loading guard, same shape as the plain fullstack template. */}
       <h2>{user.data.name}</h2>
