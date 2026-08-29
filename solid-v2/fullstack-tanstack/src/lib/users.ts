@@ -2,8 +2,10 @@
 // wrappers, because the router here isn't Solid's. On the server they are
 // plain function calls; in the browser the compiler turns each into a typed
 // fetch against the /_server endpoint. The reads are wrapped into TanStack
-// Query options in src/lib/queries.ts; the mutations take FormData so the
-// same function serves a native form post (no JS) and an enhanced submit.
+// Query options in src/lib/queries.ts; the mutations take typed arguments
+// and are called through useMutation's `mutate` — the typical TanStack
+// shape. (The plain fullstack template shows the alternative: FormData
+// signatures + form `action` posts for no-JS progressive enhancement.)
 import { GET } from '@solidjs/web/server-functions';
 
 import { findUser, listUsers, updateUser } from '../server/db';
@@ -35,9 +37,8 @@ export const getCurrentUser = GET(async () => {
   return user ? { id: userId!, ...user } : null;
 });
 
-export async function login(formData: FormData) {
+export async function login(id: string) {
   'use server';
-  const id = String(formData.get('id') ?? '');
   if (!findUser(id)) throw new Error(`No user "${id}"`);
   await setSession({ userId: id });
 }
@@ -47,12 +48,10 @@ export async function logout() {
   await clearSession();
 }
 
-export async function renameUser(formData: FormData) {
+export async function renameUser(input: { id: string; name: string }) {
   'use server';
   // Server-side authorization off the session — the UI hiding the form is
   // cosmetic; this check is the real gate.
   if (!(await getSession())?.userId) throw new Error('Sign in to rename users');
-  updateUser(String(formData.get('id') ?? ''), {
-    name: String(formData.get('name') ?? ''),
-  });
+  updateUser(input.id, { name: input.name });
 }

@@ -2,7 +2,6 @@ import { useMutation, useQuery } from '@tanstack/solid-query';
 import { createFileRoute } from '@tanstack/solid-router';
 import { Show } from 'solid-js';
 
-import { formAction } from '../lib/form-action';
 import { currentUserQuery, prefetch, userQuery } from '../lib/queries';
 import { renameUser } from '../lib/users';
 
@@ -32,36 +31,29 @@ function UserPage() {
   // parent list) into the Query cache, so every read below is current. (The
   // arrow keeps useMutation's extra context argument out of the RPC.)
   const rename = useMutation(() => ({
-    mutationFn: (formData: FormData) => renameUser(formData),
+    mutationFn: (input: { id: string; name: string }) => renameUser(input),
   }));
 
   return (
     <section>
-      <Show when={user.data}>
-        {(user) => (
-          <>
-            <h2>{user().name}</h2>
-            <p>{user().title}</p>
-          </>
-        )}
-      </Show>
+      {/* Reads suspend to the surrounding boundary until the query settles —
+          no loading guard, same shape as the plain fullstack template. */}
+      <h2>{user.data.name}</h2>
+      <p>{user.data.title}</p>
       {/* The server checks the session — hiding the form when signed out is
-          just honest UI (see src/lib/users.ts). The hidden id field keeps
-          the native (no-JS) post self-contained. */}
+          just honest UI (see src/lib/users.ts). */}
       <Show
         when={me.data}
         fallback={<p>Sign in on the home page to rename users.</p>}
       >
         <form
-          action={formAction(renameUser)}
-          method="post"
           onSubmit={(event) => {
             event.preventDefault();
-            rename.mutate(new FormData(event.currentTarget));
+            const name = new FormData(event.currentTarget).get('name');
+            rename.mutate({ id: params().id, name: String(name) });
           }}
         >
-          <input type="hidden" name="id" value={params().id} />
-          <input name="name" defaultValue={user.data?.name ?? ''} required />
+          <input name="name" value={user.data.name} required />
           <button type="submit" disabled={rename.isPending}>
             Rename
           </button>

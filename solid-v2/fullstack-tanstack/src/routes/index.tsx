@@ -3,7 +3,6 @@ import { createFileRoute } from '@tanstack/solid-router';
 import { For, Show } from 'solid-js';
 
 import Counter from '../components/Counter';
-import { formAction } from '../lib/form-action';
 import { currentUserQuery, prefetch, usersQuery } from '../lib/queries';
 import { login, logout } from '../lib/users';
 import logo from '../logo.svg';
@@ -36,7 +35,7 @@ function Home() {
   // arrows matter: mutationFn is called with (variables, context), and a
   // server function forwards every argument into the RPC.
   const loginAction = useMutation(() => ({
-    mutationFn: (formData: FormData) => login(formData),
+    mutationFn: (id: string) => login(id),
   }));
   const logoutAction = useMutation(() => ({ mutationFn: () => logout() }));
 
@@ -48,18 +47,17 @@ function Home() {
       <p>
         Edit <code>src/routes/index.tsx</code> and save to reload.
       </p>
-      {/* The session pillar: plain forms posting to server functions. The
-          `action` URL serves the no-JS path; onSubmit upgrades it to an RPC
-          call whose response carries the refreshed queries (single flight). */}
+      {/* The session pillar: forms driving mutations through `mutate` — the
+          RPC response carries the refreshed queries (single flight), so the
+          UI below flips with no invalidation call. */}
       <Show
         when={me.data}
         fallback={
           <form
-            action={formAction(login)}
-            method="post"
             onSubmit={(event) => {
               event.preventDefault();
-              loginAction.mutate(new FormData(event.currentTarget));
+              const id = new FormData(event.currentTarget).get('id');
+              loginAction.mutate(String(id));
             }}
           >
             <select name="id">
@@ -76,8 +74,6 @@ function Home() {
       >
         {(user) => (
           <form
-            action={formAction(logout)}
-            method="post"
             onSubmit={(event) => {
               event.preventDefault();
               logoutAction.mutate();
