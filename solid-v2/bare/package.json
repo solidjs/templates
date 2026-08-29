@@ -12,15 +12,15 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@solidjs/diagnostics": "^2.0.0-rc.3",
-    "@solidjs/vite-plugin": "^3.0.0-next.34",
+    "@solidjs/diagnostics": "^2.0.0-rc.4",
+    "@solidjs/vite-plugin": "^3.0.0-next.35",
     "eslint-plugin-solid": "~0.16.1",
     "oxlint": "~1.79.0",
     "typescript": "^5.9.2",
     "vite": "^8.1.5"
   },
   "dependencies": {
-    "@solidjs/web": "^2.0.0-rc.3",
-    "solid-js": "^2.0.0-rc.3"
+    "@solidjs/web": "^2.0.0-rc.4",
+    "solid-js": "^2.0.0-rc.4"
   }
 }
