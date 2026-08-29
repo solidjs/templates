@@ -80,18 +80,3 @@ export async function bootLoad(router: { load: () => Promise<void> }) {
     await new Promise(() => {});
   }
 }
-
-// Awaits every in-flight fetch in the cache — the single-flight collector's
-// settling point (src/server-config.ts) after `router.load()`, whose loaders
-// only *start* prefetches (they don't block navigation). SSR no longer needs
-// it: the render suspends per query and QueryClientProvider's channel streams
-// entries as they settle. `query.promise` is query-core's public handle on
-// the pending fetch; errors surface through the query state, not here.
-export async function settled(queryClient: QueryClient) {
-  await Promise.all(
-    queryClient
-      .getQueryCache()
-      .getAll()
-      .map((query) => query.promise?.catch(() => undefined)),
-  );
-}

@@ -1,5 +1,5 @@
 import { QueryClientProvider } from '@tanstack/solid-query';
-import { RouterProvider } from '@tanstack/solid-router';
+import { isRedirect, RouterProvider } from '@tanstack/solid-router';
 
 import { bootLoad, createQueryClient } from './lib/queries';
 import { createAppRouter } from './router';
@@ -26,6 +26,32 @@ const router = createAppRouter(queryClient);
 // hydrates, moments later), so prefetching would refetch everything the
 // server just rendered.
 if (typeof window !== 'undefined') {
+  // Redirects thrown where the router is driving — beforeLoad, loaders,
+  // and any queryFn a loader awaits — are the router's own to handle: it
+  // navigates on the client, and the server answers a real 30x
+  // (src/setup.tsx). But cache-driven fetches run outside the router: a
+  // background refetch or a mutation throwing redirect() (a session
+  // expiring, say) would just settle into cache error state with nobody
+  // navigating. This is that last stretch of glue — hand redirect errors
+  // from both caches to the router. Runtime navigation, so it belongs
+  // here in the client boot, not anywhere near SSR.
+  const navigateOnRedirect = <TRest extends Array<unknown>>(
+    onError?: (error: Error, ...rest: TRest) => void,
+  ) => {
+    return (error: Error, ...rest: TRest) => {
+      if (isRedirect(error)) {
+        error.options._fromLocation = router.stores.location.get();
+        void router.navigate(router.resolveRedirect(error).options);
+        return;
+      }
+      onError?.(error, ...rest);
+    };
+  };
+  const queryCache = queryClient.getQueryCache();
+  const mutationCache = queryClient.getMutationCache();
+  queryCache.config.onError = navigateOnRedirect(queryCache.config.onError);
+  mutationCache.config.onError = navigateOnRedirect(mutationCache.config.onError);
+
   await bootLoad(router);
 }
 
