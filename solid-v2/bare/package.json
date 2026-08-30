@@ -8,7 +8,7 @@
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview",
-    "lint": "oxlint -c oxlint.config.mjs src"
+    "lint": "oxlint src"
   },
   "license": "MIT",
   "devDependencies": {
