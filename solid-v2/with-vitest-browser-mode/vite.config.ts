@@ -17,6 +17,12 @@ export default defineConfig({
   server: {
     port: 3000,
   },
+  optimizeDeps: {
+    // Pre-bundle the diagnostics client that `diagnostics: true` injects, so
+    // the first test run after a fresh install doesn't restart mid-run on
+    // Vite's cold dependency-optimization reload.
+    include: ['@solidjs/diagnostics/browser', '@solidjs/diagnostics/protocol'],
+  },
   test: {
     globals: false,
     setupFiles: ['./vitest-setup.ts'],
