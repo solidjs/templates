@@ -15,7 +15,7 @@
   "devDependencies": {
     "@solidjs/diagnostics": "^2.0.0-rc.6",
     "@solidjs/testing-library": "^1.0.0-beta.2",
-    "@solidjs/vite-plugin": "^3.0.0-next.35",
+    "@solidjs/vite-plugin": "^3.0.0-next.38",
     "@tanstack/router-plugin": "1.168.35",
     "@testing-library/jest-dom": "^6.6.3",
     "@types/node": "^26.2.0",
