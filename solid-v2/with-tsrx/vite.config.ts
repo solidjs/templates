@@ -11,6 +11,9 @@ export default defineConfig({
     // `extensions` makes @solidjs/vite-plugin also compile the `?pick=` route
     // modules the fileRoutes plugin emits (their ids end in a query string).
     solid({ start: true, extensions: ['.jsx', '.tsx'], diagnostics: true }), // add `ssr: true` for streaming SSR
+    // Route modules stay .tsx: fileRoutes' export analyzer (oxc-parser)
+    // cannot parse TSRX syntax yet, and it must parse every route module to
+    // apply the page convention. Everything outside src/routes can be .tsrx.
     fileRoutes({ types: true }),
   ],
   server: {

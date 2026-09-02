@@ -1,6 +1,6 @@
 ## Solid `with-tsrx` template (experimental)
 
-This is `basic` plus **experimental TSRX** — same routes, same demo, same tests; the counter and a small guestbook are authored as `.tsrx` modules instead of `.tsx`. The diff against `basic` is the documentation of what TSRX changes.
+This is `basic` plus **experimental TSRX** — same routes, same demo, same tests; the app is authored in `.tsrx` instead of `.tsx` wherever the current tooling allows: the app root (`src/App.tsrx`), the document shell (`src/Document.tsrx`), and the components (`src/components/*.tsrx`). Route modules under `src/routes` stay `.tsx` for now — see "What stays `.tsx` and why" below. The diff against `basic` is the documentation of what TSRX changes.
 
 TSRX support is experimental across the whole stack: the compiler frontends in `solid-js` 2.0 RC, the `.tsrx` pipeline in `@solidjs/vite-plugin`, and the third-party editor tooling are all pre-1.0 and may change. Treat this template as a preview of the format, not a stability contract.
 
@@ -10,12 +10,22 @@ TSRX support is experimental across the whole stack: the compiler frontends in `
 
 [TSRX](https://tsrx.dev) is a TypeScript-compatible syntax extension for component-oriented UI code: everything valid in TypeScript stays valid, and the format adds statement-container function bodies (`@{ ... }`), template control flow (`@if`/`@else`, `@for ... @empty`, `@switch`, `@try`), scoped `<style>` blocks, and dynamic tags (`<{expr}>`). It is a cross-framework specification; Solid ships its own compiler frontends for it (native and Babel) as of `solid-js` 2.0.0-rc.6.
 
-**The file extension is the opt-in.** `@solidjs/vite-plugin` routes `.tsrx` modules through the Solid compiler automatically — there is no config flag, nothing was added to `vite.config.ts` for this template. Retained TypeScript is stripped as usual, and `.tsrx` modules participate in dependency scanning, code splitting, and entry discovery like any other source file. Imports spell the extension out (`import Counter from './Counter.tsrx'`).
+**The file extension is the opt-in.** `@solidjs/vite-plugin` routes `.tsrx` modules through the Solid compiler automatically — there is no config flag, nothing was added to `vite.config.ts` for this template. Retained TypeScript is stripped as usual, and `.tsrx` modules participate in dependency scanning, code splitting, and entry discovery like any other source file: the turnkey `src/App.*` and `src/Document.*` conventions pick up the `.tsrx` versions directly. Imports spell the extension out (`import Counter from './Counter.tsrx'`).
 
-## What the components demonstrate
+## What the `.tsrx` files demonstrate
 
-- **`src/components/Counter.tsrx`** — the statement-container function body (`function Counter(props) @{ ... }`: TypeScript setup first, then exactly one rendered output), a scoped `<style>` block, and an `@if` block that renders a milestone message (it lowers to Solid's `<Show>`).
+- **`src/App.tsrx`** — the app root as TSRX: a statement-container function body (`function App() @{ ... }`) rendering the router, with an ordinary arrow render prop inside the template.
+- **`src/Document.tsrx`** — the document shell, picked up by the `src/Document.*` convention and compiled only into the prerendered static shell.
+- **`src/components/Counter.tsrx`** — the statement-container body with setup (`@{` TypeScript first, then exactly one rendered output), a scoped `<style>` block, and an `@if` block that renders a milestone message (it lowers to Solid's `<Show>`).
 - **`src/components/Guestbook.tsrx`** — `@for (const guest of guests(); index i) { ... } @empty { ... }` over a reactive list (it lowers to Solid's `<For>`; item reads stay deferred, so a replaced row updates in place) plus descendant selectors in its scoped styles.
+
+## What stays `.tsx` and why
+
+- **Route modules (`src/routes/**`)** — the `fileRoutes()` scanner (`filesystem-routing`) statically analyzes every route module's exports to apply the page convention (default export = page, `route` export = config), and its parser (`oxc-parser`) cannot parse TSRX syntax yet: a `.tsrx`route fails the build at the first`@{`. Route pages can freely *import* `.tsrx` components (the home route imports both), so only the thin route modules themselves wait on the scanner.
+- **Test files (`*.test.tsx`)** — by design: vitest never needs to parse TSRX-authored source, the tests import the compiled `.tsrx` components and stay ordinary TSX.
+- **`src/router.ts`, `vite.config.ts`, `vitest-setup.ts`** — no JSX, nothing to convert.
+
+One styling note: `src/App.tsrx` keeps its nav styles in `App.css`. A scoped `<style>` block reaches its sibling elements and their descendants, but not markup rendered inside the `<Router>` render prop — and the `tsrx-tsc`/editor projection does not support `<style>` inside arrow functions yet. Scoped styles are demonstrated in the components, where they work end-to-end.
 
 ## Scoped CSS sidecars
 
