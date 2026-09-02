@@ -1,0 +1,7 @@
+# pnpm settings for this project (honored even for a single-package project —
+# this file marks the workspace root). The Solid packages release in lockstep
+# and templates track them closely; exclude the whole family from any
+# minimumReleaseAge policy so fresh Solid releases install immediately.
+minimumReleaseAgeExclude:
+  - solid-js
+  - '@solidjs/*'
