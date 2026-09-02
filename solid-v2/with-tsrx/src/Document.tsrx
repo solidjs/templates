@@ -8,17 +8,15 @@ import { HydrationScript } from '@solidjs/web';
 // <HydrationScript /> is stripped from the shell, and it activates when the
 // app flips to SSR (`ssr: true` in vite.config.ts) — no document changes
 // needed. Delete this file to fall back to the plugin's built-in shell.
-export default function Document(props: ParentProps) {
-  return (
-    <html lang="en">
-      <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-        <title>Solid App</title>
-        <HydrationScript />
-      </head>
-      <body>{props.children}</body>
-    </html>
-  );
+export default function Document(props: ParentProps) @{
+  <html lang="en">
+    <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <link rel="icon" href="/favicon.ico" />
+      <title>Solid App</title>
+      <HydrationScript />
+    </head>
+    <body>{props.children}</body>
+  </html>
 }
