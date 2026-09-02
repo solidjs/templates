@@ -1,6 +1,6 @@
 ## Solid `with-tsrx` template (experimental)
 
-This is `basic` plus **experimental TSRX** — same routes, same demo, same tests; the app is authored in `.tsrx` instead of `.tsx` wherever the current tooling allows: the app root (`src/App.tsrx`), the document shell (`src/Document.tsrx`), and the components (`src/components/*.tsrx`). Route modules under `src/routes` stay `.tsx` for now — see "What stays `.tsx` and why" below. The diff against `basic` is the documentation of what TSRX changes.
+This is `basic` plus **experimental TSRX** — same routes, same demo, same tests; the whole app is authored in `.tsrx` instead of `.tsx`: the app root (`src/App.tsrx`), the document shell (`src/Document.tsrx`), the components (`src/components/*.tsrx`), and every route module under `src/routes`. The diff against `basic` is the documentation of what TSRX changes.
 
 TSRX support is experimental across the whole stack: the compiler frontends in `solid-js` 2.0 RC, the `.tsrx` pipeline in `@solidjs/vite-plugin`, and the third-party editor tooling are all pre-1.0 and may change. Treat this template as a preview of the format, not a stability contract.
 
@@ -18,10 +18,10 @@ TSRX support is experimental across the whole stack: the compiler frontends in `
 - **`src/Document.tsrx`** — the document shell, picked up by the `src/Document.*` convention and compiled only into the prerendered static shell.
 - **`src/components/Counter.tsrx`** — the statement-container body with setup (`@{` TypeScript first, then exactly one rendered output), a scoped `<style>` block, and an `@if` block that renders a milestone message (it lowers to Solid's `<Show>`).
 - **`src/components/Guestbook.tsrx`** — `@for (const guest of guests(); index i) { ... } @empty { ... }` over a reactive list (it lowers to Solid's `<For>`; item reads stay deferred, so a replaced row updates in place) plus descendant selectors in its scoped styles.
+- **`src/routes/*.tsrx`** — route modules are TSRX too. The `fileRoutes()` scanner (`filesystem-routing` ≥ 0.3.0) statically analyzes every route module's exports to apply the page convention (default export = page, `route` export = config); for `.tsrx` routes it does that through [`@tsrx/oxc`](https://www.npmjs.com/package/@tsrx/oxc), which this template installs as a dev dependency (it is an optional peer of `filesystem-routing`, needed only when routes are `.tsrx`). `src/routes/users/[id].tsrx` shows the full shape: a `query` + `route.preload` config export next to a statement-container page component.
 
-## What stays `.tsx` and why
+## What stays `.tsx`/`.ts`
 
-- **Route modules (`src/routes/**`)** — the `fileRoutes()` scanner (`filesystem-routing`) statically analyzes every route module's exports to apply the page convention (default export = page, `route` export = config), and its parser (`oxc-parser`) cannot parse TSRX syntax yet: a `.tsrx`route fails the build at the first`@{`. Route pages can freely *import* `.tsrx` components (the home route imports both), so only the thin route modules themselves wait on the scanner.
 - **Test files (`*.test.tsx`)** — by design: vitest never needs to parse TSRX-authored source, the tests import the compiled `.tsrx` components and stay ordinary TSX.
 - **`src/router.ts`, `vite.config.ts`, `vitest-setup.ts`** — no JSX, nothing to convert.
 
@@ -45,7 +45,7 @@ Plain `tsc` cannot resolve `.tsrx` imports. `pnpm typecheck` runs `tsrx-tsc --no
 
 ## Linting and formatting
 
-`oxlint` cannot parse TSRX syntax; `.tsrx` is excluded in `oxlint.config.mjs` (the files are outside oxlint's extension set today — the ignore entry makes the posture explicit). `pnpm lint` still covers every `.ts`/`.tsx` file. The TSRX project publishes [`@tsrx/oxc`](https://www.npmjs.com/package/@tsrx/oxc) (`.tsrx`-aware oxlint/oxfmt) and `@tsrx/prettier-plugin`; `eslint-plugin-solid` coverage for `.tsrx` is future work, so this template keeps the stock toolchain and leaves those opt-in.
+`oxlint` cannot parse TSRX syntax; `.tsrx` is excluded in `oxlint.config.mjs` (the files are outside oxlint's extension set today — the ignore entry makes the posture explicit). `pnpm lint` still covers every `.ts`/`.tsx` file. `@tsrx/oxc` (installed here for route export analysis) also ships a `.tsrx`-aware `oxlint`/`oxfmt`, but this template keeps the stock `oxlint` for linting (its own bin wins in `node_modules/.bin`); `eslint-plugin-solid` coverage for `.tsrx` is future work, so `.tsrx`-aware linting stays opt-in.
 
 ## Current limits
 

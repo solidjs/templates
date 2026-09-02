@@ -9,18 +9,16 @@ export const route = {
   preload: () => httpStatus(404),
 } satisfies RouteDefinition;
 
-export default function NotFound() {
-  return (
-    <main>
-      <Title>Not Found - Solid App</Title>
-      <h1>Page Not Found</h1>
-      <p>
-        Visit{' '}
-        <a href="https://docs.solidjs.com" target="_blank" rel="noreferrer">
-          docs.solidjs.com
-        </a>{' '}
-        to learn how to build Solid apps.
-      </p>
-    </main>
-  );
+export default function NotFound() @{
+  <main>
+    <Title>Not Found - Solid App</Title>
+    <h1>Page Not Found</h1>
+    <p>
+      Visit{' '}
+      <a href="https://docs.solidjs.com" target="_blank" rel="noreferrer">
+        docs.solidjs.com
+      </a>{' '}
+      to learn how to build Solid apps.
+    </p>
+  </main>
 }

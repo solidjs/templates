@@ -24,7 +24,7 @@ Name your signals/memos/effects (the `{ name: "..." }` option) — attribution r
 
 ## TSRX modules (`.tsrx`)
 
-This template authors the app in experimental TSRX wherever tooling allows: `src/App.tsrx`, `src/Document.tsrx`, and `src/components/*.tsrx`. Rules that differ from `.tsx`:
+This template authors the whole app in experimental TSRX: `src/App.tsrx`, `src/Document.tsrx`, `src/components/*.tsrx`, and every route module under `src/routes`. Rules that differ from `.tsx`:
 
 - The extension is the opt-in: import with it spelled out (`./Counter.tsrx`). The Vite plugin compiles these automatically; no config.
 - A function body can be a statement container: `function C(props) @{ setup; <output/> }` — TypeScript statements first, then exactly one rendered output node (use a fragment for siblings).
@@ -32,5 +32,5 @@ This template authors the app in experimental TSRX wherever tooling allows: `src
 - A `<style>` block scopes its **sibling** elements and their descendants (not its ancestors). Unused selectors are pruned from the emitted CSS.
 - Authored lazy destructuring (`&{ ... }`/`&[ ... ]`) is rejected by the Solid target — keep reads explicit.
 - Type checking: `pnpm typecheck` (`tsrx-tsc`); plain `tsc` cannot resolve `.tsrx` imports. oxlint skips `.tsrx` files.
-- **Route modules under `src/routes` must stay `.tsx`**: the fileRoutes scanner parses route sources with oxc-parser, which cannot read TSRX — a `.tsrx` route file breaks the build. Routes may import `.tsrx` components freely.
+- Route modules are `.tsrx` too: the fileRoutes scanner (`filesystem-routing` ≥ 0.3.0) analyzes `.tsrx` route exports through `@tsrx/oxc` (a dev dependency here). Keep `route` config exports as plain top-level TypeScript statements — only the component body uses `@{ ... }`.
 - Do not put a `<style>` block inside an arrow function (e.g. a render prop): the compiler only scopes a style's siblings and their descendants, and the typecheck projection rejects that placement. Component-level `<style>` in function bodies is fully supported.
