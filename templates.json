@@ -14,7 +14,7 @@
         { "name": "with-sass" },
         { "name": "with-tailwindcss" },
         { "name": "with-tanstack-router" },
-        { "name": "with-tsrx" },
+        { "name": "with-tsrx", "tsOnly": true },
         { "name": "with-unocss" },
         { "name": "with-vitest-browser-mode" }
       ]
