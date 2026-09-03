@@ -21,7 +21,7 @@ each "blocked" row says exactly what to check before porting.
 
 Resolved since the original audit (kept here so the history reads right):
 
-- `@solidjs/testing-library` — unblocked: `1.0.0-beta.2` targets Solid 2 and ships in
+- `@solidjs/testing-library` — unblocked: `1.0.0-beta.3` targets Solid 2 and ships in
   `basic`'s test floor. Advance the pin when a stable lands.
 - TanStack Router / Query — unblocked: `with-tanstack-router` and `fullstack-tanstack`
   shipped on their Solid 2 betas.
