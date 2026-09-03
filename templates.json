@@ -1,87 +1,88 @@
 {
-	"version": 1,
-	"groups": {
-		"solid": {
-			"label": "Solid 2.0",
-			"path": "solid-v2",
-			"status": "beta",
-			"templates": [
-				{ "name": "basic", "default": true, "ssrToggle": true },
-				{ "name": "bare" },
-				{ "name": "fullstack" },
-				{ "name": "fullstack-tanstack" },
-				{ "name": "with-bootstrap" },
-				{ "name": "with-sass" },
-				{ "name": "with-tailwindcss" },
-				{ "name": "with-tanstack-router" },
-				{ "name": "with-unocss" },
-				{ "name": "with-vitest-browser-mode" }
-			]
-		},
-		"start-v2": {
-			"label": "SolidStart 2 (Solid 1.x)",
-			"path": "solid-start-v2",
-			"status": "stable",
-			"templates": [
-				{ "name": "basic", "default": true },
-				{ "name": "bare" },
-				{ "name": "with-auth" },
-				{ "name": "with-authjs" },
-				{ "name": "with-drizzle" },
-				{ "name": "with-mdx" },
-				{ "name": "with-prisma" },
-				{ "name": "with-solid-styled" },
-				{ "name": "with-solidbase" },
-				{ "name": "with-strict-csp" },
-				{ "name": "with-tailwindcss" },
-				{ "name": "with-trpc" },
-				{ "name": "with-unocss" },
-				{ "name": "with-vitest" }
-			]
-		},
-		"start-v1": {
-			"label": "SolidStart 1 (Legacy)",
-			"path": "solid-start-v1",
-			"status": "legacy",
-			"templates": [
-				{ "name": "basic", "default": true },
-				{ "name": "bare" },
-				{ "name": "with-solidbase" },
-				{ "name": "with-auth" },
-				{ "name": "with-authjs" },
-				{ "name": "with-drizzle" },
-				{ "name": "with-mdx" },
-				{ "name": "with-prisma" },
-				{ "name": "with-solid-styled" },
-				{ "name": "with-tailwindcss" },
-				{ "name": "with-tanstack-router" },
-				{ "name": "with-trpc" },
-				{ "name": "with-unocss" },
-				{ "name": "with-vitest" },
-				{ "name": "with-strict-csp" }
-			]
-		},
-		"vanilla": {
-			"label": "SolidJS + Vite (Solid 1.x)",
-			"path": "vanilla",
-			"status": "stable",
-			"templates": [
-				{ "name": "basic", "default": true },
-				{ "name": "bare" },
-				{ "name": "with-bootstrap" },
-				{ "name": "with-jest" },
-				{ "name": "with-sass" },
-				{ "name": "with-solid-router" },
-				{ "name": "with-tailwindcss" },
-				{ "name": "with-tanstack-router-config-based" },
-				{ "name": "with-tanstack-router-file-based" },
-				{ "name": "with-tanstack-start" },
-				{ "name": "with-unocss" },
-				{ "name": "with-uvu" },
-				{ "name": "with-vite-plugin-pages" },
-				{ "name": "with-vitest" },
-				{ "name": "with-vitest-browser-mode" }
-			]
-		}
-	}
+  "version": 1,
+  "groups": {
+    "solid": {
+      "label": "Solid 2.0",
+      "path": "solid-v2",
+      "status": "beta",
+      "templates": [
+        { "name": "basic", "default": true, "ssrToggle": true },
+        { "name": "bare" },
+        { "name": "fullstack" },
+        { "name": "fullstack-tanstack" },
+        { "name": "with-bootstrap" },
+        { "name": "with-sass" },
+        { "name": "with-tailwindcss" },
+        { "name": "with-tanstack-router" },
+        { "name": "with-tsrx", "tsOnly": true },
+        { "name": "with-unocss" },
+        { "name": "with-vitest-browser-mode" }
+      ]
+    },
+    "start-v2": {
+      "label": "SolidStart 2 (Solid 1.x)",
+      "path": "solid-start-v2",
+      "status": "stable",
+      "templates": [
+        { "name": "basic", "default": true },
+        { "name": "bare" },
+        { "name": "with-auth" },
+        { "name": "with-authjs" },
+        { "name": "with-drizzle" },
+        { "name": "with-mdx" },
+        { "name": "with-prisma" },
+        { "name": "with-solid-styled" },
+        { "name": "with-solidbase" },
+        { "name": "with-strict-csp" },
+        { "name": "with-tailwindcss" },
+        { "name": "with-trpc" },
+        { "name": "with-unocss" },
+        { "name": "with-vitest" }
+      ]
+    },
+    "start-v1": {
+      "label": "SolidStart 1 (Legacy)",
+      "path": "solid-start-v1",
+      "status": "legacy",
+      "templates": [
+        { "name": "basic", "default": true },
+        { "name": "bare" },
+        { "name": "with-solidbase" },
+        { "name": "with-auth" },
+        { "name": "with-authjs" },
+        { "name": "with-drizzle" },
+        { "name": "with-mdx" },
+        { "name": "with-prisma" },
+        { "name": "with-solid-styled" },
+        { "name": "with-tailwindcss" },
+        { "name": "with-tanstack-router" },
+        { "name": "with-trpc" },
+        { "name": "with-unocss" },
+        { "name": "with-vitest" },
+        { "name": "with-strict-csp" }
+      ]
+    },
+    "vanilla": {
+      "label": "SolidJS + Vite (Solid 1.x)",
+      "path": "vanilla",
+      "status": "stable",
+      "templates": [
+        { "name": "basic", "default": true },
+        { "name": "bare" },
+        { "name": "with-bootstrap" },
+        { "name": "with-jest" },
+        { "name": "with-sass" },
+        { "name": "with-solid-router" },
+        { "name": "with-tailwindcss" },
+        { "name": "with-tanstack-router-config-based" },
+        { "name": "with-tanstack-router-file-based" },
+        { "name": "with-tanstack-start" },
+        { "name": "with-unocss" },
+        { "name": "with-uvu" },
+        { "name": "with-vite-plugin-pages" },
+        { "name": "with-vitest" },
+        { "name": "with-vitest-browser-mode" }
+      ]
+    }
+  }
 }

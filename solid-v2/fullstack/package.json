@@ -13,9 +13,9 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@solidjs/diagnostics": "^2.0.0-rc.4",
+    "@solidjs/diagnostics": "^2.0.0-rc.6",
     "@solidjs/testing-library": "^1.0.0-beta.2",
-    "@solidjs/vite-plugin": "^3.0.0-next.35",
+    "@solidjs/vite-plugin": "^3.0.0-next.38",
     "@testing-library/jest-dom": "^6.6.3",
     "@types/node": "^26.2.0",
     "eslint-plugin-solid": "~0.17.0",
@@ -29,9 +29,9 @@
   "dependencies": {
     "@remix-run/cookie": "^0.5.4",
     "@solidjs/meta": "^1.0.0-next.2",
-    "@solidjs/router": "^2.0.0-next.19",
-    "@solidjs/web": "^2.0.0-rc.4",
-    "solid-js": "^2.0.0-rc.4",
+    "@solidjs/router": "^2.0.0-next.21",
+    "@solidjs/web": "^2.0.0-rc.6",
+    "solid-js": "^2.0.0-rc.6",
     "valibot": "^1.4.2"
   }
 }

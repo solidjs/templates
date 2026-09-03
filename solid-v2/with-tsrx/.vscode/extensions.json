@@ -1,0 +1,6 @@
+{
+  // TSRX Syntax for VS Code: syntax highlighting, diagnostics, completions,
+  // and go-to-definition for .tsrx files. It bundles @tsrx/language-server,
+  // so no further editor configuration is needed.
+  "recommendations": ["tsrx.tsrx-vscode-plugin"]
+}
