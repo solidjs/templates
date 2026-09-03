@@ -45,7 +45,7 @@ Plain `tsc` cannot resolve `.tsrx` imports. `pnpm typecheck` runs `tsrx-tsc --no
 
 ## Linting and formatting
 
-`oxlint` cannot parse TSRX syntax; `.tsrx` is excluded in `oxlint.config.mjs` (the files are outside oxlint's extension set today — the ignore entry makes the posture explicit). `pnpm lint` still covers every `.ts`/`.tsx` file. `@tsrx/oxc` (installed here for route export analysis) also ships a `.tsrx`-aware `oxlint`/`oxfmt`, but this template keeps the stock `oxlint` for linting (its own bin wins in `node_modules/.bin`); `eslint-plugin-solid` coverage for `.tsrx` is future work, so `.tsrx`-aware linting stays opt-in.
+`oxlint` cannot parse TSRX syntax; `.tsrx` is excluded in `oxlint.config.ts` (the files are outside oxlint's extension set today — the ignore entry makes the posture explicit). `pnpm lint` still covers every `.ts`/`.tsx` file. `@tsrx/oxc` (installed here for route export analysis) also ships a `.tsrx`-aware `oxlint`/`oxfmt`, but this template keeps the stock `oxlint` for linting (its own bin wins in `node_modules/.bin`); `eslint-plugin-solid` coverage for `.tsrx` is future work, so `.tsrx`-aware linting stays opt-in.
 
 ## Current limits
 

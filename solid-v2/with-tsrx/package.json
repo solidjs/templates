@@ -10,7 +10,7 @@
     "serve": "vite preview",
     "test": "vitest",
     "typecheck": "tsrx-tsc --noEmit",
-    "lint": "oxlint -c oxlint.config.mjs src"
+    "lint": "oxlint src"
   },
   "license": "MIT",
   "devDependencies": {
