@@ -24,7 +24,6 @@ export const getUsers = GET(async () => {
 
 export const getUser = GET(async (id: string) => {
   'use server';
-  await new Promise((resolve) => setTimeout(resolve, 1000));
   return findUser(id) ?? { name: 'Unknown', title: 'No such user' };
 });
 

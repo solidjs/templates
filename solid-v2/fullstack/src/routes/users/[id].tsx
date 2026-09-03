@@ -1,6 +1,6 @@
 import { Title } from '@solidjs/meta';
 import { type RouteDefinition, type RouteProps } from '@solidjs/router';
-import { Show, createMemo } from 'solid-js';
+import { Show, createMemo, isPending } from 'solid-js';
 
 import { getCurrentUser, getUser, renameUser } from '../../lib/users';
 
@@ -21,7 +21,7 @@ export default function User(props: RouteProps<'/users/:id'>) {
   const me = createMemo(() => getCurrentUser());
 
   return (
-    <section>
+    <section style={{ opacity: isPending(user) ? 0.5 : 1 }}>
       <Title>{`User ${props.params.id} - Solid App`}</Title>
       <h2>{user().name}</h2>
       <p>{user().title}</p>

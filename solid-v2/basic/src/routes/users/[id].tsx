@@ -1,7 +1,7 @@
 import { Title } from '@solidjs/meta';
 import { query, type RouteDefinition, type RouteProps } from '@solidjs/router';
 import { getRequestEvent } from '@solidjs/web';
-import { createMemo } from 'solid-js';
+import { createMemo, isPending } from 'solid-js';
 import { paths } from '../../router';
 
 // Async data loading: a query (cached per key) read through a memo — the
@@ -26,7 +26,7 @@ export default function User(props: RouteProps<'/users/:id'>) {
   const user = createMemo(() => getUser(props.params.id));
 
   return (
-    <section>
+    <section style={{ opacity: isPending(user) ? 0.5 : 1 }}>
       <Title>{`User ${props.params.id} - Solid App`}</Title>
       <h2>{user().name}</h2>
       <p>{user().title}</p>
