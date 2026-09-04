@@ -18,8 +18,8 @@ importers:
         specifier: ^6.0.0-rc.2
         version: 6.0.0-rc.2(@solidjs/web@2.0.0-rc.6(solid-js@2.0.0-rc.6))(solid-js@2.0.0-rc.6)
       '@tanstack/solid-router':
-        specifier: ^2.0.0-rc.5
-        version: 2.0.0-rc.5(@solidjs/web@2.0.0-rc.6(solid-js@2.0.0-rc.6))(solid-js@2.0.0-rc.6)
+        specifier: ^2.0.0-rc.6
+        version: 2.0.0-rc.6(@solidjs/web@2.0.0-rc.6(solid-js@2.0.0-rc.6))(solid-js@2.0.0-rc.6)
       solid-js:
         specifier: ^2.0.0-rc.6
         version: 2.0.0-rc.6
@@ -867,8 +867,8 @@ packages:
       '@solidjs/web': '>=2.0.0-rc.6 <3.0.0'
       solid-js: '>=2.0.0-rc.6 <3.0.0'
 
-  '@tanstack/solid-router@2.0.0-rc.5':
-    resolution: {integrity: sha512-0qS3phnfFIsEMzxU5fi6RwxKCQeVkh7eOORa0RzgWfABAmIc9Sl80EIR1dAdL/79GtGsfhKzJTxdhjLhIGnexQ==}
+  '@tanstack/solid-router@2.0.0-rc.6':
+    resolution: {integrity: sha512-ahTyk3ObuVQtcRFlWbDxe6glsz3KByYoqAYv4iWsLjmiXL+lw2fAuc67dOPQc6nt8AoOKIRy+/VLsMITw+GN8A==}
     engines: {node: '>=20.19'}
     peerDependencies:
       '@solidjs/web': '>=2.0.0-0 <3.0.0'
@@ -2757,7 +2757,7 @@ snapshots:
       '@tanstack/query-core': 5.101.4
       solid-js: 2.0.0-rc.6
 
-  '@tanstack/solid-router@2.0.0-rc.5(@solidjs/web@2.0.0-rc.6(solid-js@2.0.0-rc.6))(solid-js@2.0.0-rc.6)':
+  '@tanstack/solid-router@2.0.0-rc.6(@solidjs/web@2.0.0-rc.6(solid-js@2.0.0-rc.6))(solid-js@2.0.0-rc.6)':
     dependencies:
       '@solid-devtools/logger': 0.9.11(solid-js@2.0.0-rc.6)
       '@solid-primitives/refs': 1.1.4(solid-js@2.0.0-rc.6)
