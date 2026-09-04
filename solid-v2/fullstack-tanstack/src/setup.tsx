@@ -63,7 +63,11 @@ export default async function setup(
   // serialization channel. On the server it streams each query's dehydrated
   // entry into the HTML stream as it settles; the client provider primes its
   // cache from those entries as they arrive, per query — progressive, not a
-  // single end-of-render blob.
+  // single end-of-render blob. RouterProvider rides the same registry for
+  // match state: it serializes each matched route's transferable state
+  // (status, loaderData, beforeLoad context) as it renders, and the client's
+  // createRouter primes and commits its matches from those entries before
+  // hydrating — no boot load, no loader re-runs.
   return () => (
     <QueryClientProvider client={queryClient}>
       <RouterProvider router={router} />

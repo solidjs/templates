@@ -28,11 +28,12 @@ export function createAppRouter(queryClient: QueryClient, history?: RouterHistor
     // click lands.
     defaultPreload: 'intent',
     defaultPendingComponent: () => <main>Loading…</main>,
-    // Keep the client tree structurally identical to the server one: without
-    // this, Matches wraps the client render in a Loading boundary the server
-    // never rendered (it reserves that for TanStack's own SSR protocol,
-    // which assumes their stream handlers own the HTML), and hydration
-    // cannot claim the server markup. See the README's SSR section.
+    // A semantic choice, not a hydration workaround (the adapter's boundary
+    // structure is symmetric between server and client either way): without
+    // the router's global catch boundary, errors — including redirect()
+    // thrown during SSR — bubble past the router to this app's own
+    // boundaries and stream handler instead of stopping at the router's
+    // ErrorComponent.
     disableGlobalCatchBoundary: true,
   });
 }
