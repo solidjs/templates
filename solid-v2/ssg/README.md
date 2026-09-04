@@ -10,9 +10,9 @@ Same structure as `basic` — no `index.html`, no mount file, `src/App.tsx` and 
 
 - **`ssr: true`** — pages render with streaming SSR. Here that render happens once, during the build; the prerenderer writes the HTML it produces.
 - **`serverFunctions: true`** — route data lives in `'use server'` functions with real types across the boundary. In dev they run against the dev server like any fullstack app; in the build they run once and their results ship as static artifacts.
-- **`prerender({ mode: 'static' })`** (from `@solidjs/prerender/vite`) — after the client and server builds, crawls the app in-process starting at `/`: renders each page, writes its HTML, follows every same-origin link to discover more pages, and captures each `prerendered()` call as a JSON artifact under `dist/client/_static/`.
+- **`prerender({ mode: 'static' })`** (from `@solidjs/prerender/vite`) — after the client and server builds, crawls the app in-process: renders each page, writes its HTML, follows every same-origin link to discover more pages, and captures each `prerendered()` call as a JSON artifact under `dist/client/_static/`.
 
-There is no route list to maintain. The crawl finds pages the way a user would — by following links. Add a post in `src/server/posts.ts` and the next build emits its page and its data.
+There is no route list to maintain. Static file routes (`/`, `/posts`) seed the crawl directly from `src/routes`; dynamic ones (`/posts/:slug`) are found the way a user would find them — by following links. Add a post in `src/server/posts.ts` and the next build emits its page and its data.
 
 ## Data loading
 
@@ -24,6 +24,8 @@ There is no route list to maintain. The crawl finds pages the way a user would �
 `src/server/posts.ts` is the server-only source behind those functions — swap the in-memory array for a database or CMS client; it never enters the client bundle.
 
 **The constraint to understand:** only calls the build actually made have artifacts. Arguments are part of the address, so a deployed client calling `getPost('new-slug')` when no prerendered page made that call gets an error, not data. Design pages so the crawl exercises the calls the site needs — which happens naturally when pages link to what they use.
+
+The build guards the whole-function case for you: a `'use server'` function the client can call that was never captured — because it lacks `prerendered()`, or because no prerendered page called it — fails `vite build` with the function's name and module. A static site has no server to fall back to, so this is caught at build time rather than as a 404 in production.
 
 ## Dev is still live
 

@@ -26,8 +26,8 @@ Name your signals/memos/effects (the `{ name: "..." }` option) — attribution r
 
 `vite build` prerenders every page and executes every `prerendered()` server function **at build time**; `dist/client` is the entire deployment. Consequences for changes you make:
 
-- `'use server'` functions must be wrapped in `prerendered()` (see `src/data.ts`) and are read-only by nature — there is no server to receive a mutation in production. Do not add actions/mutations expecting them to work when deployed.
+- `'use server'` functions must be wrapped in `prerendered()` (see `src/data.ts`) and are read-only by nature — there is no server to receive a mutation in production. Do not add actions/mutations expecting them to work when deployed. **The build enforces this:** it fails, naming the function and its module, if the client can reach a server function that nothing prerendered.
 - Arguments to `prerendered()` functions are part of the artifact's address and must be JSON-serializable. Only calls the build's crawl actually performs have artifacts — a page must exercise a call (same arguments) for the deployed client to fetch it.
-- New pages are discovered by following links from `/`. A page nothing links to will not be prerendered unless added to the plugin's `pages` option in `vite.config.ts`.
+- Static file routes (`about.tsx`, `posts/index.tsx`) are prerendered automatically from `src/routes`. Dynamic routes (`posts/[slug].tsx`) are discovered by following links — a dynamic page nothing links to will not be prerendered unless added to the plugin's `pages` option in `vite.config.ts`.
 - Dev (`npm run dev`) runs server functions live per request — behavior that works in dev but depends on request-time state (cookies, headers, Date.now per request) will be frozen at build time in production. Keep prerendered functions deterministic on their arguments.
 - To verify the static output end to end, run `npm run build` then `npm run serve`, and confirm data loads from `/_static/*.json` (not `/_server/...`) in the network panel.
