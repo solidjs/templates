@@ -12,7 +12,6 @@ import { renameUser } from '../lib/users';
 export const Route = createFileRoute('/users/$id')({
   loader: ({ context, params }) => {
     prefetch(context.queryClient, userQuery(params.id));
-    prefetch(context.queryClient, currentUserQuery());
   },
   head: ({ params }) => ({
     meta: [{ title: `User ${params.id} - Solid App` }],

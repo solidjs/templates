@@ -1,6 +1,9 @@
+import { isServer } from '@solidjs/web';
+import * as serverFunctions from '@solidjs/web/server-functions';
 import { QueryClientProvider } from '@tanstack/solid-query';
 import { RouterProvider } from '@tanstack/solid-router';
 
+import { flightReporter } from './lib/flight';
 import { createQueryClient } from './lib/queries';
 import { createAppRouter } from './router';
 import './App.css';
@@ -16,6 +19,20 @@ import './App.css';
 // mutation call asks the server to fold refreshed data for that source into
 // its own response — see src/server-config.ts for the server half.)
 const queryClient = createQueryClient();
+
+// The report leg of scoped collection (src/lib/flight.ts): flight-eligible
+// mutation requests carry this cache's inventory and its active recipes, so
+// the server can skip recomputing what this client already holds and
+// re-execute declared queries no loader owns. Client-only — this module
+// also evaluates on the server (setup.tsx renders in App's place, but the
+// graph is shared), where in-process calls have no request to prepare and
+// the server entry ships no transport config. The namespace import keeps
+// the unused binding from being checked there.
+if (!isServer) {
+  serverFunctions.configureServerFunctionsClient({
+    prepareRequest: flightReporter(queryClient),
+  });
+}
 
 // No client boot pass: creating the router IS the hydration boot. The
 // server serialized each matched route's state into Solid's hydration
