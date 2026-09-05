@@ -15,8 +15,8 @@ importers:
         specifier: ^2.0.0-rc.6
         version: 2.0.0-rc.6(solid-js@2.0.0-rc.6)
       '@tanstack/solid-query':
-        specifier: ^6.0.0-rc.2
-        version: 6.0.0-rc.2(@solidjs/web@2.0.0-rc.6(solid-js@2.0.0-rc.6))(solid-js@2.0.0-rc.6)
+        specifier: ^6.0.0-rc.3
+        version: 6.0.0-rc.3(@solidjs/web@2.0.0-rc.6(solid-js@2.0.0-rc.6))(solid-js@2.0.0-rc.6)
       '@tanstack/solid-router':
         specifier: ^2.0.0-rc.6
         version: 2.0.0-rc.6(@solidjs/web@2.0.0-rc.6(solid-js@2.0.0-rc.6))(solid-js@2.0.0-rc.6)
@@ -861,8 +861,8 @@ packages:
     resolution: {integrity: sha512-hTWqJtqIFFdvuCl8WXNyrodp2L9zo2G37xKRrcVmVRWpAB2h+U1LuRAfS4tsFTiWOIoE/B+WDVFB8JpoEdw6jQ==}
     engines: {node: '>=20.19'}
 
-  '@tanstack/solid-query@6.0.0-rc.2':
-    resolution: {integrity: sha512-mg9FwI6z6EaU5MyFezxlYOQVQ0gHFKcPqpW7lHrodJsCP012ZXGGEzF3Y7KC1npVk3sPzhFsb5VsLMxe9UnCPA==}
+  '@tanstack/solid-query@6.0.0-rc.3':
+    resolution: {integrity: sha512-Wj23dMyRnVmKiYvvyMImZqb3+2Ftxc7FngUfloCAmQE2dpQO/QeqaSHNlpjbG6eoKqazVPe4k1xhxofUU+w/dA==}
     peerDependencies:
       '@solidjs/web': '>=2.0.0-rc.6 <3.0.0'
       solid-js: '>=2.0.0-rc.6 <3.0.0'
@@ -2751,7 +2751,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@tanstack/solid-query@6.0.0-rc.2(@solidjs/web@2.0.0-rc.6(solid-js@2.0.0-rc.6))(solid-js@2.0.0-rc.6)':
+  '@tanstack/solid-query@6.0.0-rc.3(@solidjs/web@2.0.0-rc.6(solid-js@2.0.0-rc.6))(solid-js@2.0.0-rc.6)':
     dependencies:
       '@solidjs/web': 2.0.0-rc.6(solid-js@2.0.0-rc.6)
       '@tanstack/query-core': 5.101.4
