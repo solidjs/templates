@@ -15,7 +15,7 @@
   "devDependencies": {
     "@solidjs/diagnostics": "^2.0.0-rc.6",
     "@solidjs/testing-library": "^1.0.0-beta.3",
-    "@solidjs/vite-plugin": "^3.0.0-next.38",
+    "@solidjs/vite-plugin": "^3.0.0-next.39",
     "@testing-library/jest-dom": "^6.6.3",
     "eslint-plugin-solid": "~0.17.0",
     "filesystem-routing": "0.2.1",
@@ -27,9 +27,10 @@
   },
   "dependencies": {
     "@solidjs/meta": "^1.0.0-next.2",
-    "@solidjs/prerender": "link:../../../solid-prerender/packages/solid",
+    "@solidjs/prerender": "^0.1.0",
     "@solidjs/router": "^2.0.0-next.21",
     "@solidjs/web": "^2.0.0-rc.6",
+    "prerender-crawler": "^0.1.0",
     "solid-js": "^2.0.0-rc.6"
   }
 }

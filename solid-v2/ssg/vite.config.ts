@@ -1,7 +1,8 @@
 import { fileRoutes } from 'filesystem-routing/vite';
 import { defineConfig } from 'vitest/config';
 import solid from '@solidjs/vite-plugin';
-import { prerender } from '@solidjs/prerender/vite';
+import { prerender } from 'prerender-crawler/vite';
+import { serverFunctions } from '@solidjs/prerender/integration';
 
 export default defineConfig({
   // Static site generation: the app is a full streaming-SSR Solid app —
@@ -25,11 +26,14 @@ export default defineConfig({
       extensions: ['.jsx', '.tsx'],
     }),
     fileRoutes({ types: true }),
-    // Crawls the built app starting at `/`, following same-origin links to
-    // discover every page — no route list to maintain. `mode: 'static'`
-    // writes all rendered HTML and makes a missing data artifact a hard
-    // error (there is no server to fall back to). No impact on dev.
-    prerender({ mode: 'static' }),
+    // Crawls the built app starting at `/` (plus every static file route),
+    // following same-origin links to discover every page — no route list to
+    // maintain. `mode: 'static'` writes all rendered HTML and makes a
+    // missing data artifact a hard error (there is no server to fall back
+    // to). Solid's `serverFunctions()` integration captures each
+    // `prerendered()` call as a JSON artifact and fails the build if the
+    // client can reach a server function nothing prerendered. No impact on dev.
+    prerender({ mode: 'static', integrations: [serverFunctions()] }),
   ],
   server: {
     port: 3000,

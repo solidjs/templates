@@ -12,14 +12,17 @@ importers:
         specifier: ^1.0.0-next.2
         version: 1.0.0-next.2(@solidjs/web@2.0.0-rc.6(solid-js@2.0.0-rc.6))(solid-js@2.0.0-rc.6)
       '@solidjs/prerender':
-        specifier: link:../../../solid-prerender/packages/solid
-        version: link:../../../solid-prerender/packages/solid
+        specifier: ^0.1.0
+        version: 0.1.0(@solidjs/web@2.0.0-rc.6(solid-js@2.0.0-rc.6))(prerender-crawler@0.1.0(filesystem-routing@0.2.1(vite@8.2.2))(vite@8.2.2))
       '@solidjs/router':
         specifier: ^2.0.0-next.21
         version: 2.0.0-next.21(@solidjs/web@2.0.0-rc.6(solid-js@2.0.0-rc.6))(solid-js@2.0.0-rc.6)
       '@solidjs/web':
         specifier: ^2.0.0-rc.6
         version: 2.0.0-rc.6(solid-js@2.0.0-rc.6)
+      prerender-crawler:
+        specifier: ^0.1.0
+        version: 0.1.0(filesystem-routing@0.2.1(vite@8.2.2))(vite@8.2.2)
       solid-js:
         specifier: ^2.0.0-rc.6
         version: 2.0.0-rc.6
@@ -31,8 +34,8 @@ importers:
         specifier: ^1.0.0-beta.3
         version: 1.0.0-beta.3(@solidjs/web@2.0.0-rc.6(solid-js@2.0.0-rc.6))(solid-js@2.0.0-rc.6)
       '@solidjs/vite-plugin':
-        specifier: ^3.0.0-next.38
-        version: 3.0.0-next.38(@solidjs/web@2.0.0-rc.6(solid-js@2.0.0-rc.6))(@testing-library/jest-dom@6.10.0(@testing-library/dom@10.4.1))(solid-js@2.0.0-rc.6)(vite@8.2.2)
+        specifier: ^3.0.0-next.39
+        version: 3.0.0-next.39(@solidjs/web@2.0.0-rc.6(solid-js@2.0.0-rc.6))(@testing-library/jest-dom@6.10.0(@testing-library/dom@10.4.1))(solid-js@2.0.0-rc.6)(vite@8.2.2)
       '@testing-library/jest-dom':
         specifier: ^6.6.3
         version: 6.10.0(@testing-library/dom@10.4.1)
@@ -697,6 +700,13 @@ packages:
       '@solidjs/web': ^2.0.0-rc.0
       solid-js: ^2.0.0-rc.0
 
+  '@solidjs/prerender@0.1.0':
+    resolution: {integrity: sha512-ylDtG7rWBgMEyn5nAPyrj2xHfPVhXNXF5WGpzdh+p+K2t67JRIeDA1lB7mK8KkYDOOoUGmNTWjd9xcOyUddRkQ==}
+    engines: {node: '>=20'}
+    peerDependencies:
+      '@solidjs/web': '>=2.0.0-rc.6'
+      prerender-crawler: '>=0.1.0'
+
   '@solidjs/router@2.0.0-next.21':
     resolution: {integrity: sha512-sU9n6HsWpkHN0EmT5/r7z2uXzqlIWFJEJMe3V0MXCe19S4Gc8j33sSNZzrF431uOXwUQ+/KPKU4ChzcPQPDoEw==}
     peerDependencies:
@@ -713,8 +723,8 @@ packages:
       '@solidjs/web': '>=2.0.0-0'
       solid-js: '>=2.0.0-0'
 
-  '@solidjs/vite-plugin@3.0.0-next.38':
-    resolution: {integrity: sha512-6XiolrrjNcw3g+EZyxrh/ifGNJ3zk+zePQ61jRs5YuXwmcSQENN7dNE0X0beb3wow/UoZyRUtxaRkhVNPGKgiQ==}
+  '@solidjs/vite-plugin@3.0.0-next.39':
+    resolution: {integrity: sha512-gIJI6TJd3Vs5LYSZ7w1oil5sy0dC+QuheHhTUYdwYSFy/v8yuHXKJ+tUl3dBg1yF7pZ9zbtV9d9UvNMgeyceFg==}
     engines: {node: ^20.19.0 || >=22.12.0}
     peerDependencies:
       '@solidjs/start-devtools': ^1.0.0-next.2
@@ -1490,6 +1500,18 @@ packages:
   prelude-ls@1.2.1:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
     engines: {node: '>= 0.8.0'}
+
+  prerender-crawler@0.1.0:
+    resolution: {integrity: sha512-sssU49dDTA31raGhFCRLTrdqahY80A/5OT6FaeX7+jc5Hq0I32nbInvUH2CGhzGyI3gQ+Q5P+NtGveI/JwlyXQ==}
+    engines: {node: '>=20'}
+    peerDependencies:
+      filesystem-routing: '>=0.2.0'
+      vite: ^7.0.0 || ^8.0.0
+    peerDependenciesMeta:
+      filesystem-routing:
+        optional: true
+      vite:
+        optional: true
 
   pretty-format@27.5.1:
     resolution: {integrity: sha512-Qb1gy5OrP5+zDf2Bvnzdl3jsTf1qXVMazbvCoKhtKqVs4/YK4ozX4gKQJJVyNe+cajNPn0KoC0MC3FUmaHWEmQ==}
@@ -2304,6 +2326,11 @@ snapshots:
       '@solidjs/web': 2.0.0-rc.6(solid-js@2.0.0-rc.6)
       solid-js: 2.0.0-rc.6
 
+  '@solidjs/prerender@0.1.0(@solidjs/web@2.0.0-rc.6(solid-js@2.0.0-rc.6))(prerender-crawler@0.1.0(filesystem-routing@0.2.1(vite@8.2.2))(vite@8.2.2))':
+    dependencies:
+      '@solidjs/web': 2.0.0-rc.6(solid-js@2.0.0-rc.6)
+      prerender-crawler: 0.1.0(filesystem-routing@0.2.1(vite@8.2.2))(vite@8.2.2)
+
   '@solidjs/router@2.0.0-next.21(@solidjs/web@2.0.0-rc.6(solid-js@2.0.0-rc.6))(solid-js@2.0.0-rc.6)':
     dependencies:
       '@solidjs/web': 2.0.0-rc.6(solid-js@2.0.0-rc.6)
@@ -2317,7 +2344,7 @@ snapshots:
       '@testing-library/dom': 10.4.1
       solid-js: 2.0.0-rc.6
 
-  '@solidjs/vite-plugin@3.0.0-next.38(@solidjs/web@2.0.0-rc.6(solid-js@2.0.0-rc.6))(@testing-library/jest-dom@6.10.0(@testing-library/dom@10.4.1))(solid-js@2.0.0-rc.6)(vite@8.2.2)':
+  '@solidjs/vite-plugin@3.0.0-next.39(@solidjs/web@2.0.0-rc.6(solid-js@2.0.0-rc.6))(@testing-library/jest-dom@6.10.0(@testing-library/dom@10.4.1))(solid-js@2.0.0-rc.6)(vite@8.2.2)':
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@babel/core': 7.29.7
@@ -3123,6 +3150,11 @@ snapshots:
       source-map-js: 1.2.1
 
   prelude-ls@1.2.1: {}
+
+  prerender-crawler@0.1.0(filesystem-routing@0.2.1(vite@8.2.2))(vite@8.2.2):
+    optionalDependencies:
+      filesystem-routing: 0.2.1(vite@8.2.2)
+      vite: 8.2.2
 
   pretty-format@27.5.1:
     dependencies:
