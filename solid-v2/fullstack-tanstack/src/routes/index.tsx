@@ -15,7 +15,6 @@ import logo from '../logo.svg';
 // (`prefetch` is hydration-boot aware — see src/lib/queries.ts.)
 export const Route = createFileRoute('/')({
   loader: ({ context }) => {
-    prefetch(context.queryClient, currentUserQuery());
     prefetch(context.queryClient, usersQuery());
   },
   head: () => ({ meta: [{ title: 'Home - Solid App' }] }),

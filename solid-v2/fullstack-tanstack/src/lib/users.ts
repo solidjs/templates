@@ -6,6 +6,7 @@
 // and are called through useMutation's `mutate` — the typical TanStack
 // shape. (The plain fullstack template shows the alternative: FormData
 // signatures + form `action` posts for no-JS progressive enhancement.)
+import { reload } from '@solidjs/web';
 import { GET } from '@solidjs/web/server-functions';
 
 import { findUser, listUsers, updateUser } from '../server/db';
@@ -36,15 +37,25 @@ export const getCurrentUser = GET(async () => {
   return user ? { id: userId!, ...user } : null;
 });
 
+// Mutations declare what they invalidate: `reload({ revalidate: key })`
+// stamps the key on the response (Solid's X-Revalidate header), and the
+// flight machinery scopes its work to it — the collection skips data the
+// caller already holds that no key names, re-executes declared queries the
+// loaders don't own (the session, on login/logout), and the client sweeps
+// whatever a key matches beyond the shipped payload. A mutation that
+// declares nothing keeps the unscoped behavior: rerun the page's loaders,
+// ship everything they produce.
 export async function login(id: string) {
   'use server';
   if (!findUser(id)) throw new Error(`No user "${id}"`);
   await setSession({ userId: id });
+  return reload({ revalidate: 'current-user' });
 }
 
 export async function logout() {
   'use server';
   await clearSession();
+  return reload({ revalidate: 'current-user' });
 }
 
 export async function renameUser(input: { id: string; name: string }) {
@@ -53,4 +64,5 @@ export async function renameUser(input: { id: string; name: string }) {
   // cosmetic; this check is the real gate.
   if (!(await getSession())?.userId) throw new Error('Sign in to rename users');
   updateUser(input.id, { name: input.name });
+  return reload({ revalidate: 'users' });
 }
