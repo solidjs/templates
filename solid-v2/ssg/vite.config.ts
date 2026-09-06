@@ -26,9 +26,10 @@ export default defineConfig({
       extensions: ['.jsx', '.tsx'],
     }),
     fileRoutes({ types: true }),
-    // Crawls the built app starting at `/` (plus every static file route),
-    // following same-origin links to discover every page — no route list to
-    // maintain. `mode: 'static'` writes all rendered HTML and makes a
+    // Crawls the built app starting at `/` plus the static pages the router
+    // announces (`announceRoutes` in src/App.tsx), following same-origin
+    // links to discover the rest — no route list to maintain.
+    // `mode: 'static'` writes all rendered HTML and makes a
     // missing data artifact a hard error (there is no server to fall back
     // to). Solid's `serverFunctions()` integration captures each
     // `prerendered()` call as a JSON artifact and fails the build if the

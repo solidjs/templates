@@ -27,10 +27,10 @@
   },
   "dependencies": {
     "@solidjs/meta": "^1.0.0-next.2",
-    "@solidjs/prerender": "^0.1.0",
+    "@solidjs/prerender": "^0.2.0",
     "@solidjs/router": "^2.0.0-next.21",
     "@solidjs/web": "^2.0.0-rc.6",
-    "prerender-crawler": "^0.1.0",
+    "prerender-crawler": "^0.2.0",
     "solid-js": "^2.0.0-rc.6"
   }
 }

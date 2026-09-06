@@ -12,7 +12,7 @@ Same structure as `basic` — no `index.html`, no mount file, `src/App.tsx` and 
 - **`serverFunctions: true`** — route data lives in `'use server'` functions with real types across the boundary. In dev they run against the dev server like any fullstack app; in the build they run once and their results ship as static artifacts.
 - **`prerender({ mode: 'static', integrations: [serverFunctions()] })`** — `prerender` (from `prerender-crawler/vite`) is framework-agnostic: after the client and server builds it crawls the app in-process, renders each page, writes its HTML, and follows every same-origin link to discover more pages. `serverFunctions()` (from `@solidjs/prerender/integration`) is the Solid piece: it captures each `prerendered()` call as a JSON artifact under `dist/client/_static/` and guards the static build.
 
-There is no route list to maintain. Static file routes (`/`, `/posts`) seed the crawl directly from `src/routes`; dynamic ones (`/posts/:slug`) are found the way a user would find them — by following links. Add a post in `src/server/posts.ts` and the next build emits its page and its data.
+There is no route list to maintain. `announceRoutes(Router)` in `src/App.tsx` hands the router's static pages (`/`, `/posts`) to the crawl, so a page nothing links to still builds; dynamic ones (`/posts/:slug`) are found the way a user would find them — by following links. Add a post in `src/server/posts.ts` and the next build emits its page and its data.
 
 ## Data loading
 
