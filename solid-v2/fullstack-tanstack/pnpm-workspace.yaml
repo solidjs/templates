@@ -11,5 +11,5 @@
 minimumReleaseAgeExclude:
   - solid-js
   - '@solidjs/*'
-  - '@tanstack/solid-router@2.0.0-rc.5 || 2.0.0-rc.6'
+  - '@tanstack/solid-router@2.0.0-rc.7'
   - '@tanstack/solid-query@6.0.0-rc.3'
