@@ -12,8 +12,8 @@ importers:
         specifier: ^2.0.0-rc.6
         version: 2.0.0-rc.6(solid-js@2.0.0-rc.6)
       '@tanstack/solid-router':
-        specifier: ^2.0.0-rc.6
-        version: 2.0.0-rc.6(@solidjs/web@2.0.0-rc.6(solid-js@2.0.0-rc.6))(solid-js@2.0.0-rc.6)
+        specifier: ^2.0.0-rc.7
+        version: 2.0.0-rc.7(@solidjs/web@2.0.0-rc.6(solid-js@2.0.0-rc.6))(solid-js@2.0.0-rc.6)
       solid-js:
         specifier: ^2.0.0-rc.6
         version: 2.0.0-rc.6
@@ -686,8 +686,8 @@ packages:
     resolution: {integrity: sha512-hTWqJtqIFFdvuCl8WXNyrodp2L9zo2G37xKRrcVmVRWpAB2h+U1LuRAfS4tsFTiWOIoE/B+WDVFB8JpoEdw6jQ==}
     engines: {node: '>=20.19'}
 
-  '@tanstack/solid-router@2.0.0-rc.6':
-    resolution: {integrity: sha512-ahTyk3ObuVQtcRFlWbDxe6glsz3KByYoqAYv4iWsLjmiXL+lw2fAuc67dOPQc6nt8AoOKIRy+/VLsMITw+GN8A==}
+  '@tanstack/solid-router@2.0.0-rc.7':
+    resolution: {integrity: sha512-B8Ehz2n2qjUKFmh/jGV5UUrDm6qe49ziG4TGnrsEpBbARsiNq2MhNHzCIHCjSn7j7k1Qh5W8EdrJP8fJFyCOmw==}
     engines: {node: '>=20.19'}
     peerDependencies:
       '@solidjs/web': '>=2.0.0-0 <3.0.0'
@@ -2377,7 +2377,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@tanstack/solid-router@2.0.0-rc.6(@solidjs/web@2.0.0-rc.6(solid-js@2.0.0-rc.6))(solid-js@2.0.0-rc.6)':
+  '@tanstack/solid-router@2.0.0-rc.7(@solidjs/web@2.0.0-rc.6(solid-js@2.0.0-rc.6))(solid-js@2.0.0-rc.6)':
     dependencies:
       '@solid-devtools/logger': 0.9.11(solid-js@2.0.0-rc.6)
       '@solid-primitives/refs': 1.1.4(solid-js@2.0.0-rc.6)
