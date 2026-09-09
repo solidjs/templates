@@ -14,6 +14,6 @@
 
     // Type Checking & Safety
     "strict": true,
-    "types": ["vite/client", "@testing-library/jest-dom"]
+    "types": ["vite/client", "@testing-library/jest-dom/vitest"]
   }
 }
