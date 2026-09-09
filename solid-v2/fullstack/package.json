@@ -16,7 +16,7 @@
     "@solidjs/diagnostics": "^2.0.0-rc.6",
     "@solidjs/testing-library": "^1.0.0-beta.3",
     "@solidjs/vite-plugin": "^3.0.0-next.38",
-    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/jest-dom": "^7.0.0",
     "@types/node": "^26.2.0",
     "eslint-plugin-solid": "~0.18.0",
     "filesystem-routing": "0.2.1",
@@ -24,7 +24,7 @@
     "oxlint": "~1.79.0",
     "typescript": "^5.9.2",
     "vite": "^8.1.5",
-    "vitest": "^4.0.0"
+    "vitest": "^5.0.0"
   },
   "dependencies": {
     "@remix-run/cookie": "^0.5.4",

@@ -17,7 +17,7 @@
     "@solidjs/diagnostics": "^2.0.0-rc.6",
     "@solidjs/testing-library": "^1.0.0-beta.3",
     "@solidjs/vite-plugin": "^3.0.0-next.38",
-    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/jest-dom": "^7.0.0",
     "@tsrx/oxc": "^0.9.0",
     "@tsrx/solid": "^0.1.64",
     "@tsrx/typescript-plugin": "^0.3.129",
@@ -27,7 +27,7 @@
     "oxlint": "~1.79.0",
     "typescript": "^5.9.3",
     "vite": "^8.1.5",
-    "vitest": "^4.0.0"
+    "vitest": "^5.0.0"
   },
   "dependencies": {
     "@solidjs/meta": "^1.0.0-next.2",
