@@ -14,6 +14,7 @@ import { handleRequest } from './dist/server/server.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const port = process.env.PORT || 3000;
+const clientDir = path.join(__dirname, 'dist', 'client');
 
 const MIME = {
   '.js': 'application/javascript',
@@ -23,6 +24,24 @@ const MIME = {
   '.ico': 'image/x-icon',
   '.svg': 'image/svg+xml',
 };
+
+// The file under dist/client a request path maps to, or undefined when it
+// resolves outside that directory. Containment is decided on the resolved
+// path, not by rejecting any `..` in the URL: that substring test also
+// refuses legitimate assets — the chunk a catch-all route `[...404].tsx`
+// builds to is `assets/_...404_-<hash>.js`, and turning it away sends a
+// request for JavaScript to the SSR handler, which answers with the 404
+// page's HTML and leaves that page un-hydrated.
+function clientAssetPath(url) {
+  let pathname;
+  try {
+    pathname = decodeURIComponent(url.split('?')[0]);
+  } catch {
+    return; // Malformed percent-encoding can't name a file we have.
+  }
+  const file = path.join(clientDir, pathname);
+  return file.startsWith(clientDir + path.sep) ? file : undefined;
+}
 
 function webRequest(req, res) {
   const url = new URL(req.url || '/', `http://${req.headers.host || `localhost:${port}`}`);
@@ -102,10 +121,11 @@ const server = createServer(async (req, res) => {
   const url = req.url || '/';
 
   // Static client assets first.
-  if (url !== '/' && !url.includes('..')) {
+  const file = url === '/' ? undefined : clientAssetPath(url);
+  if (file) {
     try {
-      const content = readFileSync(path.resolve(__dirname, 'dist/client' + url.split('?')[0]));
-      res.setHeader('Content-Type', MIME[path.extname(url)] || 'application/octet-stream');
+      const content = readFileSync(file);
+      res.setHeader('Content-Type', MIME[path.extname(file)] || 'application/octet-stream');
       res.end(content);
       return;
     } catch {
