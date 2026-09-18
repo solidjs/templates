@@ -8,49 +8,40 @@ import solid from '@solidjs/vite-plugin';
 export default defineConfig({
   // Turnkey streaming SSR under a third-party router: no index.html and no
   // entry files — the plugin generates the entries around src/App.tsx,
-  // wrapped in src/Document.tsx. `vite build` emits static client assets to
-  // dist/client and the request handler to dist/server; `npm start` serves
-  // both with server.js.
+  // wrapped in src/Document.tsx. `vite build` emits client assets to
+  // dist/client and the request handler to dist/server, plus the Node server
+  // (dist/server/node.js) `npm start` runs.
   plugins: [
-    // Scans src/routes and generates src/routeTree.gen.ts — the typed route
-    // tree — on dev and build. Must be registered before solid(). Code
-    // splitting is on: each route's component compiles to a lazy chunk that
+    // Generates src/routeTree.gen.ts from src/routes; must be registered
+    // before solid(). Each route's component compiles to a lazy chunk that
     // resolves at the read point during hydration (the router commits the
-    // server's matches from Solid's hydration registry before rendering, so
-    // the chunk loads under the boundary the server rendered) — no
-    // chunk-preload manifest from TanStack's own start layer is needed. See
-    // the README's SSR section.
+    // server's matches from Solid's hydration registry before rendering), so
+    // no chunk-preload manifest from TanStack's start layer is needed.
     tanstackRouter({ target: 'solid', autoCodeSplitting: true }),
     solid({
       start: {
-        // Fetch-style chain fronting every request: dispatches API routes.
         middleware: './src/middleware.ts',
         // Per-request SSR preparation: builds this request's TanStack
-        // router + Query cache, runs the loaders, and hands the render a
-        // ready app (see src/setup.tsx). Ignored when `ssr` is false.
+        // router + Query cache and runs the loaders (see src/setup.tsx).
+        // Ignored when `ssr` is false.
         setup: './src/setup.tsx',
-        // Typed env is on by convention: ./env.ts is probed automatically
-        // and validated — server vars are read from process.env when the
-        // server boots, client vars are baked at build time. (Set
-        // `env: false` here to opt out.)
+        // Emit dist/server/node.js: a ready-to-run Node server (static
+        // assets + the handler). Other platforms import dist/server/server.js.
+        node: true,
+        // Typed env is on by convention: ./env.ts is probed automatically.
+        // (Set `env: false` here to opt out.)
       },
       // Set to false for a static shell + API server: pages render on the
-      // client while server functions, sessions, and API routes keep
-      // working. (Tests always compile with the client posture.)
+      // client while server functions, sessions, and API routes keep working.
       ssr: true,
-      // Dev-only agent/diagnostics surface: exposes capture control at
-      // /__solid/diagnostics on the dev server (see AGENTS.md). No-op in build.
+      // Dev-only: capture control at /__solid/diagnostics (see AGENTS.md).
       diagnostics: true,
-      // Compiles 'use server' functions into fetch calls on the client and
-      // serves them from the /_server endpoint. The configure module runs
-      // in the handler graph before any dispatch — it registers the Query
-      // single-flight collector (see src/server-config.ts).
+      // The configure module runs in the handler graph before any dispatch —
+      // it registers the Query single-flight collector.
       serverFunctions: { configure: './src/server-config.ts' },
     }),
     // API routes only — TanStack owns src/routes, so the file-system router
-    // scans src/api instead and mounts every module under /api. httpMethods
-    // scans them for GET/POST/... exports; handler modules — and the
-    // server-only code they import — never enter the client bundle.
+    // scans src/api instead and mounts every module under /api.
     fileRoutes({
       dir: 'src/api',
       httpMethods: true,
@@ -64,9 +55,8 @@ export default defineConfig({
     globals: false,
     setupFiles: ['./vitest-setup.ts'],
     // Two projects because they need different halves of the framework:
-    // component tests run in a DOM against the browser build (the test
-    // pipeline's default posture), while server-runtime tests (the session
-    // suite) run in node against the real server build.
+    // component tests run in a DOM against the browser build, server-runtime
+    // tests (the session suite) run in node against the real server build.
     projects: [
       {
         extends: true,
@@ -124,7 +114,6 @@ export default defineConfig({
   },
   build: {
     target: 'esnext',
-    // Keep images as asset files instead of inlining them into the JS bundle.
     assetsInlineLimit: 0,
   },
 });

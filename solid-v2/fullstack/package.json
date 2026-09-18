@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "start": "node --env-file-if-exists=.env server.js",
+    "start": "node --env-file-if-exists=.env dist/server/node.js",
     "serve": "vite preview",
     "test": "vitest",
     "lint": "oxlint src"

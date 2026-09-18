@@ -7,7 +7,7 @@
 - **Session cookie auth** — a signed cookie read and written by plain server functions (`src/server/session.ts`); sign in on the home page, and the rename mutation is authorized against it server-side.
 - **An API route** — uppercase method exports under `src/routes/api` answer HTTP requests (try `GET /api/users`).
 
-**Deployment contract:** there is a server. `vite build` emits static client assets to `dist/client` and a request handler to `dist/server`; `npm start` serves both with the included `server.js`. Streaming SSR is the default posture — set `ssr: false` in `vite.config.ts` for a static shell + API server: pages render on the client while server functions, sessions, and API routes keep working. Same template, one boolean.
+**Deployment contract:** there is a server. `vite build` emits static client assets to `dist/client`, a request handler to `dist/server/server.js`, and — via `start: { node: true }` — a ready-to-run Node server at `dist/server/node.js` that `npm start` runs. Streaming SSR is the default posture — set `ssr: false` in `vite.config.ts` for a static shell + API server: pages render on the client while server functions, sessions, and API routes keep working. Same template, one boolean.
 
 ## Server functions
 
@@ -87,11 +87,11 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ### `npm run build`
 
-Builds client assets to `dist/client` and the request handler to `dist/server`.
+Builds client assets to `dist/client`, and the request handler plus the Node server to `dist/server`.
 
 ### `npm start`
 
-Runs the production build with the included `server.js` (loading `.env` if present — deploy platforms provide the real environment instead).
+Runs the production build with the emitted `dist/server/node.js` (loading `.env` if present — deploy platforms provide the real environment instead).
 
 ### `npm run serve`
 
@@ -114,7 +114,7 @@ const sameResponse = await app.fetch(request);
 
 The default `{ fetch(request) }` export follows the Fetchable convention used by deployment integrations. It intentionally ignores host arguments after the request instead of forwarding them as Solid handler options.
 
-`server.js` is the Node version of the same contract. Any target needs exactly three things:
+`dist/server/node.js` is the Node version of the same contract, emitted by the build. The platform recipes below own the server environment themselves, so they drop `start.node` from the `solid()` call. Any target needs exactly three things:
 
 1. **Serve `dist/client` statically**, and route everything else — pages, `/_server`, API routes — to `handleRequest`.
 2. **Provide the server env vars** (`SESSION_SECRET` here) in the process environment: the server bundle reads and validates them **at boot**, not at build time, so they come from the platform's env/secret settings — never from a build artifact. Client `VITE_` vars are the opposite: baked in at `vite build`, so set those on the build machine/CI.
@@ -122,9 +122,11 @@ The default `{ fetch(request) }` export follows the Fetchable convention used by
 
 ### Node
 
-The default — nothing to add. `npm run build`, then `npm start` runs `server.js` (loading `.env` if present; real deployments set the environment instead). Any node host (a VPS, Fly.io, Railway, ...) that runs `node server.js` with `PORT` and `SESSION_SECRET` set is done.
+The default — nothing to add. `start: { node: true }` in `vite.config.ts` makes the build emit `dist/server/node.js`: it serves `dist/client` statically (hashed assets under `assets/` as `Cache-Control: public, max-age=31536000, immutable`, everything else `must-revalidate`) and hands every other request to `handleRequest`. `npm run build`, then `npm start` runs it (loading `.env` if present; real deployments set the environment instead). Any node host (a VPS, Fly.io, Railway, ...) that runs `node dist/server/node.js` with `PORT` (and optionally `HOST`) and `SESSION_SECRET` set is done. The entry speaks plain HTTP — terminate TLS and compress at the reverse proxy or CDN in front of it.
 
-**Client IP:** `server.js` passes the raw Node request into the request event — `handleRequest(request, { event: { nativeEvent: req } })` — so anywhere in a request (middleware, server functions) `getRequestEvent().nativeEvent.socket.remoteAddress` is the peer address. Behind a proxy or load balancer that address is the proxy's: read the forwarding headers off `getRequestEvent().request` instead (`x-forwarded-for` and friends) — only when you trust the proxy that set them.
+The file also exports `listener` (the `(req, res)` function), `createListener({ static?, event? })`, and `serve({ port, host, static, event })`, so it composes with an existing server — e.g. `app.use(listener)` in Express, or `createListener({ static: false })` behind Express's own static handling.
+
+**Client IP:** the emitted entry passes the raw Node request into the request event — `handleRequest(request, { event: { nativeEvent: req } })` — so anywhere in a request (middleware, server functions) `getRequestEvent().nativeEvent.socket.remoteAddress` is the peer address. Behind a proxy or load balancer that address is the proxy's: read the forwarding headers off `getRequestEvent().request` instead (`x-forwarded-for` and friends) — only when you trust the proxy that set them.
 
 ### Nitro
 

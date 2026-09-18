@@ -2,7 +2,7 @@
 
 `fullstack` with the client half swapped out: [TanStack Router](https://tanstack.com/router) owns routing and [TanStack Query](https://tanstack.com/query) owns the data cache, while Solid's server functions, single-flight mutations, sessions, and API routes keep working unchanged. This is the agnosticism proof for the whole stack — the server half never asks who is routing.
 
-**Deployment contract:** there is a server. `vite build` emits static client assets to `dist/client` and a request handler to `dist/server`; `npm start` serves both with the included `server.js`. SSR is the default posture — set `ssr: false` in `vite.config.ts` for a static shell + API server: pages render on the client while server functions, single-flight, sessions, and API routes keep working. Same template, one boolean.
+**Deployment contract:** there is a server. `vite build` emits static client assets to `dist/client`, a request handler to `dist/server/server.js`, and — via `start: { node: true }` — a ready-to-run Node server at `dist/server/node.js` that `npm start` runs. SSR is the default posture — set `ssr: false` in `vite.config.ts` for a static shell + API server: pages render on the client while server functions, single-flight, sessions, and API routes keep working. Same template, one boolean.
 
 ## Who owns what
 
@@ -75,11 +75,11 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser. T
 
 ### `npm run build`
 
-Builds client assets to `dist/client` and the request handler to `dist/server`.
+Builds client assets to `dist/client`, and the request handler plus the Node server to `dist/server`.
 
 ### `npm start`
 
-Runs the production build with the included `server.js` (loading `.env` if present — deploy platforms provide the real environment instead).
+Runs the production build with the emitted `dist/server/node.js` (loading `.env` if present — deploy platforms provide the real environment instead).
 
 ### `npm run serve`
 
@@ -100,6 +100,6 @@ const response = await handleRequest(request);
 const sameResponse = await app.fetch(request);
 ```
 
-The default `{ fetch(request) }` export follows the Fetchable convention used by deployment integrations. `server.js` is the Node version of the same contract.
+The default `{ fetch(request) }` export follows the Fetchable convention used by deployment integrations. `dist/server/node.js` — emitted by `start: { node: true }` — is the Node version of the same contract: static `dist/client` (hashed assets immutable), everything else through `handleRequest` with the raw Node request as `nativeEvent`; it also exports `listener`, `createListener`, and `serve` for composing with an existing server.
 
-The server posture is identical to `fullstack` — same build layout (`dist/client` + `dist/server`), same handler export, same boot-time env contract — so the platform recipes in [`fullstack`'s README](../fullstack/README.md#deployment) (Node, Nitro, Cloudflare Workers, Netlify) apply here verbatim.
+The server posture is identical to `fullstack` — same build layout (`dist/client` + `dist/server`), same handler export, same boot-time env contract — so the platform recipes in [`fullstack`'s README](../fullstack/README.md#deployment) (Node, Nitro, Cloudflare Workers, Netlify) apply here verbatim (keep `setup` in the `start` block; the non-Node recipes drop `node`).
