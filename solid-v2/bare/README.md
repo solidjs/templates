@@ -46,7 +46,7 @@ Serves the production build locally.
 
 ## The `ssr` flip
 
-Streaming SSR is one boolean: add `ssr: true` next to `start: true` in `vite.config.ts`. `src/App.tsx` and `src/Document.tsx` carry over unchanged — `<HydrationScript />` is already in place in the Document (in client mode it is stripped from the static shell). The build then emits a request handler to `dist/server` instead of a purely static site.
+Streaming SSR is one boolean: add `ssr: true` next to `start: true` in `vite.config.ts`. `src/App.tsx` and `src/Document.tsx` carry over unchanged — `<HydrationScript />` is already in place in the Document (in client mode it is stripped from the static shell). The build then emits a request handler to `dist/server` instead of a purely static site; to run it on Node, use `start: { node: true }` so the build also emits a ready-to-run `dist/server/node.js` (`fullstack`'s README covers deployment).
 
 ## Growing out of `bare`
 

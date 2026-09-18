@@ -5,13 +5,12 @@ import {
   type RouteDefinition,
   type RouteProps,
 } from '@solidjs/router';
-import { getRequestEvent } from '@solidjs/web';
+import { getRequestEvent, markSafeError } from '@solidjs/web';
 import { createMemo } from 'solid-js';
 import { paths } from '../../router';
 
-// Async data loading: a query (cached per key) read through a memo — the
-// surrounding @pending boundary (in App.tsrx) shows its fallback until the
-// promise settles. Swap the static JSON for any API endpoint.
+// A query (cached per key) read through a memo; the surrounding @pending
+// boundary (in App.tsrx) shows its fallback until it settles.
 const getUser = query(async (id: string) => {
   // Same-origin URLs need an explicit origin when this runs during SSR
   // (getRequestEvent() is undefined in the browser, where location wins).
@@ -20,12 +19,13 @@ const getUser = query(async (id: string) => {
   const users: Record<string, { name: string; title: string }> =
     await response.json();
   const user = users[id];
-  // A missing user throws — the @catch block below renders the failure.
-  if (!user) throw new Error(`No user with id ${id}`);
+  // The @catch block below renders this message. markSafeError brands it
+  // as client-facing: a production SSR render otherwise replaces a thrown
+  // error with a generic "Internal Server Error" before it reaches the wire.
+  if (!user) throw markSafeError(new Error(`No user with id ${id}`));
   return user;
 }, 'user');
 
-// Starts the fetch as soon as navigation begins, before the page renders.
 export const route = {
   preload: ({ params }) => void getUser(params.id!),
 } satisfies RouteDefinition;

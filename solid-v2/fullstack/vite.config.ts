@@ -6,37 +6,32 @@ import solid from '@solidjs/vite-plugin';
 export default defineConfig({
   // Turnkey streaming SSR: no index.html and no entry files — the plugin
   // generates the entries around src/App.tsx, wrapped in src/Document.tsx.
-  // `vite build` emits static client assets to dist/client and the request
-  // handler to dist/server; `npm start` serves both with server.js.
+  // `vite build` emits client assets to dist/client and the request handler
+  // to dist/server, plus the Node server (dist/server/node.js) `npm start` runs.
   plugins: [
     solid({
       start: {
-        // Fetch-style chain fronting every request: dispatches API routes.
         middleware: './src/middleware.ts',
-        // Typed env is on by convention: ./env.ts is probed automatically
-        // and validated — server vars are read from process.env when the
-        // server boots, client vars are baked at build time. (Set
-        // `env: false` here to opt out.)
+        // Emit dist/server/node.js: a ready-to-run Node server (static
+        // assets + the handler). Other platforms import dist/server/server.js.
+        node: true,
+        // Typed env is on by convention: ./env.ts is probed automatically.
+        // (Set `env: false` here to opt out.)
       },
       // Set to false for a static shell + API server: pages render on the
-      // client while server functions, sessions, and API routes keep
-      // working. (Tests always compile with the client posture.)
+      // client while server functions, sessions, and API routes keep working.
       ssr: true,
-      // Dev-only agent/diagnostics surface: exposes capture control at
-      // /__solid/diagnostics on the dev server (see AGENTS.md). No-op in build.
+      // Dev-only: capture control at /__solid/diagnostics (see AGENTS.md).
       diagnostics: true,
-      // Compiles 'use server' functions into fetch calls on the client and
-      // serves them from the /_server endpoint. The configure module runs
-      // in the handler graph before any dispatch — it registers the
-      // router's single-flight collector (see src/server-config.ts).
+      // The configure module runs in the handler graph before any dispatch —
+      // it registers the router's single-flight collector.
       serverFunctions: { configure: './src/server-config.ts' },
       // `extensions` makes @solidjs/vite-plugin also compile the `?pick=` route
       // modules the fileRoutes plugin emits (their ids end in a query string).
       extensions: ['.jsx', '.tsx'],
     }),
     // `httpMethods` also scans route modules for GET/POST/... exports (API
-    // routes). One router serves both sides: handler modules — and the
-    // server-only code they import — never enter the client bundle.
+    // routes); handler modules never enter the client bundle.
     fileRoutes({ httpMethods: true, types: true }),
   ],
   server: {
@@ -46,9 +41,8 @@ export default defineConfig({
     globals: false,
     setupFiles: ['./vitest-setup.ts'],
     // Two projects because they need different halves of the framework:
-    // component tests run in a DOM against the browser build (the test
-    // pipeline's default posture), while server-runtime tests (the session
-    // suite) run in node against the real server build.
+    // component tests run in a DOM against the browser build, server-runtime
+    // tests (the session suite) run in node against the real server build.
     projects: [
       {
         extends: true,
@@ -63,8 +57,7 @@ export default defineConfig({
         test: {
           name: 'server',
           // environment:'node' projects get the server posture from the
-          // plugin automatically: server resolve conditions, the framework
-          // inlined, and ssr codegen.
+          // plugin automatically (server conditions, framework inlined).
           environment: 'node',
           include: ['src/server/**/*.test.ts'],
           alias: [
@@ -83,7 +76,6 @@ export default defineConfig({
   },
   build: {
     target: 'esnext',
-    // Keep images as asset files instead of inlining them into the JS bundle.
     assetsInlineLimit: 0,
   },
 });

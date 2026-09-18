@@ -4,10 +4,9 @@ import { defineConfig } from 'vitest/config';
 import solid from '@solidjs/vite-plugin';
 
 export default defineConfig({
-  // Turnkey client mode: no index.html and no mount file — the plugin
-  // generates the entries around src/App.tsx, wrapped in src/Document.tsx
-  // (or a built-in shell). `vite build` prerenders the shell into
-  // dist/client/index.html and emits a purely static dist/client.
+  // Turnkey client mode: no index.html and no mount file — the plugin generates
+  // the entries around src/App.tsx (wrapped in src/Document.tsx) and `vite build`
+  // prerenders the shell into a purely static dist/client.
   plugins: [
     // `extensions` makes @solidjs/vite-plugin also compile the `?pick=` route
     // modules the fileRoutes plugin emits (their ids end in a query string).
@@ -16,12 +15,6 @@ export default defineConfig({
   ],
   server: {
     port: 3000,
-  },
-  optimizeDeps: {
-    // Pre-bundle the diagnostics client that `diagnostics: true` injects, so
-    // the first test run after a fresh install doesn't restart mid-run on
-    // Vite's cold dependency-optimization reload.
-    include: ['@solidjs/diagnostics/browser', '@solidjs/diagnostics/protocol'],
   },
   test: {
     globals: false,
@@ -38,7 +31,6 @@ export default defineConfig({
   },
   build: {
     target: 'esnext',
-    // Keep images as asset files instead of inlining them into the JS bundle.
     assetsInlineLimit: 0,
   },
 });
