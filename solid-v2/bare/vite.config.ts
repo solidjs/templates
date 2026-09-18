@@ -6,7 +6,7 @@ export default defineConfig({
   // the entries around src/App.tsx (wrapped in src/Document.tsx) and `vite build`
   // prerenders the shell into a purely static dist/client.
   plugins: [
-    solid({ start: true, diagnostics: true }), // add `ssr: true, start: { node: true }` for streaming SSR
+    solid({ start: true, diagnostics: true }), // add `ssr: true` for streaming SSR
   ],
   server: {
     port: 3000,
