@@ -9,7 +9,7 @@ export default defineConfig({
   plugins: [
     // `extensions` makes @solidjs/vite-plugin also compile the `?pick=` route
     // modules the fileRoutes plugin emits (their ids end in a query string).
-    solid({ start: true, extensions: ['.jsx', '.tsx'], diagnostics: true }), // add `ssr: true` for streaming SSR
+    solid({ start: true, extensions: ['.jsx', '.tsx'], diagnostics: true }), // add `ssr: true, start: { node: true }` for streaming SSR
     fileRoutes({ types: true }),
   ],
   server: {
