@@ -12,8 +12,8 @@ importers:
         specifier: ^1.0.0-next.2
         version: 1.0.0-next.2(@solidjs/web@2.0.0-rc.9(solid-js@2.0.0-rc.9))(solid-js@2.0.0-rc.9)
       '@solidjs/router':
-        specifier: ^2.0.0-next.26
-        version: 2.0.0-next.26(@solidjs/web@2.0.0-rc.9(solid-js@2.0.0-rc.9))(solid-js@2.0.0-rc.9)
+        specifier: ^2.0.0-next.28
+        version: 2.0.0-next.28(@solidjs/web@2.0.0-rc.9(solid-js@2.0.0-rc.9))(filesystem-routing@0.4.0(vite@8.3.0))(solid-js@2.0.0-rc.9)
       '@solidjs/web':
         specifier: ^2.0.0-rc.9
         version: 2.0.0-rc.9(solid-js@2.0.0-rc.9)
@@ -37,8 +37,8 @@ importers:
         specifier: ~0.18.0
         version: 0.18.0(eslint@10.10.0)(typescript@5.9.3)
       filesystem-routing:
-        specifier: 0.3.0
-        version: 0.3.0(vite@8.3.0)
+        specifier: 0.4.0
+        version: 0.4.0(vite@8.3.0)
       jsdom:
         specifier: ^25.0.1
         version: 25.0.1
@@ -709,11 +709,15 @@ packages:
       '@solidjs/web': ^2.0.0-rc.0
       solid-js: ^2.0.0-rc.0
 
-  '@solidjs/router@2.0.0-next.26':
-    resolution: {integrity: sha512-Zjho0HI095mxSMu8tyfuqoq8vTeYML0mWJj1iQar298MrhtT2itGiEgF2C7ndE2mzKeXRQ/DLf1tr37Gax5bsg==}
+  '@solidjs/router@2.0.0-next.28':
+    resolution: {integrity: sha512-y8ROHV+PEYvaa9Glf9l8oUOjI2BiNrOTIvOTmax3GIFsqDzmLJMz/84m+SFWYrnVXO007ak9guR1CPLYY47Xqw==}
     peerDependencies:
       '@solidjs/web': ^2.0.0-rc.9
+      filesystem-routing: '>=0.4.0'
       solid-js: ^2.0.0-rc.9
+    peerDependenciesMeta:
+      filesystem-routing:
+        optional: true
 
   '@solidjs/signals@2.0.0-rc.9':
     resolution: {integrity: sha512-o3pqiTgpH5NR2DstiKrt9s/6+0YOFtv+MfvLONwLsS247I+EWMMyTu9BkRcgd35UR5Pa1DM16lI1/5uaIMY6Gw==}
@@ -1106,8 +1110,8 @@ packages:
   file-entry-cache@11.1.5:
     resolution: {integrity: sha512-+PFTHITI08JIGhnNpGNI8T8inUpgZfk3GNEqfT9R2zZV2iFXg3CvqzSl/uEhs7TSGujYRELEANyDvS8Fj7+S7Q==}
 
-  filesystem-routing@0.3.0:
-    resolution: {integrity: sha512-BjuV+R1tSjUlVOeXRhkmryzZ9qrS7WYmyYsyioGcmFFnQ53TzJmApyrMjQaevsEDUi/UdXEESFsYrx3SVPM5mw==}
+  filesystem-routing@0.4.0:
+    resolution: {integrity: sha512-HSGdLhrkYgF4/E0IKxirCShkrGUfvavQuOOP2Nio0dCxp/PrhiATGWQPUODUJuDavD+N6hIp1K7e/rh347o9nw==}
     peerDependencies:
       '@tsrx/oxc': '>=0.9.0'
       vite: ^6.0.0 || ^7.0.0 || ^8.0.0
@@ -2329,10 +2333,12 @@ snapshots:
       '@solidjs/web': 2.0.0-rc.9(solid-js@2.0.0-rc.9)
       solid-js: 2.0.0-rc.9
 
-  '@solidjs/router@2.0.0-next.26(@solidjs/web@2.0.0-rc.9(solid-js@2.0.0-rc.9))(solid-js@2.0.0-rc.9)':
+  '@solidjs/router@2.0.0-next.28(@solidjs/web@2.0.0-rc.9(solid-js@2.0.0-rc.9))(filesystem-routing@0.4.0(vite@8.3.0))(solid-js@2.0.0-rc.9)':
     dependencies:
       '@solidjs/web': 2.0.0-rc.9(solid-js@2.0.0-rc.9)
       solid-js: 2.0.0-rc.9
+    optionalDependencies:
+      filesystem-routing: 0.4.0(vite@8.3.0)
 
   '@solidjs/signals@2.0.0-rc.9': {}
 
@@ -2748,7 +2754,7 @@ snapshots:
     dependencies:
       flat-cache: 6.1.23
 
-  filesystem-routing@0.3.0(vite@8.3.0):
+  filesystem-routing@0.4.0(vite@8.3.0):
     dependencies:
       '@babel/core': 7.29.7
       '@types/babel__core': 7.20.5

@@ -13,3 +13,4 @@ minimumReleaseAgeExclude:
   - '@solidjs/*'
   - '@tanstack/solid-router@2.0.0-rc.7'
   - '@tanstack/solid-query@6.0.0-rc.3'
+  - filesystem-routing
