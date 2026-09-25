@@ -13,7 +13,7 @@ export default function App() {
           <Title>{env.VITE_APP_NAME}</Title>
           <nav class="site-nav">
             <a href={paths()}>Home</a>
-            <a href={paths.users(1)}>Users</a>
+            <a href={paths.users()}>Users</a>
           </nav>
           <Loading fallback={<main>Loading…</main>}>{props.children}</Loading>
         </>

@@ -2,7 +2,7 @@
 
 `bare` plus the app floors most projects want: `@solidjs/router` with file-system routes, per-page titles via `@solidjs/meta`, and a `vitest` test suite.
 
-**Deployment contract:** still zero server dependencies — `vite build` emits a purely static site; deploy `dist/client` to any static host.
+**Deployment contract:** still zero server dependencies — `vite build` emits a purely static site; deploy `dist/client` to any static host. There is no server and no `start` script: on platforms that build and then run `npm start` in a Node container (Firebase App Hosting, most buildpacks), pick the static product instead (on Firebase, that is Hosting), or flip on SSR (below) to get a real server.
 
 ## How it works
 
@@ -15,15 +15,15 @@ There is no `index.html` and no mount file. `@solidjs/vite-plugin`'s turnkey mod
 
 The `fileRoutes()` plugin (from `filesystem-routing/vite`) scans `src/routes` and exposes the result as the `virtual:file-routes` module, which `@solidjs/router/fs` turns into router routes inside `src/App.tsx`. You edit files under `src/routes`; the route table follows:
 
-- `index.tsx` is `/`, `users/[id].tsx` is `/users/:id`, `[...404].tsx` catches everything else.
-- Pairing `users.tsx` with the `users/` directory makes it a layout wrapping every page inside.
-- A module is a page when it has a **default export** (a file without one is not a route), and may export a `route` config object — `src/routes/users/[id].tsx` uses `preload` to start its data fetch as navigation begins.
+- `index.tsx` is `/`, `users/index.tsx` is `/users`, `users/[id].tsx` is `/users/:id`, `[...404].tsx` catches everything else.
+- Pairing `users.tsx` with the `users/` directory makes it a layout wrapping every page inside; `users/index.tsx` is what the layout shows at `/users` itself.
+- A module is a page when it has a **default export** (a file without one is not a route), and may export a `route` config object — `src/routes/users/[id].tsx` uses `preload` to start its data load as navigation begins.
 
 Every route is code-split automatically; navigating loads only that page's module.
 
 ## Data loading
 
-`src/routes/users/[id].tsx` shows the data pattern: a `query()` (from `@solidjs/router`) over a plain `fetch`, read through a memo. The surrounding `<Loading>` boundary in `App.tsx` shows its fallback until the promise settles, and `query()` caches by key so preload and render share one request. Swap the static `/users.json` for any API endpoint.
+`src/routes/users/[id].tsx` shows the data pattern: an async `query()` (from `@solidjs/router`) read through a memo. The surrounding `<Loading>` boundary in `App.tsx` shows its fallback until the promise settles, and `query()` caches by key so preload and render share one request. The data is a local JSON module (`src/data/users.json`); swap the query body for any API call. Two things to keep in mind once SSR is on: use absolute URLs, and don't `fetch` your own origin from the server — behind a proxy (most PaaS hosts) the incoming `Host` header rarely routes back to the container. Data that lives with the app belongs in a server function (the `fullstack` template shows this).
 
 ## Testing
 
@@ -45,7 +45,7 @@ $ npm install # or pnpm install or yarn install
 
 In the project directory, you can run:
 
-### `npm run dev` or `npm start`
+### `npm run dev`
 
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.

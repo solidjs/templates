@@ -2,7 +2,7 @@
 
 This is `basic` with its test suite moved from jsdom to [Vitest browser mode](https://vitest.dev/guide/browser/) — same routes, same demo, and the **same test file**: `src/components/Counter.test.tsx` runs unchanged, in a real Chromium page instead of a simulated DOM. The diff against `basic` is the documentation of what browser mode changes.
 
-**Deployment contract** (inherited from `basic`): zero server dependencies — `vite build` emits a purely static site; deploy `dist/client` anywhere. Test tooling never ships to the client.
+**Deployment contract** (inherited from `basic`): zero server dependencies — `vite build` emits a purely static site; deploy `dist/client` anywhere. No server, no `start` script: Node hosts that run `npm start` after building (Firebase App Hosting, most buildpacks) need either the platform's static product or the SSR flip — see `basic`'s README. Test tooling never ships to the client.
 
 ## How browser mode fits this stack
 
@@ -30,7 +30,7 @@ $ npx playwright install chromium # once per machine
 
 In the project directory, you can run:
 
-### `npm run dev` or `npm start`
+### `npm run dev`
 
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.

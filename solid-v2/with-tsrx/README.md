@@ -4,7 +4,7 @@ This is `basic` plus **experimental TSRX** — same routes, same demo, same test
 
 TSRX support is experimental across the whole stack: the compiler frontends in `solid-js` 2.0 RC, the `.tsrx` pipeline in `@solidjs/vite-plugin`, and the third-party editor tooling are all pre-1.0 and may change. Treat this template as a preview of the format, not a stability contract.
 
-**Deployment contract** (inherited from `basic`): zero server dependencies — `vite build` emits a purely static site; deploy `dist/client` anywhere.
+**Deployment contract** (inherited from `basic`): zero server dependencies — `vite build` emits a purely static site; deploy `dist/client` anywhere. No server, no `start` script: Node hosts that run `npm start` after building (Firebase App Hosting, most buildpacks) need either the platform's static product or the SSR flip — see `basic`'s README.
 
 ## What TSRX is
 
@@ -71,7 +71,7 @@ $ npm install # or pnpm install or yarn install
 
 In the project directory, you can run:
 
-### `npm run dev` or `npm start`
+### `npm run dev`
 
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.

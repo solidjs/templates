@@ -5,20 +5,19 @@ import {
   type RouteDefinition,
   type RouteProps,
 } from '@solidjs/router';
-import { getRequestEvent, markSafeError } from '@solidjs/web';
+import { markSafeError } from '@solidjs/web';
 import { createMemo } from 'solid-js';
+import users from '../../data/users.json';
 import { paths } from '../../router';
 
 // A query (cached per key) read through a memo; the surrounding @pending
-// boundary (in App.tsrx) shows its fallback until it settles.
+// boundary (in App.tsrx) shows its fallback until it settles. The data is a
+// local JSON module here; swap the body for any API call — an absolute URL,
+// or a server function (see the `fullstack` template). Avoid fetching your
+// own origin during SSR: behind a proxy the incoming Host header rarely
+// routes back to this server.
 const getUser = query(async (id: string) => {
-  // Same-origin URLs need an explicit origin when this runs during SSR
-  // (getRequestEvent() is undefined in the browser, where location wins).
-  const origin = getRequestEvent()?.request.url ?? location.origin;
-  const response = await fetch(new URL('/users.json', origin));
-  const users: Record<string, { name: string; title: string }> =
-    await response.json();
-  const user = users[id];
+  const user = users[id as keyof typeof users];
   // The @catch block below renders this message. markSafeError brands it
   // as client-facing: a production SSR render otherwise replaces a thrown
   // error with a generic "Internal Server Error" before it reaches the wire.

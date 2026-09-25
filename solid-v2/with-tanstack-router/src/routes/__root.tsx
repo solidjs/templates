@@ -10,9 +10,7 @@ export const Route = createRootRoute({
       <HeadContent />
       <nav>
         <Link to="/">Home</Link>
-        <Link to="/users/$id" params={{ id: '1' }}>
-          Users
-        </Link>
+        <Link to="/users">Users</Link>
       </nav>
       <Outlet />
     </>

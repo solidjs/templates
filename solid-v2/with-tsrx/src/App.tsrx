@@ -13,7 +13,7 @@ export default function App() @{
         <Title>Solid App</Title>
         <nav>
           <a href={paths()}>Home</a>
-          <a href={paths.users(1)}>Users</a>
+          <a href={paths.users()}>Users</a>
         </nav>
         @try {
           <>{props.children}</>
