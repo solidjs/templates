@@ -19,7 +19,7 @@ export default function App() {
             </a>
             <a
               class="nav-link rounded px-3 fw-semibold focus-ring focus-ring-info"
-              href={paths.users(1)}
+              href={paths.users()}
             >
               Users
             </a>

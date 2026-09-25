@@ -2,7 +2,7 @@
 
 This is `basic` with the routing layer swapped for [TanStack Router](https://tanstack.com/router)'s Solid adapter — same demo, same tests, but routing, data loading, and navigation are TanStack's own mental model, not `@solidjs/router`'s. It doubles as the "bring your own router" documentation for the Solid 2.0 turnkey stack.
 
-**Deployment contract** (inherited from `basic`): zero server dependencies — `vite build` emits a purely static site; deploy `dist/client` anywhere.
+**Deployment contract** (inherited from `basic`): zero server dependencies — `vite build` emits a purely static site; deploy `dist/client` anywhere. No server, no `start` script: Node hosts that run `npm start` after building (Firebase App Hosting, most buildpacks) need either the platform's static product or the SSR flip — see `basic`'s README.
 
 ## Who owns what
 
@@ -36,7 +36,7 @@ $ npm install # or pnpm install or yarn install
 
 In the project directory, you can run:
 
-### `npm run dev` or `npm start`
+### `npm run dev`
 
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.

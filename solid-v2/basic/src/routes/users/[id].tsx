@@ -1,20 +1,22 @@
 import { Title } from '@solidjs/meta';
 import { query, type RouteDefinition, type RouteProps } from '@solidjs/router';
-import { getRequestEvent } from '@solidjs/web';
 import { createMemo, isPending } from 'solid-js';
+import users from '../../data/users.json';
 import { paths } from '../../router';
 
 // Async data loading: a query (cached per key) read through a memo — the
 // surrounding <Loading> boundary (in App.tsx) shows its fallback until the
-// promise settles. Swap the static JSON for any API endpoint.
+// promise settles. The data is a local JSON module here; swap the body for
+// any API call — an absolute URL, or a server function (see the `fullstack`
+// template). Avoid fetching your own origin during SSR: behind a proxy the
+// incoming Host header rarely routes back to this server.
 const getUser = query(async (id: string) => {
-  // Same-origin URLs need an explicit origin when this runs during SSR
-  // (getRequestEvent() is undefined in the browser, where location wins).
-  const origin = getRequestEvent()?.request.url ?? location.origin;
-  const response = await fetch(new URL('/users.json', origin));
-  const users: Record<string, { name: string; title: string }> =
-    await response.json();
-  return users[id] ?? { name: 'Unknown', title: 'No such user' };
+  return (
+    users[id as keyof typeof users] ?? {
+      name: 'Unknown',
+      title: 'No such user',
+    }
+  );
 }, 'user');
 
 // Starts the fetch as soon as navigation begins, before the page renders.
