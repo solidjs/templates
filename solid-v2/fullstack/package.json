@@ -13,7 +13,7 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@solidjs/diagnostics": "^2.0.0-rc.10",
+    "@solidjs/diagnostics": "^2.0.0-rc.11",
     "@solidjs/testing-library": "^1.0.0-beta.3",
     "@solidjs/vite-plugin": "^3.0.0-next.46",
     "@testing-library/jest-dom": "^7.0.0",
@@ -29,9 +29,9 @@
   "dependencies": {
     "@remix-run/cookie": "^0.5.4",
     "@solidjs/meta": "^1.0.0-next.2",
-    "@solidjs/router": "^2.0.0-next.30",
-    "@solidjs/web": "^2.0.0-rc.10",
-    "solid-js": "^2.0.0-rc.10",
+    "@solidjs/router": "^2.0.0-next.31",
+    "@solidjs/web": "^2.0.0-rc.11",
+    "solid-js": "^2.0.0-rc.11",
     "valibot": "^1.4.2"
   }
 }
