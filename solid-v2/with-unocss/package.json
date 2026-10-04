@@ -18,7 +18,7 @@
     "@testing-library/jest-dom": "^7.0.0",
     "@unocss/preset-wind4": "^66.5.2",
     "@unocss/reset": "^66.5.2",
-    "eslint-plugin-solid": "~0.18.0",
+    "eslint-plugin-solid": "~0.18.1",
     "filesystem-routing": "0.4.0",
     "jsdom": "^25.0.1",
     "oxlint": "~1.79.0",

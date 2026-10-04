@@ -13,7 +13,7 @@
   "devDependencies": {
     "@solidjs/diagnostics": "^2.0.0-rc.11",
     "@solidjs/vite-plugin": "^3.0.0-next.46",
-    "eslint-plugin-solid": "~0.18.0",
+    "eslint-plugin-solid": "~0.18.1",
     "oxlint": "~1.79.0",
     "typescript": "^5.9.2",
     "vite": "^8.1.5"
