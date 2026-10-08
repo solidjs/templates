@@ -51,13 +51,15 @@ The plugin folds `.env` files into `process.env` for dev, build, and preview —
 
 ## Middleware and API routes
 
-`src/middleware.ts` (wired via `start.middleware` in `vite.config.ts`) exports a chain of fetch-style functions fronting every request — page renders, server function calls, and API routes alike. It runs inside the request-event scope, so `getRequestEvent()` and the session helpers work there exactly as in application code.
+`src/middleware.ts` (wired via `start.middleware` in `vite.config.ts`) exports a chain of event-first functions, `(event, next) => Response`, fronting every request — page renders, server function calls, and API routes alike. The request is `event.request`. `next()` takes no arguments; assign `event.request` before calling it to hand a different request downstream, and set `event.nonce` or `event.renderMode` on the event before `next()` when a request needs them (the page render runs inside it). The chain runs inside the request-event scope, so `getRequestEvent()` and the session helpers work there exactly as in application code.
 
-A route module may export uppercase `GET`/`POST`/... handlers — an API route. A module with handlers but no default export is a route without a page (`src/routes/api/users.ts`). Handlers are dispatched by the `createAPIHandler` middleware; `fileRoutes({ httpMethods: true })` scans for them with one router serving both sides — handler modules, and the server-only code they import, never enter the client bundle.
+A route module may export uppercase `GET`/`POST`/... handlers — an API route. A module with handlers but no default export is a route without a page (`src/routes/api/users.ts`). Handlers are dispatched by the `createAPIHandler` middleware; `fileRoutes({ httpMethods: true })` scans for them with one router serving both sides — handler modules, and the server-only code they import, never enter the client bundle. `createAPIHandler` still takes `(request, next)`, so the template adapts it onto the event-first chain.
 
 ## File-system routing
 
 Routing works exactly as in `basic` (see its README): the `fileRoutes` plugin scans `src/routes`, `@solidjs/router/fs` consumes the result. The router instance lives in `src/router.ts` so the single-flight collector and the app share one source of truth.
+
+Link preloading is opt-in. The router is created with `preloadLinks: intentPreload()`, so hovering, focusing, or touching a link warms that route's code and runs its `preload` — the same functions single-flight reruns — before the click. Drop the option to ship no preload listeners; `preload="false"` on a link opts that one link out.
 
 ## Testing
 
