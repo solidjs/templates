@@ -1,0 +1,60 @@
+{
+  "name": "vite-template-solid",
+  "version": "0.0.0",
+  "description": "A standard web component custom element built with SolidJS",
+  "type": "module",
+  "main": "dist/my-counter.umd.cjs",
+  "module": "dist/my-counter.js",
+  "types": "dist/types/my-counter.d.ts",
+  "files": [
+    "dist/*"
+  ],
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build",
+    "fmt": "prettier --write . && eslint . --fix",
+    "lint": "prettier --check . && eslint .",
+    "upgrade": "npx npm-check-updates -u"
+  },
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^12.1.1",
+    "@typescript-eslint/parser": "^8.17.0",
+    "eslint": "^9.16.0",
+    "eslint-plugin-solid": "^0.14.4",
+    "globals": "^15.13.0",
+    "prettier": "^3.4.2",
+    "tslib": "^2.8.1",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.0",
+    "vite-plugin-solid": "^2.11.0"
+  },
+  "dependencies": {
+    "solid-element": "^1.9.1",
+    "solid-js": "^1.9.3"
+  },
+  "prettier": {
+    "semi": true,
+    "tabWidth": 2,
+    "singleQuote": true,
+    "bracketSpacing": false,
+    "arrowParens": "avoid",
+    "useTabs": false
+  },
+  "license": "MIT",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": {
+    "name": "Author Name",
+    "email": "email@example.com"
+  },
+  "keywords": [
+    "SolidJS"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/solidjs/templates.git"
+  }
+}
