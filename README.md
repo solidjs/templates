@@ -150,7 +150,7 @@ To update all dependencies you can run:
 
 ### Agent files (`solid-v2`)
 
-Every `solid-v2` template carries instruction files for coding agents — `AGENTS.md`, `CLAUDE.md` (imports `AGENTS.md`), `.cursor/rules/solid.mdc` and `.github/copilot-instructions.md` — generated from one source, [`agents/solid-2.0-primer.md`](./agents/solid-2.0-primer.md). Edit the primer, not the generated block, then run:
+Every `solid-v2` template carries an `AGENTS.md` for coding agents (Codex, Cursor, Copilot and Gemini CLI read it directly; Claude Code falls back to it when there is no `CLAUDE.md`), generated from one source, [`agents/solid-2.0-primer.md`](./agents/solid-2.0-primer.md). Edit the primer, not the generated block, then run:
 
 `pnpm sync-agents` (or `node scripts/sync-agent-files.mjs`; `--check` exits non-zero when anything is stale)
 

@@ -1,11 +1,8 @@
 #!/usr/bin/env node
-// Generates the agent instruction files of every `solid-v2` template from one
-// source, agents/solid-2.0-primer.md:
-//
-//   AGENTS.md                        managed block + the template's own text
-//   CLAUDE.md                        imports AGENTS.md (Claude Code reads it first)
-//   .cursor/rules/solid.mdc          frontmatter + managed block
-//   .github/copilot-instructions.md  managed block
+// Generates the AGENTS.md of every `solid-v2` template from one source,
+// agents/solid-2.0-primer.md: the managed block, then the template's own text.
+// One file: Codex, Cursor, Copilot and Gemini CLI read a root AGENTS.md, and
+// Claude Code falls back to it when there is no CLAUDE.md.
 //
 // The managed block is delimited by `<!-- BEGIN solid-2.0-primer -->` /
 // `<!-- END solid-2.0-primer -->`; re-running replaces only that block and
@@ -13,13 +10,7 @@
 //
 //   node scripts/sync-agent-files.mjs          write
 //   node scripts/sync-agent-files.mjs --check  exit 1 if anything is stale
-import {
-  existsSync,
-  mkdirSync,
-  readFileSync,
-  readdirSync,
-  writeFileSync,
-} from 'node:fs';
+import { existsSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import { dirname, join, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -98,35 +89,6 @@ function agentsMd(existing) {
   return `${block}\n`;
 }
 
-function claudeMd() {
-  return (
-    '@AGENTS.md\n\n' +
-    'The line above imports AGENTS.md: Claude Code reads CLAUDE.md first and only falls back to AGENTS.md when it is absent, so the guidance lives in one file.\n'
-  );
-}
-
-function cursorRule(existing) {
-  if (existing !== null) {
-    const replaced = replaceBlock(existing);
-    if (replaced !== null) return replaced;
-  }
-  return (
-    '---\n' +
-    'description: Solid 2.0 conventions for this project (not React, not Solid 1.x) — generated from agents/solid-2.0-primer.md\n' +
-    'alwaysApply: true\n' +
-    '---\n\n' +
-    `${block}\n`
-  );
-}
-
-function copilotInstructions(existing) {
-  if (existing !== null) {
-    const replaced = replaceBlock(existing);
-    if (replaced !== null) return replaced;
-  }
-  return `${block}\n`;
-}
-
 function read(path) {
   return existsSync(path) ? readFileSync(path, 'utf8') : null;
 }
@@ -140,27 +102,18 @@ for (const name of names) {
     console.warn(`skip ${groupDir}/${name}: directory does not exist`);
     continue;
   }
-  const files = {
-    'AGENTS.md': agentsMd,
-    'CLAUDE.md': () => claudeMd(),
-    '.cursor/rules/solid.mdc': cursorRule,
-    '.github/copilot-instructions.md': copilotInstructions,
-  };
-  for (const [rel, render] of Object.entries(files)) {
-    const path = join(dir, rel);
-    const existing = read(path);
-    const next = render(existing);
-    if (existing === next) continue;
-    stale++;
-    if (check) {
-      console.log(`stale: ${relative(root, path)}`);
-      continue;
-    }
-    mkdirSync(dirname(path), { recursive: true });
-    writeFileSync(path, next);
-    written++;
-    console.log(`wrote ${relative(root, path)}`);
+  const path = join(dir, 'AGENTS.md');
+  const existing = read(path);
+  const next = agentsMd(existing);
+  if (existing === next) continue;
+  stale++;
+  if (check) {
+    console.log(`stale: ${relative(root, path)}`);
+    continue;
   }
+  writeFileSync(path, next);
+  written++;
+  console.log(`wrote ${relative(root, path)}`);
 }
 
 if (check) {
