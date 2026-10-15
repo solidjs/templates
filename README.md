@@ -148,6 +148,14 @@ To update all dependencies you can run:
 
 `pnpm up -Lri`
 
+### Agent files (`solid-v2`)
+
+Every `solid-v2` template carries instruction files for coding agents — `AGENTS.md`, `CLAUDE.md` (imports `AGENTS.md`), `.cursor/rules/solid.mdc` and `.github/copilot-instructions.md` — generated from one source, [`agents/solid-2.0-primer.md`](./agents/solid-2.0-primer.md). Edit the primer, not the generated block, then run:
+
+`pnpm sync-agents` (or `node scripts/sync-agent-files.mjs`; `--check` exits non-zero when anything is stale)
+
+The script replaces only the managed `<!-- BEGIN solid-2.0-primer -->` … `<!-- END solid-2.0-primer -->` block; text a template adds after it in `AGENTS.md` (its own stack notes) is kept.
+
 ## Troubleshooting
 
 It appears that Webstorm generate some weird triggers when saving a file. In order to prevent that you can follow [this thread](https://intellij-support.jetbrains.com/hc/en-us/community/posts/360000154544-I-m-having-a-huge-problem-with-Webstorm-and-react-hot-loader-) and disable the **"Safe Write"** option in **"Settings | Appearance & Behavior | System Settings"**.

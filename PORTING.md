@@ -9,6 +9,14 @@ who made it.
 opted into the 2.0 line. Entries below are revisited as upstream releases appear;
 each "blocked" row says exactly what to check before porting.
 
+**What every ported template carries:** `diagnostics: true` in `vite.config.ts`,
+`@solidjs/diagnostics` as a dev dependency, a `Counter.test.tsx` that captures the
+click's diagnostics artifact and asserts `expectNoDiagnostics` + `expectRerunBudget`,
+and the generated agent files (`AGENTS.md`, `CLAUDE.md`, `.cursor/rules/solid.mdc`,
+`.github/copilot-instructions.md`). The agent files come from
+`agents/solid-2.0-primer.md` via `pnpm sync-agents` (`scripts/sync-agent-files.mjs`);
+add a new template to `templates.json` and run it rather than copying the files.
+
 ## Blocked upstream — revisit as solid-js 2.0 releases land
 
 | Template | Blocked on | What to check before porting |
