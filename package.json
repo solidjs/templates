@@ -2,6 +2,8 @@
   "name": "solid-templates",
   "scripts": {
     "format": "prettier --write \"**/*.{js,json,md,yml,ts,tsx,jsx,css,scss}\"",
+    "sync-agents": "node scripts/sync-agent-files.mjs",
+    "sync-agents:check": "node scripts/sync-agent-files.mjs --check",
     "prepare": "husky"
   },
   "devDependencies": {
