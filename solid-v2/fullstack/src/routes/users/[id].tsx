@@ -25,7 +25,7 @@ export default function User(props: RouteProps<'/users/:id'>) {
       <Title>{`User ${props.params.id} - Solid App`}</Title>
       <h2>{user().name}</h2>
       <p>{user().title}</p>
-      {/* The mutation: a form posting to a server function action (works
+      {/* The mutation: a form posting to a server function formAction (works
           before hydration too); the router revalidates queries when it
           settles. The server checks the session — hiding the form when
           signed out is just honest UI (see src/lib/users.ts). */}
