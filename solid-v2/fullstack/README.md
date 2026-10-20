@@ -3,7 +3,7 @@
 `basic` plus a server. Same structure, same conventions — the diff against `basic` is what a server adds:
 
 - **Data loading through server functions** — `'use server'` functions the UI calls like local async functions (`src/lib/users.ts`).
-- **A single-flight mutation** — a `<form>` posting to an `action()` server function; the response carries the refreshed page data, so the UI updates in one round trip. Works before hydration too.
+- **A single-flight mutation** — a `<form>` posting to a `formAction()` server function; the response carries the refreshed page data, so the UI updates in one round trip. Works before hydration too.
 - **Session cookie auth** — a signed cookie read and written by plain server functions (`src/server/session.ts`); sign in on the home page, and the rename mutation is authorized against it server-side.
 - **An API route** — uppercase method exports under `src/routes/api` answer HTTP requests (try `GET /api/users`).
 
@@ -11,17 +11,17 @@
 
 ## Server functions
 
-A function marked `'use server'` always runs on the server. On the server it is a plain call; in the browser the compiler turns it into a typed fetch against the `/_server` endpoint — you never write the endpoint. Wrap reads in `query()` (cached per key, shared between preload and render) and writes in `action()`; both come from `@solidjs/router`. `src/lib/users.ts` is the whole data layer.
+A function marked `'use server'` always runs on the server. On the server it is a plain call; in the browser the compiler turns it into a typed fetch against the `/_server` endpoint — you never write the endpoint. Wrap reads in `query()` (cached per key, shared between preload and render) and form-bound writes in `formAction()`; both come from `@solidjs/router`. Outside a form, call the server function directly — the router applies its revalidation and redirect either way. `src/lib/users.ts` is the whole data layer.
 
 Inside a server function, `getRequestEvent()` (from `@solidjs/web`) is the current request — headers, `locals`, the mutable `response` head.
 
 ## Single-flight mutations
 
-The payoff the whole stack builds toward. When a form submits, the router sends the action call with a single-flight marker; on the server, after the mutation runs, the registered collector (`src/server-config.ts`) reruns the target route's `preload` and folds the refreshed `query()` data into the **same response**. The router seeds its cache from that envelope — no follow-up refetch, no stale frame in between.
+The payoff the whole stack builds toward. When a form submits, the router sends the server function call with a single-flight marker; on the server, after the mutation runs, the registered collector (`src/server-config.ts`) reruns the target route's `preload` and folds the refreshed `query()` data into the **same response**. The router seeds its cache from that envelope — no follow-up refetch, no stale frame in between.
 
 Watch the network tab while renaming a user: exactly one `POST /_server` — the heading _and_ the user list in the layout both update from that one response. Without single-flight that interaction is a POST followed by one GET per revalidated query.
 
-Two things make a route single-flight-complete, and both are already good practice: reads go through `query()`, and the route's `preload` touches every query the page renders (that is what the server reruns — `src/routes/users/[id].tsx` calls it "the page's single-flight manifest"). The no-JS fallback is the same machinery minus the envelope: the plain form POST runs the action and answers `303 See Other` back to the page, which re-renders with fresh data — one round trip there too.
+Two things make a route single-flight-complete, and both are already good practice: reads go through `query()`, and the route's `preload` touches every query the page renders (that is what the server reruns — `src/routes/users/[id].tsx` calls it "the page's single-flight manifest"). The no-JS fallback is the same machinery minus the envelope: the plain form POST runs the form action and answers `303 See Other` back to the page, which re-renders with fresh data — one round trip there too.
 
 ## Sessions
 
@@ -34,7 +34,7 @@ Semantics worth knowing (all covered by `src/server/session.test.ts`):
 - **Rotation**: `SESSION_SECRET` is comma-separated, newest first — the first entry signs, every entry verifies. Deploy `"new,old"`, drop `old` after a week.
 - `getSession()` returns `null` uniformly for absent, tampered, rotated-out, and expired cookies — and it reads the _request's_ cookie, so a `setSession` in the same request does not read back.
 
-The demo wires it as auth: `login`/`logout` actions write the cookie, `getCurrentUser` reads it, and `renameUser` checks it server-side — the UI hiding the form when signed out is cosmetic; the check in the server function is the real gate.
+The demo wires it as auth: `login`/`logout` form actions write the cookie, `getCurrentUser` reads it, and `renameUser` checks it server-side — the UI hiding the form when signed out is cosmetic; the check in the server function is the real gate.
 
 ## Typed environment variables
 
