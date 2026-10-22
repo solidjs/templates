@@ -1,0 +1,32 @@
+{
+  // Selects the TSRX target compiler for @tsrx/typescript-plugin (editor
+  // services and the `tsrx-tsc` typecheck script). @tsrx/solid projects .tsrx
+  // modules to virtual TypeScript checked under the Solid JSX settings below.
+  "tsrx": {
+    "compiler": "@tsrx/solid"
+  },
+  "compilerOptions": {
+    // General
+    "jsx": "preserve",
+    "jsxImportSource": "@solidjs/web",
+    "target": "ESNext",
+
+    // Modules
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "noEmit": true,
+
+    // Type Checking & Safety
+    "strict": true,
+    "skipLibCheck": true,
+    "types": ["vite/client"],
+
+    // Teaches tsserver-based editors (and `tsrx-tsc`) to type .tsrx modules.
+    // VS Code users get this from the "TSRX Syntax" extension instead — see
+    // .vscode/extensions.json.
+    "plugins": [{ "name": "@tsrx/typescript-plugin" }]
+  }
+}

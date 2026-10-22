@@ -1,0 +1,16 @@
+# packageExtensions works around @kobalte/solidbase importing "resolve" and
+# "esbuild" without declaring them, which breaks pnpm installs. esbuild used to
+# be satisfied by a hoisted copy from @solidjs/start's dependencies; start 2 rc
+# no longer pulls it in. Remove once fixed upstream.
+packageExtensions:
+  "@kobalte/solidbase":
+    dependencies:
+      resolve: "^1.22.8"
+      esbuild: "^0.25.0"
+allowBuilds:
+  esbuild: true
+# @kobalte/solidbase still depends on @solidjs/router ^0.15.3. Without this
+# override the app and solidbase get separate router instances, which breaks
+# SSR. Remove once solidbase depends on router 1.
+overrides:
+  "@solidjs/router": "^1.0.0"

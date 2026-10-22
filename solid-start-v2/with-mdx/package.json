@@ -1,0 +1,24 @@
+{
+  "name": "example-with-mdx",
+  "type": "module",
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build",
+    "start": "node .output/server/index.mjs",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@mdx-js/mdx": "^2.3.0",
+    "@solidjs/router": "^1.0.0",
+    "@solidjs/start": "^2.0.0",
+    "solid-js": "^1.9.14",
+    "solid-mdx": "^0.0.7",
+    "vite": "^8.0.0",
+    "@mdx-js/rollup": "^3.0.0",
+    "nitro": "^3.0.260610-beta"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "devDependencies": {}
+}
