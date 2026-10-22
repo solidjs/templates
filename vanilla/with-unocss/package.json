@@ -15,7 +15,7 @@
     "@unocss/vite": "^66.5.0",
     "solid-devtools": "^0.34.3",
     "typescript": "^5.9.2",
-    "vite": "^7.1.4",
+    "vite": "^7.3.7",
     "vite-plugin-solid": "^2.11.8"
   },
   "dependencies": {

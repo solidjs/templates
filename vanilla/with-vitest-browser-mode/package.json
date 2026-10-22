@@ -16,10 +16,10 @@
     "@testing-library/jest-dom": "^7.0.0",
     "@vitest/browser-playwright": "^5.0.0",
     "jsdom": "^25.0.1",
-    "playwright": "^1.50.1",
+    "playwright": "^1.64.1",
     "solid-devtools": "^0.34.3",
     "typescript": "^5.7.2",
-    "vite": "^7.1.4",
+    "vite": "^7.3.7",
     "vite-plugin-solid": "2.11.9",
     "vitest": "^5.0.0"
   },
