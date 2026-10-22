@@ -1,0 +1,10 @@
+/* The one thing Bootstrap doesn't cover: the logo's slow spin. */
+.logo-spin {
+  animation: logo-spin infinite 20s linear;
+}
+
+@keyframes logo-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "example-with-prisma",
+  "type": "module",
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build",
+    "start": "node .output/server/index.mjs",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/node": "^24.7.0"
+  },
+  "dependencies": {
+    "@prisma/adapter-better-sqlite3": "^7.5.0",
+    "@prisma/client": "^7.5.0",
+    "@solidjs/router": "^1.0.0",
+    "@solidjs/start": "^2.0.0",
+    "prisma": "^7.5.0",
+    "solid-js": "^1.9.14",
+    "vite": "^8.0.0",
+    "nitro": "^3.0.260610-beta"
+  },
+  "engines": {
+    "node": ">=24"
+  }
+}

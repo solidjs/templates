@@ -1,0 +1,66 @@
+import { A, createAsync } from "@solidjs/router";
+import { Show, Suspense, type VoidComponent } from "solid-js";
+import { getSessionData } from "~/app";
+
+const Home: VoidComponent = () => {
+  return (
+    <main class="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#026d56] to-[#152a2c]">
+      <div class="container flex flex-col items-center justify-center gap-12 px-4 py-16 ">
+        <h1 class="text-5xl font-extrabold tracking-tight text-white sm:text-[5rem]">
+          Auth.js
+        </h1>
+        <div class="grid grid-cols-1 gap-4 sm:grid-cols-1 md:gap-8">
+          <A
+            class="flex max-w-xs flex-col gap-4 rounded-xl bg-white/10 p-4 text-white hover:bg-white/20"
+            href="https://start.solidjs.com"
+            target="_blank"
+          >
+            <h3 class="text-2xl font-bold">Solid Start →</h3>
+            <div class="text-lg">
+              Learn more about Solid Start and the basics.
+            </div>
+          </A>
+        </div>
+        <AuthShowcase />
+      </div>
+    </main>
+  );
+};
+
+export default Home;
+
+const AuthShowcase: VoidComponent = () => {
+  const session = createAsync(() => getSessionData());
+
+  return (
+    <div class="flex flex-col items-center justify-center gap-4">
+      <Suspense fallback={<div class="text-white">Loading...</div>}>
+        <Show
+          when={session()}
+          fallback={
+            <a
+              rel="external"
+              href="/api/auth/signin"
+              class="rounded-full bg-white/10 px-10 py-3 font-semibold text-white no-underline transition hover:bg-white/20"
+            >
+              Sign in
+            </a>
+          }
+        >
+          <div class="flex flex-col gap-3 items-center">
+            <span class="text-xl text-white">
+              Welcome {session()?.user?.name}
+            </span>
+            <a
+              rel="external"
+              href="/api/auth/signout"
+              class="rounded-full bg-white/10 px-10 py-3 font-semibold text-white no-underline transition hover:bg-white/20"
+            >
+              Sign out
+            </a>
+          </div>
+        </Show>
+      </Suspense>
+    </div>
+  );
+};

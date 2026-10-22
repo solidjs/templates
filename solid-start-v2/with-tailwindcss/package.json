@@ -1,0 +1,24 @@
+{
+  "name": "example-with-tailwindcss",
+  "type": "module",
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build",
+    "start": "node .output/server/index.mjs",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@solidjs/router": "^1.0.0",
+    "@solidjs/start": "^2.0.0",
+    "solid-js": "^1.9.14",
+    "vite": "^8.0.0",
+    "nitro": "^3.0.260610-beta"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.0.7",
+    "tailwindcss": "^4.0.7"
+  },
+  "engines": {
+    "node": ">=24"
+  }
+}
