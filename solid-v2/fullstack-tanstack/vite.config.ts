@@ -29,7 +29,7 @@ export default defineConfig({
         // assets + the handler). Other platforms import dist/server/server.js.
         node: true,
         // Typed env is on by convention: ./env.ts is probed automatically.
-        // (Set `env: false` here to opt out.)
+        // (Set the top-level `env: false` option to opt out.)
       },
       // Set to false for a static shell + API server: pages render on the
       // client while server functions, sessions, and API routes keep working.
