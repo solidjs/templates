@@ -28,7 +28,7 @@ The seams that make this work are all public, on both sides: `registerFlightData
 
 ## SSR under a router Solid doesn't own
 
-The plugin's `start.setup` hook (`src/setup.tsx`) is the per-request seam: it builds this request's router + QueryClient, `await router.load()` starts the matched loaders' prefetches, and the returned component renders in App's place inside the Document — the render begins while the fetches are still in flight, each `useQuery` suspending on its own query.
+The plugin's `start.serverRenderSetup` hook (`src/setup.tsx`) is the per-request seam: it builds this request's router + QueryClient, `await router.load()` starts the matched loaders' prefetches, and the returned component renders in App's place inside the Document — the render begins while the fetches are still in flight, each `useQuery` suspending on its own query.
 
 The load's verdict rides the same seam. A server load never throws for redirects — a `redirect()` from `beforeLoad` or a loader lands in `router._serverResult` — so setup reads it after the load: a redirect folds its `Location` and status onto the event's response head (the plugin answers a real 30x with no body instead of streaming the abandoned route), and a render carries its 200/404/500 the same way, so unknown URLs answer 404 instead of a masquerading 200.
 

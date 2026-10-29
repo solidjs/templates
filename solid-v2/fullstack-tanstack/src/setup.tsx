@@ -1,4 +1,4 @@
-// The per-request SSR seam (`start.setup` in vite.config.ts): the generated
+// The per-request SSR seam (`start.serverRenderSetup` in vite.config.ts): the generated
 // server entry awaits this default export after the middleware chain and
 // renders the returned component in App's place, inside the Document. Each
 // request gets its own TanStack router and Query cache.
