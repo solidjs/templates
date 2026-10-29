@@ -24,7 +24,7 @@ export default defineConfig({
         // Per-request SSR preparation: builds this request's TanStack
         // router + Query cache and runs the loaders (see src/setup.tsx).
         // Ignored when `ssr` is false.
-        setup: './src/setup.tsx',
+        serverRenderSetup: './src/setup.tsx',
         // Emit dist/server/node.js: a ready-to-run Node server (static
         // assets + the handler). Other platforms import dist/server/server.js.
         node: true,
