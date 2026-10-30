@@ -4,11 +4,11 @@ import * as v from 'valibot';
 // objects of Standard Schema validators — valibot here, but zod, arktype, or
 // any compliant library works, even mixed per key.
 //
-// `server` vars come through `virtual:env/server` (server modules only —
+// `server` vars come through `virtual:solid-env/server` (server modules only;
 // importing it from client code fails the build) and are read from
 // process.env at BOOT, validated then: secrets rotate without a rebuild and
 // never appear in build artifacts. `client` vars must carry the public
-// VITE_ prefix and come through `virtual:env/client` as validated values
+// VITE_ prefix and come through `virtual:solid-env/client` as validated values
 // baked into the bundle. Generated types land in solid-env.d.ts.
 export default {
   server: {

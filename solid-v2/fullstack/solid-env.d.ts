@@ -2,7 +2,7 @@
 // Regenerated on every dev server and build start from env.ts.
 // Keep this file (and the schema) inside your tsconfig "include".
 
-declare module 'virtual:env/client' {
+declare module 'virtual:solid-env/client' {
   type __Schema = typeof import("./env")['default'];
   type __Out<T> = T extends { '~standard': { types?: { output: infer O } | undefined } }
     ? O
@@ -14,7 +14,7 @@ declare module 'virtual:env/client' {
   export default env;
 }
 
-declare module 'virtual:env/server' {
+declare module 'virtual:solid-env/server' {
   type __Schema = typeof import("./env")['default'];
   type __Out<T> = T extends { '~standard': { types?: { output: infer O } | undefined } }
     ? O

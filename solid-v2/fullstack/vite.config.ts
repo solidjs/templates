@@ -14,7 +14,7 @@ export default defineConfig({
         middleware: './src/middleware.ts',
         // Emit dist/server/node.js: a ready-to-run Node server (static
         // assets + the handler). Other platforms import dist/server/server.js.
-        node: true,
+        nodeServer: true,
         // Typed env is on by convention: ./env.ts is probed automatically.
         // (Set the top-level `env: false` option to opt out.)
       },
@@ -23,9 +23,9 @@ export default defineConfig({
       ssr: true,
       // Dev-only: capture control at /__solid/diagnostics (see AGENTS.md).
       diagnostics: true,
-      // The configure module runs in the handler graph before any dispatch —
+      // The serverSetup module runs in the handler graph before any dispatch:
       // it registers the router's single-flight collector.
-      serverFunctions: { configure: './src/server-config.ts' },
+      serverFunctions: { serverSetup: './src/server-config.ts' },
       // `extensions` makes @solidjs/vite-plugin also compile the `?pick=` route
       // modules the fileRoutes plugin emits (their ids end in a query string).
       extensions: ['.jsx', '.tsx'],
@@ -64,7 +64,7 @@ export default defineConfig({
             // Tests run outside the turnkey server: the plugin's env module
             // is stubbed with the same contract (live process.env reads).
             {
-              find: 'virtual:env/server',
+              find: 'virtual:solid-env/server',
               replacement: fileURLToPath(
                 new URL('./vitest-env-server-stub.ts', import.meta.url),
               ),

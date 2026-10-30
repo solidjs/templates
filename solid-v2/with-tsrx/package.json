@@ -15,7 +15,7 @@
   "devDependencies": {
     "@solidjs/diagnostics": "^2.0.0-rc.20",
     "@solidjs/testing-library": "^1.0.0-beta.3",
-    "@solidjs/vite-plugin": "^3.0.0-next.53",
+    "@solidjs/vite-plugin": "^3.0.0-next.54",
     "@testing-library/jest-dom": "^7.0.0",
     "@tsrx/oxc": "^0.9.0",
     "@tsrx/solid": "^0.1.64",

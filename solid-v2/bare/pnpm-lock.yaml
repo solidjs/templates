@@ -19,8 +19,8 @@ importers:
         specifier: ^2.0.0-rc.20
         version: 2.0.0-rc.20(@solidjs/web@2.0.0-rc.20(solid-js@2.0.0-rc.20))(solid-js@2.0.0-rc.20)
       '@solidjs/vite-plugin':
-        specifier: ^3.0.0-next.53
-        version: 3.0.0-next.53(@solidjs/web@2.0.0-rc.20(solid-js@2.0.0-rc.20))(solid-js@2.0.0-rc.20)(vite@8.3.0)
+        specifier: ^3.0.0-next.54
+        version: 3.0.0-next.54(@solidjs/web@2.0.0-rc.20(solid-js@2.0.0-rc.20))(solid-js@2.0.0-rc.20)(vite@8.3.0)
       eslint-plugin-solid:
         specifier: ~0.18.1
         version: 0.18.1(eslint@10.10.0)(typescript@5.9.3)
@@ -483,8 +483,8 @@ packages:
     resolution: {integrity: sha512-BIL5dKm0dAtPGsCEuLSNw60spDbmYG5QFK+aHUxPIgPLweA8IeJKd62DiqqqU/jqX0x39ty31GoP1n+ZINkrcg==}
     engines: {node: '>=22.12.0'}
 
-  '@solidjs/vite-plugin@3.0.0-next.53':
-    resolution: {integrity: sha512-XgPz1Fo0QwbrpeNTTURQQX7D/dLTsLxNYRmVvc2AcSzIakm67BBMPb7AAvF6z2JtMwoVcDgRZzZVJ0m6pV15iA==}
+  '@solidjs/vite-plugin@3.0.0-next.54':
+    resolution: {integrity: sha512-KcOXhajHsPd7+BMB72tefvG6OngRLR3BK6PWKMP6jtb6xj/ryLjT7SlYxgdBgsWcC3iEMmb9PiD5ZaX5NnBnMQ==}
     engines: {node: '>=22.12.0'}
     peerDependencies:
       '@solidjs/start-devtools': ^1.0.0-next.2
@@ -891,6 +891,9 @@ packages:
 
   lru-cache@5.1.1:
     resolution: {integrity: sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==}
+
+  magic-string@0.30.21:
+    resolution: {integrity: sha512-vd2F4YUyEXKGcLHoq+TEyCjxueSeHnFxyyjNp80yg0XV4vUhnDer/lvvlqM/arB5bXQN5K2/3oinyCRyx8T2CQ==}
 
   merge-anything@5.1.7:
     resolution: {integrity: sha512-eRtbOb1N5iyH0tkQDAoQ4Ipsp/5qSR79Dzrz8hEPxRX10RWWR/iQXdoKmBSRCThY1Fh5EhISDtpSc93fpxUniQ==}
@@ -1495,7 +1498,7 @@ snapshots:
 
   '@solidjs/signals@2.0.0-rc.20': {}
 
-  '@solidjs/vite-plugin@3.0.0-next.53(@solidjs/web@2.0.0-rc.20(solid-js@2.0.0-rc.20))(solid-js@2.0.0-rc.20)(vite@8.3.0)':
+  '@solidjs/vite-plugin@3.0.0-next.54(@solidjs/web@2.0.0-rc.20(solid-js@2.0.0-rc.20))(solid-js@2.0.0-rc.20)(vite@8.3.0)':
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@babel/core': 7.29.7
@@ -1503,6 +1506,7 @@ snapshots:
       '@solidjs/compiler': 2.0.0-rc.19
       '@solidjs/web': 2.0.0-rc.20(solid-js@2.0.0-rc.20)
       '@types/babel__core': 7.20.5
+      magic-string: 0.30.21
       merge-anything: 5.1.7
       solid-js: 2.0.0-rc.20
       vite: 8.3.0
@@ -1889,6 +1893,10 @@ snapshots:
   lru-cache@5.1.1:
     dependencies:
       yallist: 3.1.1
+
+  magic-string@0.30.21:
+    dependencies:
+      '@jridgewell/sourcemap-codec': 1.6.0
 
   merge-anything@5.1.7:
     dependencies:

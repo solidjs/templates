@@ -7,7 +7,7 @@
  * carrying the previous response's Set-Cookie — not a mocked event bag.
  *
  * The secrets live in process.env.SESSION_SECRET (comma-separated,
- * newest first), read through the virtual:env/server contract at module
+ * newest first), read through the virtual:solid-env/server contract at module
  * init — so each test loads a fresh copy of the module via
  * `loadSession(secret)` to pin its own secret list, which is also
  * exactly how a rotation deployment behaves (new process, new list).

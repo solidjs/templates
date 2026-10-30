@@ -2,7 +2,7 @@
 
 `fullstack` with the client half swapped out: [TanStack Router](https://tanstack.com/router) owns routing and [TanStack Query](https://tanstack.com/query) owns the data cache, while Solid's server functions, single-flight mutations, sessions, and API routes keep working unchanged. This is the agnosticism proof for the whole stack — the server half never asks who is routing.
 
-**Deployment contract:** there is a server. `vite build` emits static client assets to `dist/client`, a request handler to `dist/server/server.js`, and — via `start: { node: true }` — a ready-to-run Node server at `dist/server/node.js` that `npm start` runs. SSR is the default posture — set `ssr: false` in `vite.config.ts` for a static shell + API server: pages render on the client while server functions, single-flight, sessions, and API routes keep working. Same template, one boolean.
+**Deployment contract:** there is a server. `vite build` emits static client assets to `dist/client`, a request handler to `dist/server/server.js`, and, via `start: { nodeServer: true }`, a ready-to-run Node server at `dist/server/node.js` that `npm start` runs. SSR is the default posture; set `ssr: false` in `vite.config.ts` for a static shell + API server: pages render on the client while server functions, single-flight, sessions, and API routes keep working. Same template, one boolean.
 
 ## Who owns what
 
@@ -20,7 +20,7 @@ Mutations are Solid server functions through TanStack's `useMutation`. One gotch
 
 ## Single-flight mutations on a foreign router
 
-The capstone. When a mutation fires, the client transport asks the server to fold refreshed data into the **same response**. The client opt-in is solid-query's own: `QueryClientProvider` subscribes its named flight-data source (`"sq"`) while mounted, and hydrates the cache from whatever payloads come back — no hand-rolled consumer. On the server, `src/server-config.ts` (wired via `serverFunctions.configure`) registers the matching producer with `registerFlightDataSource`: solid-router's `loadFlightTarget` builds a fresh TanStack router + QueryClient for the page the browser is on — with the mutation's cookie effects already folded in — and runs its loaders; solid-query's `dehydrateSettled` awaits the in-flight fetches and ships the dehydrated cache as the payload.
+The capstone. When a mutation fires, the client transport asks the server to fold refreshed data into the **same response**. The client opt-in is solid-query's own: `QueryClientProvider` subscribes its named flight-data source (`"sq"`) while mounted, and hydrates the cache from whatever payloads come back, with no hand-rolled consumer. On the server, `src/server-config.ts` (wired via `serverFunctions.serverSetup`) registers the matching producer with `registerFlightDataSource`: solid-router's `loadFlightTarget` builds a fresh TanStack router + QueryClient for the page the browser is on, with the mutation's cookie effects already folded in, and runs its loaders; solid-query's `dehydrateSettled` awaits the in-flight fetches and ships the dehydrated cache as the payload.
 
 The payload **is a dehydrated QueryClient**, so consuming it is TanStack's own `hydrate`: the entries land in the cache, every `useQuery` on those keys updates, and no `invalidateQueries` refetch happens anywhere. Watch the network tab while renaming a user: exactly one `POST /_server/data/<id>` (scripted calls have their own address under the endpoint), and both the detail heading and the user list in the parent layout update from that one response.
 
@@ -43,7 +43,7 @@ One boundary, stated honestly: TanStack also ships a router-owned SSR protocol (
 These are `fullstack`'s pillars, unchanged — its README teaches each in depth:
 
 - **Sessions**: `src/server/session.ts` composes signed cookies from `@remix-run/cookie` over the request event; `login`/`logout` write it, `getCurrentUser` reads it, `renameUser` is authorized against it server-side. The 9-test suite came along too.
-- **Typed env**: `env.ts` declares the schema; `virtual:env/server` reads `process.env` at boot (that's where `SESSION_SECRET` comes from), `virtual:env/client` is baked at build time. Copy `.env.example` to `.env` to get started.
+- **Typed env**: `env.ts` declares the schema; `virtual:solid-env/server` reads `process.env` at boot (that's where `SESSION_SECRET` comes from), `virtual:solid-env/client` is baked at build time. Copy `.env.example` to `.env` to get started.
 - **API routes**: uppercase method exports under `src/api` (try `GET /api/users`), dispatched by the middleware chain. They live outside `src/routes` — that directory belongs to TanStack — so `fileRoutes` in `vite.config.ts` scans `src/api` and mounts it under `/api` with a two-line `toPath`.
 - **Server-only modules**: `src/server/db.ts` imports the `server-only` marker, so any path pulling it into the client bundle fails the build naming the importer. (Vite's dependency scanner can print exactly that error on a cold `npm run dev` start — the scanner walks imports before the `'use server'` transform runs. It skips pre-bundling and dev proceeds normally; the build-time guard is unaffected.)
 
@@ -100,6 +100,6 @@ const response = await handleRequest(request);
 const sameResponse = await app.fetch(request);
 ```
 
-The default `{ fetch(request) }` export follows the Fetchable convention used by deployment integrations. `dist/server/node.js` — emitted by `start: { node: true }` — is the Node version of the same contract: static `dist/client` (hashed assets immutable), everything else through `handleRequest` with the raw Node request as `nativeEvent`; it also exports `listener`, `createListener`, and `serve` for composing with an existing server.
+The default `{ fetch(request) }` export follows the Fetchable convention used by deployment integrations. `dist/server/node.js`, emitted by `start: { nodeServer: true }`, is the Node version of the same contract: static `dist/client` (hashed assets immutable), everything else through `handleRequest` with the raw Node request as `nativeEvent`; it also exports `listener`, `createListener`, and `serve` for composing with an existing server.
 
 The server posture is identical to `fullstack` — same build layout (`dist/client` + `dist/server`), same handler export, same boot-time env contract — so the platform recipes in [`fullstack`'s README](../fullstack/README.md#deployment) (Node, Nitro, Cloudflare Workers, Netlify) apply here verbatim (keep `setup` in the `start` block; the non-Node recipes drop `node`).

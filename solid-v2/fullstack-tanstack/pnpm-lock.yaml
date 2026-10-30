@@ -34,8 +34,8 @@ importers:
         specifier: ^1.0.0-beta.3
         version: 1.0.0-beta.3(@solidjs/web@2.0.0-rc.20(solid-js@2.0.0-rc.20))(solid-js@2.0.0-rc.20)
       '@solidjs/vite-plugin':
-        specifier: ^3.0.0-next.53
-        version: 3.0.0-next.53(@solidjs/web@2.0.0-rc.20(solid-js@2.0.0-rc.20))(@testing-library/jest-dom@7.0.1(@testing-library/dom@10.4.2)(vitest@5.0.1(@types/node@26.6.1)(jsdom@25.0.1)(vite@8.3.0(@types/node@26.6.1)(jiti@2.7.0))))(solid-js@2.0.0-rc.20)(vite@8.3.0(@types/node@26.6.1)(jiti@2.7.0))
+        specifier: ^3.0.0-next.54
+        version: 3.0.0-next.54(@solidjs/web@2.0.0-rc.20(solid-js@2.0.0-rc.20))(@testing-library/jest-dom@7.0.1(@testing-library/dom@10.4.2)(vitest@5.0.1(@types/node@26.6.1)(jsdom@25.0.1)(vite@8.3.0(@types/node@26.6.1)(jiti@2.7.0))))(solid-js@2.0.0-rc.20)(vite@8.3.0(@types/node@26.6.1)(jiti@2.7.0))
       '@tanstack/router-plugin':
         specifier: 1.168.47
         version: 1.168.47(rolldown@1.2.9)(vite@8.3.0(@types/node@26.6.1)(jiti@2.7.0))
@@ -788,8 +788,8 @@ packages:
       '@solidjs/web': '>=2.0.0-0'
       solid-js: '>=2.0.0-0'
 
-  '@solidjs/vite-plugin@3.0.0-next.53':
-    resolution: {integrity: sha512-XgPz1Fo0QwbrpeNTTURQQX7D/dLTsLxNYRmVvc2AcSzIakm67BBMPb7AAvF6z2JtMwoVcDgRZzZVJ0m6pV15iA==}
+  '@solidjs/vite-plugin@3.0.0-next.54':
+    resolution: {integrity: sha512-KcOXhajHsPd7+BMB72tefvG6OngRLR3BK6PWKMP6jtb6xj/ryLjT7SlYxgdBgsWcC3iEMmb9PiD5ZaX5NnBnMQ==}
     engines: {node: '>=22.12.0'}
     peerDependencies:
       '@solidjs/start-devtools': ^1.0.0-next.2
@@ -2665,7 +2665,7 @@ snapshots:
       '@testing-library/dom': 10.4.2
       solid-js: 2.0.0-rc.20
 
-  '@solidjs/vite-plugin@3.0.0-next.53(@solidjs/web@2.0.0-rc.20(solid-js@2.0.0-rc.20))(@testing-library/jest-dom@7.0.1(@testing-library/dom@10.4.2)(vitest@5.0.1(@types/node@26.6.1)(jsdom@25.0.1)(vite@8.3.0(@types/node@26.6.1)(jiti@2.7.0))))(solid-js@2.0.0-rc.20)(vite@8.3.0(@types/node@26.6.1)(jiti@2.7.0))':
+  '@solidjs/vite-plugin@3.0.0-next.54(@solidjs/web@2.0.0-rc.20(solid-js@2.0.0-rc.20))(@testing-library/jest-dom@7.0.1(@testing-library/dom@10.4.2)(vitest@5.0.1(@types/node@26.6.1)(jsdom@25.0.1)(vite@8.3.0(@types/node@26.6.1)(jiti@2.7.0))))(solid-js@2.0.0-rc.20)(vite@8.3.0(@types/node@26.6.1)(jiti@2.7.0))':
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@babel/core': 7.29.7
@@ -2673,6 +2673,7 @@ snapshots:
       '@solidjs/compiler': 2.0.0-rc.19
       '@solidjs/web': 2.0.0-rc.20(solid-js@2.0.0-rc.20)
       '@types/babel__core': 7.20.5
+      magic-string: 0.30.21
       merge-anything: 5.1.7
       solid-js: 2.0.0-rc.20
       vite: 8.3.0(@types/node@26.6.1)(jiti@2.7.0)

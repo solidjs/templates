@@ -9,13 +9,13 @@
 // set-session-then-`throw redirect()` login flow works by construction).
 //
 // Signed, NOT encrypted: the payload is tamper-proof but client-readable.
-// Never put secrets in it. (The virtual:env/server import is also the
+// Never put secrets in it. (The virtual:solid-env/server import is also the
 // server-only boundary: pulling this module into client code fails the
 // build, naming the importer.)
 import { getRequestEvent } from '@solidjs/web';
 import type { RequestEvent, ResponseStub } from '@solidjs/web';
 import { createCookie } from '@remix-run/cookie';
-import { env } from 'virtual:env/server';
+import { env } from 'virtual:solid-env/server';
 
 /** Augment with whatever the app stores; keep it small (cookies cap at ~4KB). */
 export interface SessionData {

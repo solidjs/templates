@@ -7,7 +7,7 @@
 - **Session cookie auth** — a signed cookie read and written by plain server functions (`src/server/session.ts`); sign in on the home page, and the rename mutation is authorized against it server-side.
 - **An API route** — uppercase method exports under `src/routes/api` answer HTTP requests (try `GET /api/users`).
 
-**Deployment contract:** there is a server. `vite build` emits static client assets to `dist/client`, a request handler to `dist/server/server.js`, and — via `start: { node: true }` — a ready-to-run Node server at `dist/server/node.js` that `npm start` runs. Streaming SSR is the default posture — set `ssr: false` in `vite.config.ts` for a static shell + API server: pages render on the client while server functions, sessions, and API routes keep working. Same template, one boolean.
+**Deployment contract:** there is a server. `vite build` emits static client assets to `dist/client`, a request handler to `dist/server/server.js`, and, via `start: { nodeServer: true }`, a ready-to-run Node server at `dist/server/node.js` that `npm start` runs. Streaming SSR is the default posture; set `ssr: false` in `vite.config.ts` for a static shell + API server: pages render on the client while server functions, sessions, and API routes keep working. Same template, one boolean.
 
 ## Server functions
 
@@ -40,8 +40,8 @@ The demo wires it as auth: `login`/`logout` form actions write the cookie, `getC
 
 `env.ts` at the project root declares every variable as a [Standard Schema](https://standardschema.dev) validator (valibot here; zod or arktype work identically — nothing is imported from the plugin). The plugin probes it automatically and serves two fully typed virtual modules; generated types land in `solid-env.d.ts`.
 
-- **`virtual:env/server`** — every var, **read from `process.env` when the server boots** and validated then: secrets rotate without a rebuild, platform-injected vars work, and no secret value exists in any build artifact. A misconfigured server fails at boot with a per-key report (delete `SESSION_SECRET` from `.env` and run `npm start` to see it). Importing this module from client code fails the build, naming the importer.
-- **`virtual:env/client`** — the `VITE_`-prefixed vars, validated and **baked into the bundle** at build time (defaults applied, zero schema-library bytes shipped). The prefix is the line: client values are public, server values never leave the server.
+- **`virtual:solid-env/server`**: every var, **read from `process.env` when the server boots** and validated then: secrets rotate without a rebuild, platform-injected vars work, and no secret value exists in any build artifact. A misconfigured server fails at boot with a per-key report (delete `SESSION_SECRET` from `.env` and run `npm start` to see it). Importing this module from client code fails the build, naming the importer.
+- **`virtual:solid-env/client`**: the `VITE_`-prefixed vars, validated and **baked into the bundle** at build time (defaults applied, zero schema-library bytes shipped). The prefix is the line: client values are public, server values never leave the server.
 
 The plugin folds `.env` files into `process.env` for dev, build, and preview — no `loadEnv` boilerplate. Copy `.env.example` to `.env` to get started (`.env` is git-ignored); `npm start` picks it up via `--env-file-if-exists`, and deploy platforms provide the real environment.
 
@@ -124,7 +124,7 @@ The default `{ fetch(request) }` export follows the Fetchable convention used by
 
 ### Node
 
-The default — nothing to add. `start: { node: true }` in `vite.config.ts` makes the build emit `dist/server/node.js`: it serves `dist/client` statically (hashed assets under `assets/` as `Cache-Control: public, max-age=31536000, immutable`, everything else `must-revalidate`) and hands every other request to `handleRequest`. `npm run build`, then `npm start` runs it (loading `.env` if present; real deployments set the environment instead). Any node host (a VPS, Fly.io, Railway, ...) that runs `node dist/server/node.js` with `PORT` (and optionally `HOST`) and `SESSION_SECRET` set is done. The entry speaks plain HTTP — terminate TLS and compress at the reverse proxy or CDN in front of it.
+The default, nothing to add. `start: { nodeServer: true }` in `vite.config.ts` makes the build emit `dist/server/node.js`: it serves `dist/client` statically (hashed assets under `assets/` as `Cache-Control: public, max-age=31536000, immutable`, everything else `must-revalidate`) and hands every other request to `handleRequest`. `npm run build`, then `npm start` runs it (loading `.env` if present; real deployments set the environment instead). Any node host (a VPS, Fly.io, Railway, ...) that runs `node dist/server/node.js` with `PORT` (and optionally `HOST`) and `SESSION_SECRET` set is done. The entry speaks plain HTTP: terminate TLS and compress at the reverse proxy or CDN in front of it.
 
 The file also exports `listener` (the `(req, res)` function), `createListener({ static?, event? })`, and `serve({ port, host, static, event })`, so it composes with an existing server — e.g. `app.use(listener)` in Express, or `createListener({ static: false })` behind Express's own static handling.
 
@@ -142,7 +142,7 @@ export default defineConfig({
     solid({
       start: { middleware: './src/middleware.ts' },
       ssr: true,
-      serverFunctions: { configure: './src/server-config.ts' },
+      serverFunctions: { serverSetup: './src/server-config.ts' },
       extensions: ['.jsx', '.tsx'],
     }),
     nitro({ serverEntry: false }),
@@ -166,7 +166,7 @@ export default defineConfig({
     solid({
       start: { middleware: './src/middleware.ts' },
       ssr: true,
-      serverFunctions: { configure: './src/server-config.ts' },
+      serverFunctions: { serverSetup: './src/server-config.ts' },
       extensions: ['.jsx', '.tsx'],
     }),
     fileRoutes({ httpMethods: true }),
@@ -214,7 +214,7 @@ export default defineConfig({
         middleware: './src/middleware.ts',
       },
       ssr: true,
-      serverFunctions: { configure: './src/server-config.ts' },
+      serverFunctions: { serverSetup: './src/server-config.ts' },
       extensions: ['.jsx', '.tsx'],
     }),
     netlify({ build: { enabled: true } }),
