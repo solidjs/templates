@@ -1,5 +1,5 @@
 // Pre-dispatch server-function configuration (pinned into the handler graph
-// via `serverFunctions.configure` in vite.config.ts — it loads before any
+// via `serverFunctions.serverSetup` in vite.config.ts; it loads before any
 // dispatch, on the dev middleware and the production handler alike).
 //
 // This is the server half of single-flight on a router Solid doesn't own,
