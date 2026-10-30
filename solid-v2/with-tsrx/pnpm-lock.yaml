@@ -25,8 +25,8 @@ importers:
         specifier: ^2.0.0-rc.20
         version: 2.0.0-rc.20(@solidjs/web@2.0.0-rc.20(solid-js@2.0.0-rc.20))(solid-js@2.0.0-rc.20)(vitest@5.0.1(jsdom@25.0.1)(vite@8.3.0))
       '@solidjs/testing-library':
-        specifier: ^1.0.0-beta.3
-        version: 1.0.0-beta.3(@solidjs/web@2.0.0-rc.20(solid-js@2.0.0-rc.20))(solid-js@2.0.0-rc.20)
+        specifier: ^1.0.0-rc.2
+        version: 1.0.0-rc.2(@solidjs/web@2.0.0-rc.20(solid-js@2.0.0-rc.20))(solid-js@2.0.0-rc.20)
       '@solidjs/vite-plugin':
         specifier: ^3.0.0-next.54
         version: 3.0.0-next.54(@solidjs/web@2.0.0-rc.20(solid-js@2.0.0-rc.20))(@testing-library/jest-dom@7.0.1(@testing-library/dom@10.4.2)(vitest@5.0.1(jsdom@25.0.1)(vite@8.3.0)))(solid-js@2.0.0-rc.20)(vite@8.3.0)
@@ -145,8 +145,8 @@ packages:
     peerDependencies:
       '@babel/core': ^7.0.0-0
 
-  '@babel/runtime@7.29.7':
-    resolution: {integrity: sha512-Nq8OhGWiZIZGV6hLHoyAKLLcJihP/xFeBMGJoUrxTX2psI8dCifzLhZISFb+VWS3wFMRDmCGw5R+dOySCqPLhw==}
+  '@babel/runtime@7.29.10':
+    resolution: {integrity: sha512-NpugTzbKgGrNe45Ui32cN8vCFFMxVtP/9rtfwv0nP5FRDAjvYBxJcLVpYA9mr1jxP6cnIT7x9LUzuDTbWYYNRA==}
     engines: {node: '>=6.9.0'}
 
   '@babel/template@7.29.7':
@@ -975,8 +975,8 @@ packages:
     resolution: {integrity: sha512-BIL5dKm0dAtPGsCEuLSNw60spDbmYG5QFK+aHUxPIgPLweA8IeJKd62DiqqqU/jqX0x39ty31GoP1n+ZINkrcg==}
     engines: {node: '>=22.12.0'}
 
-  '@solidjs/testing-library@1.0.0-beta.3':
-    resolution: {integrity: sha512-yJtAa6H76xr5lSkT7LVmaaTFCZZzxcwejzQ4UBV/+koZFByVZ5J0XMDVHZ539PGso+fyncI5iRxWyDWFqhtcLg==}
+  '@solidjs/testing-library@1.0.0-rc.2':
+    resolution: {integrity: sha512-QZqIVoyDAqaGgSsWQ3gnYGaG1peFkNF0/n5uM+393g5plZlcvgxmUgdjsQtwrRLVZCrh0K1lp7YHxsAlN5XPkA==}
     engines: {node: '>= 14'}
     peerDependencies:
       '@solidjs/web': '>=2.0.0-0'
@@ -1151,6 +1151,9 @@ packages:
   '@types/estree-jsx@1.0.5':
     resolution: {integrity: sha512-52CcUVNFyfb1A2ALocQw/Dd1BQFNmSdkuC3BkZ6iqhdMfQz7JWOFRuJFloOzjk+6WijU56m9oKXFAXc7o3Towg==}
 
+  '@types/estree@1.0.10':
+    resolution: {integrity: sha512-lTyOMnOcmRBzdCv6/4zUZCrEhV0xrqQiUZBZtVcbmLHBXKLnN8q89v/wKRF/Q0HbwVsqbIG3o5HDoFl9sduM+g==}
+
   '@types/estree@1.0.9':
     resolution: {integrity: sha512-GhdPgy1el4/ImP05X05Uw4cw2/M93BCUmnEvWZNStlCzEKME4Fkk+YpoA5OiHNQmoS7Cafb8Xa3Pya8m1Qrzeg==}
 
@@ -1227,6 +1230,11 @@ packages:
 
   acorn@8.18.0:
     resolution: {integrity: sha512-lGq+9yr1/GuAWaVYIHRjvvySG5/4VfKIvC8EWxStPdcDh/Ka7FG3twP6v4d5BkravUilhIAsG4Qj83t02LWUPQ==}
+    engines: {node: '>=0.4.0'}
+    hasBin: true
+
+  acorn@8.19.0:
+    resolution: {integrity: sha512-oJlA3XiRm7Cyk6qFD2Jn8ak9B7jSy0qy00ADO3+8dpT0LSjFihQYv4C02LFCSYJV3Q37xYwwRy5m+IpIiUzqWw==}
     engines: {node: '>=0.4.0'}
     hasBin: true
 
@@ -2347,7 +2355,7 @@ snapshots:
       '@babel/core': 7.29.7
       '@babel/helper-plugin-utils': 7.29.7
 
-  '@babel/runtime@7.29.7': {}
+  '@babel/runtime@7.29.10': {}
 
   '@babel/template@7.29.7':
     dependencies:
@@ -2905,7 +2913,7 @@ snapshots:
 
   '@solidjs/signals@2.0.0-rc.20': {}
 
-  '@solidjs/testing-library@1.0.0-beta.3(@solidjs/web@2.0.0-rc.20(solid-js@2.0.0-rc.20))(solid-js@2.0.0-rc.20)':
+  '@solidjs/testing-library@1.0.0-rc.2(@solidjs/web@2.0.0-rc.20(solid-js@2.0.0-rc.20))(solid-js@2.0.0-rc.20)':
     dependencies:
       '@solidjs/web': 2.0.0-rc.20(solid-js@2.0.0-rc.20)
       '@testing-library/dom': 10.4.2
@@ -2943,7 +2951,7 @@ snapshots:
   '@testing-library/dom@10.4.2':
     dependencies:
       '@babel/code-frame': 7.29.7
-      '@babel/runtime': 7.29.7
+      '@babel/runtime': 7.29.10
       '@types/aria-query': 5.0.4
       aria-query: 5.3.0
       dom-accessibility-api: 0.5.16
@@ -3094,6 +3102,8 @@ snapshots:
     dependencies:
       '@types/estree': 1.0.9
 
+  '@types/estree@1.0.10': {}
+
   '@types/estree@1.0.9': {}
 
   '@types/json-schema@7.0.15': {}
@@ -3176,11 +3186,13 @@ snapshots:
       path-browserify: 1.0.1
       vscode-uri: 3.2.0
 
-  acorn-jsx@5.3.2(acorn@8.18.0):
+  acorn-jsx@5.3.2(acorn@8.19.0):
     dependencies:
-      acorn: 8.18.0
+      acorn: 8.19.0
 
   acorn@8.18.0: {}
+
+  acorn@8.19.0: {}
 
   agent-base@7.1.4: {}
 
@@ -3333,7 +3345,7 @@ snapshots:
   eslint-scope@9.1.2:
     dependencies:
       '@types/esrecurse': 4.3.1
-      '@types/estree': 1.0.9
+      '@types/estree': 1.0.10
       esrecurse: 4.3.0
       estraverse: 5.3.0
 
@@ -3352,7 +3364,7 @@ snapshots:
       '@humanfs/node': 0.16.8
       '@humanwhocodes/module-importer': 1.0.1
       '@humanwhocodes/retry': 0.4.3
-      '@types/estree': 1.0.9
+      '@types/estree': 1.0.10
       ajv: 6.15.0
       cross-spawn: 7.0.6
       debug: 4.4.3
@@ -3378,8 +3390,8 @@ snapshots:
 
   espree@11.2.0:
     dependencies:
-      acorn: 8.18.0
-      acorn-jsx: 5.3.2(acorn@8.18.0)
+      acorn: 8.19.0
+      acorn-jsx: 5.3.2(acorn@8.19.0)
       eslint-visitor-keys: 5.0.1
 
   esquery@1.7.0:
