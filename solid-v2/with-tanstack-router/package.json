@@ -22,7 +22,7 @@
     "oxlint": "~1.79.0",
     "typescript": "^5.9.2",
     "vite": "^8.1.5",
-    "vitest": "^5.0.0"
+    "vitest": "^5.0.5"
   },
   "dependencies": {
     "@solidjs/web": "^2.0.0-rc.20",
