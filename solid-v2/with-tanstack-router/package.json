@@ -15,7 +15,7 @@
     "@solidjs/diagnostics": "^2.0.0-rc.20",
     "@solidjs/testing-library": "^1.0.0-rc.2",
     "@solidjs/vite-plugin": "^3.0.0-next.54",
-    "@tanstack/router-plugin": "1.168.47",
+    "@tanstack/router-plugin": "1.168.48",
     "@testing-library/jest-dom": "^7.0.0",
     "eslint-plugin-solid": "~0.18.1",
     "jsdom": "^25.0.1",
