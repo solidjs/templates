@@ -3,7 +3,7 @@ version: 2
 updates:
   - package-ecosystem: 'npm'
     directories:
-      - '**/*'
+      - '/solid-v2/*'
     schedule:
       interval: 'weekly'
     groups:

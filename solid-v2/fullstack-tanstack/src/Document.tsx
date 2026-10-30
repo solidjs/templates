@@ -1,12 +1,10 @@
 import type { ParentProps } from 'solid-js';
 import { HydrationScript } from '@solidjs/web';
 
-// The document shell — the new index.html: picked up by the src/Document.*
-// convention, it wraps the app in the plugin's generated entries and must
-// render the full <html>. Head tags go here. It renders on the server only
-// and ships zero client-side JS of its own. (The SSR Query handoff needs no
-// inline script here: QueryClientProvider streams dehydrated entries through
-// Solid's own hydration serializer, riding the SSR stream.)
+// The document shell (the index.html replacement), picked up by the
+// src/Document.* convention; it must render the full <html> and ships no
+// client JS. No inline dehydration script is needed: QueryClientProvider
+// streams its entries through Solid's hydration serializer.
 export default function Document(props: ParentProps) {
   return (
     <html lang="en">

@@ -4,30 +4,29 @@
   "description": "",
   "type": "module",
   "scripts": {
-    "start": "vite",
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview",
     "test": "vitest",
-    "lint": "oxlint -c oxlint.config.mjs src"
+    "lint": "oxlint src"
   },
   "license": "MIT",
   "devDependencies": {
-    "@solidjs/diagnostics": "^2.0.0-rc.4",
-    "@solidjs/testing-library": "^1.0.0-beta.2",
-    "@solidjs/vite-plugin": "^3.0.0-next.35",
-    "@tanstack/router-plugin": "1.168.35",
-    "@testing-library/jest-dom": "^6.6.3",
-    "eslint-plugin-solid": "~0.17.0",
+    "@solidjs/diagnostics": "^2.0.0-rc.20",
+    "@solidjs/testing-library": "^1.0.0-beta.3",
+    "@solidjs/vite-plugin": "^3.0.0-next.53",
+    "@tanstack/router-plugin": "1.168.47",
+    "@testing-library/jest-dom": "^7.0.0",
+    "eslint-plugin-solid": "~0.18.1",
     "jsdom": "^25.0.1",
     "oxlint": "~1.79.0",
     "typescript": "^5.9.2",
     "vite": "^8.1.5",
-    "vitest": "^4.0.0"
+    "vitest": "^5.0.0"
   },
   "dependencies": {
-    "@solidjs/web": "^2.0.0-rc.4",
-    "@tanstack/solid-router": "^2.0.0-rc.4",
-    "solid-js": "^2.0.0-rc.4"
+    "@solidjs/web": "^2.0.0-rc.20",
+    "@tanstack/solid-router": "^2.0.0-rc.9",
+    "solid-js": "^2.0.0-rc.20"
   }
 }

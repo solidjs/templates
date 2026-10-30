@@ -6,33 +6,33 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "start": "node --env-file-if-exists=.env server.js",
+    "start": "node --env-file-if-exists=.env dist/server/node.js",
     "serve": "vite preview",
     "test": "vitest",
-    "lint": "oxlint -c oxlint.config.mjs src"
+    "lint": "oxlint src"
   },
   "license": "MIT",
   "devDependencies": {
-    "@solidjs/diagnostics": "^2.0.0-rc.4",
-    "@solidjs/testing-library": "^1.0.0-beta.2",
-    "@solidjs/vite-plugin": "^3.0.0-next.35",
-    "@tanstack/router-plugin": "1.168.35",
-    "@testing-library/jest-dom": "^6.6.3",
+    "@solidjs/diagnostics": "^2.0.0-rc.20",
+    "@solidjs/testing-library": "^1.0.0-beta.3",
+    "@solidjs/vite-plugin": "^3.0.0-next.53",
+    "@tanstack/router-plugin": "1.168.47",
+    "@testing-library/jest-dom": "^7.0.0",
     "@types/node": "^26.2.0",
-    "eslint-plugin-solid": "~0.17.0",
-    "filesystem-routing": "0.2.1",
+    "eslint-plugin-solid": "~0.18.1",
+    "filesystem-routing": "0.4.0",
     "jsdom": "^25.0.1",
     "oxlint": "~1.79.0",
     "typescript": "^5.9.2",
     "vite": "^8.1.5",
-    "vitest": "^4.0.0"
+    "vitest": "^5.0.0"
   },
   "dependencies": {
     "@remix-run/cookie": "^0.5.4",
-    "@solidjs/web": "^2.0.0-rc.4",
-    "@tanstack/solid-query": "^6.0.0-rc.1",
-    "@tanstack/solid-router": "^2.0.0-rc.4",
-    "solid-js": "^2.0.0-rc.4",
+    "@solidjs/web": "^2.0.0-rc.20",
+    "@tanstack/solid-query": "^6.0.0-rc.3",
+    "@tanstack/solid-router": "^2.0.0-rc.9",
+    "solid-js": "^2.0.0-rc.20",
     "valibot": "^1.4.2"
   }
 }

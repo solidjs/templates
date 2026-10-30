@@ -3,25 +3,25 @@
 `basic` plus a server. Same structure, same conventions — the diff against `basic` is what a server adds:
 
 - **Data loading through server functions** — `'use server'` functions the UI calls like local async functions (`src/lib/users.ts`).
-- **A single-flight mutation** — a `<form>` posting to an `action()` server function; the response carries the refreshed page data, so the UI updates in one round trip. Works before hydration too.
+- **A single-flight mutation** — a `<form>` posting to a `formAction()` server function; the response carries the refreshed page data, so the UI updates in one round trip. Works before hydration too.
 - **Session cookie auth** — a signed cookie read and written by plain server functions (`src/server/session.ts`); sign in on the home page, and the rename mutation is authorized against it server-side.
 - **An API route** — uppercase method exports under `src/routes/api` answer HTTP requests (try `GET /api/users`).
 
-**Deployment contract:** there is a server. `vite build` emits static client assets to `dist/client` and a request handler to `dist/server`; `npm start` serves both with the included `server.js`. Streaming SSR is the default posture — set `ssr: false` in `vite.config.ts` for a static shell + API server: pages render on the client while server functions, sessions, and API routes keep working. Same template, one boolean.
+**Deployment contract:** there is a server. `vite build` emits static client assets to `dist/client`, a request handler to `dist/server/server.js`, and — via `start: { node: true }` — a ready-to-run Node server at `dist/server/node.js` that `npm start` runs. Streaming SSR is the default posture — set `ssr: false` in `vite.config.ts` for a static shell + API server: pages render on the client while server functions, sessions, and API routes keep working. Same template, one boolean.
 
 ## Server functions
 
-A function marked `'use server'` always runs on the server. On the server it is a plain call; in the browser the compiler turns it into a typed fetch against the `/_server` endpoint — you never write the endpoint. Wrap reads in `query()` (cached per key, shared between preload and render) and writes in `action()`; both come from `@solidjs/router`. `src/lib/users.ts` is the whole data layer.
+A function marked `'use server'` always runs on the server. On the server it is a plain call; in the browser the compiler turns it into a typed fetch against the `/_server` endpoint — you never write the endpoint. Wrap reads in `query()` (cached per key, shared between preload and render) and form-bound writes in `formAction()`; both come from `@solidjs/router`. Outside a form, call the server function directly — the router applies its revalidation and redirect either way. `src/lib/users.ts` is the whole data layer.
 
 Inside a server function, `getRequestEvent()` (from `@solidjs/web`) is the current request — headers, `locals`, the mutable `response` head.
 
 ## Single-flight mutations
 
-The payoff the whole stack builds toward. When a form submits, the router sends the action call with a single-flight marker; on the server, after the mutation runs, the registered collector (`src/server-config.ts`) reruns the target route's `preload` and folds the refreshed `query()` data into the **same response**. The router seeds its cache from that envelope — no follow-up refetch, no stale frame in between.
+The payoff the whole stack builds toward. When a form submits, the router sends the server function call with a single-flight marker; on the server, after the mutation runs, the registered collector (`src/server-config.ts`) reruns the target route's `preload` and folds the refreshed `query()` data into the **same response**. The router seeds its cache from that envelope — no follow-up refetch, no stale frame in between.
 
 Watch the network tab while renaming a user: exactly one `POST /_server/data/<id>` (scripted calls have their own address under the endpoint) — the heading _and_ the user list in the layout both update from that one response. Without single-flight that interaction is a POST followed by one GET per revalidated query.
 
-Two things make a route single-flight-complete, and both are already good practice: reads go through `query()`, and the route's `preload` touches every query the page renders (that is what the server reruns — `src/routes/users/[id].tsx` calls it "the page's single-flight manifest"). The no-JS fallback is the same machinery minus the envelope: the plain form POST runs the action and answers `303 See Other` back to the page, which re-renders with fresh data — one round trip there too.
+Two things make a route single-flight-complete, and both are already good practice: reads go through `query()`, and the route's `preload` touches every query the page renders (that is what the server reruns — `src/routes/users/[id].tsx` calls it "the page's single-flight manifest"). The no-JS fallback is the same machinery minus the envelope: the plain form POST runs the form action and answers `303 See Other` back to the page, which re-renders with fresh data — one round trip there too.
 
 ## Sessions
 
@@ -34,7 +34,7 @@ Semantics worth knowing (all covered by `src/server/session.test.ts`):
 - **Rotation**: `SESSION_SECRET` is comma-separated, newest first — the first entry signs, every entry verifies. Deploy `"new,old"`, drop `old` after a week.
 - `getSession()` returns `null` uniformly for absent, tampered, rotated-out, and expired cookies — and it reads the _request's_ cookie, so a `setSession` in the same request does not read back.
 
-The demo wires it as auth: `login`/`logout` actions write the cookie, `getCurrentUser` reads it, and `renameUser` checks it server-side — the UI hiding the form when signed out is cosmetic; the check in the server function is the real gate.
+The demo wires it as auth: `login`/`logout` form actions write the cookie, `getCurrentUser` reads it, and `renameUser` checks it server-side — the UI hiding the form when signed out is cosmetic; the check in the server function is the real gate.
 
 ## Typed environment variables
 
@@ -51,13 +51,15 @@ The plugin folds `.env` files into `process.env` for dev, build, and preview —
 
 ## Middleware and API routes
 
-`src/middleware.ts` (wired via `start.middleware` in `vite.config.ts`) exports a chain of fetch-style functions fronting every request — page renders, server function calls, and API routes alike. It runs inside the request-event scope, so `getRequestEvent()` and the session helpers work there exactly as in application code.
+`src/middleware.ts` (wired via `start.middleware` in `vite.config.ts`) exports a chain of event-first functions, `(event, next) => Response`, fronting every request — page renders, server function calls, and API routes alike. The request is `event.request`. `next()` takes no arguments; assign `event.request` before calling it to hand a different request downstream, and set `event.nonce` or `event.renderMode` on the event before `next()` when a request needs them (the page render runs inside it). The chain runs inside the request-event scope, so `getRequestEvent()` and the session helpers work there exactly as in application code.
 
-A route module may export uppercase `GET`/`POST`/... handlers — an API route. A module with handlers but no default export is a route without a page (`src/routes/api/users.ts`). Handlers are dispatched by the `createAPIHandler` middleware; `fileRoutes({ httpMethods: true })` scans for them with one router serving both sides — handler modules, and the server-only code they import, never enter the client bundle.
+A route module may export uppercase `GET`/`POST`/... handlers — an API route. A module with handlers but no default export is a route without a page (`src/routes/api/users.ts`). Handlers are dispatched by the `createAPIHandler` middleware; `fileRoutes({ httpMethods: true })` scans for them with one router serving both sides — handler modules, and the server-only code they import, never enter the client bundle. `createAPIHandler` still takes `(request, next)`, so the template adapts it onto the event-first chain.
 
 ## File-system routing
 
 Routing works exactly as in `basic` (see its README): the `fileRoutes` plugin scans `src/routes`, `@solidjs/router/fs` consumes the result. The router instance lives in `src/router.ts` so the single-flight collector and the app share one source of truth.
+
+Link preloading is opt-in. The router is created with `preloadLinks: intentPreload()`, so hovering, focusing, or touching a link warms that route's code and runs its `preload` — the same functions single-flight reruns — before the click. Drop the option to ship no preload listeners; `preload="false"` on a link opts that one link out.
 
 ## Testing
 
@@ -87,11 +89,11 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ### `npm run build`
 
-Builds client assets to `dist/client` and the request handler to `dist/server`.
+Builds client assets to `dist/client`, and the request handler plus the Node server to `dist/server`.
 
 ### `npm start`
 
-Runs the production build with the included `server.js` (loading `.env` if present — deploy platforms provide the real environment instead).
+Runs the production build with the emitted `dist/server/node.js` (loading `.env` if present — deploy platforms provide the real environment instead).
 
 ### `npm run serve`
 
@@ -114,7 +116,7 @@ const sameResponse = await app.fetch(request);
 
 The default `{ fetch(request) }` export follows the Fetchable convention used by deployment integrations. It intentionally ignores host arguments after the request instead of forwarding them as Solid handler options.
 
-`server.js` is the Node version of the same contract. Any target needs exactly three things:
+`dist/server/node.js` is the Node version of the same contract, emitted by the build. The platform recipes below own the server environment themselves, so they drop `start.node` from the `solid()` call. Any target needs exactly three things:
 
 1. **Serve `dist/client` statically**, and route everything else — pages, `/_server`, API routes — to `handleRequest`.
 2. **Provide the server env vars** (`SESSION_SECRET` here) in the process environment: the server bundle reads and validates them **at boot**, not at build time, so they come from the platform's env/secret settings — never from a build artifact. Client `VITE_` vars are the opposite: baked in at `vite build`, so set those on the build machine/CI.
@@ -122,9 +124,11 @@ The default `{ fetch(request) }` export follows the Fetchable convention used by
 
 ### Node
 
-The default — nothing to add. `npm run build`, then `npm start` runs `server.js` (loading `.env` if present; real deployments set the environment instead). Any node host (a VPS, Fly.io, Railway, ...) that runs `node server.js` with `PORT` and `SESSION_SECRET` set is done.
+The default — nothing to add. `start: { node: true }` in `vite.config.ts` makes the build emit `dist/server/node.js`: it serves `dist/client` statically (hashed assets under `assets/` as `Cache-Control: public, max-age=31536000, immutable`, everything else `must-revalidate`) and hands every other request to `handleRequest`. `npm run build`, then `npm start` runs it (loading `.env` if present; real deployments set the environment instead). Any node host (a VPS, Fly.io, Railway, ...) that runs `node dist/server/node.js` with `PORT` (and optionally `HOST`) and `SESSION_SECRET` set is done. The entry speaks plain HTTP — terminate TLS and compress at the reverse proxy or CDN in front of it.
 
-**Client IP:** `server.js` passes the raw Node request into the request event — `handleRequest(request, { event: { nativeEvent: req } })` — so anywhere in a request (middleware, server functions) `getRequestEvent().nativeEvent.socket.remoteAddress` is the peer address. Behind a proxy or load balancer that address is the proxy's: read the forwarding headers off `getRequestEvent().request` instead (`x-forwarded-for` and friends) — only when you trust the proxy that set them.
+The file also exports `listener` (the `(req, res)` function), `createListener({ static?, event? })`, and `serve({ port, host, static, event })`, so it composes with an existing server — e.g. `app.use(listener)` in Express, or `createListener({ static: false })` behind Express's own static handling.
+
+**Client IP:** the emitted entry passes the raw Node request into the request event — `handleRequest(request, { event: { nativeEvent: req } })` — so anywhere in a request (middleware, server functions) `getRequestEvent().nativeEvent.socket.remoteAddress` is the peer address. Behind a proxy or load balancer that address is the proxy's: read the forwarding headers off `getRequestEvent().request` instead (`x-forwarded-for` and friends) — only when you trust the proxy that set them.
 
 ### Nitro
 

@@ -31,7 +31,7 @@ export default function Home() {
       <p>
         Edit <code>src/routes/index.tsx</code> and save to reload.
       </p>
-      {/* The session pillar: login/logout are actions posting to server
+      {/* The session pillar: login/logout are form actions posting to server
           functions — plain form posts, so they work before hydration too. */}
       <Show
         when={me()}

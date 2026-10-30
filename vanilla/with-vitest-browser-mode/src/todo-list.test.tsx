@@ -33,8 +33,8 @@ describe('<TodoList />', () => {
     fireEvent.click(completed);
     expect(completed?.checked).toBe(true);
     const text = getByText('mark new todo as completed') as HTMLSpanElement;
-    expect(text).toHaveStyle({
-      'text-decoration': 'line-through solid rgb(0, 0, 0)',
-    });
+    expect(text).toHaveStyle(
+      'text-decoration: line-through solid rgb(0, 0, 0)',
+    );
   });
 });

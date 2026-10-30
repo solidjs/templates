@@ -1,6 +1,6 @@
 import { Title } from '@solidjs/meta';
 import { type RouteDefinition, type RouteProps } from '@solidjs/router';
-import { Show, createMemo } from 'solid-js';
+import { Show, createMemo, isPending } from 'solid-js';
 
 import { getCurrentUser, getUser, renameUser } from '../../lib/users';
 
@@ -21,11 +21,11 @@ export default function User(props: RouteProps<'/users/:id'>) {
   const me = createMemo(() => getCurrentUser());
 
   return (
-    <section>
+    <section style={{ opacity: isPending(user) ? 0.5 : 1 }}>
       <Title>{`User ${props.params.id} - Solid App`}</Title>
       <h2>{user().name}</h2>
       <p>{user().title}</p>
-      {/* The mutation: a form posting to a server function action (works
+      {/* The mutation: a form posting to a server function formAction (works
           before hydration too); the router revalidates queries when it
           settles. The server checks the session — hiding the form when
           signed out is just honest UI (see src/lib/users.ts). */}

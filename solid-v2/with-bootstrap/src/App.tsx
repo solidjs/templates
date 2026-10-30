@@ -4,8 +4,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { paths, Router } from './router';
 import './App.css';
 
-// The app root: the router and the site-wide layout live here. Pages are
-// the modules under src/routes.
 export default function App() {
   return (
     <Router>
@@ -21,7 +19,7 @@ export default function App() {
             </a>
             <a
               class="nav-link rounded px-3 fw-semibold focus-ring focus-ring-info"
-              href={paths.users(1)}
+              href={paths.users()}
             >
               Users
             </a>
