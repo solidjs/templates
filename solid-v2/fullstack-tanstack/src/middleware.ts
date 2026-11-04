@@ -14,11 +14,6 @@ import routes from 'virtual:file-routes';
 
 // createAPIHandler serves the GET/POST/... exports of the modules under
 // src/api (mounted at /api — see the fileRoutes config in vite.config.ts)
-// and passes everything else down the chain. It still speaks the previous
-// (request, next) shape and calls next() with no arguments, so adapt it
-// onto the event.
-const api = createAPIHandler(routes);
-
-const handleAPI: StartMiddleware = (event, next) => api(event.request, next);
-
-export default [handleAPI];
+// and passes everything else down the chain. It takes the request event
+// directly and hands that same event to the handler (params written onto it).
+export default [createAPIHandler(routes)] satisfies StartMiddleware[];

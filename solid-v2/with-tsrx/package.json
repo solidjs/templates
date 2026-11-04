@@ -21,7 +21,7 @@
     "@tsrx/solid": "^0.1.64",
     "@tsrx/typescript-plugin": "^0.3.129",
     "eslint-plugin-solid": "~0.18.1",
-    "filesystem-routing": "0.4.0",
+    "filesystem-routing": "0.4.2",
     "jsdom": "^25.0.1",
     "oxlint": "~1.79.0",
     "typescript": "^5.9.3",
