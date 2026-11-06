@@ -18,7 +18,7 @@
     "@tanstack/router-plugin": "1.168.48",
     "@testing-library/jest-dom": "^7.0.0",
     "eslint-plugin-solid": "~0.18.1",
-    "jsdom": "^25.0.1",
+    "jsdom": "^31.0.0",
     "oxlint": "~1.79.0",
     "typescript": "^5.9.2",
     "vite": "^8.3.5",

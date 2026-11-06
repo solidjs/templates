@@ -22,7 +22,7 @@
     "@tsrx/typescript-plugin": "^0.3.129",
     "eslint-plugin-solid": "~0.18.1",
     "filesystem-routing": "0.4.2",
-    "jsdom": "^25.0.1",
+    "jsdom": "^31.0.0",
     "oxlint": "~1.79.0",
     "typescript": "^5.9.3",
     "vite": "^8.3.5",
