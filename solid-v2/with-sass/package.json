@@ -22,7 +22,7 @@
     "oxlint": "~1.79.0",
     "sass": "^1.107.1",
     "typescript": "^5.9.2",
-    "vite": "^8.1.5",
+    "vite": "^8.3.5",
     "vitest": "^5.0.5"
   },
   "dependencies": {
