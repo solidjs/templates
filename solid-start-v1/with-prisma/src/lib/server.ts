@@ -1,4 +1,4 @@
-import { useSession } from "@solidjs/start/http";
+import { useSession } from "vinxi/http";
 import { db } from "./db";
 
 export function validateUsername(username: unknown) {
