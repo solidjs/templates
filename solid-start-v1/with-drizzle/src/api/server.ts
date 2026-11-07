@@ -1,4 +1,5 @@
 "use server";
+import { randomBytes, scrypt, timingSafeEqual } from "node:crypto";
 import { redirect } from "@solidjs/router";
 import { useSession } from "vinxi/http";
 import { eq } from "drizzle-orm";
@@ -17,16 +18,44 @@ function validatePassword(password: unknown) {
   }
 }
 
+const SCRYPT_KEY_LENGTH = 64;
+// OWASP's minimum cost for scrypt; maxmem must exceed the 128 MiB that N and r need.
+const SCRYPT_OPTIONS = { N: 2 ** 17, r: 8, p: 1, maxmem: 256 * 1024 * 1024 };
+
+function deriveKey(password: string, salt: Buffer) {
+  return new Promise<Buffer>((resolve, reject) => {
+    scrypt(password, salt, SCRYPT_KEY_LENGTH, SCRYPT_OPTIONS, (err, key) =>
+      err ? reject(err) : resolve(key)
+    );
+  });
+}
+
+async function hashPassword(password: string) {
+  const salt = randomBytes(16);
+  const key = await deriveKey(password, salt);
+  return `${salt.toString("hex")}:${key.toString("hex")}`;
+}
+
+async function verifyPassword(password: string, stored: string) {
+  const [salt, key] = stored.split(":");
+  if (!salt || !key) return false;
+  const expected = Buffer.from(key, "hex");
+  const actual = await deriveKey(password, Buffer.from(salt, "hex"));
+  return expected.length === actual.length && timingSafeEqual(expected, actual);
+}
+
 async function login(username: string, password: string) {
   const user = db.select().from(Users).where(eq(Users.username, username)).get();
-  if (!user || password !== user.password) throw new Error("Invalid login");
+  if (!user || !(await verifyPassword(password, user.password))) throw new Error("Invalid login");
   return user;
 }
 
 async function register(username: string, password: string) {
+  // Hash first: an await between the check and the insert would let duplicates through.
+  const hash = await hashPassword(password);
   const existingUser = db.select().from(Users).where(eq(Users.username, username)).get();
   if (existingUser) throw new Error("User already exists");
-  return db.insert(Users).values({ username, password }).returning().get();
+  return db.insert(Users).values({ username, password: hash }).returning().get();
 }
 
 function getSession() {
