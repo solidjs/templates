@@ -12,3 +12,6 @@ minimumReleaseAgeExclude:
   - solid-js
   - '@solidjs/*'
   - filesystem-routing
+# @parcel/watcher ships prebuilt binaries; its install script only builds from source on request.
+allowBuilds:
+  '@parcel/watcher': false
