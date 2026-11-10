@@ -12,8 +12,8 @@ importers:
         specifier: ^2.0.0-rc.21
         version: 2.0.0-rc.21(solid-js@2.0.0-rc.21)
       '@tanstack/solid-router':
-        specifier: ^2.0.0-rc.9
-        version: 2.0.0-rc.9(@solidjs/web@2.0.0-rc.21(solid-js@2.0.0-rc.21))(solid-js@2.0.0-rc.21)
+        specifier: ^2.0.0-rc.10
+        version: 2.0.0-rc.10(@solidjs/web@2.0.0-rc.21(solid-js@2.0.0-rc.21))(solid-js@2.0.0-rc.21)
       solid-js:
         specifier: ^2.0.0-rc.21
         version: 2.0.0-rc.21
@@ -247,56 +247,48 @@ packages:
     engines: {node: ^20.19.0 || >=22.12.0}
     cpu: [arm64]
     os: [linux]
-    libc: [glibc]
 
   '@oxlint/binding-linux-arm64-musl@1.92.0':
     resolution: {integrity: sha512-9Se7Zuazr104yc2PaluriJW2rqvtaN6FSi9MSjQgZGeYb6LKvEcJ586tpjek0l7hNQNoir8MID7OENPH6juN1w==}
     engines: {node: ^20.19.0 || >=22.12.0}
     cpu: [arm64]
     os: [linux]
-    libc: [musl]
 
   '@oxlint/binding-linux-ppc64-gnu@1.92.0':
     resolution: {integrity: sha512-88IAchs204I/xxAbAo3NRyz1m/29tn8jUAPvc4tK4FzrT2PLwZertd93ANF6231vwbAhYiD5gl0cX8Po5xsjWQ==}
     engines: {node: ^20.19.0 || >=22.12.0}
     cpu: [ppc64]
     os: [linux]
-    libc: [glibc]
 
   '@oxlint/binding-linux-riscv64-gnu@1.92.0':
     resolution: {integrity: sha512-KtFdVdkfvBGcsrmnbjYJ9/XTDABnaniiwnptAcAm0pkaR2zhZ3sr/Xy+N1Xbz1Yq5Jegu7SoeNv9caTP0b5OTA==}
     engines: {node: ^20.19.0 || >=22.12.0}
     cpu: [riscv64]
     os: [linux]
-    libc: [glibc]
 
   '@oxlint/binding-linux-riscv64-musl@1.92.0':
     resolution: {integrity: sha512-V43CO5FPgHtwHup4H5+dIdwzZX2FhREQGsSBZx8V1UyFEAul0Q13qviKqZfSMM6G41CGtCekVpJGGOxW5v1y8Q==}
     engines: {node: ^20.19.0 || >=22.12.0}
     cpu: [riscv64]
     os: [linux]
-    libc: [musl]
 
   '@oxlint/binding-linux-s390x-gnu@1.92.0':
     resolution: {integrity: sha512-WooxeACzGH5q34olo7JgAk7XbVkTUNfwhR/TzmhwVs/y1p2R7ZWJo14hiyxiGcoYZR1iBnbBFHectADqb/KSog==}
     engines: {node: ^20.19.0 || >=22.12.0}
     cpu: [s390x]
     os: [linux]
-    libc: [glibc]
 
   '@oxlint/binding-linux-x64-gnu@1.92.0':
     resolution: {integrity: sha512-lW2pLF1oFvNN780YUCtDyoUm8oFzZGJNcOFe9RtLMX5v5+FcWfAQvHUMMPF8H8kJB0HAi3dFmWDWLa5VPuY9mw==}
     engines: {node: ^20.19.0 || >=22.12.0}
     cpu: [x64]
     os: [linux]
-    libc: [glibc]
 
   '@oxlint/binding-linux-x64-musl@1.92.0':
     resolution: {integrity: sha512-2BJAAB/eqPn7iD7mFVfs+1ZVUogAYOMCTaUgjAvbtNGg2ppCDE7gcv/9VSO6GCDybdFUqlcyeyjn9hRpl1ZHog==}
     engines: {node: ^20.19.0 || >=22.12.0}
     cpu: [x64]
     os: [linux]
-    libc: [musl]
 
   '@oxlint/binding-openharmony-arm64@1.92.0':
     resolution: {integrity: sha512-iLtjNqqa/2IV5qu/3rrkpVd42Ia3yeCn4fSZoEr+m5FoGHtZvAV6J6YuU3lewg5Rg5ORGvwhdgN+7gNzwkl7tA==}
@@ -363,42 +355,36 @@ packages:
     engines: {node: ^20.19.0 || >=22.12.0}
     cpu: [arm64]
     os: [linux]
-    libc: [glibc]
 
   '@rolldown/binding-linux-arm64-musl@1.2.16':
     resolution: {integrity: sha512-hrJpblMsrQ58U9veWpbXzkhV5zStunds6HWLprqq1qauvgBr1E6P+24kLj6lSLI9vjRn/RYpjprhkHQPKGWpNg==}
     engines: {node: ^20.19.0 || >=22.12.0}
     cpu: [arm64]
     os: [linux]
-    libc: [musl]
 
   '@rolldown/binding-linux-ppc64-gnu@1.2.16':
     resolution: {integrity: sha512-qJd/dC6j6CwLG9/s/RP2nb1RZ0GIgj7Ioj7x/SYa3RzjVrlzrmH0fhIOpfvqQDeIsdP0loi+kHaMhJzY1PBIaA==}
     engines: {node: ^20.19.0 || >=22.12.0}
     cpu: [ppc64]
     os: [linux]
-    libc: [glibc]
 
   '@rolldown/binding-linux-s390x-gnu@1.2.16':
     resolution: {integrity: sha512-Vx7Xg5uUJuNcujJjI70OICaH0EYj80BtOLZTSN7uOYg8QOLlyKnaG0IW7Fn/J0IpJsaKzmDKMhOQv1JBM9m9vg==}
     engines: {node: ^20.19.0 || >=22.12.0}
     cpu: [s390x]
     os: [linux]
-    libc: [glibc]
 
   '@rolldown/binding-linux-x64-gnu@1.2.16':
     resolution: {integrity: sha512-TNKhgE3uJTsTzatUSSYt0Kgo+Oa2uSlSjz4r1aEIea7HX6ULBym4fAlYUhG1i6pjNf2njfCUAfKwr6C3E9Xg1w==}
     engines: {node: ^20.19.0 || >=22.12.0}
     cpu: [x64]
     os: [linux]
-    libc: [glibc]
 
   '@rolldown/binding-linux-x64-musl@1.2.16':
     resolution: {integrity: sha512-7chXdpjXZ8qG0+mIxECN3cT9kvhZ3/oZhMX6Pp876P7CDrIy8nJswva6Mq357JR7eYXfuskwZxMeV1SzoZdHrA==}
     engines: {node: ^20.19.0 || >=22.12.0}
     cpu: [x64]
     os: [linux]
-    libc: [musl]
 
   '@rolldown/binding-openharmony-arm64@1.2.16':
     resolution: {integrity: sha512-Kwjt+7uNTJK5/MDkGWGVO2KQPnj8yAV75dMpfwyHZrJSXWHrniOB0aUEWlVYf3H1hOqFLIStLdM5QXq6bnKmOQ==}
@@ -505,13 +491,11 @@ packages:
     resolution: {integrity: sha512-rJpzsmhydP13WSqWpBegbRd8NSZrWZkeCGJOfMeisOUzIY3XntA50RDe0+sLNXaekU8PXGeyQCxOxkDlrBbEXQ==}
     cpu: [arm64]
     os: [linux]
-    libc: [glibc]
 
   '@solidjs/compiler-linux-x64-gnu@2.0.0-rc.21':
     resolution: {integrity: sha512-lZa593mWtgtOZuWLa54rolQOTp+II9DUznRoJKcGxNzCyhjzqMAGiWOP1fHGmEAdYlbyUqA+CnhwhjcC34WBKQ==}
     cpu: [x64]
     os: [linux]
-    libc: [glibc]
 
   '@solidjs/compiler-wasm32-wasi@2.0.0-rc.21':
     resolution: {integrity: sha512-gQeaqDoie2wgh8ph2Ti89mFiBthVmq0EWYL5HesI45K5NvvrlvaftZs0Zt3VlVQrvz79A7OLKhHX+2aD6PvnzA==}
@@ -535,10 +519,10 @@ packages:
       vitest:
         optional: true
 
-  '@solidjs/meta@0.29.4':
-    resolution: {integrity: sha512-zdIWBGpR9zGx1p1bzIPqF5Gs+Ks/BH8R6fWhmUa/dcK1L2rUC8BAcZJzNRYBQv74kScf1TSOs0EY//Vd/I0V8g==}
+  '@solidjs/meta@0.29.8':
+    resolution: {integrity: sha512-DkK5odQmnNJ/JlDFPf4rV6RaYN+G6ZtJyyb8jPmKAFT6HpRWnajYq4JaiDm/9UdY4rLKLVv+Q4ilkG1CD4x7mw==}
     peerDependencies:
-      solid-js: '>=1.8.4'
+      solid-js: ^1.8.4
 
   '@solidjs/signals@2.0.0-rc.21':
     resolution: {integrity: sha512-F1TUMO/nd1XC//+tcaWxibOOgXBHQGmNQnAeiDnpLh+1smnlwIgKF6pc20evlyfQwqf0gP6rH4sNEqCPBNcpgg==}
@@ -623,12 +607,12 @@ packages:
     resolution: {integrity: sha512-3TSH3rwAQTqQOtTBF8IXMFXmGNJWnjwIm+l87uguyC/of0pSRKcU9GJrozaf0fY9it8dLQvUZJA2MOlfqbW1sA==}
     engines: {node: '>=20.19'}
 
-  '@tanstack/solid-router@2.0.0-rc.9':
-    resolution: {integrity: sha512-iu9b8UeakVSqbltx1L0JDJKPxpe6dayqpUFjPn/GWj4DU31Ev7H+g1UakUvhp5phrGVcypxkmFsI8+C1x+AZPg==}
+  '@tanstack/solid-router@2.0.0-rc.10':
+    resolution: {integrity: sha512-ffAeEsOpO4jL78iVGcgzphWkZ84XMithWAN/s9YePHarzEaqTLaP4QpVda8OP98GVtuG51WGD5/5Bn13ti2PTA==}
     engines: {node: '>=20.19'}
     peerDependencies:
-      '@solidjs/web': '>=2.0.0-rc.16 <3.0.0'
-      solid-js: '>=2.0.0-rc.16 <3.0.0'
+      '@solidjs/web': '>=2.0.0-rc.20 <3.0.0'
+      solid-js: '>=2.0.0-rc.20 <3.0.0'
 
   '@tanstack/virtual-file-routes@1.162.0':
     resolution: {integrity: sha512-uhOeFyxLcU41HzvrxsGpiWdcMbScY1EDgbZ5K7DVRMYInbLYWAC0EA/kx9wXAoSM8q82bUG2hRl8+EAjE6XAbA==}
@@ -991,8 +975,8 @@ packages:
     resolution: {integrity: sha512-ZhMwEosbFJkA0YhFnNDgTM4ZxDRsS6HqTo7qsZM08fehyRYIYa0yHu5R6mgo1n/8MgaPBXiPimPD77baVFYg+A==}
     engines: {node: '>=12.13'}
 
-  isbot@5.2.2:
-    resolution: {integrity: sha512-iQcBXcd+Rv/pkubRyGh2utW2j1oPG5hZY6TUhVPpqK4G+o3IbxpJNx04hgksjc/N7GK5pEorUxDeg31cFgEk/w==}
+  isbot@5.2.3:
+    resolution: {integrity: sha512-e8gGz3VzAuImtTMnB5PqNRRWGAswObTc+X+X5a8PttKT78VSSFec98w9ZwUoy6jJdlvJkVdLiN+WMgA8TewoZg==}
     engines: {node: '>=18'}
 
   jiti@2.7.0:
@@ -1062,28 +1046,24 @@ packages:
     engines: {node: '>= 12.0.0'}
     cpu: [arm64]
     os: [linux]
-    libc: [glibc]
 
   lightningcss-linux-arm64-musl@1.33.0:
     resolution: {integrity: sha512-yiO5ROMuYQgXbC60yjZU5CYSFZGKXL0HFATXt9mHJn1+zW55oCtMI9NfcVhYLMFDL7gV7oBPon/EmMMGg2OvtQ==}
     engines: {node: '>= 12.0.0'}
     cpu: [arm64]
     os: [linux]
-    libc: [musl]
 
   lightningcss-linux-x64-gnu@1.33.0:
     resolution: {integrity: sha512-ar+Ju7LmcN0Jo4FpL4hpFybwNG9/3A/Br5KW2n2jyODg3MEZXaDYADdemoNS+BDNfMgKvylJLj4S5tyRActuAg==}
     engines: {node: '>= 12.0.0'}
     cpu: [x64]
     os: [linux]
-    libc: [glibc]
 
   lightningcss-linux-x64-musl@1.33.0:
     resolution: {integrity: sha512-RYiYbkokw0trfKqqzfF55lginwEPrD3OJDfTuJzFs1MK6iFnDenaz1fqLLtX4ITG3OktJQXOeTaw1awrBAlZPw==}
     engines: {node: '>= 12.0.0'}
     cpu: [x64]
     os: [linux]
-    libc: [musl]
 
   lightningcss-win32-arm64-msvc@1.33.0:
     resolution: {integrity: sha512-1K+MPfLSFVpphzpdbfkhlWk6wBrTObBzS2T6db10PNOZgR9GoVsAWzwNyuhUYYbTp23j+4RrncfujZ4uAzXvwA==}
@@ -1227,12 +1207,22 @@ packages:
     peerDependencies:
       seroval: ^1.0
 
+  seroval-plugins@1.8.0:
+    resolution: {integrity: sha512-96vBb12rDvPPwdKUgWw1op3fGq8AVBFOr0IllbnM72yR5J9WWXF18cQ4g1XfDO7HCyh2dt70P3XdtyRayP8FWg==}
+    engines: {node: '>=20'}
+    peerDependencies:
+      seroval: ^1.8.0
+
   seroval@1.7.0:
     resolution: {integrity: sha512-FU+LUkmDzWNsJ6oubZFN3dGPKny53DRhPJG6nftEaXDL8MIn19+kEE1Gvc+63Go+qPOwVUlKIdKhsu2HN6tksw==}
     engines: {node: '>=20'}
 
   seroval@1.7.5:
     resolution: {integrity: sha512-UdNgpHdq0gVpme5JdQF+S3jNscnjFr4NTwUWOc1qcOa8OuWZmbV0+YX2hsqxkUZshBpHnpxDZfAKVZG2ugbrJA==}
+    engines: {node: '>=20'}
+
+  seroval@1.8.0:
+    resolution: {integrity: sha512-W5N4cMPc58lypAsScCmhGTyZxNZ6gPHvLHtMqtyvDFpfyNDsH1QjU0nI9Lr34+Q5ZLPsWeqOhkgTY5XtaPVQ4A==}
     engines: {node: '>=20'}
 
   solid-js@2.0.0-rc.21:
@@ -1898,7 +1888,7 @@ snapshots:
     optionalDependencies:
       vitest: 5.1.0(jsdom@31.0.0)(vite@8.3.5(jiti@2.7.0))
 
-  '@solidjs/meta@0.29.4(solid-js@2.0.0-rc.21)':
+  '@solidjs/meta@0.29.8(solid-js@2.0.0-rc.21)':
     dependencies:
       solid-js: 2.0.0-rc.21
 
@@ -1938,8 +1928,8 @@ snapshots:
     dependencies:
       '@tanstack/history': 1.162.1
       cookie-es: 3.1.1
-      seroval: 1.7.5
-      seroval-plugins: 1.7.6(seroval@1.7.5)
+      seroval: 1.8.0
+      seroval-plugins: 1.8.0(seroval@1.8.0)
 
   '@tanstack/router-core@1.171.39':
     dependencies:
@@ -1997,15 +1987,15 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@tanstack/solid-router@2.0.0-rc.9(@solidjs/web@2.0.0-rc.21(solid-js@2.0.0-rc.21))(solid-js@2.0.0-rc.21)':
+  '@tanstack/solid-router@2.0.0-rc.10(@solidjs/web@2.0.0-rc.21(solid-js@2.0.0-rc.21))(solid-js@2.0.0-rc.21)':
     dependencies:
       '@solid-devtools/logger': 0.9.11(solid-js@2.0.0-rc.21)
       '@solid-primitives/refs': 1.1.4(solid-js@2.0.0-rc.21)
-      '@solidjs/meta': 0.29.4(solid-js@2.0.0-rc.21)
+      '@solidjs/meta': 0.29.8(solid-js@2.0.0-rc.21)
       '@solidjs/web': 2.0.0-rc.21(solid-js@2.0.0-rc.21)
       '@tanstack/history': 1.162.1
       '@tanstack/router-core': 1.171.22
-      isbot: 5.2.2
+      isbot: 5.2.3
       solid-js: 2.0.0-rc.21
 
   '@tanstack/virtual-file-routes@1.162.0': {}
@@ -2269,7 +2259,7 @@ snapshots:
 
   is-what@4.1.16: {}
 
-  isbot@5.2.2: {}
+  isbot@5.2.3: {}
 
   jiti@2.7.0: {}
 
@@ -2485,9 +2475,15 @@ snapshots:
     dependencies:
       seroval: 1.7.5
 
+  seroval-plugins@1.8.0(seroval@1.8.0):
+    dependencies:
+      seroval: 1.8.0
+
   seroval@1.7.0: {}
 
   seroval@1.7.5: {}
+
+  seroval@1.8.0: {}
 
   solid-js@2.0.0-rc.21:
     dependencies:

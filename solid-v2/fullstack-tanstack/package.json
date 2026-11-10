@@ -31,7 +31,7 @@
     "@remix-run/cookie": "^1.0.2",
     "@solidjs/web": "^2.0.0-rc.21",
     "@tanstack/solid-query": "^6.0.0-rc.5",
-    "@tanstack/solid-router": "^2.0.0-rc.9",
+    "@tanstack/solid-router": "^2.0.0-rc.10",
     "solid-js": "^2.0.0-rc.21",
     "valibot": "^1.4.2"
   }
