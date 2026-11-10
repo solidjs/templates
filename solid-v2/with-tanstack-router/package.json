@@ -26,7 +26,7 @@
   },
   "dependencies": {
     "@solidjs/web": "^2.0.0-rc.21",
-    "@tanstack/solid-router": "^2.0.0-rc.9",
+    "@tanstack/solid-router": "^2.0.0-rc.10",
     "solid-js": "^2.0.0-rc.21"
   }
 }
