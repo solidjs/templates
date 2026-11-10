@@ -20,7 +20,7 @@
     "eslint-plugin-solid": "~0.19.0",
     "filesystem-routing": "0.5.0",
     "jsdom": "^31.0.0",
-    "oxlint": "~1.79.0",
+    "oxlint": "~1.92.0",
     "tailwindcss": "^4.3.5",
     "typescript": "^7.0.2",
     "vite": "^8.3.5",
