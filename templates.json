@@ -11,6 +11,7 @@
         { "name": "fullstack" },
         { "name": "fullstack-tanstack" },
         { "name": "with-bootstrap" },
+        { "name": "with-reactivescript", "tsOnly": true },
         { "name": "with-sass" },
         { "name": "with-tailwindcss" },
         { "name": "with-tanstack-router" },

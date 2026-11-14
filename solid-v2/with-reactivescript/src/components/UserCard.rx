@@ -1,0 +1,17 @@
+import pure { fetchUser } from "../users"
+
+export component UserCard() {
+  source id := 1
+  user = await fetchUser(id)
+
+  <section>
+    <h2>User {latest id}</h2>
+    {errored fallback(e) { <p>{e.message}</p> } {
+      {loading fallback { <p>Loading…</p> } {
+        <p class={pending? user ? "stale" : ""}><strong>{user.name}</strong>, {user.title}</p>
+      }}
+    }}
+    <button type="button" disabled={latest id == 1} onClick={() => { id := latest id - 1 }}>Previous user</button>{" "}
+    <button type="button" onClick={() => { id := latest id + 1 }}>Next user</button>
+  </section>
+}

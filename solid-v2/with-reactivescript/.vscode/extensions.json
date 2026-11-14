@@ -1,0 +1,5 @@
+{
+  // ReactiveScript for VS Code: highlighting, the checker's diagnostics with
+  // their rules, and TypeScript's hover, completion and type errors on .rx.
+  "recommendations": ["solidjs.reactivescript"]
+}

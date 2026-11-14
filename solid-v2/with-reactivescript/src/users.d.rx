@@ -1,0 +1,3 @@
+export pure fn fetchUser(id: number) rejects(NotFound)
+export error NotFound
+export type User = { name: string; title: string }

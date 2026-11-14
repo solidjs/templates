@@ -1,0 +1,19 @@
+import { Counter } from "./components/Counter.rx"
+import { Guestbook } from "./components/Guestbook.rx"
+import { UserCard } from "./components/UserCard.rx"
+
+export default component App() {
+  <main>
+    <img src="/logo.svg" class="logo" alt="Solid logo" />
+    <h1>Hello ReactiveScript!</h1>
+    <Counter />
+    <Guestbook />
+    <UserCard />
+    <p>
+      Edit <code>src/components/Counter.rx</code> and save to reload.
+    </p>
+    <a href="https://reactivescript.dev/" target="_blank" rel="noopener noreferrer">
+      Learn ReactiveScript
+    </a>
+  </main>
+}
