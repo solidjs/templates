@@ -4,6 +4,11 @@ export component UserCard() {
   source id := 1
   user = await fetchUser(id)
 
+  <style>
+    .stale {
+      opacity: 0.5;
+    }
+  </style>
   <section>
     <h2>User {latest id}</h2>
     {errored fallback(e) { <p>{e.message}</p> } {

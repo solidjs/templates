@@ -4,17 +4,20 @@ import { afterEach, describe, expect, test } from 'vitest';
 // @ts-expect-error rx-tsc's projection of App.rx has no default export yet
 import main from './App.rx';
 
+const disposers: (() => void)[] = [];
+
 function mount() {
   const root = document.createElement('div');
   document.body.append(root);
   const app = createApp({ root });
-  app.mount(main(app));
+  disposers.push(app.mount(main(app)));
   const button = (label: RegExp) =>
     [...root.querySelectorAll('button')].find((b) => label.test(b.textContent ?? ''))!;
   return { root, button };
 }
 
 afterEach(() => {
+  disposers.splice(0).forEach((dispose) => dispose());
   document.body.innerHTML = '';
 });
 
@@ -39,7 +42,7 @@ describe('<App />', () => {
     button(/Sign/).click();
     flush();
     expect(root).not.toHaveTextContent('No signatures yet');
-    expect(root).toHaveTextContent('AdaGrace');
+    expect([...root.querySelectorAll('li.entry')].map((li) => li.textContent)).toEqual(['Ada', 'Grace']);
   });
 
   test('the user card loads, then shows a failure in its errored region', async () => {

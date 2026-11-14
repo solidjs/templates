@@ -20,8 +20,7 @@ main {
   pointer-events: none;
 }
 
-/* The counter button styles moved into src/components/Counter.rx —
-   ReactiveScript components carry their own scoped <style> blocks. */
+/* Component styles live in each .rx component's scoped <style> block. */
 
 main a {
   color: #1d5f91;

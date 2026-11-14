@@ -11,4 +11,5 @@
 minimumReleaseAgeExclude:
   - solid-js
   - '@solidjs/*'
+  # ReactiveScript 0.x releases follow the Solid RCs the same way.
   - '@reactivescript/*'

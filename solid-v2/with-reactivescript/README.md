@@ -52,6 +52,7 @@ oxlint cannot parse `.rx`, so `oxlint.config.ts` ignores those files; `pnpm lint
 ## Known limits
 
 - **Styles in dev:** an edit to a `<style>` block in a component other than `App.rx` does not show until you restart `vite`. The program's stylesheet is attached to the entry, and the dev server refreshes only the CSS of the file you edited. Production builds are correct.
+- **No Vitest module cache:** `vite.config.ts` sets `test.fsModuleCache: false`. With the cache on, a cached `App.rx` skips the program build, so the first run after editing another `.rx` module fails with "imported as an .rx dependency, but no program built so far contains it".
 - **Edits reload the page:** an `.rx` edit in dev does a full page reload, so component state resets.
 - **Browser globals** (`console`, `document`, `window`) are not in scope in `.rx`. Bring JavaScript in through an import from a `.ts` or `.js` module.
 - **No router integration yet:** a `.rx` program owns its whole view. This template is client-only; ReactiveScript's streamed SSR is not wired up here.
