@@ -1,0 +1,26 @@
+export component Counter(props: { milestone?: number }) {
+  source count := 0
+  milestone = props.milestone ?? 5
+
+  <style>
+    .increment {
+      font-size: 1rem;
+      padding: 0.5rem 1.5rem;
+      cursor: pointer;
+    }
+
+    .milestone {
+      margin-top: 0.75rem;
+      color: rgb(22, 163, 74);
+      font-weight: 600;
+    }
+  </style>
+  <div>
+    <button class="increment" type="button" onClick={() => { count := count + 1 }}>
+      Clicks: {count}
+    </button>
+    {if count >= milestone {
+      <p class="milestone">Milestone reached: {count} clicks!</p>
+    }}
+  </div>
+}
