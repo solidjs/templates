@@ -1,3 +1,6 @@
+packages:
+  - '.'
+
 # packageExtensions works around @kobalte/solidbase importing "resolve" and
 # "esbuild" without declaring them, which breaks pnpm installs. esbuild used to
 # be satisfied by a hoisted copy from @solidjs/start's dependencies; start 2 rc
