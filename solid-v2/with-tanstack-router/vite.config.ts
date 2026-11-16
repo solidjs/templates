@@ -3,7 +3,7 @@ import { defineConfig } from 'vitest/config';
 import solid from '@solidjs/vite-plugin';
 
 export default defineConfig({
-  // Turnkey client mode: no index.html and no mount file — the plugin generates
+  // Turnkey client mode: no index.html and no mount file - the plugin generates
   // the entries around src/App.tsx (wrapped in src/Document.tsx) and `vite build`
   // prerenders the shell into a purely static dist/client.
   plugins: [
@@ -11,7 +11,7 @@ export default defineConfig({
     // before solid().
     tanstackRouter({ target: 'solid', autoCodeSplitting: true }),
     // Client mode only: TanStack's SSR needs per-request router wiring the
-    // generated streaming entry doesn't perform — see the README's SSR note.
+    // generated streaming entry doesn't perform - see the README's SSR note.
     solid({ start: true, diagnostics: true }),
   ],
   server: {

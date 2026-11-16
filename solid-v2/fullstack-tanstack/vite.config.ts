@@ -7,7 +7,7 @@ import solid from '@solidjs/vite-plugin';
 
 export default defineConfig({
   // Turnkey streaming SSR under a third-party router: no index.html and no
-  // entry files — the plugin generates the entries around src/App.tsx,
+  // entry files - the plugin generates the entries around src/App.tsx,
   // wrapped in src/Document.tsx. `vite build` emits client assets to
   // dist/client and the request handler to dist/server, plus the Node server
   // (dist/server/node.js) `npm start` runs.
@@ -40,7 +40,7 @@ export default defineConfig({
       // it registers the Query single-flight collector.
       serverFunctions: { serverSetup: './src/server-config.ts' },
     }),
-    // API routes only — TanStack owns src/routes, so the file-system router
+    // API routes only - TanStack owns src/routes, so the file-system router
     // scans src/api instead and mounts every module under /api.
     fileRoutes({
       dir: 'src/api',

@@ -1,14 +1,14 @@
 /**
  * The session helper against the REAL @solidjs/web server runtime: every
- * test drives a full request/response cycle — a web `Request` into
+ * test drives a full request/response cycle - a web `Request` into
  * `createRequestEvent`, the helper running inside `provideRequestEvent`'s
  * scope, the outgoing `Response` derived by `commitEventResponse` (the
  * same fold server-function responses take), and the NEXT request
- * carrying the previous response's Set-Cookie — not a mocked event bag.
+ * carrying the previous response's Set-Cookie - not a mocked event bag.
  *
  * The secrets live in process.env.SESSION_SECRET (comma-separated,
  * newest first), read through the virtual:solid-env/server contract at module
- * init — so each test loads a fresh copy of the module via
+ * init - so each test loads a fresh copy of the module via
  * `loadSession(secret)` to pin its own secret list, which is also
  * exactly how a rotation deployment behaves (new process, new list).
  */
