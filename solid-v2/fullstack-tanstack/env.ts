@@ -1,7 +1,7 @@
 import * as v from 'valibot';
 
 // The typed env schema (probed by the plugin from the project root): plain
-// objects of Standard Schema validators - valibot here, but zod, arktype, or
+// objects of Standard Schema validators — valibot here, but zod, arktype, or
 // any compliant library works, even mixed per key.
 //
 // `server` vars come through `virtual:solid-env/server` (server modules only;
@@ -12,7 +12,7 @@ import * as v from 'valibot';
 // baked into the bundle. Generated types land in solid-env.d.ts.
 export default {
   server: {
-    // Comma-separated, newest first - see src/server/session.ts for the
+    // Comma-separated, newest first — see src/server/session.ts for the
     // rotation story. Generate one: `openssl rand -base64 32`.
     SESSION_SECRET: v.pipe(v.string(), v.minLength(32)),
   },

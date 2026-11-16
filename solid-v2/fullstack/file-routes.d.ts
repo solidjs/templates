@@ -10,7 +10,7 @@ declare module "virtual:file-routes" {
 
   /** An eager ref: its picked exports are imported statically. */
   export interface FileRouteEagerRef<M = Record<string, unknown>> {
-    /** The source module path - present when the convention emitted the ref lazy and `codeSplitting: false` delivered it eagerly. */
+    /** The source module path — present when the convention emitted the ref lazy and `codeSplitting: false` delivered it eagerly. */
     src?: string;
     require(): M;
   }

@@ -1,5 +1,5 @@
 // Signed cookie sessions: `@remix-run/cookie` (signed HMAC-SHA256 on pure
-// WebCrypto - node/deno/bun/workerd - with secret rotation built in)
+// WebCrypto — node/deno/bun/workerd — with secret rotation built in)
 // composed over @solidjs/web's request event. There is no Solid session API
 // on purpose: cookies are a web standard, so sessions compose from a
 // standard cookie library instead of a framework opinion.
@@ -22,9 +22,9 @@ export interface SessionData {
   userId?: string;
 }
 
-const MAX_AGE = 60 * 60 * 24 * 7; // seconds - drives cookie Max-Age AND the enforced expiry
+const MAX_AGE = 60 * 60 * 24 * 7; // seconds — drives cookie Max-Age AND the enforced expiry
 
-// Rotation: SESSION_SECRET is comma-separated, newest first - the first
+// Rotation: SESSION_SECRET is comma-separated, newest first — the first
 // entry signs, every entry verifies. To rotate, prepend the new secret
 // (`SESSION_SECRET="new,old"`) and drop the old one after a MAX_AGE
 // window. Dropping every old secret logs every outstanding session out.
@@ -34,7 +34,7 @@ const secrets = (env.SESSION_SECRET ?? '')
   .filter(Boolean);
 if (secrets.length === 0) {
   throw new Error(
-    'session: SESSION_SECRET is not set - generate one with `openssl rand -base64 32`',
+    'session: SESSION_SECRET is not set — generate one with `openssl rand -base64 32`',
   );
 }
 
@@ -50,14 +50,14 @@ function event(): RequestEvent & { response: ResponseStub } {
   const e = getRequestEvent();
   if (!e) {
     throw new Error(
-      'session: no request event - call within a server function, SSR handler, or middleware',
+      'session: no request event — call within a server function, SSR handler, or middleware',
     );
   }
   return e as RequestEvent & { response: ResponseStub };
 }
 
 /**
- * The current session, or `null` - absent, tampered, signed by a
+ * The current session, or `null` — absent, tampered, signed by a
  * rotated-out secret, and expired all read the same. Reads the REQUEST's
  * cookie only: a `setSession` in the same request does not read back
  * (the request is what arrived; the response is what you're building).

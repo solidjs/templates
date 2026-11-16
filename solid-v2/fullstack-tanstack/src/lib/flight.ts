@@ -1,26 +1,26 @@
 // Userland single-flight extension: key-scoped collection with a client
 // inventory and re-executable recipes. Everything here composes public
-// seams - no package patches.
+// seams — no package patches.
 //
 // The base protocol (see src/server-config.ts) reruns the target page's
 // loaders on every mutation and ships the results. Correct, but blunt: it
 // recomputes data the client already holds, and it can't reach data no
 // loader owns (component-owned queries like the session). Declaring scope
-// on the mutation (`reload({ revalidate: 'users' })` -> the X-Revalidate
+// on the mutation (`reload({ revalidate: 'users' })` → the X-Revalidate
 // header) sharpens both edges:
 //
-// - inventory (client -> server): the mutation request carries the query
+// - inventory (client → server): the mutation request carries the query
 //   hashes this client already caches. The collection gate skips
-//   recomputing them - the mutation's declaration is the license: anything
+//   recomputing them — the mutation's declaration is the license: anything
 //   it didn't name is fresh by its own testimony. Undeclared data the
 //   client DOESN'T hold still collects fully (new pages on redirects).
-// - recipes (client -> server): queries declared through `serverQueryFn`
-//   are addressable - the server can re-execute `(fn.id, args)` via
+// - recipes (client → server): queries declared through `serverQueryFn`
+//   are addressable — the server can re-execute `(fn.id, args)` via
 //   `getServerFunction` and fold the result into the same response. That
 //   covers declared data outside the loader graph (the session query) in
 //   the one round trip.
 // - the sweep (in @tanstack/solid-query): whatever a declared key matches
-//   beyond the payload is invalidated client-side - the safety net every
+//   beyond the payload is invalidated client-side — the safety net every
 //   failure mode here degrades onto (report too large, version skew,
 //   queries without recipes).
 //
@@ -31,7 +31,7 @@ import type { QueryClient, QueryKey } from '@tanstack/solid-query';
 
 /** Request header carrying the report; JSON, ASCII-escaped, capped. */
 const FLIGHT_REPORT_HEADER = 'X-Query-Flight';
-/** Past this the header is dropped whole - everything degrades to the sweep. */
+/** Past this the header is dropped whole — everything degrades to the sweep. */
 const REPORT_LIMIT = 4096;
 
 /** How to recompute a query remotely: a server function id + arguments. */
@@ -41,7 +41,7 @@ interface FlightRecipe {
 }
 
 interface FlightReport {
-  /** Cached query hashes (the inventory - what this client holds). */
+  /** Cached query hashes (the inventory — what this client holds). */
   i: Array<string>;
   /** Active addressable queries: `[queryKey, recipe]` pairs. */
   r: Array<[QueryKey, FlightRecipe]>;
@@ -67,8 +67,8 @@ export function serverQueryFn<A extends Array<unknown>, R>(
 
 /**
  * The report leg, as a `prepareRequest` hook (wire it in the client entry
- * via `configureServerFunctionsClient`). On flight-eligible calls - the
- * transport already stamped X-Single-Flight - it attaches the inventory
+ * via `configureServerFunctionsClient`). On flight-eligible calls — the
+ * transport already stamped X-Single-Flight — it attaches the inventory
  * and the active recipes. GET reads and non-flight calls are untouched.
  */
 export function flightReporter(queryClient: QueryClient) {
@@ -83,7 +83,7 @@ export function flightReporter(queryClient: QueryClient) {
     }
     // Header values are latin1: escape everything past printable ASCII
     // (still valid JSON). Oversized reports are dropped whole rather than
-    // truncated - a partial report would misread as a partial cache.
+    // truncated — a partial report would misread as a partial cache.
     const encoded = JSON.stringify(report).replace(
       /[\u007f-\uffff]/g,
       (c) => `\\u${c.charCodeAt(0).toString(16).padStart(4, '0')}`,
@@ -101,8 +101,8 @@ export function flightReporter(queryClient: QueryClient) {
 /**
  * Reads the mutation's report + declared keys into a collection plan:
  * `skip` is the loader-prefetch gate, `recipes` the declared active
- * instances to re-execute. Without declared keys there is no plan - the
- * declaration is what licenses skipping - and collection stays full.
+ * instances to re-execute. Without declared keys there is no plan — the
+ * declaration is what licenses skipping — and collection stays full.
  */
 export function planFlightCollection(
   request: Request,
@@ -118,7 +118,7 @@ export function planFlightCollection(
   const declared = (key: QueryKey) =>
     revalidateKeys?.includes(String(key[0])) ?? false;
   return {
-    /** Skip fetching what the client holds - unless the mutation declared it. */
+    /** Skip fetching what the client holds — unless the mutation declared it. */
     skip: (key: QueryKey) =>
       revalidateKeys !== undefined &&
       report !== undefined &&
@@ -155,7 +155,7 @@ export function flightGateSkips(queryClient: QueryClient, key: QueryKey) {
 /**
  * Re-executes declared active instances the loaders didn't produce and
  * folds them into the collection client. `getServerFunction` resolves only
- * registered functions (unknown ids - version skew - just skip: the sweep
+ * registered functions (unknown ids — version skew — just skip: the sweep
  * refetches), and each function does its own authorization, exactly as if
  * the client had called it over RPC directly.
  */

@@ -43,7 +43,7 @@ export const logout = formAction(async () => {
 
 export const renameUser = formAction(async (id: string, formData: FormData) => {
   'use server';
-  // Server-side authorization off the session - the UI hiding the form is
+  // Server-side authorization off the session — the UI hiding the form is
   // cosmetic; this check is the real gate.
   if (!(await getSession())?.userId) throw new Error('Sign in to rename users');
   updateUser(id, { name: String(formData.get('name') ?? '') });
