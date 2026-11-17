@@ -4,7 +4,7 @@
     "solid": {
       "label": "Solid 2.0",
       "path": "solid-v2",
-      "status": "beta",
+      "status": "stable",
       "templates": [
         { "name": "basic", "default": true, "ssrToggle": true },
         { "name": "bare" },

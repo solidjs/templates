@@ -2,13 +2,13 @@
 
 This is `basic` plus **experimental TSRX** — same routes, same demo, same tests; the whole app is authored in `.tsrx` instead of `.tsx`: the app root (`src/App.tsrx`), the document shell (`src/Document.tsrx`), the components (`src/components/*.tsrx`), and every route module under `src/routes`. The diff against `basic` is the documentation of what TSRX changes.
 
-TSRX support is experimental across the whole stack: the compiler frontends in `solid-js` 2.0 RC, the `.tsrx` pipeline in `@solidjs/vite-plugin`, and the third-party editor tooling are all pre-1.0 and may change. Treat this template as a preview of the format, not a stability contract.
+TSRX support is experimental across the whole stack: the compiler frontends in `solid-js` 2.0, the `.tsrx` pipeline in `@solidjs/vite-plugin`, and the third-party editor tooling are all pre-1.0 and may change. Treat this template as a preview of the format, not a stability contract.
 
 **Deployment contract** (inherited from `basic`): zero server dependencies — `vite build` emits a purely static site; deploy `dist/client` anywhere. No server, no `start` script: Node hosts that run `npm start` after building (Firebase App Hosting, most buildpacks) need either the platform's static product or the SSR flip — see `basic`'s README.
 
 ## What TSRX is
 
-[TSRX](https://tsrx.dev) is a TypeScript-compatible syntax extension for component-oriented UI code: everything valid in TypeScript stays valid, and the format adds statement-container function bodies (`@{ ... }`), template control flow (`@if`/`@else`, `@for ... @empty`, `@switch`, `@try`), scoped `<style>` blocks, and dynamic tags (`<{expr}>`). It is a cross-framework specification; Solid ships its own compiler frontends for it (native and Babel) as of `solid-js` 2.0.0-rc.6.
+[TSRX](https://tsrx.dev) is a TypeScript-compatible syntax extension for component-oriented UI code: everything valid in TypeScript stays valid, and the format adds statement-container function bodies (`@{ ... }`), template control flow (`@if`/`@else`, `@for ... @empty`, `@switch`, `@try`), scoped `<style>` blocks, and dynamic tags (`<{expr}>`). It is a cross-framework specification; Solid ships its own compiler frontends for it (native and Babel) as of `solid-js` 2.0.
 
 **The file extension is the opt-in.** `@solidjs/vite-plugin` routes `.tsrx` modules through the Solid compiler automatically — there is no config flag, nothing was added to `vite.config.ts` for this template. Retained TypeScript is stripped as usual, and `.tsrx` modules participate in dependency scanning, code splitting, and entry discovery like any other source file: the turnkey `src/App.*` and `src/Document.*` conventions pick up the `.tsrx` versions directly. Imports spell the extension out (`import Counter from './Counter.tsrx'`).
 
@@ -37,7 +37,7 @@ The sidecar flows through Vite's normal CSS pipeline, so it behaves like a real 
 
 - **VS Code:** install [TSRX Syntax](https://marketplace.visualstudio.com/items?itemName=TSRX.tsrx-vscode-plugin) (recommended via `.vscode/extensions.json`). It bundles `@tsrx/language-server` — syntax highlighting, diagnostics, completions, and go-to-definition work with no further configuration.
 - **Other editors / tsserver:** this template ships `@tsrx/typescript-plugin` wired into `tsconfig.json` (`compilerOptions.plugins` plus the top-level `"tsrx": { "compiler": "@tsrx/solid" }` selector), which teaches any tsserver-based editor to type `.tsrx` modules. `@tsrx/solid` projects TSRX to virtual TypeScript checked under this project's Solid JSX settings. A Zed extension also exists on its marketplace.
-- Expect a peer-dependency warning on install: `@tsrx/solid` currently pins `solid-js` 2.0.0-rc.3 while this template floors rc.6. The package is editor/typecheck tooling only — it is not part of the build — and works fine; the pin should catch up as TSRX tracks the RC line.
+- Expect a peer-dependency warning on install: `@tsrx/solid` currently pins `solid-js` 2.0.0-rc.3 while this template uses 2.0. The package is editor/typecheck tooling only — it is not part of the build — and works fine; the pin should catch up as TSRX tracks the stable line.
 
 ## Type checking
 
