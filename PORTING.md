@@ -1,7 +1,7 @@
 # Porting ledger — what did NOT move to `solid-v2`
 
 The `solid-v2` group is a port of the existing templates onto the Solid 2.0 stack
-(`solid-js` 2.0 beta, `@solidjs/vite-plugin` turnkey `start` mode). This file records
+(`solid-js` 2.0, `@solidjs/vite-plugin` turnkey `start` mode). This file records
 every template that was **not** ported, and why — so the decision survives the people
 who made it.
 
@@ -28,8 +28,8 @@ and a generated `AGENTS.md`. It comes from `agents/solid-2.0-primer.md` via
 
 Resolved since the original audit (kept here so the history reads right):
 
-- `@solidjs/testing-library` — unblocked: `1.0.0-beta.3` targets Solid 2 and ships in
-  `basic`'s test floor. Advance the pin when a stable lands.
+- `@solidjs/testing-library` — unblocked: `1.0.0-rc.2` targets Solid 2 and ships in
+  every template's test floor. Advance the pin when a stable lands.
 - TanStack Router / Query — unblocked: `with-tanstack-router` and `fullstack-tanstack`
   shipped on their Solid 2 betas.
 

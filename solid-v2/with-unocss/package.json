@@ -12,9 +12,9 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@solidjs/diagnostics": "^2.0.0-rc.21",
+    "@solidjs/diagnostics": "^2.0.0",
     "@solidjs/testing-library": "^1.0.0-rc.2",
-    "@solidjs/vite-plugin": "^3.0.0-next.57",
+    "@solidjs/vite-plugin": "^3.0.0",
     "@testing-library/jest-dom": "^7.0.0",
     "@unocss/preset-wind4": "^66.12.0",
     "@unocss/reset": "^66.12.0",
@@ -28,9 +28,9 @@
     "vitest": "^5.1.0"
   },
   "dependencies": {
-    "@solidjs/meta": "^1.0.0-next.2",
-    "@solidjs/router": "^2.0.0-next.44",
-    "@solidjs/web": "^2.0.0-rc.21",
-    "solid-js": "^2.0.0-rc.21"
+    "@solidjs/meta": "^2.0.0",
+    "@solidjs/router": "^2.0.0",
+    "@solidjs/web": "^2.0.0",
+    "solid-js": "^2.0.0"
   }
 }
