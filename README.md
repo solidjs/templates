@@ -1,5 +1,5 @@
 <p>
-  <img width="100%" src="https://raw.githubusercontent.com/solidjs/templates/vanilla/master/banner.png" alt="Solid Vite Templates">
+  <img width="100%" src="https://assets.solidjs.com/banner?project=Templates&type=core&version=2.0" alt="Solid Vite Templates">
 </p>
 
 # Solid Templates (using [vite](https://vitejs.dev/))
