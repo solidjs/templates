@@ -1,0 +1,51 @@
+body {
+  margin: 0;
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
+  text-align: center;
+}
+
+
+
+
+main {
+  padding: 3rem 1rem;
+}
+
+.logo {
+  animation: logo-spin infinite 20s linear;
+  height: 24vmin;
+  pointer-events: none;
+}
+
+/* Component styles live in each .rx component's scoped <style> block. */
+
+main a {
+  color: #1d5f91;
+  font-weight: 600;
+  text-decoration-color: #7bb6df;
+  text-decoration-thickness: 0.1em;
+  text-underline-offset: 0.2em;
+  transition: color 150ms ease;
+}
+
+main a:hover {
+  color: #123f63;
+}
+
+a:focus-visible {
+  outline: 3px solid #0284c7;
+  outline-offset: 3px;
+  border-radius: 0.2rem;
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,53 @@
+names = ["Ada", "Grace", "Anders", "Brendan"]
+
+export component Guestbook() {
+  source guests: string[] := []
+
+  <style>
+    .guestbook {
+      margin: 2rem auto 0;
+      max-width: 20rem;
+      padding: 1rem;
+      border: 1px solid #d4d4d8;
+      border-radius: 0.75rem;
+    }
+
+    .guestbook ul {
+      margin: 1rem 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .sign {
+      font-size: 1rem;
+      padding: 0.5rem 1.5rem;
+      cursor: pointer;
+    }
+
+    .entry {
+      padding: 0.25rem 0;
+      color: rgb(29, 95, 145);
+    }
+
+    .empty {
+      padding: 0.25rem 0;
+      color: #71717a;
+      font-style: italic;
+    }
+  </style>
+  <section class="guestbook">
+    <h2>Guestbook</h2>
+    <button class="sign" type="button" onClick={() => { guests := gs => [...gs, names[gs.length % names.length]] }}>
+      Sign the guestbook
+    </button>
+    <ul>
+      {if guests.length == 0 {
+        <li class="empty">No signatures yet — be the first.</li>
+      } else {
+        {for guest in guests {
+          <li class="entry">{guest}</li>
+        }}
+      }}
+    </ul>
+  </section>
+}
