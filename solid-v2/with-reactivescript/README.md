@@ -21,7 +21,7 @@ The language fits on one page: `node_modules/@reactivescript/compiler/guide/lang
 
 ## How it is wired
 
-- **`vite.config.ts`** uses plain `solid()`. `@solidjs/vite-plugin` (3.0.0-next.57 or later) finds `@reactivescript/compiler` in the project and compiles `.rx` modules with it. No option names it.
+- **`vite.config.ts`** uses plain `solid()`. `@solidjs/vite-plugin` 3.0 finds `@reactivescript/compiler` in the project and compiles `.rx` modules with it. No option names it.
 - **`index.html` and `src/main.ts`** mount the app. A `.rx` program is mounted by ReactiveScript's runtime, not by `render()`: `createApp({ root }).mount(main(app))`, where `main` is the entry module `src/App.rx`. JavaScript imports only an entry. The other `.rx` modules import each other with the extension spelled out (`import { Counter } from "./components/Counter.rx"`).
 - **`@reactivescript/runtime`** is the small layer compiled `.rx` code calls over Solid. `solid-js`, `@solidjs/web` and `@solidjs/signals` are its peers, installed as dependencies here.
 
