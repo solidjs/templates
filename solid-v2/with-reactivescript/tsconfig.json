@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    // General
+    "jsx": "preserve",
+    "jsxImportSource": "@solidjs/web",
+    "target": "ESNext",
+
+    // Modules
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "noEmit": true,
+
+    // Type Checking & Safety
+    "strict": true,
+    "skipLibCheck": true,
+    "types": ["vite/client"]
+  },
+  // rx-tsc type checks the .rx modules it finds here, beside the .ts ones.
+  "include": ["src", "vite.config.ts", "vitest-setup.ts"],
+  "exclude": ["src/**/*.d.rx"]
+}
