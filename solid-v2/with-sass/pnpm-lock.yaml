@@ -13,7 +13,7 @@ importers:
         version: 2.0.0(@solidjs/web@2.0.0(solid-js@2.0.0))(solid-js@2.0.0)
       '@solidjs/router':
         specifier: ^2.0.0
-        version: 2.0.0(@solidjs/web@2.0.0(solid-js@2.0.0))(filesystem-routing@0.5.0(vite@8.3.5(sass@1.107.1)))(solid-js@2.0.0)
+        version: 2.0.0(@solidjs/web@2.0.0(solid-js@2.0.0))(filesystem-routing@0.5.0(vite@8.3.5(sass@1.108.2)))(solid-js@2.0.0)
       '@solidjs/web':
         specifier: ^2.0.0
         version: 2.0.0(solid-js@2.0.0)
@@ -23,22 +23,22 @@ importers:
     devDependencies:
       '@solidjs/diagnostics':
         specifier: ^2.0.0
-        version: 2.0.0(@solidjs/web@2.0.0(solid-js@2.0.0))(solid-js@2.0.0)(vitest@5.1.0(jsdom@31.0.0)(vite@8.3.5(sass@1.107.1)))
+        version: 2.0.0(@solidjs/web@2.0.0(solid-js@2.0.0))(solid-js@2.0.0)(vitest@5.1.0(jsdom@31.0.0)(vite@8.3.5(sass@1.108.2)))
       '@solidjs/testing-library':
         specifier: ^1.0.0-rc.2
         version: 1.0.0-rc.2(@solidjs/web@2.0.0(solid-js@2.0.0))(solid-js@2.0.0)
       '@solidjs/vite-plugin':
         specifier: ^3.0.0
-        version: 3.0.0(@solidjs/web@2.0.0(solid-js@2.0.0))(@testing-library/jest-dom@7.0.1(@testing-library/dom@10.4.2)(vitest@5.1.0(jsdom@31.0.0)(vite@8.3.5(sass@1.107.1))))(solid-js@2.0.0)(vite@8.3.5(sass@1.107.1))
+        version: 3.0.0(@solidjs/web@2.0.0(solid-js@2.0.0))(@testing-library/jest-dom@7.0.1(@testing-library/dom@10.4.2)(vitest@5.1.0(jsdom@31.0.0)(vite@8.3.5(sass@1.108.2))))(solid-js@2.0.0)(vite@8.3.5(sass@1.108.2))
       '@testing-library/jest-dom':
         specifier: ^7.0.0
-        version: 7.0.1(@testing-library/dom@10.4.2)(vitest@5.1.0(jsdom@31.0.0)(vite@8.3.5(sass@1.107.1)))
+        version: 7.0.1(@testing-library/dom@10.4.2)(vitest@5.1.0(jsdom@31.0.0)(vite@8.3.5(sass@1.108.2)))
       eslint-plugin-solid:
         specifier: ~0.20.0
         version: 0.20.0
       filesystem-routing:
         specifier: 0.5.0
-        version: 0.5.0(vite@8.3.5(sass@1.107.1))
+        version: 0.5.0(vite@8.3.5(sass@1.108.2))
       jsdom:
         specifier: ^31.0.0
         version: 31.0.0
@@ -46,17 +46,17 @@ importers:
         specifier: ~1.92.0
         version: 1.92.0
       sass:
-        specifier: ^1.107.1
-        version: 1.107.1
+        specifier: ^1.108.2
+        version: 1.108.2
       typescript:
         specifier: ^7.0.2
         version: 7.0.2
       vite:
         specifier: ^8.3.5
-        version: 8.3.5(sass@1.107.1)
+        version: 8.3.5(sass@1.108.2)
       vitest:
         specifier: ^5.1.0
-        version: 5.1.0(jsdom@31.0.0)(vite@8.3.5(sass@1.107.1))
+        version: 5.1.0(jsdom@31.0.0)(vite@8.3.5(sass@1.108.2))
 
 packages:
 
@@ -958,8 +958,8 @@ packages:
     resolution: {integrity: sha512-ztqyC3kLto0e9WbNp0aeP+M3kTt+nbaIveGmUxAtZa+8iFgKLUOD4YKM5j+f3QD89bra7UeumolZHKuOXnTmeQ==}
     engines: {node: '>=8'}
 
-  immutable@5.1.9:
-    resolution: {integrity: sha512-m8nVez3rwrgmWxtLMt1ZYXB2Lv7OKYn/disyxAlSDYAlKSlFoPPfIAmAM/M5xqL4m4C/wAPw7S2/CNaUii1Hxg==}
+  immutable@5.2.1:
+    resolution: {integrity: sha512-CgXNM1BhKqpMjFHTyqQSk09OWqzHNJ/U4BdeBgXoBdR2DdgBdOSv131cO1/YMgzopqnka3B/i949UaMLEKUxOA==}
 
   indent-string@4.0.0:
     resolution: {integrity: sha512-EdDDZu4A2OyIK7Lr/2zG+w5jmbuk1DVBnEwREQvBzspBJkCEbRa8GxU1lghYcaGJCnRWibjDXlq779X1/y5xwg==}
@@ -1208,8 +1208,8 @@ packages:
   run-parallel@1.2.0:
     resolution: {integrity: sha512-5l4VyZR86LZ/lDxZTR6jqL8AFE2S0IFLMP26AbjsLVADxHdhB/c0GUsH+y39UfCi3dzz8OlQuPmnaJOMoDHQBA==}
 
-  sass@1.107.1:
-    resolution: {integrity: sha512-aJ1/LvxOOb04YhmiBjzZn3jVwdHKol+OVhoMV6fFl02fF9T3i+5Mg9l/CnzqtM+NX5Jn5o3lAbs/ZJivTCLHfQ==}
+  sass@1.108.2:
+    resolution: {integrity: sha512-kugK8djotnG9HQRPTOf36asKYlxg8rWWsNLYHOgWDIVOiZQqlRfKBgF4XXM6kfw146kIDMvm57B4GIkvDSyTzA==}
     engines: {node: '>=20.19.0'}
     hasBin: true
 
@@ -1765,25 +1765,25 @@ snapshots:
       '@solidjs/compiler-wasm32-wasi': 2.0.0
       '@solidjs/compiler-win32-x64-msvc': 2.0.0
 
-  '@solidjs/diagnostics@2.0.0(@solidjs/web@2.0.0(solid-js@2.0.0))(solid-js@2.0.0)(vitest@5.1.0(jsdom@31.0.0)(vite@8.3.5(sass@1.107.1)))':
+  '@solidjs/diagnostics@2.0.0(@solidjs/web@2.0.0(solid-js@2.0.0))(solid-js@2.0.0)(vitest@5.1.0(jsdom@31.0.0)(vite@8.3.5(sass@1.108.2)))':
     dependencies:
       '@solidjs/signals': 2.0.0
       '@solidjs/web': 2.0.0(solid-js@2.0.0)
       solid-js: 2.0.0
     optionalDependencies:
-      vitest: 5.1.0(jsdom@31.0.0)(vite@8.3.5(sass@1.107.1))
+      vitest: 5.1.0(jsdom@31.0.0)(vite@8.3.5(sass@1.108.2))
 
   '@solidjs/meta@2.0.0(@solidjs/web@2.0.0(solid-js@2.0.0))(solid-js@2.0.0)':
     dependencies:
       '@solidjs/web': 2.0.0(solid-js@2.0.0)
       solid-js: 2.0.0
 
-  '@solidjs/router@2.0.0(@solidjs/web@2.0.0(solid-js@2.0.0))(filesystem-routing@0.5.0(vite@8.3.5(sass@1.107.1)))(solid-js@2.0.0)':
+  '@solidjs/router@2.0.0(@solidjs/web@2.0.0(solid-js@2.0.0))(filesystem-routing@0.5.0(vite@8.3.5(sass@1.108.2)))(solid-js@2.0.0)':
     dependencies:
       '@solidjs/web': 2.0.0(solid-js@2.0.0)
       solid-js: 2.0.0
     optionalDependencies:
-      filesystem-routing: 0.5.0(vite@8.3.5(sass@1.107.1))
+      filesystem-routing: 0.5.0(vite@8.3.5(sass@1.108.2))
 
   '@solidjs/signals@2.0.0': {}
 
@@ -1793,7 +1793,7 @@ snapshots:
       '@testing-library/dom': 10.4.2
       solid-js: 2.0.0
 
-  '@solidjs/vite-plugin@3.0.0(@solidjs/web@2.0.0(solid-js@2.0.0))(@testing-library/jest-dom@7.0.1(@testing-library/dom@10.4.2)(vitest@5.1.0(jsdom@31.0.0)(vite@8.3.5(sass@1.107.1))))(solid-js@2.0.0)(vite@8.3.5(sass@1.107.1))':
+  '@solidjs/vite-plugin@3.0.0(@solidjs/web@2.0.0(solid-js@2.0.0))(@testing-library/jest-dom@7.0.1(@testing-library/dom@10.4.2)(vitest@5.1.0(jsdom@31.0.0)(vite@8.3.5(sass@1.108.2))))(solid-js@2.0.0)(vite@8.3.5(sass@1.108.2))':
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@solidjs/compiler': 2.0.0
@@ -1801,10 +1801,10 @@ snapshots:
       magic-string: 0.30.21
       merge-anything: 5.1.7
       solid-js: 2.0.0
-      vite: 8.3.5(sass@1.107.1)
-      vitefu: 1.1.3(vite@8.3.5(sass@1.107.1))
+      vite: 8.3.5(sass@1.108.2)
+      vitefu: 1.1.3(vite@8.3.5(sass@1.108.2))
     optionalDependencies:
-      '@testing-library/jest-dom': 7.0.1(@testing-library/dom@10.4.2)(vitest@5.1.0(jsdom@31.0.0)(vite@8.3.5(sass@1.107.1)))
+      '@testing-library/jest-dom': 7.0.1(@testing-library/dom@10.4.2)(vitest@5.1.0(jsdom@31.0.0)(vite@8.3.5(sass@1.108.2)))
 
   '@solidjs/web@2.0.0(solid-js@2.0.0)':
     dependencies:
@@ -1824,7 +1824,7 @@ snapshots:
       picocolors: 1.1.1
       pretty-format: 27.5.1
 
-  '@testing-library/jest-dom@7.0.1(@testing-library/dom@10.4.2)(vitest@5.1.0(jsdom@31.0.0)(vite@8.3.5(sass@1.107.1)))':
+  '@testing-library/jest-dom@7.0.1(@testing-library/dom@10.4.2)(vitest@5.1.0(jsdom@31.0.0)(vite@8.3.5(sass@1.108.2)))':
     dependencies:
       '@adobe/css-tools': 4.5.0
       '@testing-library/dom': 10.4.2
@@ -1834,7 +1834,7 @@ snapshots:
       picocolors: 1.1.1
       redent: 3.0.0
     optionalDependencies:
-      vitest: 5.1.0(jsdom@31.0.0)(vite@8.3.5(sass@1.107.1))
+      vitest: 5.1.0(jsdom@31.0.0)(vite@8.3.5(sass@1.108.2))
 
   '@tybys/wasm-util@0.10.4':
     dependencies:
@@ -1918,14 +1918,14 @@ snapshots:
   '@typescript/typescript-win32-x64@7.0.2':
     optional: true
 
-  '@vitest/mocker@5.1.0(vite@8.3.5(sass@1.107.1))':
+  '@vitest/mocker@5.1.0(vite@8.3.5(sass@1.108.2))':
     dependencies:
       '@jridgewell/trace-mapping': 0.3.31
       '@vitest/spy': 5.1.0
       estree-walker: 3.0.3
       magic-string: 1.4.5
     optionalDependencies:
-      vite: 8.3.5(sass@1.107.1)
+      vite: 8.3.5(sass@1.108.2)
 
   '@vitest/spy@5.1.0': {}
 
@@ -2023,7 +2023,7 @@ snapshots:
     optionalDependencies:
       picomatch: 4.0.7
 
-  filesystem-routing@0.5.0(vite@8.3.5(sass@1.107.1)):
+  filesystem-routing@0.5.0(vite@8.3.5(sass@1.108.2)):
     dependencies:
       '@types/micromatch': 4.0.10
       fast-glob: 3.3.3
@@ -2032,7 +2032,7 @@ snapshots:
       oxc-parser: 0.139.0
       radix3: 1.1.2
     optionalDependencies:
-      vite: 8.3.5(sass@1.107.1)
+      vite: 8.3.5(sass@1.108.2)
 
   fill-range@7.1.1:
     dependencies:
@@ -2053,7 +2053,7 @@ snapshots:
 
   html-tags@3.3.1: {}
 
-  immutable@5.1.9: {}
+  immutable@5.2.1: {}
 
   indent-string@4.0.0: {}
 
@@ -2313,10 +2313,10 @@ snapshots:
     dependencies:
       queue-microtask: 1.2.3
 
-  sass@1.107.1:
+  sass@1.108.2:
     dependencies:
       chokidar: 5.0.0
-      immutable: 5.1.9
+      immutable: 5.2.1
       source-map-js: 1.2.2
     optionalDependencies:
       '@parcel/watcher': 2.6.0
@@ -2406,7 +2406,7 @@ snapshots:
 
   validate-html-nesting@1.2.4: {}
 
-  vite@8.3.5(sass@1.107.1):
+  vite@8.3.5(sass@1.108.2):
     dependencies:
       lightningcss: 1.33.0
       picomatch: 4.0.7
@@ -2415,16 +2415,16 @@ snapshots:
       tinyglobby: 0.2.17
     optionalDependencies:
       fsevents: 2.3.3
-      sass: 1.107.1
+      sass: 1.108.2
 
-  vitefu@1.1.3(vite@8.3.5(sass@1.107.1)):
+  vitefu@1.1.3(vite@8.3.5(sass@1.108.2)):
     optionalDependencies:
-      vite: 8.3.5(sass@1.107.1)
+      vite: 8.3.5(sass@1.108.2)
 
-  vitest@5.1.0(jsdom@31.0.0)(vite@8.3.5(sass@1.107.1)):
+  vitest@5.1.0(jsdom@31.0.0)(vite@8.3.5(sass@1.108.2)):
     dependencies:
       '@types/chai': 5.2.3
-      '@vitest/mocker': 5.1.0(vite@8.3.5(sass@1.107.1))
+      '@vitest/mocker': 5.1.0(vite@8.3.5(sass@1.108.2))
       chai: 6.3.0
       es-module-lexer: 2.3.2
       expect-type: 1.4.0
@@ -2435,7 +2435,7 @@ snapshots:
       tinybench: 6.2.3
       tinyexec: 1.3.1
       tinyglobby: 0.2.17
-      vite: 8.3.5(sass@1.107.1)
+      vite: 8.3.5(sass@1.108.2)
       why-is-node-running: 3.2.1
     optionalDependencies:
       jsdom: 31.0.0
