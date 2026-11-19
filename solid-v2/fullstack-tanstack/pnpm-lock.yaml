@@ -12,33 +12,33 @@ importers:
         specifier: ^1.0.2
         version: 1.0.2
       '@solidjs/web':
-        specifier: ^2.0.0
-        version: 2.0.0(solid-js@2.0.0)
+        specifier: ^2.0.1
+        version: 2.0.1(solid-js@2.0.1)
       '@tanstack/solid-query':
-        specifier: ^6.0.0-rc.5
-        version: 6.0.0-rc.5(@solidjs/web@2.0.0(solid-js@2.0.0))(solid-js@2.0.0)
+        specifier: ^6.0.0-rc.6
+        version: 6.0.0-rc.6(@solidjs/web@2.0.1(solid-js@2.0.1))(solid-js@2.0.1)
       '@tanstack/solid-router':
-        specifier: ^2.0.0-rc.10
-        version: 2.0.0-rc.10(@solidjs/web@2.0.0(solid-js@2.0.0))(solid-js@2.0.0)
+        specifier: ^2.0.0-rc.11
+        version: 2.0.0-rc.11(@solidjs/web@2.0.1(solid-js@2.0.1))(solid-js@2.0.1)
       solid-js:
-        specifier: ^2.0.0
-        version: 2.0.0
+        specifier: ^2.0.1
+        version: 2.0.1
       valibot:
         specifier: ^1.4.2
         version: 1.5.0(typescript@7.0.2)
     devDependencies:
       '@solidjs/diagnostics':
-        specifier: ^2.0.0
-        version: 2.0.0(@solidjs/web@2.0.0(solid-js@2.0.0))(solid-js@2.0.0)(vitest@5.1.0(@types/node@26.6.6)(jsdom@31.0.0)(vite@8.3.8(@types/node@26.6.6)(jiti@2.7.0)))
+        specifier: ^2.0.1
+        version: 2.0.1(@solidjs/web@2.0.1(solid-js@2.0.1))(solid-js@2.0.1)(vitest@5.1.0(@types/node@26.6.6)(jsdom@31.0.0)(vite@8.3.8(@types/node@26.6.6)(jiti@2.7.0)))
       '@solidjs/testing-library':
         specifier: ^1.0.0-rc.2
-        version: 1.0.0-rc.2(@solidjs/web@2.0.0(solid-js@2.0.0))(solid-js@2.0.0)
+        version: 1.0.0-rc.2(@solidjs/web@2.0.1(solid-js@2.0.1))(solid-js@2.0.1)
       '@solidjs/vite-plugin':
         specifier: ^3.0.0
-        version: 3.0.0(@babel/core@7.29.7)(@solidjs/web@2.0.0(solid-js@2.0.0))(@testing-library/jest-dom@7.0.1(@testing-library/dom@10.4.2)(vitest@5.1.0(@types/node@26.6.6)(jsdom@31.0.0)(vite@8.3.8(@types/node@26.6.6)(jiti@2.7.0))))(solid-js@2.0.0)(vite@8.3.8(@types/node@26.6.6)(jiti@2.7.0))
+        version: 3.0.0(@babel/core@7.29.7)(@solidjs/web@2.0.1(solid-js@2.0.1))(@testing-library/jest-dom@7.0.1(@testing-library/dom@10.4.2)(vitest@5.1.0(@types/node@26.6.6)(jsdom@31.0.0)(vite@8.3.8(@types/node@26.6.6)(jiti@2.7.0))))(solid-js@2.0.1)(vite@8.3.8(@types/node@26.6.6)(jiti@2.7.0))
       '@tanstack/router-plugin':
-        specifier: 1.168.48
-        version: 1.168.48(rolldown@1.2.19)(vite@8.3.8(@types/node@26.6.6)(jiti@2.7.0))
+        specifier: 1.169.0
+        version: 1.169.0(rolldown@1.2.19)(vite@8.3.8(@types/node@26.6.6)(jiti@2.7.0))
       '@testing-library/jest-dom':
         specifier: ^7.0.0
         version: 7.0.1(@testing-library/dom@10.4.2)(vitest@5.1.0(@types/node@26.6.6)(jsdom@31.0.0)(vite@8.3.8(@types/node@26.6.6)(jiti@2.7.0)))
@@ -92,10 +92,6 @@ packages:
     resolution: {integrity: sha512-2W76mhjrpQFO1lK5e8IvGYB2D0YZ7S2R1Z2BjO2ZUYuW+amcpK/z60U6ZZmzskwoa7sJ6XohP/Wg8H5KxXI/IA==}
     engines: {node: '>=6.9.0'}
 
-  '@babel/generator@7.29.8':
-    resolution: {integrity: sha512-gZbepsdh3WDtgZKWL+vTPh71LSBrm/Y4/QDZBVCcYfmeTEEuoOYwlSy+G1StfJg+/Zy550u/3TATbm7qDbbMtg==}
-    engines: {node: '>=6.9.0'}
-
   '@babel/helper-compilation-targets@7.29.7':
     resolution: {integrity: sha512-wem6WaBj4NaVYVdNhLPPVacES6ZJ+KBBfSkTMD3YZxbP3rm3Di85tJU5ljaUNhaOynt+Aj0xruhYuzQBt8n71g==}
     engines: {node: '>=6.9.0'}
@@ -118,10 +114,6 @@ packages:
     resolution: {integrity: sha512-snZbO7MEDOof+hvNa97EjEY7qD7h2kwvQr5AJC3ZhQudKW5dnej6k3kP9NQV88hJwaS8vDqRLFo9rivLEhle2g==}
     engines: {node: '>=6.9.0'}
 
-  '@babel/helper-string-parser@7.29.7':
-    resolution: {integrity: sha512-Pb5ijPrZ89GDH8223L4UP8i6QApWxs04RbPQJTeWDV0/keR2E36MeKnyr6LYmUUvqRRI+Iv87SuF1W6ErINzYw==}
-    engines: {node: '>=6.9.0'}
-
   '@babel/helper-validator-identifier@7.29.7':
     resolution: {integrity: sha512-qehxGkRj55h/ff8EMaJ+cYhyaKlHIxqYDn682wQD7RNp9UujOQsHog2uS0r2vzr4pW+sXf90NeeayjcNaX3fFg==}
     engines: {node: '>=6.9.0'}
@@ -139,11 +131,6 @@ packages:
     engines: {node: '>=6.0.0'}
     hasBin: true
 
-  '@babel/parser@7.29.9':
-    resolution: {integrity: sha512-CjXrNHTnvqBVqHgdBysY3vk2T8tpJHb5/RMeHJBTyVa9xgugCB0CJTx/3oO8RV2QRQP391RWpB7D6hLjm8V9uA==}
-    engines: {node: '>=6.0.0'}
-    hasBin: true
-
   '@babel/runtime@7.29.10':
     resolution: {integrity: sha512-NpugTzbKgGrNe45Ui32cN8vCFFMxVtP/9rtfwv0nP5FRDAjvYBxJcLVpYA9mr1jxP6cnIT7x9LUzuDTbWYYNRA==}
     engines: {node: '>=6.9.0'}
@@ -156,16 +143,8 @@ packages:
     resolution: {integrity: sha512-MscXe/NAZcOkYEsRajHZFt3ynsb22PUi6CTrp5U7+RYycR9By84mn9mFN54YgfITiqK4hFx3Ju3tZSyzfpS5ew==}
     engines: {node: '>=6.9.0'}
 
-  '@babel/traverse@7.29.8':
-    resolution: {integrity: sha512-I5z7H3bf/41ktsNVLtpN0wAa336HkqIHQ5BuPLEhTkt1jVSyZpeNKIzTgEWmlxjdg81R0IgUCcaE+Ok3NvrfZg==}
-    engines: {node: '>=6.9.0'}
-
   '@babel/types@7.29.11':
     resolution: {integrity: sha512-WCsemW40Cpc6gouC1SrY6PBaZ+oLRlEVY9XBvZBI7il/HyUrb2nJ505wE1MHEFyDZNnrWDEuy4jL50WVHfTTSQ==}
-    engines: {node: '>=6.9.0'}
-
-  '@babel/types@7.29.8':
-    resolution: {integrity: sha512-Vj1jF3cPfxg7OAfoI7QnVKLoILlm2JF9pnVHrX8qx7AHMiYWT+NDAA7jChlNgRS4WTLc/fD1lXLmPixluj+3Gg==}
     engines: {node: '>=6.9.0'}
 
   '@emnapi/core@1.11.1':
@@ -589,9 +568,6 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@rolldown/pluginutils@1.0.1':
-    resolution: {integrity: sha512-2j9bGt5Jh8hj+vPtgzPtl72j0yRxHAyumoo6TNfAjsLB04UtpSvPbPcDcBMxz7n+9CYB0c1GxQFxYRg2jimqGw==}
-
   '@rolldown/pluginutils@1.1.1':
     resolution: {integrity: sha512-glFIJDvLNDtJhT9qrMFWLPbvS+skxgt4L0K8Ei2YtnhPysAJnsI7nyxSJxKj4ADeKX0OLjC4ntRkwpLOoS3rwA==}
 
@@ -697,11 +673,11 @@ packages:
   '@solidjs/compiler@2.0.0':
     resolution: {integrity: sha512-Spgqz1+eojQ2pDl4yajnajIjX/kSusjTK/6mC6Fm7sAZ3YBI0yP4/epRR1hV08TU3YAH4xLBmZ6wjb1zC134Sw==}
 
-  '@solidjs/diagnostics@2.0.0':
-    resolution: {integrity: sha512-mjniTyT3W9Ohe+QN5anBA3h2Obl40AjEDx+vLcU+YsxteYNJ6FyoHBZ6cmf9ENLpcGEy2uk4q/9yV76/iVsfvQ==}
+  '@solidjs/diagnostics@2.0.1':
+    resolution: {integrity: sha512-AhU09msTL4TUHWbKKkcyfzmmbtJFbHqbn+7/brZAccdST3gslMFhiL8yz2wKWNMQQUUG3pRSy7+kjAzDDMIfbw==}
     peerDependencies:
-      '@solidjs/web': ^2.0.0
-      solid-js: ^2.0.0
+      '@solidjs/web': ^2.0.1
+      solid-js: ^2.0.1
       vitest: '>=2.0.0'
     peerDependenciesMeta:
       vitest:
@@ -712,8 +688,8 @@ packages:
     peerDependencies:
       solid-js: ^1.8.4
 
-  '@solidjs/signals@2.0.0':
-    resolution: {integrity: sha512-jrcT6XTVvsYRpesRp0At/mSUnsWr6jiprK8C93Oat56B8n7X9BMSe58Rxl6qSZUhBN0L+sxm8GzeO7HdhBXvDw==}
+  '@solidjs/signals@2.0.1':
+    resolution: {integrity: sha512-nTdIk7UgGLwATg0wCT/wH/G62aWYjGol2AnqdrN4qVyV7snYTnYoesgJ/G7xRkO34mAr3tayt0cu1+k/dt0lmA==}
     engines: {node: '>=22.12.0'}
 
   '@solidjs/testing-library@1.0.0-rc.2':
@@ -744,42 +720,34 @@ packages:
       '@testing-library/jest-dom':
         optional: true
 
-  '@solidjs/web@2.0.0':
-    resolution: {integrity: sha512-R0+JMCD6ukEXaID/sH5PVQe9bCIN9pRzJry+F6Sb6YvtlkAp9DEyVI7AeZYiV0cd6TSL98kpbCyLDiZnaAKGrA==}
+  '@solidjs/web@2.0.1':
+    resolution: {integrity: sha512-o7spK20IEMk0bA+lVeULfTQPD9Oyb/VLS9gv5BNQdHIxFWBRFNlHf1ofF0z9b2uA3pLlRtYh+5/USk3fSTdsjQ==}
     engines: {node: '>=22.12.0'}
     peerDependencies:
-      solid-js: ^2.0.0
-
-  '@tanstack/history@1.162.1':
-    resolution: {integrity: sha512-DR9t6lfLVdrjgCwpglrR9DR7Ok8/HlXjcOE+goWXF3zyuLUO/ug7vMbSFxTqrQTtbRghJfyhmIZ0S6LhPIy44w==}
-    engines: {node: '>=20.19'}
+      solid-js: ^2.0.1
 
   '@tanstack/history@1.162.5':
     resolution: {integrity: sha512-w1+YvwmTkwt5n8yUqEH3IWZ9DsmorCZW/EQ3KYHnqEgIkOZpH54NvW6/Epq3Dzb8H0ifIeYX8PExvrNLIH5FIA==}
     engines: {node: '>=20.19'}
 
-  '@tanstack/query-core@5.101.4':
-    resolution: {integrity: sha512-gNwcvOJcRbLWPOLG/2OBm+zM+Yv+MKsXKEOWC57USuZDEsI71hEErQsiEGx5wX9rzWWkfwM0fVSPoiIFSsxfiw==}
-
-  '@tanstack/router-core@1.171.22':
-    resolution: {integrity: sha512-sitsuRkz4qpTjIAV97S5zFCoeGv0OFd6+VWg3ZcIlQbi5R4NIXfz6ogg51n5w6rvTwSODz/lKWb5dl5tvh2bQw==}
-    engines: {node: '>=20.19'}
+  '@tanstack/query-core@5.107.1':
+    resolution: {integrity: sha512-PSyAik11oQBEVOiVy5hjZWHmoUqOXqK1WYy4v55mcxozEfKaQgpUMsgnXhWjuESzSht8JfzqMS1m6M/9CpNgvg==}
 
   '@tanstack/router-core@1.171.39':
     resolution: {integrity: sha512-qUhoJ0meuSUqGYQbHbcJYdASr06YtK+bulbj6vtrhKYFkLgkSsZ6tXmMyym7sFxiSJSPYgasgozrL01LyyR/6A==}
     engines: {node: '>=20.19'}
 
-  '@tanstack/router-generator@1.167.46':
-    resolution: {integrity: sha512-JSailAThcqPvqBzE3+MhNh6zQyZM2IdmIsHOxZgAc061Lh++SZqamNm/Whe7QNXWK5sLP4E0J1F8AI0hP8wTSw==}
-    engines: {node: '>=20.19'}
+  '@tanstack/router-generator@1.168.0':
+    resolution: {integrity: sha512-Ty3y1g96Nq4yMojTH+OTgRFp0oa14LBKhiDW8+SrsdgW2mCpPRzZ8Ix7jjztxmkS8O+AKc2WaLkSskGUe3oEDQ==}
+    engines: {node: ^20.19.0 || >=22.12.0}
 
-  '@tanstack/router-plugin@1.168.48':
-    resolution: {integrity: sha512-oLDEZO/vhvF5JLrQ6qMNYcCjMMhlHA0Byx6ZXl9AHJ6qVLRxUeCU41vlZQ4buisONY2p0Zl9O09/qwLiVrIBCQ==}
-    engines: {node: '>=20.19'}
+  '@tanstack/router-plugin@1.169.0':
+    resolution: {integrity: sha512-aulFJmvW/rN5zQg/IM1Z5iUueX9dnYjBKxNpFWstpHxbatdlRlEwtSrc57VlBmfzRuckVxpZLi6wH3O40DMLgw==}
+    engines: {node: ^20.19.0 || >=22.12.0}
     peerDependencies:
       '@rsbuild/core': '>=1.0.2 || ^2.0.0'
       '@tanstack/react-router': ^1.170.46
-      vite: '>=5.0.0 || >=6.0.0 || >=7.0.0 || >=8.0.0'
+      vite: '>=6.0.0'
       vite-plugin-solid: ^2.11.10 || ^3.0.0-0
       webpack: '>=5.92.0'
     peerDependenciesMeta:
@@ -794,22 +762,22 @@ packages:
       webpack:
         optional: true
 
-  '@tanstack/router-utils@1.162.4':
-    resolution: {integrity: sha512-3TSH3rwAQTqQOtTBF8IXMFXmGNJWnjwIm+l87uguyC/of0pSRKcU9GJrozaf0fY9it8dLQvUZJA2MOlfqbW1sA==}
-    engines: {node: '>=20.19'}
+  '@tanstack/router-utils@1.163.0':
+    resolution: {integrity: sha512-OMeFv8aRwk9Xtf3JhRmQrjtMxCj7qqfnsueASuL8xUgItoblIL9eCIyt4Zv0hk3LBp/s7NqviZgQhiAfDhJb/A==}
+    engines: {node: ^20.19.0 || >=22.12.0}
 
-  '@tanstack/solid-query@6.0.0-rc.5':
-    resolution: {integrity: sha512-O9lD2JRgaN2ZS4ROBPL6HLPbPJ4FvnUsVe7j6FSxhE3GI8a5ntZbAj5zrTtmny6rSzhdcBuMB38R53tHIuXJkw==}
+  '@tanstack/solid-query@6.0.0-rc.6':
+    resolution: {integrity: sha512-fz0LCD4douutprI6ASNR6BftNw1+yrrISSC4teDUpS7ZmsPi3BJ9sDJSNrikljPrikH0fvAUcxUWEKGM5925bA==}
     peerDependencies:
-      '@solidjs/web': '>=2.0.0-rc.13 <3.0.0'
-      solid-js: '>=2.0.0-rc.13 <3.0.0'
+      '@solidjs/web': ^2.0.0
+      solid-js: ^2.0.0
 
-  '@tanstack/solid-router@2.0.0-rc.10':
-    resolution: {integrity: sha512-ffAeEsOpO4jL78iVGcgzphWkZ84XMithWAN/s9YePHarzEaqTLaP4QpVda8OP98GVtuG51WGD5/5Bn13ti2PTA==}
+  '@tanstack/solid-router@2.0.0-rc.11':
+    resolution: {integrity: sha512-PDngmJoFmIyWok4C7yb7lxI90ndF1bJ4eXHRktfUiImy1a/6XHqcCEuvrMR2o5Q5kM7vXtn/wjIKg6i/ojn38Q==}
     engines: {node: '>=20.19'}
     peerDependencies:
-      '@solidjs/web': '>=2.0.0-rc.20 <3.0.0'
-      solid-js: '>=2.0.0-rc.20 <3.0.0'
+      '@solidjs/web': '>=2.0.1 <3.0.0'
+      solid-js: '>=2.0.1 <3.0.0'
 
   '@tanstack/virtual-file-routes@1.162.0':
     resolution: {integrity: sha512-uhOeFyxLcU41HzvrxsGpiWdcMbScY1EDgbZ5K7DVRMYInbLYWAC0EA/kx9wXAoSM8q82bUG2hRl8+EAjE6XAbA==}
@@ -1485,8 +1453,8 @@ packages:
     resolution: {integrity: sha512-W5N4cMPc58lypAsScCmhGTyZxNZ6gPHvLHtMqtyvDFpfyNDsH1QjU0nI9Lr34+Q5ZLPsWeqOhkgTY5XtaPVQ4A==}
     engines: {node: '>=20'}
 
-  solid-js@2.0.0:
-    resolution: {integrity: sha512-9zN4uH2OQeQAYbF4BmIzoaa+L5Hb8Dp6kkP6ZXobHQ1FZVICdmzREPDVDBJY7umzdAE8D6zbFfWhxGtagkyslA==}
+  solid-js@2.0.1:
+    resolution: {integrity: sha512-5bBwRCblIZ672y2H2aB5KIOfeP/N+acx1YoCjNCWYFc4ZI/Y7y7n/6N1kei8AgWmcJJQ1m5SV90rs3V8CPAnYQ==}
     engines: {node: '>=22.12.0'}
 
   source-map-js@1.2.2:
@@ -1755,14 +1723,14 @@ snapshots:
   '@babel/core@7.29.7':
     dependencies:
       '@babel/code-frame': 7.29.7
-      '@babel/generator': 7.29.8
+      '@babel/generator': 7.29.12
       '@babel/helper-compilation-targets': 7.29.7
       '@babel/helper-module-transforms': 7.29.7(@babel/core@7.29.7)
       '@babel/helpers': 7.29.7
-      '@babel/parser': 7.29.9
+      '@babel/parser': 7.29.12
       '@babel/template': 7.29.7
-      '@babel/traverse': 7.29.8
-      '@babel/types': 7.29.8
+      '@babel/traverse': 7.29.12
+      '@babel/types': 7.29.11
       '@jridgewell/remapping': 2.3.5
       convert-source-map: 2.0.0
       debug: 4.4.3
@@ -1780,14 +1748,6 @@ snapshots:
       '@jridgewell/trace-mapping': 0.3.31
       jsesc: 3.1.0
 
-  '@babel/generator@7.29.8':
-    dependencies:
-      '@babel/parser': 7.29.9
-      '@babel/types': 7.29.11
-      '@jridgewell/gen-mapping': 0.3.13
-      '@jridgewell/trace-mapping': 0.3.31
-      jsesc: 3.1.0
-
   '@babel/helper-compilation-targets@7.29.7':
     dependencies:
       '@babel/compat-data': 7.29.7
@@ -1800,7 +1760,7 @@ snapshots:
 
   '@babel/helper-module-imports@7.29.7':
     dependencies:
-      '@babel/traverse': 7.29.8
+      '@babel/traverse': 7.29.12
       '@babel/types': 7.29.11
     transitivePeerDependencies:
       - supports-color
@@ -1810,13 +1770,11 @@ snapshots:
       '@babel/core': 7.29.7
       '@babel/helper-module-imports': 7.29.7
       '@babel/helper-validator-identifier': 7.29.7
-      '@babel/traverse': 7.29.8
+      '@babel/traverse': 7.29.12
     transitivePeerDependencies:
       - supports-color
 
   '@babel/helper-string-parser@7.29.11': {}
-
-  '@babel/helper-string-parser@7.29.7': {}
 
   '@babel/helper-validator-identifier@7.29.7': {}
 
@@ -1828,10 +1786,6 @@ snapshots:
       '@babel/types': 7.29.11
 
   '@babel/parser@7.29.12':
-    dependencies:
-      '@babel/types': 7.29.11
-
-  '@babel/parser@7.29.9':
     dependencies:
       '@babel/types': 7.29.11
 
@@ -1855,26 +1809,9 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@babel/traverse@7.29.8':
-    dependencies:
-      '@babel/code-frame': 7.29.7
-      '@babel/generator': 7.29.8
-      '@babel/helper-globals': 7.29.7
-      '@babel/parser': 7.29.9
-      '@babel/template': 7.29.7
-      '@babel/types': 7.29.11
-      debug: 4.4.3
-    transitivePeerDependencies:
-      - supports-color
-
   '@babel/types@7.29.11':
     dependencies:
       '@babel/helper-string-parser': 7.29.11
-      '@babel/helper-validator-identifier': 7.29.7
-
-  '@babel/types@7.29.8':
-    dependencies:
-      '@babel/helper-string-parser': 7.29.7
       '@babel/helper-validator-identifier': 7.29.7
 
   '@emnapi/core@1.11.1':
@@ -2164,108 +2101,106 @@ snapshots:
   '@rolldown/binding-win32-x64-msvc@1.2.19':
     optional: true
 
-  '@rolldown/pluginutils@1.0.1': {}
-
   '@rolldown/pluginutils@1.1.1': {}
 
-  '@solid-devtools/debugger@0.28.1(solid-js@2.0.0)':
+  '@solid-devtools/debugger@0.28.1(solid-js@2.0.1)':
     dependencies:
       '@nothing-but/utils': 0.17.0
-      '@solid-devtools/shared': 0.20.0(solid-js@2.0.0)
-      '@solid-primitives/bounds': 0.1.7(solid-js@2.0.0)
-      '@solid-primitives/event-listener': 2.4.6(solid-js@2.0.0)
-      '@solid-primitives/keyboard': 1.3.7(solid-js@2.0.0)
-      '@solid-primitives/rootless': 1.5.4(solid-js@2.0.0)
-      '@solid-primitives/scheduled': 1.5.3(solid-js@2.0.0)
-      '@solid-primitives/static-store': 0.1.4(solid-js@2.0.0)
-      '@solid-primitives/utils': 6.4.1(solid-js@2.0.0)
-      solid-js: 2.0.0
+      '@solid-devtools/shared': 0.20.0(solid-js@2.0.1)
+      '@solid-primitives/bounds': 0.1.7(solid-js@2.0.1)
+      '@solid-primitives/event-listener': 2.4.6(solid-js@2.0.1)
+      '@solid-primitives/keyboard': 1.3.7(solid-js@2.0.1)
+      '@solid-primitives/rootless': 1.5.4(solid-js@2.0.1)
+      '@solid-primitives/scheduled': 1.5.3(solid-js@2.0.1)
+      '@solid-primitives/static-store': 0.1.4(solid-js@2.0.1)
+      '@solid-primitives/utils': 6.4.1(solid-js@2.0.1)
+      solid-js: 2.0.1
 
-  '@solid-devtools/logger@0.9.11(solid-js@2.0.0)':
+  '@solid-devtools/logger@0.9.11(solid-js@2.0.1)':
     dependencies:
       '@nothing-but/utils': 0.17.0
-      '@solid-devtools/debugger': 0.28.1(solid-js@2.0.0)
-      '@solid-devtools/shared': 0.20.0(solid-js@2.0.0)
-      '@solid-primitives/utils': 6.4.1(solid-js@2.0.0)
-      solid-js: 2.0.0
+      '@solid-devtools/debugger': 0.28.1(solid-js@2.0.1)
+      '@solid-devtools/shared': 0.20.0(solid-js@2.0.1)
+      '@solid-primitives/utils': 6.4.1(solid-js@2.0.1)
+      solid-js: 2.0.1
 
-  '@solid-devtools/shared@0.20.0(solid-js@2.0.0)':
+  '@solid-devtools/shared@0.20.0(solid-js@2.0.1)':
     dependencies:
       '@nothing-but/utils': 0.17.0
-      '@solid-primitives/event-listener': 2.4.6(solid-js@2.0.0)
-      '@solid-primitives/media': 2.3.6(solid-js@2.0.0)
-      '@solid-primitives/refs': 1.1.4(solid-js@2.0.0)
-      '@solid-primitives/rootless': 1.5.4(solid-js@2.0.0)
-      '@solid-primitives/scheduled': 1.5.3(solid-js@2.0.0)
-      '@solid-primitives/static-store': 0.1.4(solid-js@2.0.0)
-      '@solid-primitives/styles': 0.1.4(solid-js@2.0.0)
-      '@solid-primitives/utils': 6.4.1(solid-js@2.0.0)
-      solid-js: 2.0.0
+      '@solid-primitives/event-listener': 2.4.6(solid-js@2.0.1)
+      '@solid-primitives/media': 2.3.6(solid-js@2.0.1)
+      '@solid-primitives/refs': 1.1.4(solid-js@2.0.1)
+      '@solid-primitives/rootless': 1.5.4(solid-js@2.0.1)
+      '@solid-primitives/scheduled': 1.5.3(solid-js@2.0.1)
+      '@solid-primitives/static-store': 0.1.4(solid-js@2.0.1)
+      '@solid-primitives/styles': 0.1.4(solid-js@2.0.1)
+      '@solid-primitives/utils': 6.4.1(solid-js@2.0.1)
+      solid-js: 2.0.1
 
-  '@solid-primitives/bounds@0.1.7(solid-js@2.0.0)':
+  '@solid-primitives/bounds@0.1.7(solid-js@2.0.1)':
     dependencies:
-      '@solid-primitives/event-listener': 2.4.6(solid-js@2.0.0)
-      '@solid-primitives/resize-observer': 2.2.0(solid-js@2.0.0)
-      '@solid-primitives/static-store': 0.1.4(solid-js@2.0.0)
-      '@solid-primitives/utils': 6.4.1(solid-js@2.0.0)
-      solid-js: 2.0.0
+      '@solid-primitives/event-listener': 2.4.6(solid-js@2.0.1)
+      '@solid-primitives/resize-observer': 2.2.0(solid-js@2.0.1)
+      '@solid-primitives/static-store': 0.1.4(solid-js@2.0.1)
+      '@solid-primitives/utils': 6.4.1(solid-js@2.0.1)
+      solid-js: 2.0.1
 
-  '@solid-primitives/event-listener@2.4.6(solid-js@2.0.0)':
+  '@solid-primitives/event-listener@2.4.6(solid-js@2.0.1)':
     dependencies:
-      '@solid-primitives/utils': 6.4.1(solid-js@2.0.0)
-      solid-js: 2.0.0
+      '@solid-primitives/utils': 6.4.1(solid-js@2.0.1)
+      solid-js: 2.0.1
 
-  '@solid-primitives/keyboard@1.3.7(solid-js@2.0.0)':
+  '@solid-primitives/keyboard@1.3.7(solid-js@2.0.1)':
     dependencies:
-      '@solid-primitives/event-listener': 2.4.6(solid-js@2.0.0)
-      '@solid-primitives/rootless': 1.5.4(solid-js@2.0.0)
-      '@solid-primitives/utils': 6.4.1(solid-js@2.0.0)
-      solid-js: 2.0.0
+      '@solid-primitives/event-listener': 2.4.6(solid-js@2.0.1)
+      '@solid-primitives/rootless': 1.5.4(solid-js@2.0.1)
+      '@solid-primitives/utils': 6.4.1(solid-js@2.0.1)
+      solid-js: 2.0.1
 
-  '@solid-primitives/media@2.3.6(solid-js@2.0.0)':
+  '@solid-primitives/media@2.3.6(solid-js@2.0.1)':
     dependencies:
-      '@solid-primitives/event-listener': 2.4.6(solid-js@2.0.0)
-      '@solid-primitives/rootless': 1.5.4(solid-js@2.0.0)
-      '@solid-primitives/static-store': 0.1.4(solid-js@2.0.0)
-      '@solid-primitives/utils': 6.4.1(solid-js@2.0.0)
-      solid-js: 2.0.0
+      '@solid-primitives/event-listener': 2.4.6(solid-js@2.0.1)
+      '@solid-primitives/rootless': 1.5.4(solid-js@2.0.1)
+      '@solid-primitives/static-store': 0.1.4(solid-js@2.0.1)
+      '@solid-primitives/utils': 6.4.1(solid-js@2.0.1)
+      solid-js: 2.0.1
 
-  '@solid-primitives/refs@1.1.4(solid-js@2.0.0)':
+  '@solid-primitives/refs@1.1.4(solid-js@2.0.1)':
     dependencies:
-      '@solid-primitives/utils': 6.4.1(solid-js@2.0.0)
-      solid-js: 2.0.0
+      '@solid-primitives/utils': 6.4.1(solid-js@2.0.1)
+      solid-js: 2.0.1
 
-  '@solid-primitives/resize-observer@2.2.0(solid-js@2.0.0)':
+  '@solid-primitives/resize-observer@2.2.0(solid-js@2.0.1)':
     dependencies:
-      '@solid-primitives/event-listener': 2.4.6(solid-js@2.0.0)
-      '@solid-primitives/rootless': 1.5.4(solid-js@2.0.0)
-      '@solid-primitives/static-store': 0.1.4(solid-js@2.0.0)
-      '@solid-primitives/utils': 6.4.1(solid-js@2.0.0)
-      solid-js: 2.0.0
+      '@solid-primitives/event-listener': 2.4.6(solid-js@2.0.1)
+      '@solid-primitives/rootless': 1.5.4(solid-js@2.0.1)
+      '@solid-primitives/static-store': 0.1.4(solid-js@2.0.1)
+      '@solid-primitives/utils': 6.4.1(solid-js@2.0.1)
+      solid-js: 2.0.1
 
-  '@solid-primitives/rootless@1.5.4(solid-js@2.0.0)':
+  '@solid-primitives/rootless@1.5.4(solid-js@2.0.1)':
     dependencies:
-      '@solid-primitives/utils': 6.4.1(solid-js@2.0.0)
-      solid-js: 2.0.0
+      '@solid-primitives/utils': 6.4.1(solid-js@2.0.1)
+      solid-js: 2.0.1
 
-  '@solid-primitives/scheduled@1.5.3(solid-js@2.0.0)':
+  '@solid-primitives/scheduled@1.5.3(solid-js@2.0.1)':
     dependencies:
-      solid-js: 2.0.0
+      solid-js: 2.0.1
 
-  '@solid-primitives/static-store@0.1.4(solid-js@2.0.0)':
+  '@solid-primitives/static-store@0.1.4(solid-js@2.0.1)':
     dependencies:
-      '@solid-primitives/utils': 6.4.1(solid-js@2.0.0)
-      solid-js: 2.0.0
+      '@solid-primitives/utils': 6.4.1(solid-js@2.0.1)
+      solid-js: 2.0.1
 
-  '@solid-primitives/styles@0.1.4(solid-js@2.0.0)':
+  '@solid-primitives/styles@0.1.4(solid-js@2.0.1)':
     dependencies:
-      '@solid-primitives/rootless': 1.5.4(solid-js@2.0.0)
-      '@solid-primitives/utils': 6.4.1(solid-js@2.0.0)
-      solid-js: 2.0.0
+      '@solid-primitives/rootless': 1.5.4(solid-js@2.0.1)
+      '@solid-primitives/utils': 6.4.1(solid-js@2.0.1)
+      solid-js: 2.0.1
 
-  '@solid-primitives/utils@6.4.1(solid-js@2.0.0)':
+  '@solid-primitives/utils@6.4.1(solid-js@2.0.1)':
     dependencies:
-      solid-js: 2.0.0
+      solid-js: 2.0.1
 
   '@solidjs/compiler-darwin-arm64@2.0.0':
     optional: true
@@ -2298,59 +2233,50 @@ snapshots:
       '@solidjs/compiler-wasm32-wasi': 2.0.0
       '@solidjs/compiler-win32-x64-msvc': 2.0.0
 
-  '@solidjs/diagnostics@2.0.0(@solidjs/web@2.0.0(solid-js@2.0.0))(solid-js@2.0.0)(vitest@5.1.0(@types/node@26.6.6)(jsdom@31.0.0)(vite@8.3.8(@types/node@26.6.6)(jiti@2.7.0)))':
+  '@solidjs/diagnostics@2.0.1(@solidjs/web@2.0.1(solid-js@2.0.1))(solid-js@2.0.1)(vitest@5.1.0(@types/node@26.6.6)(jsdom@31.0.0)(vite@8.3.8(@types/node@26.6.6)(jiti@2.7.0)))':
     dependencies:
-      '@solidjs/signals': 2.0.0
-      '@solidjs/web': 2.0.0(solid-js@2.0.0)
-      solid-js: 2.0.0
+      '@solidjs/signals': 2.0.1
+      '@solidjs/web': 2.0.1(solid-js@2.0.1)
+      solid-js: 2.0.1
     optionalDependencies:
       vitest: 5.1.0(@types/node@26.6.6)(jsdom@31.0.0)(vite@8.3.8(@types/node@26.6.6)(jiti@2.7.0))
 
-  '@solidjs/meta@0.29.8(solid-js@2.0.0)':
+  '@solidjs/meta@0.29.8(solid-js@2.0.1)':
     dependencies:
-      solid-js: 2.0.0
+      solid-js: 2.0.1
 
-  '@solidjs/signals@2.0.0': {}
+  '@solidjs/signals@2.0.1': {}
 
-  '@solidjs/testing-library@1.0.0-rc.2(@solidjs/web@2.0.0(solid-js@2.0.0))(solid-js@2.0.0)':
+  '@solidjs/testing-library@1.0.0-rc.2(@solidjs/web@2.0.1(solid-js@2.0.1))(solid-js@2.0.1)':
     dependencies:
-      '@solidjs/web': 2.0.0(solid-js@2.0.0)
+      '@solidjs/web': 2.0.1(solid-js@2.0.1)
       '@testing-library/dom': 10.4.2
-      solid-js: 2.0.0
+      solid-js: 2.0.1
 
-  '@solidjs/vite-plugin@3.0.0(@babel/core@7.29.7)(@solidjs/web@2.0.0(solid-js@2.0.0))(@testing-library/jest-dom@7.0.1(@testing-library/dom@10.4.2)(vitest@5.1.0(@types/node@26.6.6)(jsdom@31.0.0)(vite@8.3.8(@types/node@26.6.6)(jiti@2.7.0))))(solid-js@2.0.0)(vite@8.3.8(@types/node@26.6.6)(jiti@2.7.0))':
+  '@solidjs/vite-plugin@3.0.0(@babel/core@7.29.7)(@solidjs/web@2.0.1(solid-js@2.0.1))(@testing-library/jest-dom@7.0.1(@testing-library/dom@10.4.2)(vitest@5.1.0(@types/node@26.6.6)(jsdom@31.0.0)(vite@8.3.8(@types/node@26.6.6)(jiti@2.7.0))))(solid-js@2.0.1)(vite@8.3.8(@types/node@26.6.6)(jiti@2.7.0))':
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@solidjs/compiler': 2.0.0
-      '@solidjs/web': 2.0.0(solid-js@2.0.0)
+      '@solidjs/web': 2.0.1(solid-js@2.0.1)
       magic-string: 0.30.21
       merge-anything: 5.1.7
-      solid-js: 2.0.0
+      solid-js: 2.0.1
       vite: 8.3.8(@types/node@26.6.6)(jiti@2.7.0)
       vitefu: 1.1.3(vite@8.3.8(@types/node@26.6.6)(jiti@2.7.0))
     optionalDependencies:
       '@babel/core': 7.29.7
       '@testing-library/jest-dom': 7.0.1(@testing-library/dom@10.4.2)(vitest@5.1.0(@types/node@26.6.6)(jsdom@31.0.0)(vite@8.3.8(@types/node@26.6.6)(jiti@2.7.0)))
 
-  '@solidjs/web@2.0.0(solid-js@2.0.0)':
+  '@solidjs/web@2.0.1(solid-js@2.0.1)':
     dependencies:
       csstype: 3.2.3
       seroval: 1.8.0
       seroval-plugins: 1.8.0(seroval@1.8.0)
-      solid-js: 2.0.0
-
-  '@tanstack/history@1.162.1': {}
+      solid-js: 2.0.1
 
   '@tanstack/history@1.162.5': {}
 
-  '@tanstack/query-core@5.101.4': {}
-
-  '@tanstack/router-core@1.171.22':
-    dependencies:
-      '@tanstack/history': 1.162.1
-      cookie-es: 3.1.1
-      seroval: 1.8.0
-      seroval-plugins: 1.8.0(seroval@1.8.0)
+  '@tanstack/query-core@5.107.1': {}
 
   '@tanstack/router-core@1.171.39':
     dependencies:
@@ -2359,11 +2285,11 @@ snapshots:
       seroval: 1.8.0
       seroval-plugins: 1.8.0(seroval@1.8.0)
 
-  '@tanstack/router-generator@1.167.46':
+  '@tanstack/router-generator@1.168.0':
     dependencies:
       '@babel/types': 7.29.11
       '@tanstack/router-core': 1.171.39
-      '@tanstack/router-utils': 1.162.4
+      '@tanstack/router-utils': 1.163.0
       '@tanstack/virtual-file-routes': 1.162.0
       jiti: 2.7.0
       magic-string: 0.30.21
@@ -2372,14 +2298,14 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@tanstack/router-plugin@1.168.48(rolldown@1.2.19)(vite@8.3.8(@types/node@26.6.6)(jiti@2.7.0))':
+  '@tanstack/router-plugin@1.169.0(rolldown@1.2.19)(vite@8.3.8(@types/node@26.6.6)(jiti@2.7.0))':
     dependencies:
       '@babel/core': 7.29.7
       '@babel/template': 7.29.7
       '@babel/types': 7.29.11
       '@tanstack/router-core': 1.171.39
-      '@tanstack/router-generator': 1.167.46
-      '@tanstack/router-utils': 1.162.4
+      '@tanstack/router-generator': 1.168.0
+      '@tanstack/router-utils': 1.163.0
       chokidar: 5.0.0
       unplugin: 3.7.0(rolldown@1.2.19)(vite@8.3.8(@types/node@26.6.6)(jiti@2.7.0))
       zod: 4.6.7
@@ -2395,7 +2321,7 @@ snapshots:
       - supports-color
       - unloader
 
-  '@tanstack/router-utils@1.162.4':
+  '@tanstack/router-utils@1.163.0':
     dependencies:
       '@babel/generator': 7.29.12
       '@babel/parser': 7.29.12
@@ -2408,22 +2334,22 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@tanstack/solid-query@6.0.0-rc.5(@solidjs/web@2.0.0(solid-js@2.0.0))(solid-js@2.0.0)':
+  '@tanstack/solid-query@6.0.0-rc.6(@solidjs/web@2.0.1(solid-js@2.0.1))(solid-js@2.0.1)':
     dependencies:
-      '@solidjs/web': 2.0.0(solid-js@2.0.0)
-      '@tanstack/query-core': 5.101.4
-      solid-js: 2.0.0
+      '@solidjs/web': 2.0.1(solid-js@2.0.1)
+      '@tanstack/query-core': 5.107.1
+      solid-js: 2.0.1
 
-  '@tanstack/solid-router@2.0.0-rc.10(@solidjs/web@2.0.0(solid-js@2.0.0))(solid-js@2.0.0)':
+  '@tanstack/solid-router@2.0.0-rc.11(@solidjs/web@2.0.1(solid-js@2.0.1))(solid-js@2.0.1)':
     dependencies:
-      '@solid-devtools/logger': 0.9.11(solid-js@2.0.0)
-      '@solid-primitives/refs': 1.1.4(solid-js@2.0.0)
-      '@solidjs/meta': 0.29.8(solid-js@2.0.0)
-      '@solidjs/web': 2.0.0(solid-js@2.0.0)
-      '@tanstack/history': 1.162.1
-      '@tanstack/router-core': 1.171.22
+      '@solid-devtools/logger': 0.9.11(solid-js@2.0.1)
+      '@solid-primitives/refs': 1.1.4(solid-js@2.0.1)
+      '@solidjs/meta': 0.29.8(solid-js@2.0.1)
+      '@solidjs/web': 2.0.1(solid-js@2.0.1)
+      '@tanstack/history': 1.162.5
+      '@tanstack/router-core': 1.171.39
       isbot: 5.2.3
-      solid-js: 2.0.0
+      solid-js: 2.0.1
 
   '@tanstack/virtual-file-routes@1.162.0': {}
 
@@ -3003,9 +2929,9 @@ snapshots:
 
   seroval@1.8.0: {}
 
-  solid-js@2.0.0:
+  solid-js@2.0.1:
     dependencies:
-      '@solidjs/signals': 2.0.0
+      '@solidjs/signals': 2.0.1
       seroval: 1.8.0
       seroval-plugins: 1.8.0(seroval@1.8.0)
 
@@ -3084,7 +3010,7 @@ snapshots:
   unplugin@3.7.0(rolldown@1.2.19)(vite@8.3.8(@types/node@26.6.6)(jiti@2.7.0)):
     dependencies:
       '@jridgewell/remapping': 2.3.5
-      '@rolldown/pluginutils': 1.0.1
+      '@rolldown/pluginutils': 1.1.1
       picomatch: 4.0.7
       webpack-virtual-modules: 0.6.2
     optionalDependencies:
