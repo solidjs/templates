@@ -54,9 +54,15 @@ Also:
   microtask or `flush()`. In tests, `flush()` before asserting.
 - No writes inside a memo, effect compute, or component body (dev throws).
   Write from event handlers, `onSettled`, or actions.
-- No reactive reads at the top of a component body; read in JSX, a memo, or
-  `untrack`. Flow callbacks (`<For>`, `<Show>`, `<Match>`) are owners, not
-  tracking scopes: read their accessor arguments in JSX, not at the top.
+- No reactive reads at the top of a component body; read in JSX, a memo, an
+  effect's compute, or hand a hook an accessor (`useThing(() => props.id)`;
+  JSX props still take values). Flow callbacks (`<For>`, `<Show>`,
+  `<Match>`) are owners, not tracking scopes: read their accessor arguments
+  in JSX, not at the top.
+- Never use `untrack` to silence `STRICT_READ_UNTRACKED`: the value still
+  goes stale, and the warning was the only sign. Move the read instead (see
+  that code's section in the diagnostics skill). Hooks and adapters take
+  accessors and read them inside their own memos and effects.
 - `<For>`: default gives a raw item and an index accessor; `keyed={false}`
   gives an item accessor and a plain number. `<Repeat>`: `i` is a number.
 - `onClick={cond() ? a : b}` binds once; decide inside a stable handler.
