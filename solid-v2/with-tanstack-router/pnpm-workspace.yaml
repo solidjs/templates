@@ -14,4 +14,4 @@ packages:
 minimumReleaseAgeExclude:
   - solid-js
   - '@solidjs/*'
-  - '@tanstack/solid-router@2.0.0-rc.9'
+  - '@tanstack/solid-router@2.0.0-rc.11'
