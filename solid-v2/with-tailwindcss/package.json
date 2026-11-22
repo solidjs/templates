@@ -12,9 +12,9 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@solidjs/diagnostics": "^2.0.0",
+    "@solidjs/diagnostics": "^2.0.3",
     "@solidjs/testing-library": "^1.0.0-rc.2",
-    "@solidjs/vite-plugin": "^3.0.0",
+    "@solidjs/vite-plugin": "^3.0.1",
     "@tailwindcss/vite": "^4.3.5",
     "@testing-library/jest-dom": "^7.0.0",
     "eslint-plugin-solid": "~0.20.0",
@@ -29,7 +29,7 @@
   "dependencies": {
     "@solidjs/meta": "^2.0.0",
     "@solidjs/router": "^2.0.0",
-    "@solidjs/web": "^2.0.0",
-    "solid-js": "^2.0.0"
+    "@solidjs/web": "^2.0.3",
+    "solid-js": "^2.0.3"
   }
 }
