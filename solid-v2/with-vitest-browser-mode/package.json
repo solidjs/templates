@@ -16,14 +16,14 @@
     "@solidjs/testing-library": "^1.0.0-rc.2",
     "@solidjs/vite-plugin": "^3.0.0",
     "@testing-library/jest-dom": "^7.0.0",
-    "@vitest/browser-playwright": "^5.1.0",
+    "@vitest/browser-playwright": "^5.1.1",
     "eslint-plugin-solid": "~0.20.0",
     "filesystem-routing": "0.5.0",
     "oxlint": "~1.92.0",
     "playwright": "^1.56.0",
     "typescript": "^7.0.2",
     "vite": "^8.3.8",
-    "vitest": "^5.1.0"
+    "vitest": "^5.1.1"
   },
   "dependencies": {
     "@solidjs/meta": "^2.0.0",

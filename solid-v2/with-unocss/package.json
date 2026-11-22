@@ -25,7 +25,7 @@
     "typescript": "^7.0.2",
     "unocss": "^66.12.0",
     "vite": "^8.3.8",
-    "vitest": "^5.1.0"
+    "vitest": "^5.1.1"
   },
   "dependencies": {
     "@solidjs/meta": "^2.0.0",
