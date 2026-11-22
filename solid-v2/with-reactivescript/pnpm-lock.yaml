@@ -23,25 +23,25 @@ importers:
     devDependencies:
       '@reactivescript/compiler':
         specifier: ^0.3.1
-        version: 0.3.1(@solidjs/vite-plugin@3.0.0(@solidjs/web@2.0.0(solid-js@2.0.0))(@testing-library/jest-dom@7.0.1(@testing-library/dom@10.4.2)(vitest@5.1.0(jsdom@31.0.0)(vite@8.3.8)))(solid-js@2.0.0)(vite@8.3.8))
+        version: 0.3.1(@solidjs/vite-plugin@3.0.0(@solidjs/web@2.0.0(solid-js@2.0.0))(@testing-library/jest-dom@8.0.0(@testing-library/dom@10.4.2)(vitest@5.1.0(jsdom@31.0.1)(vite@8.3.8)))(solid-js@2.0.0)(vite@8.3.8))
       '@reactivescript/language-server':
         specifier: ^0.3.1
         version: 0.3.1(@volar/language-service@2.4.30(typescript@5.9.3))
       '@solidjs/diagnostics':
         specifier: ^2.0.0
-        version: 2.0.0(@solidjs/web@2.0.0(solid-js@2.0.0))(solid-js@2.0.0)(vitest@5.1.0(jsdom@31.0.0)(vite@8.3.8))
+        version: 2.0.0(@solidjs/web@2.0.0(solid-js@2.0.0))(solid-js@2.0.0)(vitest@5.1.0(jsdom@31.0.1)(vite@8.3.8))
       '@solidjs/vite-plugin':
         specifier: ^3.0.0
-        version: 3.0.0(@solidjs/web@2.0.0(solid-js@2.0.0))(@testing-library/jest-dom@7.0.1(@testing-library/dom@10.4.2)(vitest@5.1.0(jsdom@31.0.0)(vite@8.3.8)))(solid-js@2.0.0)(vite@8.3.8)
+        version: 3.0.0(@solidjs/web@2.0.0(solid-js@2.0.0))(@testing-library/jest-dom@8.0.0(@testing-library/dom@10.4.2)(vitest@5.1.0(jsdom@31.0.1)(vite@8.3.8)))(solid-js@2.0.0)(vite@8.3.8)
       '@testing-library/jest-dom':
-        specifier: ^7.0.0
-        version: 7.0.1(@testing-library/dom@10.4.2)(vitest@5.1.0(jsdom@31.0.0)(vite@8.3.8))
+        specifier: ^8.0.0
+        version: 8.0.0(@testing-library/dom@10.4.2)(vitest@5.1.0(jsdom@31.0.1)(vite@8.3.8))
       eslint-plugin-solid:
         specifier: ~0.20.0
         version: 0.20.0
       jsdom:
-        specifier: ^31.0.0
-        version: 31.0.0
+        specifier: ^31.0.1
+        version: 31.0.1
       oxlint:
         specifier: ~1.92.0
         version: 1.92.0
@@ -53,7 +53,7 @@ importers:
         version: 8.3.8
       vitest:
         specifier: ^5.1.0
-        version: 5.1.0(jsdom@31.0.0)(vite@8.3.8)
+        version: 5.1.0(jsdom@31.0.1)(vite@8.3.8)
 
 packages:
 
@@ -72,8 +72,8 @@ packages:
     resolution: {integrity: sha512-qehxGkRj55h/ff8EMaJ+cYhyaKlHIxqYDn682wQD7RNp9UujOQsHog2uS0r2vzr4pW+sXf90NeeayjcNaX3fFg==}
     engines: {node: '>=6.9.0'}
 
-  '@babel/runtime@7.29.14':
-    resolution: {integrity: sha512-Y5tqevQaUAZhhj82BpYMNC1ssvLQTVAfwKdm8iy8qwmhvC2/CpcAu8OC+QEtjM7pMk7knx83u1Qj8gzkicyelw==}
+  '@babel/runtime@7.29.15':
+    resolution: {integrity: sha512-304gsbbGVmQc+cNGHzwHBlqepYdWLKj3VXCQBGt/EGcV7PUPfKI7kAUNW1FZEOCwlQiLvQjg1JEaAlRQ616h+Q==}
     engines: {node: '>=6.9.0'}
 
   '@emnapi/core@1.11.3':
@@ -471,12 +471,12 @@ packages:
     resolution: {integrity: sha512-yzr2S9HyAIdhz2/6qHgbs665Q7PKVcDF05vsOlHPxG1mo36gKVesdYVeDLnXgfjJ03CrKRk08knc6+E/9m8v2Q==}
     engines: {node: '>=18'}
 
-  '@testing-library/jest-dom@7.0.1':
-    resolution: {integrity: sha512-oMDTC3oA+6CXSO2JZnvOI7CA6oVub6kij5ggk9ohwye5slmkwxYDXcPOVxgMw/RQlticjtO0C1RZkR97HgrWMw==}
+  '@testing-library/jest-dom@8.0.0':
+    resolution: {integrity: sha512-Nu45KEeFgP/ydCMipnisMblq6YHViqEFi3fKN0a40s+zdKDDD7vEPCEavS0i7i4RxmclcEIL8q2o42pu+WgNgg==}
     engines: {node: '>=22', npm: '>=6', yarn: '>=1'}
     peerDependencies:
       '@testing-library/dom': '>=10 <11'
-      vitest: '>= 0.32'
+      vitest: '>=5 <6'
     peerDependenciesMeta:
       vitest:
         optional: true
@@ -683,8 +683,8 @@ packages:
   js-tokens@4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
 
-  jsdom@31.0.0:
-    resolution: {integrity: sha512-xAkhD9z1eyFC5+QUi9K24CaZJgdCQ2GOGLW1GdVDoQvkp/AxEH9TQ0pAplPOlIiV92hfcgnFOADZypbjgbBT6Q==}
+  jsdom@31.0.1:
+    resolution: {integrity: sha512-CbhJL8ZQg3eKswxSZth4QO9tW0jPIhmR0vtSXQSbKSfWbwIT6hoRc17wdHIVTQ43KI0mdV5iTJr3281IDgVZ5g==}
     engines: {node: ^22.22.2 || ^24.15.0 || >=26.0.0}
     peerDependencies:
       '@napi-rs/canvas': ^1.0.13
@@ -907,11 +907,11 @@ packages:
     resolution: {integrity: sha512-wXR/dYpcqKmfWpEdZjiKJOwCNFndD0DMnrW/cYjVGttEkBfVgcLFHoNrlj47mjOVic9yyNu65alsgF4NQyTa2g==}
     engines: {node: '>=12.0.0'}
 
-  tldts-core@7.5.1:
-    resolution: {integrity: sha512-GGSowIH9Pp52ym/x0OxBBNqS2DuqlLL91YNnlnj+k+ZWjJQ+ilNxpwP7/RT+iX1gzuafhj1l7j46CNVqm+xAeQ==}
+  tldts-core@7.5.5:
+    resolution: {integrity: sha512-rEJz/8cJFY/bdF354gl14yxavbrIbvM+FcbkYVQ6CSCMQTJdUFUIm39TTWSiGPvcpQh7/F6qHrD3SkwwdgtDCw==}
 
-  tldts@7.5.1:
-    resolution: {integrity: sha512-UW1Z5afSpu5qA0qhDnaynyiwPa+/VC7J/mofz72R032It5DUTUWk8I502cAitA6qMQV1x7IwNHg7pCBNVORVww==}
+  tldts@7.5.5:
+    resolution: {integrity: sha512-Hy6IImaWALzJOgCIss4gIFi4G0M9lqk95pFKCUVxQPZw+biZ1Pv6f28JpYgahpJB+BufA0HYsIU/aP/WIx3KRg==}
     hasBin: true
 
   tough-cookie@6.1.0:
@@ -938,8 +938,8 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
-  undici@8.12.4:
-    resolution: {integrity: sha512-8Mx+uNKKER2bA4AdtedkqRbwUCIJFr2nJckXRe5yrDqzePqwLP7VNcctN8/XdmDSbF7mS+jJKIszlL+vbam1VA==}
+  undici@8.13.1:
+    resolution: {integrity: sha512-Kt7EaPjh0s93lJH/PmW3d5rhkcpUa6fS3jqZ7+YGxNd9L7Xy/i827xe4C2uhhq+pJebM4tQOl5AgHmW11G5Skg==}
     engines: {node: '>=22.19.0'}
 
   validate-html-nesting@1.2.4:
@@ -1123,7 +1123,7 @@ snapshots:
 
   '@babel/helper-validator-identifier@7.29.7': {}
 
-  '@babel/runtime@7.29.14': {}
+  '@babel/runtime@7.29.15': {}
 
   '@emnapi/core@1.11.3':
     dependencies:
@@ -1268,7 +1268,7 @@ snapshots:
   '@reactivescript/compiler-win32-x64-msvc@0.3.1':
     optional: true
 
-  '@reactivescript/compiler@0.3.1(@solidjs/vite-plugin@3.0.0(@solidjs/web@2.0.0(solid-js@2.0.0))(@testing-library/jest-dom@7.0.1(@testing-library/dom@10.4.2)(vitest@5.1.0(jsdom@31.0.0)(vite@8.3.8)))(solid-js@2.0.0)(vite@8.3.8))':
+  '@reactivescript/compiler@0.3.1(@solidjs/vite-plugin@3.0.0(@solidjs/web@2.0.0(solid-js@2.0.0))(@testing-library/jest-dom@8.0.0(@testing-library/dom@10.4.2)(vitest@5.1.0(jsdom@31.0.1)(vite@8.3.8)))(solid-js@2.0.0)(vite@8.3.8))':
     optionalDependencies:
       '@reactivescript/compiler-darwin-arm64': 0.3.1
       '@reactivescript/compiler-darwin-x64': 0.3.1
@@ -1276,7 +1276,7 @@ snapshots:
       '@reactivescript/compiler-linux-x64-gnu': 0.3.1
       '@reactivescript/compiler-wasm32-wasi': 0.3.1
       '@reactivescript/compiler-win32-x64-msvc': 0.3.1
-      '@solidjs/vite-plugin': 3.0.0(@solidjs/web@2.0.0(solid-js@2.0.0))(@testing-library/jest-dom@7.0.1(@testing-library/dom@10.4.2)(vitest@5.1.0(jsdom@31.0.0)(vite@8.3.8)))(solid-js@2.0.0)(vite@8.3.8)
+      '@solidjs/vite-plugin': 3.0.0(@solidjs/web@2.0.0(solid-js@2.0.0))(@testing-library/jest-dom@8.0.0(@testing-library/dom@10.4.2)(vitest@5.1.0(jsdom@31.0.1)(vite@8.3.8)))(solid-js@2.0.0)(vite@8.3.8)
 
   '@reactivescript/language-server@0.3.1(@volar/language-service@2.4.30(typescript@5.9.3))':
     dependencies:
@@ -1380,17 +1380,17 @@ snapshots:
       '@solidjs/compiler-wasm32-wasi': 2.0.0
       '@solidjs/compiler-win32-x64-msvc': 2.0.0
 
-  '@solidjs/diagnostics@2.0.0(@solidjs/web@2.0.0(solid-js@2.0.0))(solid-js@2.0.0)(vitest@5.1.0(jsdom@31.0.0)(vite@8.3.8))':
+  '@solidjs/diagnostics@2.0.0(@solidjs/web@2.0.0(solid-js@2.0.0))(solid-js@2.0.0)(vitest@5.1.0(jsdom@31.0.1)(vite@8.3.8))':
     dependencies:
       '@solidjs/signals': 2.0.0
       '@solidjs/web': 2.0.0(solid-js@2.0.0)
       solid-js: 2.0.0
     optionalDependencies:
-      vitest: 5.1.0(jsdom@31.0.0)(vite@8.3.8)
+      vitest: 5.1.0(jsdom@31.0.1)(vite@8.3.8)
 
   '@solidjs/signals@2.0.0': {}
 
-  '@solidjs/vite-plugin@3.0.0(@solidjs/web@2.0.0(solid-js@2.0.0))(@testing-library/jest-dom@7.0.1(@testing-library/dom@10.4.2)(vitest@5.1.0(jsdom@31.0.0)(vite@8.3.8)))(solid-js@2.0.0)(vite@8.3.8)':
+  '@solidjs/vite-plugin@3.0.0(@solidjs/web@2.0.0(solid-js@2.0.0))(@testing-library/jest-dom@8.0.0(@testing-library/dom@10.4.2)(vitest@5.1.0(jsdom@31.0.1)(vite@8.3.8)))(solid-js@2.0.0)(vite@8.3.8)':
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@solidjs/compiler': 2.0.0
@@ -1401,7 +1401,7 @@ snapshots:
       vite: 8.3.8
       vitefu: 1.1.3(vite@8.3.8)
     optionalDependencies:
-      '@testing-library/jest-dom': 7.0.1(@testing-library/dom@10.4.2)(vitest@5.1.0(jsdom@31.0.0)(vite@8.3.8))
+      '@testing-library/jest-dom': 8.0.0(@testing-library/dom@10.4.2)(vitest@5.1.0(jsdom@31.0.1)(vite@8.3.8))
 
   '@solidjs/web@2.0.0(solid-js@2.0.0)':
     dependencies:
@@ -1413,7 +1413,7 @@ snapshots:
   '@testing-library/dom@10.4.2':
     dependencies:
       '@babel/code-frame': 7.29.7
-      '@babel/runtime': 7.29.14
+      '@babel/runtime': 7.29.15
       '@types/aria-query': 5.0.4
       aria-query: 5.3.0
       dom-accessibility-api: 0.5.16
@@ -1421,7 +1421,7 @@ snapshots:
       picocolors: 1.1.1
       pretty-format: 27.5.1
 
-  '@testing-library/jest-dom@7.0.1(@testing-library/dom@10.4.2)(vitest@5.1.0(jsdom@31.0.0)(vite@8.3.8))':
+  '@testing-library/jest-dom@8.0.0(@testing-library/dom@10.4.2)(vitest@5.1.0(jsdom@31.0.1)(vite@8.3.8))':
     dependencies:
       '@adobe/css-tools': 4.5.0
       '@testing-library/dom': 10.4.2
@@ -1431,7 +1431,7 @@ snapshots:
       picocolors: 1.1.1
       redent: 3.0.0
     optionalDependencies:
-      vitest: 5.1.0(jsdom@31.0.0)(vite@8.3.8)
+      vitest: 5.1.0(jsdom@31.0.1)(vite@8.3.8)
 
   '@tybys/wasm-util@0.10.4':
     dependencies:
@@ -1616,7 +1616,7 @@ snapshots:
 
   js-tokens@4.0.0: {}
 
-  jsdom@31.0.0:
+  jsdom@31.0.1:
     dependencies:
       '@exodus/bytes': 1.16.0
       bcp-47: 2.1.2
@@ -1630,7 +1630,7 @@ snapshots:
       parse5-parser-stream: 8.1.1
       saxes: 6.0.0
       tough-cookie: 6.1.0
-      undici: 8.12.4
+      undici: 8.13.1
       w3c-xmlserializer: 6.0.0
       webidl-conversions: 8.0.1
       whatwg-mimetype: 5.0.0
@@ -1838,15 +1838,15 @@ snapshots:
       fdir: 6.5.0(picomatch@4.0.7)
       picomatch: 4.0.7
 
-  tldts-core@7.5.1: {}
+  tldts-core@7.5.5: {}
 
-  tldts@7.5.1:
+  tldts@7.5.5:
     dependencies:
-      tldts-core: 7.5.1
+      tldts-core: 7.5.5
 
   tough-cookie@6.1.0:
     dependencies:
-      tldts: 7.5.1
+      tldts: 7.5.5
 
   tr46@7.0.0:
     dependencies:
@@ -1863,7 +1863,7 @@ snapshots:
 
   typescript@6.0.3: {}
 
-  undici@8.12.4: {}
+  undici@8.13.1: {}
 
   validate-html-nesting@1.2.4: {}
 
@@ -1881,7 +1881,7 @@ snapshots:
     optionalDependencies:
       vite: 8.3.8
 
-  vitest@5.1.0(jsdom@31.0.0)(vite@8.3.8):
+  vitest@5.1.0(jsdom@31.0.1)(vite@8.3.8):
     dependencies:
       '@types/chai': 5.2.3
       '@vitest/mocker': 5.1.0(vite@8.3.8)
@@ -1898,7 +1898,7 @@ snapshots:
       vite: 8.3.8
       why-is-node-running: 3.2.1
     optionalDependencies:
-      jsdom: 31.0.0
+      jsdom: 31.0.1
     transitivePeerDependencies:
       - msw
 
